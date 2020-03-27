@@ -18,7 +18,7 @@ public class FirstFrame extends JFrame {
     private JLabel lblAmount = new JLabel("Amount");
     private JLabel lblNames = new JLabel("Name");
     private JComboBox amountBox = new JComboBox();
-    private JTextField textField = new JTextField();
+    private JTextField textField = new JTextField(); //textfield
 
     private JPanel north = new JPanel();
     private JPanel center = new JPanel();
