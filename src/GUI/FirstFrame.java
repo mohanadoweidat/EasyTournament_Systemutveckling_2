@@ -29,7 +29,7 @@ public class FirstFrame extends JFrame {
     ImageIcon imageIcon = new ImageIcon(new ImageIcon("images/ET.png").getImage().getScaledInstance(200, 250, Image.SCALE_DEFAULT));
     private JLabel imageLbl = new JLabel(imageIcon);
 
-    public FirstFrame(){
+    public FirstFrame(){// TODO
 
     }
 
