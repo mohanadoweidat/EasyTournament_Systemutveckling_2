@@ -46,6 +46,7 @@ public class FirstFrame extends JFrame {
         southWest.setBackground(Color.WHITE);
 //        add(southEast, BorderLayout.SOUTH);
         //Ändra guit
+        // tog bort joels ändringar
 
 
         Border border = BorderFactory.createLineBorder(Color.BLACK);
