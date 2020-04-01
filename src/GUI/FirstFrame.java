@@ -48,6 +48,7 @@ public class FirstFrame extends JFrame {
         //Ändra guit
         // tog bort joels ändringar
 
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         Border border = BorderFactory.createLineBorder(Color.BLACK);
         center.setBorder(border);
@@ -63,7 +64,13 @@ public class FirstFrame extends JFrame {
         lblLogo.setPreferredSize(new Dimension(650,80));
         lblLogo.setFont(new Font("Serif", Font.BOLD, 50));
         lblLogo.setForeground(Color.black);
+ /*
 
+
+Coolt det är med branches :D
+
+
+  */
         center.add(lblChoose);
         center.add(lblPlayer);
         center.add(btnPlayer);
