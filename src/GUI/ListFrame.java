@@ -69,8 +69,7 @@ public class ListFrame extends JFrame {
 //        playersList.setFixedCellHeight(250);
 //        playersList.setPreferredSize(new Dimension(430,330));
 //        playersList.setVisibleRowCount(14);
-        playersTable.setPreferredSize(new Dimension(430,300));
-//        playersTable.setVisibleRowCount(14);
+        playersTable.setPreferredScrollableViewportSize(new Dimension(430, 320));//        playersTable.setVisibleRowCount(14);
         scrollPane = new JScrollPane(playersTable);
         panelNorthWest.add(scrollPane);
         addLbl.setFont(font);
