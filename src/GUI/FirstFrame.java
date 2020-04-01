@@ -45,6 +45,7 @@ public class FirstFrame extends JFrame {
         southEast.setBackground(Color.WHITE);
         southWest.setBackground(Color.WHITE);
 //        add(southEast, BorderLayout.SOUTH);
+        //Ändra guit
 
 
         Border border = BorderFactory.createLineBorder(Color.BLACK);
