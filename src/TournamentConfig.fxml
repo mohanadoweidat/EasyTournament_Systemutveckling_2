@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
@@ -17,29 +18,44 @@
          <children>
             <Pane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="24.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/ET.png" />
+                     </image></ImageView>
                </children>
             </Pane>
             <VBox alignment="CENTER" layoutY="250.0" prefHeight="350.0" prefWidth="200.0" spacing="30.0">
                <children>
-                  <Button fx:id="Confiq" alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #393351 #393351;" text="Config" textFill="WHITE">
+                  <Button fx:id="Confiq" alignment="BOTTOM_LEFT" graphicTextGap="8.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="140.0" style="-fx-background-color: #393351 #393351;" text="Config" textFill="WHITE">
                      <graphic>
-                        <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icons8-settings.png" />
+                           </image></ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="Confiq1" alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #393351 #393351;" text="Players" textFill="WHITE">
+                  <Button fx:id="Confiq1" alignment="BOTTOM_LEFT" graphicTextGap="8.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="140.0" style="-fx-background-color: #393351 #393351;" text="Players" textFill="WHITE">
                      <graphic>
-                        <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icons8-person.png" />
+                           </image></ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="Confiq2" alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="252.0" style="-fx-background-color: #393351 #393351;" text="Teams" textFill="WHITE">
+                  <Button fx:id="Confiq2" alignment="BOTTOM_LEFT" graphicTextGap="8.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="140.0" style="-fx-background-color: #393351 #393351;" text="Teams" textFill="WHITE">
                      <graphic>
-                        <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icons8-user_groups.png" />
+                           </image></ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="Confiq3" alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="238.0" style="-fx-background-color: #393351 #393351;" text="OverView" textFill="WHITE">
+                  <Button fx:id="Confiq3" alignment="BOTTOM_LEFT" graphicTextGap="8.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="140.0" style="-fx-background-color: #393351 #393351;" text="OverView" textFill="WHITE">
                      <graphic>
-                        <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icons8-preview_file.png" />
+                           </image></ImageView>
                      </graphic>
                   </Button>
                </children>
