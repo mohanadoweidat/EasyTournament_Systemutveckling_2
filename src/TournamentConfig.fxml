@@ -5,41 +5,57 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" style="-fx-background-color: #2F2B43;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" style="-fx-background-color: #2F2B43;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
       <AnchorPane prefHeight="600.0" prefWidth="180.0" style="-fx-background-color: #393351;">
          <children>
             <Pane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="24.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/ET.png" />
+                     </image></ImageView>
                </children>
             </Pane>
             <VBox alignment="CENTER" layoutY="250.0" prefHeight="350.0" prefWidth="200.0" spacing="30.0">
                <children>
-                  <Button fx:id="Confiq" alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #393351 #393351;" text="Config" textFill="WHITE">
+                  <Button fx:id="Confiq" alignment="BOTTOM_LEFT" graphicTextGap="8.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="140.0" style="-fx-background-color: #393351 #393351;" text="Config" textFill="WHITE">
                      <graphic>
-                        <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icons8-settings.png" />
+                           </image></ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="Confiq1" alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #393351 #393351;" text="Players" textFill="WHITE">
+                  <Button fx:id="Confiq1" alignment="BOTTOM_LEFT" graphicTextGap="8.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="140.0" style="-fx-background-color: #393351 #393351;" text="Players" textFill="WHITE">
                      <graphic>
-                        <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icons8-person.png" />
+                           </image></ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="Confiq2" alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="252.0" style="-fx-background-color: #393351 #393351;" text="Teams" textFill="WHITE">
+                  <Button fx:id="Confiq2" alignment="BOTTOM_LEFT" graphicTextGap="8.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="140.0" style="-fx-background-color: #393351 #393351;" text="Teams" textFill="WHITE">
                      <graphic>
-                        <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icons8-user_groups.png" />
+                           </image></ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="Confiq3" alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="238.0" style="-fx-background-color: #393351 #393351;" text="OverView" textFill="WHITE">
+                  <Button fx:id="Confiq3" alignment="BOTTOM_LEFT" graphicTextGap="8.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="140.0" style="-fx-background-color: #393351 #393351;" text="OverView" textFill="WHITE">
                      <graphic>
-                        <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icons8-preview_file.png" />
+                           </image></ImageView>
                      </graphic>
                   </Button>
                </children>
@@ -53,19 +69,19 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <ComboBox layoutX="265.0" layoutY="119.0" prefHeight="27.0" prefWidth="160.5" promptText="Singleplayer" />
+      <ComboBox fx:id="cbConfig" layoutX="265.0" layoutY="119.0" onAction="#saveConfig" prefHeight="27.0" prefWidth="160.5" promptText="Singleplayer" />
       <Label layoutX="263.0" layoutY="178.0" text="Amount of teams:" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <TextField layoutX="265.0" layoutY="202.0" promptText="Insert number" />
-      <CheckBox layoutX="263.0" layoutY="275.0" mnemonicParsing="false" text="Groupstage" textFill="WHITE">
+      <TextField fx:id="tfAmountOfTeams" layoutX="265.0" layoutY="202.0" onAction="#amountOfTeams" promptText="Insert number" />
+      <CheckBox fx:id="cbGroupStage" layoutX="263.0" layoutY="275.0" mnemonicParsing="false" onAction="#structure" text="Groupstage" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="263.0" layoutY="320.0" mnemonicParsing="false" text="Playoffs" textFill="WHITE">
+      <CheckBox fx:id="cbPlayoffs" layoutX="263.0" layoutY="320.0" mnemonicParsing="false" onAction="#structure" text="Playoffs" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
