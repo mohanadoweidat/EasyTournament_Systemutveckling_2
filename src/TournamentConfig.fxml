@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" style="-fx-background-color: #2F2B43;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" style="-fx-background-color: #2F2B43;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
       <AnchorPane prefHeight="600.0" prefWidth="180.0" style="-fx-background-color: #393351;">
          <children>
@@ -69,19 +69,19 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <ComboBox layoutX="265.0" layoutY="119.0" prefHeight="27.0" prefWidth="160.5" promptText="Singleplayer" />
+      <ComboBox fx:id="cbConfig" layoutX="265.0" layoutY="119.0" onAction="#saveConfig" prefHeight="27.0" prefWidth="160.5" promptText="Singleplayer" />
       <Label layoutX="263.0" layoutY="178.0" text="Amount of teams:" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <TextField layoutX="265.0" layoutY="202.0" promptText="Insert number" />
-      <CheckBox layoutX="263.0" layoutY="275.0" mnemonicParsing="false" text="Groupstage" textFill="WHITE">
+      <TextField fx:id="tfAmountOfTeams" layoutX="265.0" layoutY="202.0" onAction="#amountOfTeams" promptText="Insert number" />
+      <CheckBox fx:id="cbGroupStage" layoutX="263.0" layoutY="275.0" mnemonicParsing="false" onAction="#structure" text="Groupstage" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="263.0" layoutY="320.0" mnemonicParsing="false" text="Playoffs" textFill="WHITE">
+      <CheckBox fx:id="cbPlayoffs" layoutX="263.0" layoutY="320.0" mnemonicParsing="false" onAction="#structure" text="Playoffs" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
