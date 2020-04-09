@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+
 import java.io.IOException;
 
 public class Main extends Application {
@@ -14,7 +15,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
 
-        Parent root = FXMLLoader.load(getClass().getResource("joelsGUI.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("AddPla.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 750, 600));
         primaryStage.show();
