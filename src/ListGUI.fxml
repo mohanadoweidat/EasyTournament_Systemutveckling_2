@@ -13,9 +13,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="900.0" style="-fx-background-color: #696969#696969;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" style="-fx-background-color: #696969#696969;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <bottom>
-      <TableView prefHeight="350.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <TableView prefHeight="262.0" prefWidth="734.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn prefWidth="95.0" text="Teams" />
           <TableColumn text="Player 1" />
@@ -55,15 +55,15 @@
    <center>
       <Pane prefHeight="264.0" prefWidth="268.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnAdd" layoutX="155.0" layoutY="71.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="118.0" text="Add Player">
+            <Button fx:id="btnAdd" layoutX="112.0" layoutY="57.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="118.0" text="Add Player">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button fx:id="btnImport" layoutX="155.0" layoutY="120.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="118.0" text="Import Teams">
+            <Button fx:id="btnImport" layoutX="112.0" layoutY="113.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="118.0" text="Import Teams">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button fx:id="btnStartTournament" layoutX="155.0" layoutY="220.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="118.0" text="Start Tournament">
+            <Button fx:id="btnStartTournament" layoutX="112.0" layoutY="164.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="118.0" text="Start Tournament">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
@@ -74,7 +74,7 @@
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <Label layoutY="6.0" text="Added Players" textFill="WHITE" />
-            <ListView layoutY="24.0" prefHeight="330.0" prefWidth="300.0" />
+            <ListView layoutY="24.0" prefHeight="220.0" prefWidth="263.0" />
          </children>
          <BorderPane.margin>
             <Insets left="8.0" />
@@ -84,10 +84,10 @@
    <right>
       <ImageView fitHeight="234.0" fitWidth="252.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
-            <Image url="@../../images/ET.png" />
+            <Image url="@images/ET.png" />
          </image>
          <BorderPane.margin>
-            <Insets right="70.0" />
+            <Insets right="60.0" />
          </BorderPane.margin>
       </ImageView>
    </right>
