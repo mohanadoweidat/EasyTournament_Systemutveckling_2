@@ -1,4 +1,4 @@
-package GUI;
+/*package GUI;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -70,7 +70,7 @@ public class FirstFrame extends JFrame {
 Coolt det är med branches :D
 
 
-  */
+
         center.add(lblChoose);
         center.add(lblPlayer);
         center.add(btnPlayer);
@@ -114,3 +114,4 @@ Coolt det är med branches :D
     }
 
 }
+*/
