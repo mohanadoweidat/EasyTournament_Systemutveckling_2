@@ -18,26 +18,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-
-       window = primaryStage;
-
-        //Parent config = FXMLLoader.load(getClass().getResource("TournamentConfig.fxml"));
-        //Parent player = FXMLLoader.load(getClass().getResource("AddPlayerGui.fxml"));
-
-        configScene = new Scene((FXMLLoader.load(getClass().getResource("TournamentConfig.fxml"))), 750,600);
-        //playerScene = new Scene((FXMLLoader.load(getClass().getResource("AddPlayerGui.fxml"))), 750,600);
-
-        window.setScene(configScene);
-        window.setTitle("Easy Tournament");
-        window.show();
-    }
-
-    public void setConfigGUI() throws IOException {
-        window.setScene(new Scene((FXMLLoader.load(getClass().getResource("TournamentConfig.fxml"))), 750,600));
-    }
-
-    public void setPlayerGUI() throws IOException {
-        window.setScene(new Scene((FXMLLoader.load(getClass().getResource("AddPlayerGui.fxml"))), 750,600));
+        Parent config = FXMLLoader.load(getClass().getResource("TournamentConfig.fxml"));
+        primaryStage.setTitle("Easy Tournament");
+        primaryStage.setScene(new Scene(config,750,600));
+        primaryStage.show();
     }
 
     public void setTeamGUI(){
