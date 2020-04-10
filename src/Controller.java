@@ -1,5 +1,7 @@
-public class Controller {
+import java.io.IOException;
 
+public class Controller {
+    private Main main;
 
     public void saveConfig(){
 
@@ -12,14 +14,22 @@ public class Controller {
     public void structure(){
 
     }
-/*
+
     public void setConfigGUI(){
-        main.setConfigGUI();
+        try {
+            main.setConfigGUI();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     public void setPlayerGUI(){
-        main.setPlayerGUI();
+        try {
+            main.setPlayerGUI();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
- */
+
 }
