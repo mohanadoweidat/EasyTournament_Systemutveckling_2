@@ -63,7 +63,7 @@
          </children>
       </AnchorPane>
       <Button layoutX="237.0" layoutY="533.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="215.0" style="-fx-background-color: #393351 #393351;" text="Back" textFill="WHITE" />
-      <Button layoutX="486.0" layoutY="533.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="215.0" style="-fx-background-color: #393351 #393351;" text="Next" textFill="WHITE" />
+      <Button fx:id="configNext" layoutX="486.0" layoutY="533.0" mnemonicParsing="false" onAction="#setPlayerGUI" prefHeight="44.0" prefWidth="215.0" style="-fx-background-color: #393351 #393351;" text="Next" textFill="WHITE" />
       <Label layoutX="260.0" layoutY="95.0" text="Team config: " textFill="WHITE">
          <font>
             <Font size="15.0" />

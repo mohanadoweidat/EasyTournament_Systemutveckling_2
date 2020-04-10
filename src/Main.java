@@ -10,15 +10,25 @@ import java.io.IOException;
 
 public class Main extends Application {
 
+    private Stage window;
+    private Scene startGUI, configScene, playerScene, teamGUI, overViewGUI;
+
+
 
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-
-        Parent root = FXMLLoader.load(getClass().getResource("TournamentConfig.fxml"));
+        Parent config = FXMLLoader.load(getClass().getResource("TournamentConfig.fxml"));
         primaryStage.setTitle("Easy Tournament");
-        primaryStage.setScene(new Scene(root, 750, 600));
+        primaryStage.setScene(new Scene(config,750,600));
         primaryStage.show();
+    }
+
+    public void setTeamGUI(){
+
+    }
+
+    public void setOverViewGUI(){
 
     }
     public static void main(String[] args) {
