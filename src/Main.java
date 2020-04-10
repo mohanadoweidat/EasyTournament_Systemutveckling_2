@@ -10,12 +10,6 @@ import java.io.IOException;
 
 public class Main extends Application {
 
-    private Stage window;
-    private Scene startGUI, configScene, playerScene, teamGUI, overViewGUI;
-
-
-
-
     @Override
     public void start(Stage primaryStage) throws IOException {
         Parent config = FXMLLoader.load(getClass().getResource("TournamentConfig.fxml"));

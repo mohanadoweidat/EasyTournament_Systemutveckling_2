@@ -2,8 +2,8 @@ public class Tournament {
 
     private int amountOfTeams;
     private Config config;
-    private boolean groupStage;
-    private boolean playOffs;
+    private boolean groupStage = false;
+    private boolean playOffs = false;
 
 
     public void saveConfig(Config config){
@@ -14,8 +14,11 @@ public class Tournament {
         this.amountOfTeams = amountOfTeams;
     }
 
-    public void structure(){
-
+    public void groupStage() {
+        groupStage = true;
     }
 
+    public void playoffs() {
+        groupStage = true;
+    }
 }

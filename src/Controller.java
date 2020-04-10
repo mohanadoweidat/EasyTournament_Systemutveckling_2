@@ -7,17 +7,21 @@ import javafx.stage.*;
 import java.io.IOException;
 
 public class Controller {
-    private Main main;
+    private Tournament tournament;
 
-    public void saveConfig() {
-
+    public void saveConfig(ActionEvent event) {
+       // tournament.saveConfig();
     }
 
     public void amountOfTeams() {
+        //ournament.amountOfTeams();
+    }
+
+    public void groupStage() {
 
     }
 
-    public void structure() {
+    public void playoffs() {
 
     }
 
