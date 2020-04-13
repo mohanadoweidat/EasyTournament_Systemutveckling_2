@@ -15,20 +15,20 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" style="-fx-background-color: #2F2B43 #2F2B43;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button layoutX="481.0" layoutY="107.0" mnemonicParsing="false" prefWidth="120.0" style="-fx-background-color: #393351 #393351 #393351 #393351;" text="Add Player" textFill="WHITE">
+      <Button layoutX="481.0" layoutY="78.0" mnemonicParsing="false" prefWidth="120.0" style="-fx-background-color: #393351 #393351 #393351 #393351;" text="Add Player" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button layoutX="481.0" layoutY="191.0" mnemonicParsing="false" prefWidth="120.0" style="-fx-background-color: #393351 #393351 #393351 #393351;" text="Import Teams" textFill="WHITE">
+      <Button layoutX="481.0" layoutY="134.0" mnemonicParsing="false" prefWidth="120.0" style="-fx-background-color: #393351 #393351 #393351 #393351;" text="Import Teams" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button layoutX="481.0" layoutY="273.0" mnemonicParsing="false" prefWidth="120.0" style="-fx-background-color: #393351 #393351 #393351 #393351;" text="Start Tournament" textFill="#fffbfb">
+      <Button layoutX="481.0" layoutY="188.0" mnemonicParsing="false" prefWidth="120.0" style="-fx-background-color: #393351 #393351 #393351 #393351;" text="Start Tournament" textFill="#fffbfb">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <ListView layoutX="213.0" layoutY="69.0" prefHeight="271.0" prefWidth="208.0" style="-fx-background-color: #393351 #393351 #393351 #393351;" />
-      <TableView layoutX="213.0" layoutY="356.0" prefHeight="230.0" prefWidth="523.0" style="-fx-background-color: #393351 #393351 #393351 #393351;">
+      <ListView layoutX="213.0" layoutY="47.0" prefHeight="216.0" prefWidth="208.0" style="-fx-background-color: #FFFAFA#FFFAFA;" />
+      <TableView layoutX="213.0" layoutY="282.0" prefHeight="230.0" prefWidth="523.0" style="-fx-background-color: #FFFAFA#FFFAFA;">
         <columns>
           <TableColumn prefWidth="92.0" text="Teams" />
           <TableColumn prefWidth="72.0" text="Player 1" />
@@ -40,7 +40,7 @@
             <TableColumn prefWidth="72.0" text="C2" />
         </columns>
       </TableView>
-      <Label layoutX="213.0" layoutY="41.0" text="Added Players" textFill="WHITE">
+      <Label layoutX="213.0" layoutY="21.0" text="Added Players" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font></Label>
@@ -94,5 +94,15 @@
             </ImageView>
          </children>
       </AnchorPane>
+      <Button layoutX="226.0" layoutY="533.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="215.0" style="-fx-background-color: #393351 #393351;" text="Back" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="494.0" layoutY="534.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="215.0" style="-fx-background-color: #393351 #393351;" text="Next" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </Pane>
