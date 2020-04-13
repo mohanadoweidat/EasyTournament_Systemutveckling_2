@@ -17,7 +17,7 @@ public class Controller {
     @FXML
     private CheckBox cbPlayoffs;
     @FXML
-    private CheckBox cbConfig;
+    private ComboBox<Config> cbConfig;
     @FXML
     private TextField tfAmountOfTeams;
 
