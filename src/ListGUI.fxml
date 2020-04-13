@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" style="-fx-background-color: #2F2B43 #2F2B43;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" style="-fx-background-color: #2F2B43 #2F2B43;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
       <Button layoutX="481.0" layoutY="78.0" mnemonicParsing="false" prefWidth="120.0" style="-fx-background-color: #393351 #393351 #393351 #393351;" text="Add Player" textFill="WHITE">
          <cursor>
@@ -94,12 +94,12 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Button layoutX="226.0" layoutY="533.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="215.0" style="-fx-background-color: #393351 #393351;" text="Back" textFill="WHITE">
+      <Button layoutX="226.0" layoutY="533.0" mnemonicParsing="false" onAction="#setPlayerGUI" prefHeight="45.0" prefWidth="215.0" style="-fx-background-color: #393351 #393351;" text="Back" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="494.0" layoutY="534.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="215.0" style="-fx-background-color: #393351 #393351;" text="Next" textFill="WHITE">
+      <Button layoutX="494.0" layoutY="534.0" mnemonicParsing="false" onAction="#setOverViewGUI" prefHeight="44.0" prefWidth="215.0" style="-fx-background-color: #393351 #393351;" text="Next" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
