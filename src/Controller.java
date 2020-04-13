@@ -3,34 +3,23 @@ import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.scene.control.*;
+import javafx.scene.control.TextField;
 import javafx.stage.*;
 
 import java.awt.*;
 import java.io.IOException;
 
 public class Controller {
+
     private Tournament tournament;
     @FXML
     private CheckBox cbGroupStage;
     @FXML
     private CheckBox cbPlayoffs;
-
-
-    public void saveConfig(ActionEvent event) {
-       // tournament.saveConfig();
-    }
-
-    public void amountOfTeams() {
-        //ournament.amountOfTeams();
-    }
-
-    public void groupStage() {
-
-    }
-
-    public void playoffs() {
-
-    }
+    @FXML
+    private CheckBox cbConfig;
+    @FXML
+    private TextField tfAmountOfTeams;
 
     @FXML
     public void setConfigGUI(ActionEvent event) throws IOException {
@@ -80,5 +69,15 @@ public class Controller {
         if(cbPlayoffs.isSelected()) {
             tournament.playoffs();
         }
+    }
+
+    @FXML
+    public void handleConfig(){
+
+    }
+
+    @FXML
+    public void handleAmountOfTeams(){
+
     }
 }
