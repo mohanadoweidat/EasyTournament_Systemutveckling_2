@@ -10,12 +10,11 @@ import java.io.IOException;
 
 public class Controller {
     private Tournament tournament;
-
     @FXML
     private CheckBox cbGroupStage;
-
     @FXML
     private CheckBox cbPlayoffs;
+
 
     public void saveConfig(ActionEvent event) {
        // tournament.saveConfig();
@@ -72,14 +71,14 @@ public class Controller {
     @FXML
     public void handleGroupStageBox(ActionEvent actionEvent){
         if(cbGroupStage.isSelected()) {
-
-        } else {
-
+            tournament.groupStage();
         }
     }
 
     @FXML
     public void handlePlayoffsBox(ActionEvent actionEvent){
-
+        if(cbPlayoffs.isSelected()) {
+            tournament.playoffs();
+        }
     }
 }
