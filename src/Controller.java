@@ -52,6 +52,9 @@ public class Controller {
         window.show();
     }
 
+    
+
+
     @FXML
     public void setOverViewGUI(ActionEvent event) throws IOException {
         Parent playerGUI = FXMLLoader.load(getClass().getResource("joelsGui.fxml"));
@@ -62,4 +65,5 @@ public class Controller {
     }
 
 
+ master
 }
