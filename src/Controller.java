@@ -2,12 +2,20 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.*;
+import javafx.scene.control.*;
 import javafx.stage.*;
 
+import java.awt.*;
 import java.io.IOException;
 
 public class Controller {
     private Tournament tournament;
+
+    @FXML
+    private CheckBox cbGroupStage;
+
+    @FXML
+    private CheckBox cbPlayoffs;
 
     public void saveConfig(ActionEvent event) {
        // tournament.saveConfig();
@@ -61,5 +69,17 @@ public class Controller {
         window.show();
     }
 
+    @FXML
+    public void handleGroupStageBox(ActionEvent actionEvent){
+        if(cbGroupStage.isSelected()) {
 
+        } else {
+
+        }
+    }
+
+    @FXML
+    public void handlePlayoffsBox(ActionEvent actionEvent){
+
+    }
 }

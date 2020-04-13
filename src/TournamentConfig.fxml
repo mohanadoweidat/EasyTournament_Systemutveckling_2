@@ -76,12 +76,12 @@
          </font>
       </Label>
       <TextField fx:id="tfAmountOfTeams" layoutX="265.0" layoutY="202.0" onAction="#amountOfTeams" promptText="Insert number" />
-      <CheckBox fx:id="cbGroupStage" layoutX="263.0" layoutY="275.0" mnemonicParsing="false" onAction="#structure" text="Groupstage" textFill="WHITE">
+      <CheckBox fx:id="cbGroupStage" layoutX="263.0" layoutY="275.0" mnemonicParsing="false" onAction="#handleGroupStageBox" text="Groupstage" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="cbPlayoffs" layoutX="263.0" layoutY="320.0" mnemonicParsing="false" onAction="#structure" text="Playoffs" textFill="WHITE">
+      <CheckBox fx:id="cbPlayoffs" layoutX="263.0" layoutY="320.0" mnemonicParsing="false" onAction="#handlePlayoffsBox" text="Playoffs" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
