@@ -1,9 +1,16 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 public class Tournament {
 
     private int amountOfTeams;
     private Config config;
-    private boolean groupStage;
-    private boolean playOffs;
+    private boolean groupStage = false;
+    private boolean playOffs = false;
+    private int teamIndex = 1;
+    private ArrayList players = new ArrayList();
+    private ArrayList teams = new ArrayList();
 
 
     public void saveConfig(Config config){
@@ -14,8 +21,27 @@ public class Tournament {
         this.amountOfTeams = amountOfTeams;
     }
 
-    public void structure(){
-
+    public void groupStage() {
+        groupStage = true;
     }
+
+    public void playoffs() {
+        groupStage = true;
+    }
+
+    public void addPlayer(String player){
+        players.add(player);
+    }
+
+    public void addTeams(){
+        for (int i = 0; i < amountOfTeams; i++){
+            
+
+            teamIndex++;
+        }
+    }
+
+
+
 
 }
