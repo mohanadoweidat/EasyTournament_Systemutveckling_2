@@ -48,12 +48,9 @@ public class Controller {
         window.show();
     }
 
-    
-
-
     @FXML
     public void setOverViewGUI(ActionEvent event) throws IOException {
-        Parent playerGUI = FXMLLoader.load(getClass().getResource("joelsGui.fxml"));
+        Parent playerGUI = FXMLLoader.load(getClass().getResource("OverviewGUI.fxml"));
         Scene playerScene = new Scene(playerGUI);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(playerScene);
