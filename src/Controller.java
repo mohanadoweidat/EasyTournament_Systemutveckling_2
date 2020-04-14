@@ -73,7 +73,7 @@ public class Controller {
 
     @FXML
     public void handleConfig(){
-
+       // tournament.playoffs();
     }
 
     @FXML
