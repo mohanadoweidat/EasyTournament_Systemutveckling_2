@@ -30,7 +30,7 @@ public class Controller {
     @FXML
     private ListView listAddedPlayers;
 
-    ObservableList<Config> configStatusList = FXCollections.observableArrayList(Config.values());
+    private ObservableList<Config> configStatusList = FXCollections.observableArrayList(Config.values());
 
 
 
@@ -89,11 +89,14 @@ public class Controller {
        // tournament.playoffs();
     }
 
-    @FXML
-    public void initialize(){
+
+    /*public void initialize(){
         cbConfig.setValue(config);
         cbConfig.setItems(configStatusList);
     }
+
+     */
+
 
     @FXML
     public void handleAmountOfTeams(){
