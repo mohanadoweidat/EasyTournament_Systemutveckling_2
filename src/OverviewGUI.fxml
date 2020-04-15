@@ -16,7 +16,7 @@
          <children>
             <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #393351 #393351 #393351 #393351;">
                <children>
-                  <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="24.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="24.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/ET.png" />
                      </image>
@@ -61,17 +61,17 @@
             </Button>
          </children>
       </AnchorPane>
-      <ListView layoutX="238.0" layoutY="59.0" prefHeight="340.0" prefWidth="480.0" style="-fx-background-color: #FFFAFA#FFFAFA #FFFAFA#FFFAFA;" />
-      <Button layoutX="503.0" layoutY="522.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="215.0" style="-fx-background-color: #393351 #393351 #393351 #393351;" text="Lets Play" textFill="WHITE">
+      <ListView layoutX="236.0" layoutY="78.0" prefHeight="340.0" prefWidth="480.0" style="-fx-background-color: #FFFAFA#FFFAFA #FFFAFA#FFFAFA;" />
+      <Button layoutX="494.0" layoutY="533.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="215.0" style="-fx-background-color: #393351 #393351 #393351 #393351;" text="Lets Play" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Label layoutX="236.0" layoutY="40.0" prefHeight="19.0" prefWidth="88.0" text="Overview" textFill="WHITE">
+      <Label layoutX="236.0" layoutY="51.0" prefHeight="19.0" prefWidth="88.0" text="Overview" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Button layoutX="248.0" layoutY="522.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="215.0" style="-fx-background-color: #393351 #393351 #393351 #393351;" text="Back" textFill="WHITE">
+      <Button layoutX="226.0" layoutY="533.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="215.0" style="-fx-background-color: #393351 #393351 #393351 #393351;" text="Back" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
