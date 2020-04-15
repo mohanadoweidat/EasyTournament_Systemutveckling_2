@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.*;
 
@@ -14,7 +15,7 @@ import java.io.IOException;
 
 public class Controller {
 
-    private Tournament tournament = new Tournament();
+    private Tournament tournament = new Tournament(this);
 
     private Config config;
     @FXML
@@ -29,6 +30,10 @@ public class Controller {
     private TextField tfPlayerName;
     @FXML
     private ListView listAddedPlayers;
+    @FXML
+    private ListView listOverview;
+    @FXML
+    private Button btnRefresh;
 
     private ObservableList<Config> configStatusList = FXCollections.observableArrayList(Config.values());
 
@@ -73,6 +78,10 @@ public class Controller {
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(playerScene);
         window.show();
+//        showGui("hej");
+
+
+
     }
 
     @FXML
@@ -108,7 +117,21 @@ public class Controller {
 
     public void addPlayersToList(){
         listAddedPlayers.getItems().add(tfPlayerName.getText());
+        tfPlayerName.setText("");
     }
 
+    public void overviewRefresh(){
+        listOverview.getItems().add("hej mamma");
+    }
+
+//    public void teamsNext(ActionEvent event) throws IOException, InterruptedException {
+//        setOverViewGUI(event);
+//        Thread.sleep(2000);
+//        overviewRefresh();
+//    }
+
+//    public void showGui(String showGui){
+//        listOverview.getItems().add(showGui);
+//    }
 
 }

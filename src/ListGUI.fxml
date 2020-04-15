@@ -99,7 +99,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="teamNext" layoutX="494.0" layoutY="534.0" mnemonicParsing="false" onAction="#setOverViewGUI" prefHeight="44.0" prefWidth="215.0" style="-fx-background-color: #393351 #393351;" text="Next" textFill="WHITE">
+      <Button fx:id="teamNext" layoutX="494.0" layoutY="534.0" mnemonicParsing="false" onAction="#teamsNext" prefHeight="44.0" prefWidth="215.0" style="-fx-background-color: #393351 #393351;" text="Next" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

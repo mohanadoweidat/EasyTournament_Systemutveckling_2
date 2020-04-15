@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" style="-fx-background-color: #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<AnchorPane  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" style="-fx-background-color: #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
       <AnchorPane prefHeight="600.0" prefWidth="180.0" style="-fx-background-color: #393351 #393351 #393351 #393351;">
          <children>
@@ -61,7 +61,7 @@
             </Button>
          </children>
       </AnchorPane>
-      <ListView layoutX="236.0" layoutY="78.0" prefHeight="340.0" prefWidth="480.0" style="-fx-background-color: #FFFAFA#FFFAFA #FFFAFA#FFFAFA;" />
+      <ListView fx:id="listOverview" layoutX="236.0" layoutY="78.0" prefHeight="340.0" prefWidth="480.0" style="-fx-background-color: #FFFAFA#FFFAFA #FFFAFA#FFFAFA;" />
       <Button layoutX="494.0" layoutY="533.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="215.0" style="-fx-background-color: #393351 #393351 #393351 #393351;" text="Lets Play" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -75,5 +75,6 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
+      <Button layoutX="448.0" layoutY="34.0" mnemonicParsing="false" onAction="#overviewRefresh" text="refresh" />
    </children>
 </AnchorPane>

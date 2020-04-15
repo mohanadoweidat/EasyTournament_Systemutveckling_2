@@ -11,8 +11,13 @@ public class Tournament {
     private int teamIndex = 1;
     private ArrayList players = new ArrayList();
     private ArrayList teams = new ArrayList();
+    private Controller controller;
 
 
+    public Tournament(Controller controller){
+        this.controller=controller;
+
+    }
     public void saveConfig(Config config){
         this.config = config;
     }
@@ -44,6 +49,10 @@ public class Tournament {
         for (Object p : players){
             System.out.println(p);
         }
+    }
+
+    public String toString(){
+        return (String)amountOfTeams; //+ "\n" + groupStage + "\n" + playOffs + "\n" + players;
     }
 
 //    public void addTeams(){
