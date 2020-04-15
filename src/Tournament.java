@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Tournament {
 
-    private int amountOfTeams;
+    private String amountOfTeams;
     private Config config;
     private boolean groupStage = false;
     private boolean playOffs = false;
@@ -17,29 +17,42 @@ public class Tournament {
         this.config = config;
     }
 
-    public void amountOfTeams(int amountOfTeams){
+    public void setAmountOfTeams(String amountOfTeams){
         this.amountOfTeams = amountOfTeams;
+        System.out.println(this.amountOfTeams);
     }
 
     public void groupStage() {
-        groupStage = true;
+        if (groupStage){
+            groupStage=false;
+        }else if (!groupStage){
+            groupStage=true;
+        }
     }
 
     public void playoffs() {
-        groupStage = true;
+        if (playOffs){
+            playOffs=false;
+        }else if (!playOffs){
+            playOffs=true;
+        }
+
     }
 
-    public void addPlayer(String player){
+    public void addPlayer(List player){
         players.add(player);
-    }
-
-    public void addTeams(){
-        for (int i = 0; i < amountOfTeams; i++){
-            
-
-            teamIndex++;
+        for (Object p : players){
+            System.out.println(p);
         }
     }
+
+//    public void addTeams(){
+//        for (int i = 0; i < amountOfTeams; i++){
+//
+//
+//            teamIndex++;
+//        }
+//    }
 
 
 

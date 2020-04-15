@@ -14,7 +14,7 @@ import java.io.IOException;
 
 public class Controller {
 
-    private Tournament tournament;
+    private Tournament tournament = new Tournament();
 
     private Config config;
     @FXML
@@ -26,13 +26,16 @@ public class Controller {
     @FXML
     private TextField tfAmountOfTeams;
     @FXML
-    private TextField playerName;
+    private TextField tfPlayerName;
     @FXML
     private ListView listAddedPlayers;
 
     private ObservableList<Config> configStatusList = FXCollections.observableArrayList(Config.values());
 
 
+    public Controller(){
+
+    }
 
     @FXML
     public void setConfigGUI(ActionEvent event) throws IOException {
@@ -45,6 +48,7 @@ public class Controller {
 
     @FXML
     public void setPlayerGUI(ActionEvent event) throws IOException {
+        handleAmountOfTeams();
         Parent playerGUI = FXMLLoader.load(getClass().getResource("AddPlayersGui.fxml"));
         Scene playerScene = new Scene(playerGUI);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -54,6 +58,7 @@ public class Controller {
 
     @FXML
     public void setTeamsGUI(ActionEvent event) throws IOException {
+        tournament.addPlayer(listAddedPlayers.getItems());
         Parent playerGUI = FXMLLoader.load(getClass().getResource("ListGUI.fxml"));
         Scene playerScene = new Scene(playerGUI);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -72,16 +77,14 @@ public class Controller {
 
     @FXML
     public void handleGroupStageBox(ActionEvent actionEvent){
-        if(cbGroupStage.isSelected()) {
             tournament.groupStage();
-        }
+
     }
+
 
     @FXML
     public void handlePlayoffsBox(ActionEvent actionEvent){
-        if(cbPlayoffs.isSelected()) {
             tournament.playoffs();
-        }
     }
 
     @FXML
@@ -100,14 +103,12 @@ public class Controller {
 
     @FXML
     public void handleAmountOfTeams(){
-        System.out.println(tfAmountOfTeams.getText());
-    }
-   /* public String getPlayername(){
-        return playerName.getText();
-    }
-    public void addPlayersToList(){
-    listAddedPlayers.getItems().add(getPlayername());
+        tournament.setAmountOfTeams(tfAmountOfTeams.getText());
     }
 
-    */
+    public void addPlayersToList(){
+        listAddedPlayers.getItems().add(tfPlayerName.getText());
+    }
+
+
 }
