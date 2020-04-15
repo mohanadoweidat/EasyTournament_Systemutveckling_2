@@ -13,6 +13,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" style="-fx-background-color: #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
+
       <ListView fx:id="addedPlayerList" layoutX="516.0" layoutY="51.0" prefHeight="387.0" prefWidth="217.0" style="-fx-background-color: #FFFAFA#FFFAFA #FFFAFA#FFFAFA;" />
       <Button fx:id="addPlayer" layoutX="416.0" layoutY="201.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="86.0" style="-fx-background-color: #393351 #393351 #393351 #393351 #393351 #393351 #393351 #393351;" text="Add Player" textFill="WHITE">
          <cursor>
@@ -20,9 +21,16 @@
          </cursor></Button>
       <TextField fx:id="playerName" layoutX="244.0" layoutY="201.0" prefHeight="32.0" prefWidth="156.0" style="-fx-background-color: #FFFAFA#FFFAFA #FFFAFA#FFFAFA;" />
       <Label layoutX="244.0" layoutY="176.0" prefHeight="17.0" prefWidth="156.0" text="Player Name:" textFill="WHITE">
+
+      <ListView fx:id="listAddedPlayers" layoutX="523.0" layoutY="51.0" prefHeight="387.0" prefWidth="210.0" />
+      <Button fx:id="btnAddPlayer" layoutX="416.0" layoutY="185.0" mnemonicParsing="false" onAction="#addPlayersToList" prefHeight="32.0" prefWidth="86.0" style="-fx-background-color: #6060B9;" text="Add Player" textFill="WHITE" />
+      <TextField fx:id="tfPlayerName" layoutX="244.0" layoutY="185.0" prefHeight="32.0" prefWidth="156.0" />
+      <Label layoutX="244.0" layoutY="159.0" prefHeight="17.0" prefWidth="156.0" text="Player Name:" textFill="WHITE">
+
          <font>
             <Font size="15.0" />
          </font></Label>
+
       <Button fx:id="importGroups" layoutX="517.0" layoutY="447.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="103.0" style="-fx-background-color: #393351 #393351 #393351 #393351 #393351 #393351 #393351 #393351;" text="Import Groups" textFill="WHITE" />
       <Button fx:id="saveGroup" layoutX="628.0" layoutY="447.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="103.0" style="-fx-background-color: #393351 #393351 #393351 #393351 #393351 #393351 #393351 #393351;" text="Save Group" textFill="WHITE" />
       <Button fx:id="pickTeam" layoutX="496.0" layoutY="531.0" mnemonicParsing="false" onAction="#setTeamsGUI" prefHeight="44.0" prefWidth="215.0" style="-fx-background-color: #393351 #393351 #393351 #393351 #393351 #393351 #393351 #393351;" text="Next" textFill="WHITE">
@@ -31,6 +39,13 @@
          </cursor></Button>
       <ScrollBar layoutX="717.0" layoutY="51.0" orientation="VERTICAL" prefHeight="387.0" prefWidth="17.0" />
       <Label layoutX="515.0" layoutY="19.0" prefHeight="32.0" prefWidth="210.0" text="Added Players :" textAlignment="CENTER" textFill="WHITE">
+
+      <Button fx:id="importGroups" layoutX="523.0" layoutY="447.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="96.0" style="-fx-background-color: #6060B9;" text="Import Groups" textFill="WHITE" />
+      <Button fx:id="btnSaveGroup" layoutX="637.0" layoutY="447.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="96.0" style="-fx-background-color: #6060B9;" text="Save Group" textFill="WHITE" />
+      <Button fx:id="pickTeam" layoutX="494.0" layoutY="531.0" mnemonicParsing="false" onAction="#setTeamsGUI" prefHeight="46.0" prefWidth="167.0" style="-fx-background-color: #6060B9;" text="Next" textFill="WHITE" />
+      <ScrollBar layoutX="719.0" layoutY="51.0" orientation="VERTICAL" prefHeight="369.0" prefWidth="14.0" />
+      <Label layoutX="523.0" layoutY="19.0" prefHeight="32.0" prefWidth="210.0" text="Added Players :" textAlignment="CENTER" textFill="WHITE">
+
          <font>
             <Font size="15.0" />
          </font>
@@ -80,9 +95,13 @@
             </Button>
          </children>
       </Pane>
+
       <Button fx:id="pickTeam1" layoutX="233.0" layoutY="531.0" mnemonicParsing="false" onAction="#setConfigGUI" opacity="0.95" prefHeight="44.0" prefWidth="215.0" style="-fx-background-color: #393351 #393351 #393351 #393351 #393351 #393351 #393351 #393351;" text="Back" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
+
+      <Button fx:id="btnBack" layoutX="292.0" layoutY="531.0" mnemonicParsing="false" onAction="#setConfigGUI" opacity="0.95" prefHeight="46.0" prefWidth="167.0" style="-fx-background-color: #6060B9;" text="Back" textFill="WHITE" />
+
    </children>
 </Pane>

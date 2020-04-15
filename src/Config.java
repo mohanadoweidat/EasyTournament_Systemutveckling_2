@@ -1,4 +1,12 @@
 public enum Config {
     SinglePlayer,
-    MultiPlayer;
+    TwoPlayerTeams,
+    ThreePlayerTeams,
+    FourPlayerTeams,
+    FivePlayerTeams,
+    SixPlayerTeams,
+    SevenPlayerTeams,
+    EightPlayerTeams,
+    NinePlayerTeams,
+    TenPlayerTeams,
 }
