@@ -71,7 +71,7 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Button layoutX="226.0" layoutY="533.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="215.0" style="-fx-background-color: #393351 #393351 #393351 #393351;" text="Back" textFill="WHITE">
+      <Button layoutX="226.0" layoutY="533.0" mnemonicParsing="false" onAction="#setTeamsGUI" prefHeight="44.0" prefWidth="215.0" style="-fx-background-color: #393351 #393351 #393351 #393351;" text="Back" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
