@@ -19,7 +19,6 @@ public class Main extends Application {
     }
 
     public void setTeamGUI(){
-
     }
 
     public void setOverViewGUI(){

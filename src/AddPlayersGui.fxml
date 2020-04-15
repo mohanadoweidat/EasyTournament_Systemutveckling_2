@@ -12,15 +12,15 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" style="-fx-background-color: #4D4DA1;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
-      <ListView fx:id="addedPlayerList" layoutX="523.0" layoutY="51.0" prefHeight="387.0" prefWidth="210.0" />
-      <Button fx:id="addPlayer" layoutX="416.0" layoutY="185.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="86.0" style="-fx-background-color: #6060B9;" text="Add Player" textFill="WHITE" />
-      <TextField fx:id="playerName" layoutX="244.0" layoutY="185.0" prefHeight="32.0" prefWidth="156.0" />
+      <ListView fx:id="listAddedPlayers" layoutX="523.0" layoutY="51.0" prefHeight="387.0" prefWidth="210.0" />
+      <Button fx:id="btnAddPlayer" layoutX="416.0" layoutY="185.0" mnemonicParsing="false" onAction="#addPlayersToList" prefHeight="32.0" prefWidth="86.0" style="-fx-background-color: #6060B9;" text="Add Player" textFill="WHITE" />
+      <TextField fx:id="tfPlayerName" layoutX="244.0" layoutY="185.0" prefHeight="32.0" prefWidth="156.0" />
       <Label layoutX="244.0" layoutY="159.0" prefHeight="17.0" prefWidth="156.0" text="Player Name:" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
       <Button fx:id="importGroups" layoutX="523.0" layoutY="447.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="96.0" style="-fx-background-color: #6060B9;" text="Import Groups" textFill="WHITE" />
-      <Button fx:id="saveGroup" layoutX="637.0" layoutY="447.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="96.0" style="-fx-background-color: #6060B9;" text="Save Group" textFill="WHITE" />
+      <Button fx:id="btnSaveGroup" layoutX="637.0" layoutY="447.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="96.0" style="-fx-background-color: #6060B9;" text="Save Group" textFill="WHITE" />
       <Button fx:id="pickTeam" layoutX="494.0" layoutY="531.0" mnemonicParsing="false" onAction="#setTeamsGUI" prefHeight="46.0" prefWidth="167.0" style="-fx-background-color: #6060B9;" text="Next" textFill="WHITE" />
       <ScrollBar layoutX="719.0" layoutY="51.0" orientation="VERTICAL" prefHeight="369.0" prefWidth="14.0" />
       <Label layoutX="523.0" layoutY="19.0" prefHeight="32.0" prefWidth="210.0" text="Added Players :" textAlignment="CENTER" textFill="WHITE">
@@ -60,6 +60,6 @@
             <Label layoutX="82.0" layoutY="552.0" prefHeight="20.0" prefWidth="69.0" text="Overview" textFill="WHITE" />
          </children>
       </Pane>
-      <Button fx:id="pickTeam1" layoutX="292.0" layoutY="531.0" mnemonicParsing="false" onAction="#setConfigGUI" opacity="0.95" prefHeight="46.0" prefWidth="167.0" style="-fx-background-color: #6060B9;" text="Back" textFill="WHITE" />
+      <Button fx:id="btnBack" layoutX="292.0" layoutY="531.0" mnemonicParsing="false" onAction="#setConfigGUI" opacity="0.95" prefHeight="46.0" prefWidth="167.0" style="-fx-background-color: #6060B9;" text="Back" textFill="WHITE" />
    </children>
 </Pane>

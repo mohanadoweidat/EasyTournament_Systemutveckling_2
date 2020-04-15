@@ -20,6 +20,10 @@ public class Controller {
     private ComboBox<Config> cbConfig;
     @FXML
     private TextField tfAmountOfTeams;
+    @FXML
+    private TextField playerName;
+    @FXML
+    private ListView listAddedPlayers;
 
     @FXML
     public void setConfigGUI(ActionEvent event) throws IOException {
@@ -81,4 +85,12 @@ public class Controller {
     public void handleAmountOfTeams(){
 
     }
+   /* public String getPlayername(){
+        return playerName.getText();
+    }
+    public void addPlayersToList(){
+    listAddedPlayers.getItems().add(getPlayername());
+    }
+
+    */
 }
