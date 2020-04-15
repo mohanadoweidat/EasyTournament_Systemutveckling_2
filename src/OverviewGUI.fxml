@@ -63,11 +63,12 @@
          </children>
       </AnchorPane>
       <ListView layoutX="238.0" layoutY="59.0" prefHeight="340.0" prefWidth="480.0" style="-fx-background-color: #B0C4DE#B0C4DE;" />
-      <Button layoutX="402.0" layoutY="494.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="151.0" style="-fx-background-color: #4169E1#4169E1;" text="Lets Play" />
+      <Button layoutX="527.0" layoutY="493.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="151.0" style="-fx-background-color: #4169E1#4169E1;" text="Lets Play" />
       <Label layoutX="236.0" layoutY="40.0" prefHeight="19.0" prefWidth="88.0" text="Overview" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
+      <Button layoutX="280.0" layoutY="493.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="151.0" style="-fx-background-color: #4169E1#4169E1;" text="Back" />
    </children>
 </AnchorPane>
