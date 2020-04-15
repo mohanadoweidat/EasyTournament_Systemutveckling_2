@@ -1,4 +1,7 @@
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableArray;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.*;
@@ -12,6 +15,8 @@ import java.io.IOException;
 public class Controller {
 
     private Tournament tournament;
+
+    private Config config;
     @FXML
     private CheckBox cbGroupStage;
     @FXML
@@ -20,6 +25,10 @@ public class Controller {
     private ComboBox<Config> cbConfig;
     @FXML
     private TextField tfAmountOfTeams;
+
+    ObservableList<Config> configStatusList = FXCollections.observableArrayList(Config.values());
+
+
 
     @FXML
     public void setConfigGUI(ActionEvent event) throws IOException {
@@ -71,14 +80,19 @@ public class Controller {
         }
     }
 
-
     @FXML
     public void handleConfig(){
        // tournament.playoffs();
     }
 
     @FXML
-    public void handleAmountOfTeams(){
+    public void initialize(){
+        cbConfig.setValue(config);
+        cbConfig.setItems(configStatusList);
+    }
 
+    @FXML
+    public void handleAmountOfTeams(){
+        System.out.println(tfAmountOfTeams.getText());
     }
 }
