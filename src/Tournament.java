@@ -44,7 +44,7 @@ public class Tournament {
 
     }
 
-    public void addPlayer(String player){
+    public void addPlayer(List player){
         players.add(player);
         for (Object p : players){
            System.out.println(p);

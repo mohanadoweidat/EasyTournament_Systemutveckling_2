@@ -63,7 +63,7 @@ public class Controller {
 
     @FXML
     public void setTeamsGUI(ActionEvent event) throws IOException {
-        //tournament.addPlayer(listAddedPlayers.getItems());
+        tournament.addPlayer(listAddedPlayers.getItems());
         Parent playerGUI = FXMLLoader.load(getClass().getResource("ListGUI.fxml"));
         Scene playerScene = new Scene(playerGUI);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -116,7 +116,6 @@ public class Controller {
 
     public void addPlayersToList(){
         listAddedPlayers.getItems().add(tfPlayerName.getText());
-        tournament.addPlayer(tfPlayerName.getText());
         tfPlayerName.setText("");
     }
 
