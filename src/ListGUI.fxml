@@ -14,13 +14,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" style="-fx-background-color: #2F2B43 #2F2B43;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" style="-fx-background-color: #2b2b2b;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
-      <Button layoutX="441.0" layoutY="74.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="140.0" style="-fx-background-color: #393351 #393351 #393351 #393351;" text="Add Player To Team" textFill="WHITE">
+      <Button layoutX="441.0" layoutY="74.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="140.0" style="-fx-background-color: #3b3f41#3b3f41;" text="Add Player To Team" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button layoutX="441.0" layoutY="119.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="140.0" style="-fx-background-color: #393351 #393351 #393351 #393351;" text="Randomize Teams" textFill="WHITE">
+      <Button layoutX="441.0" layoutY="119.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="140.0" style="-fx-background-color: #3b3f41#3b3f41;" text="Randomize Teams" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
@@ -41,12 +41,12 @@
          <font>
             <Font size="15.0" />
          </font></Label>
-      <AnchorPane prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #393351 #393351;">
+      <AnchorPane prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #3b3f41;">
          <children>
             <ImageView fitHeight="230.0" fitWidth="200.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
             <VBox alignment="CENTER" layoutY="250.0" prefHeight="350.0" prefWidth="200.0" spacing="30.0">
                <children>
-                  <Button fx:id="Confiq" alignment="BOTTOM_LEFT" graphicTextGap="8.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="140.0" style="-fx-background-color: #393351 #393351;" text="Home Page" textFill="WHITE">
+                  <Button fx:id="Confiq" alignment="BOTTOM_LEFT" graphicTextGap="8.0" mnemonicParsing="false" onAction="#setFirstPageGUI" prefHeight="50.0" prefWidth="140.0" style="-fx-background-color: #3b3f41#3b3f41;" text="Home Page" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -58,7 +58,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="Confiq1" alignment="BOTTOM_LEFT" graphicTextGap="8.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="140.0" style="-fx-background-color: #393351 #393351;" text="Players" textFill="WHITE">
+                  <Button fx:id="Confiq1" alignment="BOTTOM_LEFT" graphicTextGap="8.0" mnemonicParsing="false" onAction="#setPlayerGUI" prefHeight="50.0" prefWidth="140.0" style="-fx-background-color: #3b3f41#3b3f41;" text="Players" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="44.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -70,7 +70,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="Confiq2" alignment="BOTTOM_LEFT" graphicTextGap="8.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="140.0" style="-fx-background-color: #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43;" text="Teams" textFill="WHITE">
+                  <Button fx:id="Confiq2" alignment="BOTTOM_LEFT" graphicTextGap="8.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="140.0" style="-fx-background-color: #2b2b2b;" text="Teams" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="41.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -91,7 +91,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Button fx:id="teamNext" layoutX="367.0" layoutY="532.0" mnemonicParsing="false" onAction="#setOverViewGUI" prefHeight="44.0" prefWidth="215.0" style="-fx-background-color: #393351 #393351;" text="Start Tournament" textFill="WHITE">
+      <Button fx:id="teamNext" layoutX="367.0" layoutY="532.0" mnemonicParsing="false" onAction="#setOverViewGUI" prefHeight="44.0" prefWidth="215.0" style="-fx-background-color: #3b3f41#3b3f41;" text="Start Tournament" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
