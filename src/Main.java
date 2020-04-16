@@ -16,7 +16,6 @@ public class Main extends Application {
         primaryStage.setTitle("Easy Tournament");
         primaryStage.setScene(new Scene(config,750,600));
         primaryStage.show();
-
     }
 
     public void setTeamGUI(){

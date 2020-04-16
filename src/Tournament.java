@@ -49,8 +49,10 @@ public class Tournament {
         for (Object p : players){
            System.out.println(p);
         }
+    }
 
-
+    public List getPlayers(){
+        return players;
     }
 
     public String toString(){

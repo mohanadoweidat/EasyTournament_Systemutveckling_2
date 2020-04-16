@@ -16,7 +16,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" style="-fx-background-color: #2b2b2b;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
-      <Button layoutX="441.0" layoutY="74.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="140.0" style="-fx-background-color: #3b3f41#3b3f41;" text="Add Player To Team" textFill="WHITE">
+      <Button layoutX="441.0" layoutY="76.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="140.0" style="-fx-background-color: #3b3f41#3b3f41;" text="Add Player To Team" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
@@ -24,7 +24,7 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <ListView layoutX="213.0" layoutY="47.0" prefHeight="216.0" prefWidth="208.0" style="-fx-background-color: #FFFAFA#FFFAFA;" />
+      <ListView fx:id="listTeamsPlayer" layoutX="213.0" layoutY="35.0" prefHeight="228.0" prefWidth="208.0" style="-fx-background-color: #FFFAFA#FFFAFA;" />
       <TableView layoutX="213.0" layoutY="282.0" prefHeight="230.0" prefWidth="523.0" style="-fx-background-color: #FFFAFA#FFFAFA;">
         <columns>
           <TableColumn prefWidth="92.0" text="Teams" />
@@ -37,7 +37,7 @@
             <TableColumn prefWidth="72.0" text="C2" />
         </columns>
       </TableView>
-      <Label layoutX="213.0" layoutY="21.0" text="Added Players" textFill="WHITE">
+      <Label layoutX="218.0" layoutY="15.0" text="Added Players" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font></Label>
@@ -98,5 +98,10 @@
       </Button>
       <CheckBox layoutX="441.0" layoutY="168.0" mnemonicParsing="false" text="Group Stage" textFill="WHITE" />
       <CheckBox layoutX="441.0" layoutY="197.0" mnemonicParsing="false" text="Play-Offs" textFill="WHITE" />
+      <Button fx:id="btnImportPlayers" layoutX="441.0" layoutY="34.0" mnemonicParsing="false" onAction="#update" prefHeight="27.0" prefWidth="140.0" style="-fx-background-color: #3b3f41#3b3f41;" text="Import Players" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </Pane>

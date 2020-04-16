@@ -92,7 +92,7 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Button fx:id="importGroups1" layoutX="244.0" layoutY="491.0" mnemonicParsing="false" onAction="#setTeamsGUI" prefHeight="44.0" prefWidth="156.0" style="-fx-background-color: #3b3f41#3b3f41;" text="Pick Teams" textFill="WHITE">
+      <Button fx:id="btnPickTeams" layoutX="244.0" layoutY="491.0" mnemonicParsing="false" onAction="#setTeamsGUI"  prefHeight="44.0" prefWidth="156.0" style="-fx-background-color: #3b3f41#3b3f41;" text="Pick Teams" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

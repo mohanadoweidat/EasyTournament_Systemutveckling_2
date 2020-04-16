@@ -3,6 +3,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.scene.control.*;
@@ -10,7 +11,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.*;
 
+import javax.swing.*;
 import java.awt.*;
+import java.awt.Dialog;
 import java.io.IOException;
 
 public class Controller {
@@ -18,6 +21,7 @@ public class Controller {
     private Tournament tournament = new Tournament(this);
 
     private Config config;
+
     @FXML
     private CheckBox cbGroupStage;
     @FXML
@@ -33,12 +37,20 @@ public class Controller {
     @FXML
     private ListView listOverview;
     @FXML
+    private ListView listTeamsPlayer;
+    @FXML
     private Button btnRefresh;
+    @FXML
+    private Button btnPickTeams;
+
+    private List save = new List();
+
 
     private ObservableList<Config> configStatusList = FXCollections.observableArrayList(Config.values());
 
 
     public Controller(){
+
 
     }
 
@@ -69,6 +81,7 @@ public class Controller {
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(playerScene);
         window.show();
+
     }
 
     @FXML
@@ -78,10 +91,6 @@ public class Controller {
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(playerScene);
         window.show();
-//        showGui("hej");
-
-
-
     }
 
     @FXML
@@ -101,6 +110,10 @@ public class Controller {
     }
 
 
+    public void update(){
+        listTeamsPlayer.getItems().add("Carl");
+        listTeamsPlayer.getItems().add("Gurkan");
+    }
     /*public void initialize(){
         cbConfig.setValue(config);
         cbConfig.setItems(configStatusList);
@@ -109,13 +122,29 @@ public class Controller {
      */
 
 
+
     @FXML
     public void handleAmountOfTeams(){
         //tournament.setAmountOfTeams(tfAmountOfTeams.getText());
     }
 
     public void addPlayersToList(){
-        listAddedPlayers.getItems().add(tfPlayerName.getText());
+        String test = tfPlayerName.getText();
+        if (test.isBlank()){
+            Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+            alert1.setTitle("Name problems");
+            alert1.setHeaderText(null);
+            alert1.setContentText("The name can't be empty");
+            alert1.showAndWait();
+        } else if (Character.isDigit(test.charAt(0))) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Name problems");
+            alert.setHeaderText(null);
+            alert.setContentText("The name needs to start with a bokstäv");
+            alert.showAndWait();
+        }else{
+            listAddedPlayers.getItems().add(tfPlayerName.getText());
+        }
         tfPlayerName.setText("");
     }
 
