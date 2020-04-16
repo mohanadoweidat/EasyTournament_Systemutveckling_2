@@ -12,7 +12,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent config = FXMLLoader.load(getClass().getResource("TournamentConfig.fxml"));
+        Parent config = FXMLLoader.load(getClass().getResource("FirstPage.fxml"));
         primaryStage.setTitle("Easy Tournament");
         primaryStage.setScene(new Scene(config,750,600));
         primaryStage.show();
