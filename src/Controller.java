@@ -53,7 +53,7 @@ public class Controller {
 
     @FXML
     public void setPlayerGUI(ActionEvent event) throws IOException {
-        handleAmountOfTeams();
+        //handleAmountOfTeams();
         Parent playerGUI = FXMLLoader.load(getClass().getResource("AddPlayersGui.fxml"));
         Scene playerScene = new Scene(playerGUI);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -72,8 +72,8 @@ public class Controller {
     }
 
     @FXML
-    public void setOverViewGUI(ActionEvent event) throws IOException {
-        Parent playerGUI = FXMLLoader.load(getClass().getResource("OverviewGUI.fxml"));
+    public void setFirstPageGUI(ActionEvent event) throws IOException {
+        Parent playerGUI = FXMLLoader.load(getClass().getResource("FirstPage.fxml"));
         Scene playerScene = new Scene(playerGUI);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(playerScene);
@@ -86,8 +86,7 @@ public class Controller {
 
     @FXML
     public void handleGroupStageBox(ActionEvent actionEvent){
-            tournament.groupStage();
-
+        tournament.groupStage();
     }
 
 
@@ -112,7 +111,7 @@ public class Controller {
 
     @FXML
     public void handleAmountOfTeams(){
-        tournament.setAmountOfTeams(tfAmountOfTeams.getText());
+        //tournament.setAmountOfTeams(tfAmountOfTeams.getText());
     }
 
     public void addPlayersToList(){
