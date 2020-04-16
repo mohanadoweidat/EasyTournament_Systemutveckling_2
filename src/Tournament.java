@@ -44,11 +44,13 @@ public class Tournament {
 
     }
 
-    public void addPlayer(List player){
+    public void addPlayer(String player){
         players.add(player);
         for (Object p : players){
-           // System.out.println(p);
+           System.out.println(p);
         }
+
+
     }
 
     public String toString(){

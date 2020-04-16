@@ -116,6 +116,7 @@ public class Controller {
 
     public void addPlayersToList(){
         listAddedPlayers.getItems().add(tfPlayerName.getText());
+        tournament.addPlayer(tfPlayerName.getText());
         tfPlayerName.setText("");
     }
 
