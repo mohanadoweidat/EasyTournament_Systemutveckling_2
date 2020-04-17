@@ -15,6 +15,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.Dialog;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Controller {
 
@@ -49,7 +50,7 @@ public class Controller {
     private ObservableList<Config> configStatusList = FXCollections.observableArrayList(Config.values());
 
 
-    public Controller(){
+    public Controller() {
 
 
     }
@@ -75,7 +76,7 @@ public class Controller {
 
     @FXML
     public void setTeamsGUI(ActionEvent event) throws IOException {
-        tournament.addPlayer(listAddedPlayers.getItems());
+//        tournament.addPlayer(tournament.getPlayers());
         Parent playerGUI = FXMLLoader.load(getClass().getResource("ListGUI.fxml"));
         Scene playerScene = new Scene(playerGUI);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -94,26 +95,22 @@ public class Controller {
     }
 
     @FXML
-    public void handleGroupStageBox(ActionEvent actionEvent){
+    public void handleGroupStageBox(ActionEvent actionEvent) {
         tournament.groupStage();
     }
 
 
     @FXML
-    public void handlePlayoffsBox(ActionEvent actionEvent){
-            tournament.playoffs();
+    public void handlePlayoffsBox(ActionEvent actionEvent) {
+        tournament.playoffs();
     }
 
     @FXML
-    public void handleConfig(){
-       // tournament.playoffs();
+    public void handleConfig() {
+        // tournament.playoffs();
     }
 
 
-    public void update(){
-        listTeamsPlayer.getItems().add("Carl");
-        listTeamsPlayer.getItems().add("Gurkan");
-    }
     /*public void initialize(){
         cbConfig.setValue(config);
         cbConfig.setItems(configStatusList);
@@ -122,15 +119,14 @@ public class Controller {
      */
 
 
-
     @FXML
-    public void handleAmountOfTeams(){
+    public void handleAmountOfTeams() {
         //tournament.setAmountOfTeams(tfAmountOfTeams.getText());
     }
 
-    public void addPlayersToList(){
+    public void addPlayersToList() {
         String test = tfPlayerName.getText();
-        if (test.isBlank()){
+        if (test.isBlank()) {
             Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
             alert1.setTitle("Name problems");
             alert1.setHeaderText(null);
@@ -140,17 +136,37 @@ public class Controller {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Name problems");
             alert.setHeaderText(null);
-            alert.setContentText("The name needs to start with a bokstäv");
+            alert.setContentText("The name needs to start with a letter");
             alert.showAndWait();
-        }else{
+        } else {
             listAddedPlayers.getItems().add(tfPlayerName.getText());
+            tournament.addPlayer(tfPlayerName.getText());
         }
         tfPlayerName.setText("");
     }
 
-    public void overviewRefresh(){
+    public void overviewRefresh() {
         listOverview.getItems().add("hej mamma");
     }
+
+    //Uppdaterar listan i ListGUI
+    public void update() {
+        for (int i=0; i<tournament.getPlayersList().size(); i++)
+            System.out.println(i);
+            listTeamsPlayer.getItems().add(tournament.getPlayersList());
+
+        }
+
+
+//        for (int i = 0; i<temp.size(); i++) {
+//            System.out.println(i);
+//        }
+//        for (Object p : temp) {
+//            System.out.println(2);
+//            System.out.println(p.toString() + " update");
+//            List name = (List) p;
+//            listTeamsPlayer.getItems().add(name);
+//        }
 
 //    public void teamsNext(ActionEvent event) throws IOException, InterruptedException {
 //        setOverViewGUI(event);
@@ -162,4 +178,4 @@ public class Controller {
 //        listOverview.getItems().add(showGui);
 //    }
 
-}
+    }
