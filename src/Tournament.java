@@ -43,15 +43,14 @@ public class Tournament {
         }
 
     }
-
-    public void addPlayer(List player){
+    //Hämtar spelare från sidan AddPlayersGUI och sparar i ArrayList
+    public void addPlayer(String player){
         players.add(player);
-        for (Object p : players){
-           System.out.println(p);
-        }
+        System.out.println(players);
     }
 
-    public List getPlayers(){
+    //Returnerar en arrayList med inskrivna spelare
+    public ArrayList getPlayersList(){
         return players;
     }
 
