@@ -125,7 +125,9 @@ public class Controller {
         tournament.playoffs();
     }
 
-
+    /**
+     * not used
+     */
     @FXML
     public void handleConfig() {
         // tournament.playoffs();
