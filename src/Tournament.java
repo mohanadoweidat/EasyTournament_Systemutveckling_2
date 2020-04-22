@@ -83,16 +83,4 @@ public class Tournament {
     public String toString(){
         return (String)amountOfTeams; //+ "\n" + groupStage + "\n" + playOffs + "\n" + players;
     }
-
-//    public void addTeams(){
-//        for (int i = 0; i < amountOfTeams; i++){
-//
-//
-//            teamIndex++;
-//        }
-//    }
-
-
-
-
 }
