@@ -17,6 +17,12 @@ import java.awt.Dialog;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * The class is responsible for the connection between
+ * the view and the model classes
+ * auther Andreas von Uthmann
+ */
+
 public class Controller {
 
     private Tournament tournament = new Tournament(this);
@@ -50,11 +56,11 @@ public class Controller {
     private ObservableList<Config> configStatusList = FXCollections.observableArrayList(Config.values());
 
 
-    public Controller() {
+    public Controller() {}
 
-
-    }
-
+    /**
+     * The method reads a fxml-file and changes the current window to the new fxml-file
+     */
     @FXML
     public void setConfigGUI(ActionEvent event) throws IOException {
         Parent playerGUI = FXMLLoader.load(getClass().getResource("TournamentConfig.fxml"));
@@ -64,6 +70,9 @@ public class Controller {
         window.show();
     }
 
+    /**
+     * The method reads a fxml-file and changes the current window to the new fxml-file
+     */
     @FXML
     public void setPlayerGUI(ActionEvent event) throws IOException {
         //handleAmountOfTeams();
@@ -74,6 +83,9 @@ public class Controller {
         window.show();
     }
 
+    /**
+     * The method reads a fxml-file and changes the current window to the new fxml-file
+     */
     @FXML
     public void setTeamsGUI(ActionEvent event) throws IOException {
 //        tournament.addPlayer(tournament.getPlayers());
@@ -85,6 +97,9 @@ public class Controller {
 
     }
 
+    /**
+     * The method reads a fxml-file and changes the current window to the new fxml-file
+     */
     @FXML
     public void setFirstPageGUI(ActionEvent event) throws IOException {
         Parent playerGUI = FXMLLoader.load(getClass().getResource("FirstPage.fxml"));
@@ -94,16 +109,22 @@ public class Controller {
         window.show();
     }
 
+    /**
+     * Register that the user wants to add a groupstage to the tournament
+     */
     @FXML
     public void handleGroupStageBox(ActionEvent actionEvent) {
         tournament.groupStage();
     }
 
-
+    /**
+     * Register that the user wants to add a playoffs to the tournament
+     */
     @FXML
     public void handlePlayoffsBox(ActionEvent actionEvent) {
         tournament.playoffs();
     }
+
 
     @FXML
     public void handleConfig() {
@@ -119,11 +140,17 @@ public class Controller {
      */
 
 
+    /**
+     * Saves the amount of that the user wants in the tournament class
+     */
     @FXML
     public void handleAmountOfTeams() {
         //tournament.setAmountOfTeams(tfAmountOfTeams.getText());
     }
 
+    /**
+     * Saves the player that the user added to the player list
+     */
     public void addPlayersToList() {
         String test = tfPlayerName.getText();
         if (test.isBlank()) {
@@ -145,12 +172,17 @@ public class Controller {
         tfPlayerName.setText("");
     }
 
+    /**
+     * Saves the player that the user added to the player list
+     */
     public void overviewRefresh() {
         listOverview.getItems().add("hej mamma");
     }
 
-    //Uppdaterar listan i ListGUI
-    public void update() {
+    /**
+     * Updates the ListGUI so that it shows the new players that has been added
+     */
+    public void updateListGUI() {
         for (int i=0; i<tournament.getPlayersList().size(); i++)
             System.out.println(i);
             listTeamsPlayer.getItems().add(tournament.getPlayersList());
