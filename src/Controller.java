@@ -22,7 +22,6 @@ import java.util.ArrayList;
  * the view and the model classes
  * auther Andreas von Uthmann
  */
-
 public class Controller {
 
     private Tournament tournament = new Tournament(this);

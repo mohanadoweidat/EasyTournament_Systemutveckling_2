@@ -1,5 +1,9 @@
 import java.util.ArrayList;
 
+/**
+ * The class is responsible for save tha tournaments information
+ * auther Carl Hagred
+ */
 public class Tournament {
 
     private String amountOfTeams;
