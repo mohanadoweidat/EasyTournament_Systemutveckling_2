@@ -33,9 +33,15 @@ public class Controller {
     @FXML
     private CheckBox cbPlayoffs;
     @FXML
+
     private ChoiceBox teamsBox = new ChoiceBox();
     @FXML
     private ComboBox<String> cbAmountOfTeams;
+
+    private ComboBox<Config> cbConfig;
+//    @FXML
+//    private ComboBox<String> cbAmountOfTeams;
+
     @FXML
     private TextField tfAmountOfTeams;
     @FXML
@@ -49,12 +55,13 @@ public class Controller {
     @FXML
     private ListView listTeamsPlayer = new ListView();
     @FXML
+    private ChoiceBox teamsBox = new ChoiceBox();
+    @FXML
     private Button btnRefresh;
     @FXML
     private Button btnPickTeams;
 
-    private ObservableList<Object> amountOfTeamsStatusList = FXCollections.observableArrayList(AmountOfTeams.values());
-
+    ObservableList<Object > amountOfTeamsStatusList = (FXCollections.observableArrayList(AmountOfTeams.values()));
     public Controller() {}
 
     /**
@@ -142,9 +149,15 @@ public class Controller {
         // tournament.playoffs();
     }
 
+    //sets the values to the choicebox in PlayersGUI through the AmountOfTeams Enum
+    @FXML
+    private void initialize(){
+        teamsBox.setItems(amountOfTeamsStatusList);
+
 
     public void initialize(){
         teamsBox.setItems(amountOfTeamsStatusList);
+
     }
 
 
