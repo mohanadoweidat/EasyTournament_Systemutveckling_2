@@ -27,13 +27,13 @@
       <ListView fx:id="listTeamsPlayer" layoutX="213.0" layoutY="35.0" prefHeight="228.0" prefWidth="208.0" style="-fx-background-color: #FFFAFA#FFFAFA;" />
       <TableView layoutX="213.0" layoutY="282.0" prefHeight="230.0" prefWidth="523.0" style="-fx-background-color: #FFFAFA#FFFAFA;">
         <columns>
-          <TableColumn prefWidth="92.0" text="Teams" />
-          <TableColumn prefWidth="72.0" text="Player 1" />
-            <TableColumn prefWidth="72.0" text="Player 2" />
-            <TableColumn prefWidth="72.0" text="Player 3" />
-            <TableColumn prefWidth="72.0" text="Player 4" />
-            <TableColumn prefWidth="72.0" text="Player 5" />
-            <TableColumn prefWidth="72.0" text="Player 6" />
+          <TableColumn prefWidth="92.0" text="Team 1" />
+          <TableColumn prefWidth="72.0" text="Team 2" />
+            <TableColumn prefWidth="72.0" text="Team 3" />
+            <TableColumn prefWidth="72.0" text="Team 4" />
+            <TableColumn prefWidth="72.0" text="Team 5" />
+            <TableColumn prefWidth="72.0" text="Team 6" />
+            <TableColumn prefWidth="72.0" text="Team 7" />
             <TableColumn prefWidth="72.0" text="C2" />
         </columns>
       </TableView>

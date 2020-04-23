@@ -28,6 +28,8 @@ public class Controller {
 
     private Config config;
 
+    private AmountOfTeams amountOfTeams;
+
     @FXML
     private CheckBox cbGroupStage;
     @FXML
@@ -35,25 +37,25 @@ public class Controller {
     @FXML
     private ComboBox<Config> cbConfig;
     @FXML
+    private ComboBox<String> cbAmountOfTeams;
+    @FXML
     private TextField tfAmountOfTeams;
     @FXML
     private TextField tfPlayerName;
     @FXML
-    private ListView listAddedPlayers;
+    private ListView listAddedPlayers = new ListView();
+
+    private final ListView addedPlayers = new ListView();
     @FXML
-    private ListView listOverview;
+    private ListView listOverview = new ListView();
     @FXML
-    private ListView listTeamsPlayer;
+    private ListView listTeamsPlayer = new ListView();
     @FXML
     private Button btnRefresh;
     @FXML
     private Button btnPickTeams;
 
-    private List save = new List();
-
-
-    private ObservableList<Config> configStatusList = FXCollections.observableArrayList(Config.values());
-
+    private ObservableList<Object> amountOfTeamsStatusList = FXCollections.observableArrayList(AmountOfTeams.values());
 
     public Controller() {}
 
@@ -61,8 +63,12 @@ public class Controller {
      * The method reads a fxml-file and changes the current window to the new fxml-file
      */
     @FXML
-    public void setConfigGUI(ActionEvent event) throws IOException {
-        Parent playerGUI = FXMLLoader.load(getClass().getResource("TournamentConfig.fxml"));
+    public void setPlayerGUI(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("AddPlayersGui.fxml"));
+        Parent playerGUI = loader.load();
+       // Controller controller = loader.getController();
+        //controller.initAddPlayersViewData();
         Scene playerScene = new Scene(playerGUI);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(playerScene);
@@ -70,16 +76,11 @@ public class Controller {
     }
 
     /**
-     * The method reads a fxml-file and changes the current window to the new fxml-file
+     * Shows the data should be in the gui when it load
      */
-    @FXML
-    public void setPlayerGUI(ActionEvent event) throws IOException {
-        //handleAmountOfTeams();
-        Parent playerGUI = FXMLLoader.load(getClass().getResource("AddPlayersGui.fxml"));
-        Scene playerScene = new Scene(playerGUI);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(playerScene);
-        window.show();
+    public void initAddPlayersViewData(){
+        //cbAmountOfTeams.setValue("ThreeTeams");
+       // cbAmountOfTeams.setItems(amountOfTeamsStatusList);
     }
 
     /**
@@ -88,12 +89,23 @@ public class Controller {
     @FXML
     public void setTeamsGUI(ActionEvent event) throws IOException {
 //        tournament.addPlayer(tournament.getPlayers());
-        Parent playerGUI = FXMLLoader.load(getClass().getResource("ListGUI.fxml"));
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("ListGUI.fxml"));
+        Parent playerGUI = loader.load();
+        Controller controller = loader.getController();
+        controller.initTeamsViewData(addedPlayers);
         Scene playerScene = new Scene(playerGUI);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(playerScene);
         window.show();
+    }
 
+    /**
+     * Shows the data should be in the gui when it loads
+     * @param addedPlayers a list of the players that has been added
+     */
+    public void initTeamsViewData(ListView addedPlayers){
+        listTeamsPlayer.getItems().add(addedPlayers);
     }
 
     /**
@@ -168,6 +180,8 @@ public class Controller {
             alert.showAndWait();
         } else {
             listAddedPlayers.getItems().add(tfPlayerName.getText());
+            listTeamsPlayer.getItems().add(tfPlayerName.getText());
+            addedPlayers.getItems().add(tfPlayerName.getText());
             tournament.addPlayer(tfPlayerName.getText());
         }
         tfPlayerName.setText("");
