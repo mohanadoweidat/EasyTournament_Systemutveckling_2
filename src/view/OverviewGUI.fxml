@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" style="-fx-background-color: #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<AnchorPane  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" style="-fx-background-color: #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43 #2F2B43;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
    <children>
       <AnchorPane prefHeight="600.0" prefWidth="180.0" style="-fx-background-color: #393351 #393351 #393351 #393351;">
          <children>
@@ -18,16 +18,16 @@
                <children>
                   <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="24.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/ET.png" />
+                        <Image url="@../images/ET.png" />
                      </image>
                   </ImageView>
                </children>
             </Pane>
-            <Button fx:id="Confiq" alignment="BOTTOM_LEFT" graphicTextGap="8.0" layoutX="30.0" layoutY="275.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="140.0" style="-fx-background-color: #393351 #393351;" text="Config" textFill="WHITE">
+            <Button fx:id="Confiq" alignment="BOTTOM_LEFT" graphicTextGap="8.0" layoutX="30.0" layoutY="275.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="140.0" style="-fx-background-color: #393351 #393351;" text="model.Config" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/icons8-settings.png" />
+                        <Image url="@../images/icons8-settings.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -36,7 +36,7 @@
                <graphic>
                   <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/icons8-person.png" />
+                        <Image url="@../images/icons8-person.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -45,7 +45,7 @@
                <graphic>
                   <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/icons8-user_groups.png" />
+                        <Image url="@../images/icons8-user_groups.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -54,7 +54,7 @@
                <graphic>
                   <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/icons8-preview_file.png" />
+                        <Image url="@../images/icons8-preview_file.png" />
                      </image>
                   </ImageView>
                </graphic>

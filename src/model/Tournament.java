@@ -1,8 +1,12 @@
+package model;
+
+import controller.Controller;
+
 import java.util.ArrayList;
 
 /**
  * The class is responsible for save tha tournaments information
- * auther Carl Hagred
+ * @author Carl Hagred
  */
 public class Tournament {
 
@@ -16,8 +20,8 @@ public class Tournament {
     private Controller controller;
 
     /**
-     * Saves the Controller that gets sent in through tha parameters in the Controller variable
-     * @param controller the Controller class
+     * Saves the controller.Controller that gets sent in through tha parameters in the controller.Controller variable
+     * @param controller the controller.Controller class
      */
     public Tournament(Controller controller){
         this.controller=controller;
