@@ -17,7 +17,7 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../view/FirstPage.fxml"));
         Parent config = loader.load();
-//        Parent config = FXMLLoader.load(controller.Main.class.getResource("fxml/FirstPage.fxml"));
+//      Parent config = FXMLLoader.load(controller.Main.class.getResource("fxml/FirstPage.fxml"));
         primaryStage.setTitle("Easy Tournament");
         primaryStage.setScene(new Scene(config,750,600));
         primaryStage.show();

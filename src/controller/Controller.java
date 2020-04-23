@@ -33,9 +33,15 @@ public class Controller {
     @FXML
     private CheckBox cbPlayoffs;
     @FXML
+
+    private ChoiceBox teamsBox = new ChoiceBox();
+    @FXML
+    private ComboBox<String> cbAmountOfTeams;
+
     private ComboBox<Config> cbConfig;
 //    @FXML
 //    private ComboBox<String> cbAmountOfTeams;
+
     @FXML
     private TextField tfAmountOfTeams;
     @FXML
@@ -146,6 +152,10 @@ public class Controller {
     //sets the values to the choicebox in PlayersGUI through the AmountOfTeams Enum
     @FXML
     private void initialize(){
+        teamsBox.setItems(amountOfTeamsStatusList);
+
+
+    public void initialize(){
         teamsBox.setItems(amountOfTeamsStatusList);
 
     }
