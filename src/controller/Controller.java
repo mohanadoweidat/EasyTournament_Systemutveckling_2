@@ -54,8 +54,7 @@ public class Controller {
     private ListView listOverview = new ListView();
     @FXML
     private ListView listTeamsPlayer = new ListView();
-    @FXML
-    private ChoiceBox teamsBox = new ChoiceBox();
+
     @FXML
     private Button btnRefresh;
     @FXML
@@ -151,16 +150,9 @@ public class Controller {
 
     //sets the values to the choicebox in PlayersGUI through the AmountOfTeams Enum
     @FXML
-    private void initialize(){
+    private void initialize() {
         teamsBox.setItems(amountOfTeamsStatusList);
-
-
-    public void initialize(){
-        teamsBox.setItems(amountOfTeamsStatusList);
-
     }
-
-
 
 
     /**
