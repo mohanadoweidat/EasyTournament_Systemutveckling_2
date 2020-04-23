@@ -1,6 +1,8 @@
 package model;
 
 import controller.Controller;
+//import controller.PlayersController;
+//import controller.TeamsController;
 
 import java.util.ArrayList;
 
@@ -18,14 +20,25 @@ public class Tournament {
     private ArrayList players = new ArrayList();
     private ArrayList teams = new ArrayList();
     private Controller controller;
+//    private TeamsController teamsController;
+//    private PlayersController playersController;
 
     /**
      * Saves the controller.Controller that gets sent in through tha parameters in the controller.Controller variable
      * @param controller the controller.Controller class
      */
     public Tournament(Controller controller){
+
         this.controller=controller;
     }
+//    public Tournament(TeamsController teamsController){
+//        this.teamsController = teamsController;
+//    }
+//
+//    public Tournament(PlayersController playersController){
+//        this.playersController = playersController;
+//
+//    }
 
     /**
      * Saves the new config for the tournament

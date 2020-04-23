@@ -33,7 +33,7 @@ public class Controller {
     @FXML
     private CheckBox cbPlayoffs;
     @FXML
-    private ComboBox<Config> cbConfig;
+    private ChoiceBox teamsBox = new ChoiceBox();
     @FXML
     private ComboBox<String> cbAmountOfTeams;
     @FXML
@@ -143,12 +143,11 @@ public class Controller {
     }
 
 
-    /*public void initialize(){
-        cbConfig.setValue(config);
-        cbConfig.setItems(configStatusList);
+    public void initialize(){
+        teamsBox.setItems(amountOfTeamsStatusList);
     }
 
-     */
+
 
 
     /**
