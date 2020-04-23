@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" style="-fx-background-color: #2b2b2b#2b2b2b;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" style="-fx-background-color: #2b2b2b#2b2b2b;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
    <children>
       <ListView fx:id="listAddedPlayers" layoutX="519.0" layoutY="93.0" prefHeight="387.0" prefWidth="215.0" style="-fx-background-color: #FFFAFA#FFFAFA #FFFAFA#FFFAFA;" />
       <Button fx:id="btnAddPlayer" layoutX="416.0" layoutY="201.0" mnemonicParsing="false" onAction="#addPlayersToList" prefHeight="32.0" prefWidth="86.0" style="-fx-background-color: #3b3f41#3b3f41;" text="Add Player" textFill="WHITE">
@@ -41,7 +41,7 @@
          <children>
             <ImageView fitHeight="207.0" fitWidth="230.0" layoutX="19.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/ET.png" />
+                  <Image url="@../images/ET.png" />
                </image>
             </ImageView>
             <VBox alignment="CENTER" layoutX="-3.0" layoutY="250.0" prefHeight="350.0" prefWidth="200.0" spacing="30.0">
@@ -50,7 +50,7 @@
                      <graphic>
                         <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/ET.png" />
+                              <Image url="@../images/ET.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -62,7 +62,7 @@
                      <graphic>
                         <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/icons8-person.png" />
+                              <Image url="@../images/icons8-person.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -74,7 +74,7 @@
                      <graphic>
                         <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/icons8-user_groups.png" />
+                              <Image url="@../images/icons8-user_groups.png" />
                            </image>
                         </ImageView>
                      </graphic>

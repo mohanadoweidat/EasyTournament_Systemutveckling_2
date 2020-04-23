@@ -1,26 +1,24 @@
+package controller;
 
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.*;
+import model.AmountOfTeams;
+import model.Config;
+import model.Tournament;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.Dialog;
 import java.io.IOException;
-import java.util.ArrayList;
 
 /**
  * The class is responsible for the connection between
  * the view and the model classes
- * auther Andreas von Uthmann
+ * @author Andreas von Uthmann
  */
 public class Controller {
 
@@ -65,9 +63,9 @@ public class Controller {
     @FXML
     public void setPlayerGUI(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("AddPlayersGui.fxml"));
+        loader.setLocation(getClass().getResource("../view/PlayersGui.fxml"));
         Parent playerGUI = loader.load();
-       // Controller controller = loader.getController();
+       // controller.Controller controller = loader.getController();
         //controller.initAddPlayersViewData();
         Scene playerScene = new Scene(playerGUI);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -90,7 +88,7 @@ public class Controller {
     public void setTeamsGUI(ActionEvent event) throws IOException {
 //        tournament.addPlayer(tournament.getPlayers());
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("ListGUI.fxml"));
+        loader.setLocation(getClass().getResource("../view/TeamsGUI.fxml"));
         Parent playerGUI = loader.load();
         Controller controller = loader.getController();
         controller.initTeamsViewData(addedPlayers);
@@ -113,7 +111,7 @@ public class Controller {
      */
     @FXML
     public void setFirstPageGUI(ActionEvent event) throws IOException {
-        Parent playerGUI = FXMLLoader.load(getClass().getResource("FirstPage.fxml"));
+        Parent playerGUI = FXMLLoader.load(getClass().getResource("../view/FirstPage.fxml"));
         Scene playerScene = new Scene(playerGUI);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(playerScene);
