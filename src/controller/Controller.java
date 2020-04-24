@@ -206,6 +206,33 @@ public class Controller {
 
         }
 
+    /**
+     * Removes players from the "added players" list
+     */
+    public void removePlayerPlayersGui(){
+        final int selectedIndex = listAddedPlayers.getSelectionModel().getSelectedIndex();
+        if(selectedIndex!= -1){
+            String removeSelected= String.valueOf(listAddedPlayers.getSelectionModel().getSelectedItem());
+            listAddedPlayers.getItems().remove(selectedIndex);
+            addedPlayers.getItems().remove(selectedIndex);
+            System.out.println(removeSelected);
+
+            tournament.removePlayer(removeSelected);
+        }
+
+        }
+        public void removePlayersTeamsGui(){
+        final int selectedIndex2 = listTeamsPlayer.getSelectionModel().getSelectedIndex();
+        if(selectedIndex2 != -1){
+            String removeSelected2 = String.valueOf(listTeamsPlayer.getSelectionModel().getSelectedItem());
+            listAddedPlayers.getItems().remove(selectedIndex2);
+            listTeamsPlayer.getItems().remove(selectedIndex2);
+            System.out.println(removeSelected2);
+            tournament.removePlayer(removeSelected2);
+
+        }
+        }
+
 
 //        for (int i = 0; i<temp.size(); i++) {
 //            System.out.println(i);
