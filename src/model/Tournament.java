@@ -87,6 +87,10 @@ public class Tournament {
         players.add(player);
         System.out.println(players);
     }
+    public void removePlayer(String player){
+        players.remove(player);
+
+    }
 
 
     /**

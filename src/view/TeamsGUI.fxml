@@ -16,7 +16,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" style="-fx-background-color: #2b2b2b;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
    <children>
-      <Button layoutX="441.0" layoutY="60.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="140.0" style="-fx-background-color: #3b3f41#3b3f41;" text="Add Player To Team" textFill="WHITE">
+      <Button layoutX="441.0" layoutY="36.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="140.0" style="-fx-background-color: #3b3f41#3b3f41;" text="Add Player To Team" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
@@ -39,7 +39,7 @@
       </TableView>
       <Label layoutX="218.0" layoutY="15.0" text="Added Players" textFill="WHITE">
          <font>
-            <Font size="15.0" />
+            <Font name="System Bold" size="15.0" />
          </font></Label>
       <AnchorPane prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #3b3f41;">
          <children>
@@ -98,5 +98,10 @@
       </Button>
       <CheckBox layoutX="441.0" layoutY="160.0" mnemonicParsing="false" text="Group Stage" textFill="WHITE" />
       <CheckBox layoutX="441.0" layoutY="192.0" mnemonicParsing="false" text="Play-Offs" textFill="WHITE" />
+      <Button fx:id="btnRemovePlayerTeams" layoutX="441.0" layoutY="75.0" mnemonicParsing="false" onAction="#removePlayersTeamsGui" prefHeight="27.0" prefWidth="140.0" style="-fx-background-color: #3b3f41#3b3f41;" text="Remove Player" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </Pane>
