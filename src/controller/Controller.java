@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -8,11 +9,11 @@ import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.*;
-import model.AmountOfTeams;
-import model.Config;
-import model.Tournament;
-
+import model.*;
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.io.IOException;
 
 /**
@@ -25,16 +26,19 @@ public class Controller {
     private Tournament tournament = new Tournament(this);
 
     private Config config;
+    private String[] columnNames = {"ID", "Name", "Age", "Gender", "Animal", "Category Info", "Extra info"};
+
 
     private AmountOfTeams amountOfTeams;
+    @FXML
+    private TableView <Player> tblTeams = new TableView<>();
 
     @FXML
     private CheckBox cbGroupStage;
     @FXML
     private CheckBox cbPlayoffs;
-    @FXML
 
-    private ChoiceBox teamsBox = new ChoiceBox();
+
     @FXML
     private ComboBox<String> cbAmountOfTeams;
 
@@ -60,8 +64,27 @@ public class Controller {
     @FXML
     private Button btnPickTeams;
 
+    private TableColumn <Player, String> column = new TableColumn("Players");
+    private TableColumn column1 = new TableColumn("Team 1");
+    private TableColumn column2 = new TableColumn("Team 2");
+    private TableColumn column3 = new TableColumn("Team 3");
+    private TableColumn column4 = new TableColumn("Team 4");
+    private TableColumn column5 = new TableColumn("Team 5");
+    private TableColumn column6 = new TableColumn("Team 6");
+    private TableColumn column7 = new TableColumn("Team 7");
+    private TableColumn column8 = new TableColumn("Team 8");
+    private TableColumn column9 = new TableColumn("Team 9");
+    private TableColumn column10 = new TableColumn("Team 10");
+
+    @FXML
+    private ChoiceBox<AmountOfTeams> teamsBox = new ChoiceBox();
+
+
     ObservableList<Object > amountOfTeamsStatusList = (FXCollections.observableArrayList(AmountOfTeams.values()));
-    public Controller() {}
+    public Controller() {
+
+
+    }
 
     /**
      * The method reads a fxml-file and changes the current window to the new fxml-file
@@ -97,11 +120,42 @@ public class Controller {
         loader.setLocation(getClass().getResource("../view/TeamsGUI.fxml"));
         Parent playerGUI = loader.load();
         Controller controller = loader.getController();
+//        teamsBox.getSelectionModel().getSelectedItem();
         controller.initTeamsViewData(addedPlayers);
+        controller.initTeamsTableData(teamsBox.getSelectionModel().getSelectedItem());
         Scene playerScene = new Scene(playerGUI);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(playerScene);
         window.show();
+    }
+
+    private void initTeamsTableData(AmountOfTeams selectedItem) {
+        switch (selectedItem){
+            case Three:
+                tblTeams.getColumns().addAll(column, column1, column2,column3);
+                tblTeams.setItems(getPlayer());
+                column.setCellValueFactory(new PropertyValueFactory<>("name"));
+
+
+//            case Four:
+//                tblTeams.getColumns().addAll(column, column1, column2,column3);
+//            case Five:
+//                tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5, column6);
+//            case Six:
+//                tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5, column6);
+//            case Seven:
+//                tblTeams.getColumns().addAll(column, column1, column2,column3);
+//            case Eight:
+//                tblTeams.getColumns().addAll(column, column1, column2,column3);
+//            case Nine:
+//                tblTeams.getColumns().addAll(column, column1, column2,column3);
+//            case Ten:
+//                tblTeams.getColumns().addAll(column, column1, column2,column3);
+        }
+
+
+//        tblTeams.getColumns().addAll(column, column1, column2, column3, column4, column5, column6);
+
     }
 
     /**
@@ -151,9 +205,9 @@ public class Controller {
     //sets the values to the choicebox in PlayersGUI through the AmountOfTeams Enum
     @FXML
     private void initialize() {
-        teamsBox.setItems(amountOfTeamsStatusList);
+//        teamsBox.setItems(amountOfTeamsStatusList);
+        teamsBox.getItems().addAll(AmountOfTeams.values());
     }
-
 
     /**
      * Saves the amount of that the user wants in the tournament class
@@ -162,6 +216,7 @@ public class Controller {
     public void handleAmountOfTeams() {
         //tournament.setAmountOfTeams(tfAmountOfTeams.getText());
     }
+
 
     /**
      * Saves the player that the user added to the player list
@@ -185,8 +240,27 @@ public class Controller {
             listTeamsPlayer.getItems().add(tfPlayerName.getText());
             addedPlayers.getItems().add(tfPlayerName.getText());
             tournament.addPlayer(tfPlayerName.getText());
+//            addBtnClicked();
         }
         tfPlayerName.setText("");
+    }
+
+    public void addBtnClicked(){
+        System.out.println("HEjehjehejhej");
+        Player player = new Player();
+        player.setName(tfPlayerName.getText());
+
+        tblTeams.getItems().add(player);
+        tfPlayerName.clear();
+    }
+
+    public ObservableList<Player> getPlayer(){
+        ObservableList<Player> players = FXCollections.observableArrayList();
+        players.add(new Player("Rickard"));
+        players.add(new Player("Sampi"));
+
+
+        return players;
     }
 
     /**
