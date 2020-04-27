@@ -31,22 +31,7 @@ public class Tournament {
 
         this.controller=controller;
     }
-//    public Tournament(TeamsController teamsController){
-//        this.teamsController = teamsController;
-//    }
-//
-//    public Tournament(PlayersController playersController){
-//        this.playersController = playersController;
-//
-//    }
 
-    /**
-     * Saves the new config for the tournament
-     * @param config the setup for the tournament
-     */
-    public void saveConfig(Config config){
-        this.config = config;
-    }
 
     /**
      * Saves the amount of teams that gets sent in trough parameters
