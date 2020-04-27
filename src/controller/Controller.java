@@ -1,20 +1,18 @@
 package controller;
 
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.scene.control.*;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.*;
 import model.*;
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
+
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * The class is responsible for the connection between
@@ -39,11 +37,13 @@ public class Controller {
     @FXML
     private ListView listAddedPlayers = new ListView();
 
-    private final ListView addedPlayers = new ListView();
+    private final ArrayList<Player> playerSave = new ArrayList();
     @FXML
     private ListView listOverview = new ListView();
     @FXML
     private ListView listTeamsPlayer = new ListView();
+
+    //private final ObservableList<Player> observablePlayers = FXCollections.observableArrayList();
 
 
     private TableColumn <Player, String> column = new TableColumn("Players");
@@ -61,8 +61,7 @@ public class Controller {
     @FXML
     private ChoiceBox<AmountOfTeams> teamsBox = new ChoiceBox();
 
-    public Controller() {
-    }
+    public Controller() {}
 
     /**
      * The method reads a fxml-file and changes the current window to the new fxml-file
@@ -72,14 +71,13 @@ public class Controller {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../view/PlayersGui.fxml"));
         Parent playerGUI = loader.load();
-       // controller.Controller controller = loader.getController();
+        //controller.Controller controller = loader.getController();
         //controller.initAddPlayersViewData();
         Scene playerScene = new Scene(playerGUI);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(playerScene);
         window.show();
     }
-
 
     /**
      * The method reads a fxml-file and changes the current window to the new fxml-file
@@ -90,19 +88,20 @@ public class Controller {
         loader.setLocation(getClass().getResource("../view/TeamsGUI.fxml"));
         Parent playerGUI = loader.load();
         Controller controller = loader.getController();
-        controller.initTeamsViewData(addedPlayers);
-        controller.initTeamsTableData(teamsBox.getSelectionModel().getSelectedItem());
+        //controller.initTeamsViewData(addedPlayers);
+        controller.initTeamsTableData(teamsBox.getSelectionModel().getSelectedItem(), playerSave);
         Scene playerScene = new Scene(playerGUI);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(playerScene);
         window.show();
     }
 
-    private void initTeamsTableData(AmountOfTeams selectedItem) {
+    private void initTeamsTableData(AmountOfTeams selectedItem, ArrayList playerSave) {
+
         switch (selectedItem){
             case Three:
                 tblTeams.getColumns().addAll(column, column1, column2,column3);
-                tblTeams.setItems(getPlayer());
+                tblTeams.setItems(getPlayer(playerSave));
                 column.setCellValueFactory(new PropertyValueFactory<>("name"));
 
 
@@ -192,30 +191,24 @@ public class Controller {
         } else {
             listAddedPlayers.getItems().add(tfPlayerName.getText());
             listTeamsPlayer.getItems().add(tfPlayerName.getText());
-            addedPlayers.getItems().add(tfPlayerName.getText());
-            tournament.addPlayer(tfPlayerName.getText());
-//            addBtnClicked();
+            //addedPlayers.getItems().add(tfPlayerName.getText());
+            addBtnClicked(tfPlayerName.getText());
         }
         tfPlayerName.setText("");
     }
 
-    public void addBtnClicked(){
-        System.out.println("HEjehjehejhej");
-        Player player = new Player();
-        player.setName(tfPlayerName.getText());
-
-        tblTeams.getItems().add(player);
+    public void addBtnClicked(String input){
+        playerSave.add(new Player(input));
         tfPlayerName.clear();
     }
 
     //adds data to the table
-    public ObservableList<Player> getPlayer(){
-        ObservableList<Player> players = FXCollections.observableArrayList();
-        players.add(new Player("Rickard"));
-        players.add(new Player("Sampi"));
-
-
-        return players;
+    public ObservableList<Player> getPlayer(ArrayList<Player> input){
+        ObservableList<Player> observablePlayers = FXCollections.observableArrayList();
+        for (Player p: input){
+            observablePlayers.add(p);
+        }
+        return observablePlayers;
     }
 
 
@@ -227,13 +220,10 @@ public class Controller {
         if(selectedIndex!= -1){
             String removeSelected= String.valueOf(listAddedPlayers.getSelectionModel().getSelectedItem());
             listAddedPlayers.getItems().remove(selectedIndex);
-            addedPlayers.getItems().remove(selectedIndex);
+           // addedPlayers.getItems().remove(selectedIndex);
             System.out.println(removeSelected);
 
             tournament.removePlayer(removeSelected);
         }
-
-        }
-
-
     }
+}
