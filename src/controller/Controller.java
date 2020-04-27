@@ -47,16 +47,16 @@ public class Controller {
 
 
     private TableColumn <Player, String> column = new TableColumn("Players");
-    private TableColumn column1 = new TableColumn("Team 1");
-    private TableColumn column2 = new TableColumn("Team 2");
-    private TableColumn column3 = new TableColumn("Team 3");
-    private TableColumn column4 = new TableColumn("Team 4");
-    private TableColumn column5 = new TableColumn("Team 5");
-    private TableColumn column6 = new TableColumn("Team 6");
-    private TableColumn column7 = new TableColumn("Team 7");
-    private TableColumn column8 = new TableColumn("Team 8");
-    private TableColumn column9 = new TableColumn("Team 9");
-    private TableColumn column10 = new TableColumn("Team 10");
+    private final TableColumn column1 = new TableColumn("Team 1");
+    private final TableColumn column2 = new TableColumn("Team 2");
+    private final TableColumn column3 = new TableColumn("Team 3");
+    private final TableColumn column4 = new TableColumn("Team 4");
+    private final TableColumn column5 = new TableColumn("Team 5");
+    private final TableColumn column6 = new TableColumn("Team 6");
+    private final TableColumn column7 = new TableColumn("Team 7");
+    private final TableColumn column8 = new TableColumn("Team 8");
+    private final TableColumn column9 = new TableColumn("Team 9");
+    private final TableColumn column10 = new TableColumn("Team 10");
 
     @FXML
     private ChoiceBox<AmountOfTeams> teamsBox = new ChoiceBox();
@@ -103,27 +103,35 @@ public class Controller {
                 tblTeams.getColumns().addAll(column, column1, column2,column3);
                 tblTeams.setItems(getPlayer(playerSave));
                 column.setCellValueFactory(new PropertyValueFactory<>("name"));
-
-
-//            case Four:
-//                tblTeams.getColumns().addAll(column, column1, column2,column3);
-//            case Five:
-//                tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5, column6);
-//            case Six:
-//                tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5, column6);
-//            case Seven:
-//                tblTeams.getColumns().addAll(column, column1, column2,column3);
-//            case Eight:
-//                tblTeams.getColumns().addAll(column, column1, column2,column3);
-//            case Nine:
-//                tblTeams.getColumns().addAll(column, column1, column2,column3);
-//            case Ten:
-//                tblTeams.getColumns().addAll(column, column1, column2,column3);
+         //   case Four:
+         //       tblTeams.getColumns().addAll(column, column1, column2,column3,column4);
+         //       tblTeams.setItems(getPlayer(playerSave));
+         //       column.setCellValueFactory(new PropertyValueFactory<>("name"));
+         //   case Five:
+         //       tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5);
+         //       tblTeams.setItems(getPlayer(playerSave));
+         //       column.setCellValueFactory(new PropertyValueFactory<>("name"));
+         //   case Six:
+         //       tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5, column6);
+         //       tblTeams.setItems(getPlayer(playerSave));
+         //       column.setCellValueFactory(new PropertyValueFactory<>("name"));
+         //   case Seven:
+         //       tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5, column6, column7);
+         //       tblTeams.setItems(getPlayer(playerSave));
+         //       column.setCellValueFactory(new PropertyValueFactory<>("name"));
+         //   case Eight:
+         //       tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5, column6, column7, column8);
+         //       tblTeams.setItems(getPlayer(playerSave));
+         //       column.setCellValueFactory(new PropertyValueFactory<>("name"));
+         //   case Nine:
+         //       tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5, column6, column7, column8, column9);
+         //       tblTeams.setItems(getPlayer(playerSave));
+         //       column.setCellValueFactory(new PropertyValueFactory<>("name"));
+         //   case Ten:
+         //       tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5, column6, column7, column8, column9, column10);
+         //       tblTeams.setItems(getPlayer(playerSave));
+         //       column.setCellValueFactory(new PropertyValueFactory<>("name"));
         }
-
-
-//        tblTeams.getColumns().addAll(column, column1, column2, column3, column4, column5, column6);
-
     }
 
     /**
@@ -197,12 +205,20 @@ public class Controller {
         tfPlayerName.setText("");
     }
 
+    /**
+     * Creats a new object of a player and adds it to the savedPlayers list
+     * @param input the user input
+     */
     public void addBtnClicked(String input){
         playerSave.add(new Player(input));
         tfPlayerName.clear();
     }
 
-    //adds data to the table
+    /**
+     *  Adds the saved players to the teamtable
+     * @param input the saved players
+     * @return returns the list of players for the table
+     */
     public ObservableList<Player> getPlayer(ArrayList<Player> input){
         ObservableList<Player> observablePlayers = FXCollections.observableArrayList();
         for (Player p: input){
