@@ -1,20 +1,18 @@
 package controller;
 
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.scene.control.*;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.*;
 import model.*;
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
+
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * The class is responsible for the connection between
@@ -39,30 +37,31 @@ public class Controller {
     @FXML
     private ListView listAddedPlayers = new ListView();
 
-    private final ListView addedPlayers = new ListView();
+    private final ArrayList<Player> playerSave = new ArrayList();
     @FXML
     private ListView listOverview = new ListView();
     @FXML
     private ListView listTeamsPlayer = new ListView();
 
+    //private final ObservableList<Player> observablePlayers = FXCollections.observableArrayList();
+
 
     private TableColumn <Player, String> column = new TableColumn("Players");
-    private TableColumn column1 = new TableColumn("Team 1");
-    private TableColumn column2 = new TableColumn("Team 2");
-    private TableColumn column3 = new TableColumn("Team 3");
-    private TableColumn column4 = new TableColumn("Team 4");
-    private TableColumn column5 = new TableColumn("Team 5");
-    private TableColumn column6 = new TableColumn("Team 6");
-    private TableColumn column7 = new TableColumn("Team 7");
-    private TableColumn column8 = new TableColumn("Team 8");
-    private TableColumn column9 = new TableColumn("Team 9");
-    private TableColumn column10 = new TableColumn("Team 10");
+    private final TableColumn column1 = new TableColumn("Team 1");
+    private final TableColumn column2 = new TableColumn("Team 2");
+    private final TableColumn column3 = new TableColumn("Team 3");
+    private final TableColumn column4 = new TableColumn("Team 4");
+    private final TableColumn column5 = new TableColumn("Team 5");
+    private final TableColumn column6 = new TableColumn("Team 6");
+    private final TableColumn column7 = new TableColumn("Team 7");
+    private final TableColumn column8 = new TableColumn("Team 8");
+    private final TableColumn column9 = new TableColumn("Team 9");
+    private final TableColumn column10 = new TableColumn("Team 10");
 
     @FXML
     private ChoiceBox<AmountOfTeams> teamsBox = new ChoiceBox();
 
-    public Controller() {
-    }
+    public Controller() {}
 
     /**
      * The method reads a fxml-file and changes the current window to the new fxml-file
@@ -72,14 +71,13 @@ public class Controller {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../view/PlayersGui.fxml"));
         Parent playerGUI = loader.load();
-       // controller.Controller controller = loader.getController();
+        //controller.Controller controller = loader.getController();
         //controller.initAddPlayersViewData();
         Scene playerScene = new Scene(playerGUI);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(playerScene);
         window.show();
     }
-
 
     /**
      * The method reads a fxml-file and changes the current window to the new fxml-file
@@ -90,41 +88,50 @@ public class Controller {
         loader.setLocation(getClass().getResource("../view/TeamsGUI.fxml"));
         Parent playerGUI = loader.load();
         Controller controller = loader.getController();
-        controller.initTeamsViewData(addedPlayers);
-        controller.initTeamsTableData(teamsBox.getSelectionModel().getSelectedItem());
+        //controller.initTeamsViewData(addedPlayers);
+        controller.initTeamsTableData(teamsBox.getSelectionModel().getSelectedItem(), playerSave);
         Scene playerScene = new Scene(playerGUI);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(playerScene);
         window.show();
     }
 
-    private void initTeamsTableData(AmountOfTeams selectedItem) {
+    private void initTeamsTableData(AmountOfTeams selectedItem, ArrayList playerSave) {
+
         switch (selectedItem){
             case Three:
                 tblTeams.getColumns().addAll(column, column1, column2,column3);
-                tblTeams.setItems(getPlayer());
+                tblTeams.setItems(getPlayer(playerSave));
                 column.setCellValueFactory(new PropertyValueFactory<>("name"));
-
-
-//            case Four:
-//                tblTeams.getColumns().addAll(column, column1, column2,column3);
-//            case Five:
-//                tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5, column6);
-//            case Six:
-//                tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5, column6);
-//            case Seven:
-//                tblTeams.getColumns().addAll(column, column1, column2,column3);
-//            case Eight:
-//                tblTeams.getColumns().addAll(column, column1, column2,column3);
-//            case Nine:
-//                tblTeams.getColumns().addAll(column, column1, column2,column3);
-//            case Ten:
-//                tblTeams.getColumns().addAll(column, column1, column2,column3);
+         //   case Four:
+         //       tblTeams.getColumns().addAll(column, column1, column2,column3,column4);
+         //       tblTeams.setItems(getPlayer(playerSave));
+         //       column.setCellValueFactory(new PropertyValueFactory<>("name"));
+         //   case Five:
+         //       tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5);
+         //       tblTeams.setItems(getPlayer(playerSave));
+         //       column.setCellValueFactory(new PropertyValueFactory<>("name"));
+         //   case Six:
+         //       tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5, column6);
+         //       tblTeams.setItems(getPlayer(playerSave));
+         //       column.setCellValueFactory(new PropertyValueFactory<>("name"));
+         //   case Seven:
+         //       tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5, column6, column7);
+         //       tblTeams.setItems(getPlayer(playerSave));
+         //       column.setCellValueFactory(new PropertyValueFactory<>("name"));
+         //   case Eight:
+         //       tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5, column6, column7, column8);
+         //       tblTeams.setItems(getPlayer(playerSave));
+         //       column.setCellValueFactory(new PropertyValueFactory<>("name"));
+         //   case Nine:
+         //       tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5, column6, column7, column8, column9);
+         //       tblTeams.setItems(getPlayer(playerSave));
+         //       column.setCellValueFactory(new PropertyValueFactory<>("name"));
+         //   case Ten:
+         //       tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5, column6, column7, column8, column9, column10);
+         //       tblTeams.setItems(getPlayer(playerSave));
+         //       column.setCellValueFactory(new PropertyValueFactory<>("name"));
         }
-
-
-//        tblTeams.getColumns().addAll(column, column1, column2, column3, column4, column5, column6);
-
     }
 
     /**
@@ -192,30 +199,32 @@ public class Controller {
         } else {
             listAddedPlayers.getItems().add(tfPlayerName.getText());
             listTeamsPlayer.getItems().add(tfPlayerName.getText());
-            addedPlayers.getItems().add(tfPlayerName.getText());
-            tournament.addPlayer(tfPlayerName.getText());
-//            addBtnClicked();
+            //addedPlayers.getItems().add(tfPlayerName.getText());
+            addBtnClicked(tfPlayerName.getText());
         }
         tfPlayerName.setText("");
     }
 
-    public void addBtnClicked(){
-        System.out.println("HEjehjehejhej");
-        Player player = new Player();
-        player.setName(tfPlayerName.getText());
-
-        tblTeams.getItems().add(player);
+    /**
+     * Creats a new object of a player and adds it to the savedPlayers list
+     * @param input the user input
+     */
+    public void addBtnClicked(String input){
+        playerSave.add(new Player(input));
         tfPlayerName.clear();
     }
 
-    //adds data to the table
-    public ObservableList<Player> getPlayer(){
-        ObservableList<Player> players = FXCollections.observableArrayList();
-        players.add(new Player("Rickard"));
-        players.add(new Player("Sampi"));
-
-
-        return players;
+    /**
+     *  Adds the saved players to the teamtable
+     * @param input the saved players
+     * @return returns the list of players for the table
+     */
+    public ObservableList<Player> getPlayer(ArrayList<Player> input){
+        ObservableList<Player> observablePlayers = FXCollections.observableArrayList();
+        for (Player p: input){
+            observablePlayers.add(p);
+        }
+        return observablePlayers;
     }
 
 
@@ -227,13 +236,10 @@ public class Controller {
         if(selectedIndex!= -1){
             String removeSelected= String.valueOf(listAddedPlayers.getSelectionModel().getSelectedItem());
             listAddedPlayers.getItems().remove(selectedIndex);
-            addedPlayers.getItems().remove(selectedIndex);
+           // addedPlayers.getItems().remove(selectedIndex);
             System.out.println(removeSelected);
 
             tournament.removePlayer(removeSelected);
         }
-
-        }
-
-
     }
+}

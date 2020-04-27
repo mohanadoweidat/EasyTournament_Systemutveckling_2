@@ -68,9 +68,9 @@ public class Tournament {
      * Saves the player that is getting sent in trough the parameters to the players list
      * @param player a player name
      */
-    public void addPlayer(String player){
+    public void addPlayer(Player player){
         players.add(player);
-        System.out.println(players);
+        //System.out.println(players);
     }
     public void removePlayer(String player){
         players.remove(player);
