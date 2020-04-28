@@ -43,9 +43,6 @@ public class Controller {
     @FXML
     private ListView listTeamsPlayer = new ListView();
 
-    //private final ObservableList<Player> observablePlayers = FXCollections.observableArrayList();
-
-
     private TableColumn <Player, String> column = new TableColumn("Players");
     private final TableColumn column1 = new TableColumn("Team 1");
     private final TableColumn column2 = new TableColumn("Team 2");
@@ -238,7 +235,6 @@ public class Controller {
             listAddedPlayers.getItems().remove(selectedIndex);
            // addedPlayers.getItems().remove(selectedIndex);
             System.out.println(removeSelected);
-
             tournament.removePlayer(removeSelected);
         }
         else {
