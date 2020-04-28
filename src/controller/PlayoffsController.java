@@ -19,9 +19,13 @@ public class PlayoffsController {
     }
 
     @FXML
-    public void setPlayoffsGUI(ActionEvent event) throws IOException {
+    public void setPlayoffsGUI(ActionEvent event, AmountOfTeams selectedItem) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        //loader.setLocation(getClass().getResource("../view/TeamsGUI.fxml"));
+        switch (selectedItem) {
+            case Three:
+                loader.setLocation(getClass().getResource("../view/FirstPage.fxml"));
+                break;
+        }
         Parent playerGUI = loader.load();
         Controller controller = loader.getController();
         Scene playerScene = new Scene(playerGUI);
