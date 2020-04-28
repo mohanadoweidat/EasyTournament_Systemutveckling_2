@@ -93,6 +93,11 @@ public class Controller {
         window.show();
     }
 
+    @FXML
+    public void startTournament(){
+        
+    }
+
     private void initTeamsTableData(AmountOfTeams selectedItem, ArrayList playerSave) {
 
         switch (selectedItem){
