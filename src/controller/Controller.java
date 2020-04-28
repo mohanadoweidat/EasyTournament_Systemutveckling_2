@@ -22,6 +22,8 @@ import java.util.ArrayList;
 public class Controller {
 
     private Tournament tournament = new Tournament(this);
+    private GroupStageController groupStageController = new GroupStageController(this);
+    private PlayoffsController playoffsController = new PlayoffsController(this);
 
     private AmountOfTeams amountOfTeams;
     @FXML
@@ -31,7 +33,6 @@ public class Controller {
     private CheckBox cbGroupStage;
     @FXML
     private CheckBox cbPlayoffs;
-
     @FXML
     private TextField tfPlayerName;
     @FXML
@@ -94,8 +95,12 @@ public class Controller {
     }
 
     @FXML
-    public void startTournament(){
-        
+    public void startTournament(ActionEvent event) throws IOException{
+        if(cbGroupStage.isSelected()){
+            groupStageController.setGroupStageGUI(event);
+        } else {
+            playoffsController.setPlayoffsGUI(event);
+        }
     }
 
     private void initTeamsTableData(AmountOfTeams selectedItem, ArrayList playerSave) {
