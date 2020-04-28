@@ -20,9 +20,14 @@ public class GroupStageController {
     }
 
     @FXML
-    public void setGroupStageGUI(ActionEvent event) throws IOException {
+    public void setGroupStageGUI(ActionEvent event, AmountOfTeams selectedItem) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../view/FirstPage.fxml"));
+        switch (selectedItem) {
+            case Three:
+                loader.setLocation(getClass().getResource("../view/FirstPage.fxml"));
+                break;
+        }
+        //loader.setLocation(getClass().getResource("../view/FirstPage.fxml"));
         Parent playerGUI = loader.load();
         Controller controller = loader.getController();
         Scene playerScene = new Scene(playerGUI);

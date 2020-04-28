@@ -97,14 +97,14 @@ public class Controller {
     @FXML
     public void startTournament(ActionEvent event) throws IOException{
         if(cbGroupStage.isSelected()){
-            groupStageController.setGroupStageGUI(event);
+            groupStageController.setGroupStageGUI(event, amountOfTeams);
         } else {
-            playoffsController.setPlayoffsGUI(event);
+            playoffsController.setPlayoffsGUI(event, amountOfTeams);
         }
     }
 
     private void initTeamsTableData(AmountOfTeams selectedItem, ArrayList playerSave) {
-
+        this.amountOfTeams = selectedItem;
         switch (selectedItem){
             case Three:
                 tblTeams.getColumns().addAll(column, column1, column2,column3);
