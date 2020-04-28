@@ -241,5 +241,12 @@ public class Controller {
 
             tournament.removePlayer(removeSelected);
         }
+        else {
+            Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+            alert1.setTitle("Error");
+            alert1.setHeaderText(null);
+            alert1.setContentText("Select a player");
+            alert1.showAndWait();
+        }
     }
 }
