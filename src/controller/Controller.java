@@ -98,8 +98,14 @@ public class Controller {
     public void startTournament(ActionEvent event) throws IOException{
         if(cbGroupStage.isSelected()){
             groupStageController.setGroupStageGUI(event, amountOfTeams);
-        } else {
+        } else if (cbPlayoffs.isSelected()){
             playoffsController.setPlayoffsGUI(event, amountOfTeams);
+        }else {
+            Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+            alert1.setTitle("Error message");
+            alert1.setHeaderText(null);
+            alert1.setContentText("You have to choose either Groupstage or Playoffs");
+            alert1.showAndWait();
         }
     }
 

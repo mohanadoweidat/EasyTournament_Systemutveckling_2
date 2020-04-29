@@ -13,6 +13,7 @@ import java.io.IOException;
 
 public class PlayoffsController {
     private Controller controller;
+    private AmountOfTeams amountOfTeams;
 
     public PlayoffsController(Controller controller) {
         this.controller = controller;
@@ -20,10 +21,25 @@ public class PlayoffsController {
 
     @FXML
     public void setPlayoffsGUI(ActionEvent event, AmountOfTeams selectedItem) throws IOException {
+        this.amountOfTeams=selectedItem;
         FXMLLoader loader = new FXMLLoader();
         switch (selectedItem) {
             case Three:
-                loader.setLocation(getClass().getResource("../view/FirstPage.fxml"));
+                loader.setLocation(getClass().getResource("../view/ThreeTeamsPlayoff.fxml"));
+//            case Four:
+//                loader.setLocation(getClass().getResource("../view/ThreeTeamsPlayoff.fxml"));
+//            case Five:
+//                loader.setLocation(getClass().getResource("../view/ThreeTeamsPlayoff.fxml"));
+//            case Six:
+//                loader.setLocation(getClass().getResource("../view/ThreeTeamsPlayoff.fxml"));
+//            case Seven:
+//                loader.setLocation(getClass().getResource("../view/ThreeTeamsPlayoff.fxml"));
+//            case Eight:
+//                loader.setLocation(getClass().getResource("../view/EightTeamsPlayoff.fxml"));
+//            case Nine:
+//                loader.setLocation(getClass().getResource("../view/ThreeTeamsPlayoff.fxml"));
+//            case Ten:
+//                loader.setLocation(getClass().getResource("../view/ThreeTeamsPlayoff.fxml"));
                 break;
         }
         Parent playerGUI = loader.load();
