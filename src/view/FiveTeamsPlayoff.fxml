@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+   <children>
+      <ImageView fitHeight="496.0" fitWidth="778.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/fiveTeams.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="107.0" layoutY="125.0" text="Label" />
+      <Label layoutX="107.0" layoutY="188.0" text="Label" />
+      <Label layoutX="213.0" layoutY="162.0" text="Label" />
+      <Label layoutX="213.0" layoutY="279.0" text="Label" />
+      <Label layoutX="332.0" layoutY="221.0" text="Label" />
+      <Label layoutX="459.0" layoutY="221.0" text="Label" />
+      <Label layoutX="577.0" layoutY="162.0" text="Label" />
+      <Label layoutX="577.0" layoutY="279.0" text="Label" />
+      <Label layoutX="396.0" layoutY="162.0" text="Label" />
+      <Label layoutX="385.0" layoutY="123.0" text="Winner" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
