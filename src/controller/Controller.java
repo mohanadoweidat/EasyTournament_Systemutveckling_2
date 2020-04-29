@@ -116,34 +116,42 @@ public class Controller {
                 tblTeams.getColumns().addAll(column, column1, column2,column3);
                 tblTeams.setItems(getPlayer(playerSave));
                 column.setCellValueFactory(new PropertyValueFactory<>("name"));
-         //   case Four:
-         //       tblTeams.getColumns().addAll(column, column1, column2,column3,column4);
-         //       tblTeams.setItems(getPlayer(playerSave));
-         //       column.setCellValueFactory(new PropertyValueFactory<>("name"));
-         //   case Five:
-         //       tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5);
-         //       tblTeams.setItems(getPlayer(playerSave));
-         //       column.setCellValueFactory(new PropertyValueFactory<>("name"));
-         //   case Six:
-         //       tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5, column6);
-         //       tblTeams.setItems(getPlayer(playerSave));
-         //       column.setCellValueFactory(new PropertyValueFactory<>("name"));
-         //   case Seven:
-         //       tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5, column6, column7);
-         //       tblTeams.setItems(getPlayer(playerSave));
-         //       column.setCellValueFactory(new PropertyValueFactory<>("name"));
-         //   case Eight:
-         //       tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5, column6, column7, column8);
-         //       tblTeams.setItems(getPlayer(playerSave));
-         //       column.setCellValueFactory(new PropertyValueFactory<>("name"));
-         //   case Nine:
-         //       tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5, column6, column7, column8, column9);
-         //       tblTeams.setItems(getPlayer(playerSave));
-         //       column.setCellValueFactory(new PropertyValueFactory<>("name"));
-         //   case Ten:
-         //       tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5, column6, column7, column8, column9, column10);
-         //       tblTeams.setItems(getPlayer(playerSave));
-         //       column.setCellValueFactory(new PropertyValueFactory<>("name"));
+                break;
+            case Four:
+                tblTeams.getColumns().addAll(column, column1, column2,column3,column4);
+                tblTeams.setItems(getPlayer(playerSave));
+                column.setCellValueFactory(new PropertyValueFactory<>("name"));
+                break;
+            case Five:
+                tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5);
+                tblTeams.setItems(getPlayer(playerSave));
+                column.setCellValueFactory(new PropertyValueFactory<>("name"));
+                break;
+            case Six:
+                tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5, column6);
+                tblTeams.setItems(getPlayer(playerSave));
+                column.setCellValueFactory(new PropertyValueFactory<>("name"));
+                break;
+            case Seven:
+                tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5, column6, column7);
+                tblTeams.setItems(getPlayer(playerSave));
+                column.setCellValueFactory(new PropertyValueFactory<>("name"));
+                break;
+            case Eight:
+                tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5, column6, column7, column8);
+                tblTeams.setItems(getPlayer(playerSave));
+                column.setCellValueFactory(new PropertyValueFactory<>("name"));
+                break;
+            case Nine:
+                tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5, column6, column7, column8, column9);
+                tblTeams.setItems(getPlayer(playerSave));
+                column.setCellValueFactory(new PropertyValueFactory<>("name"));
+                break;
+            case Ten:
+                tblTeams.getColumns().addAll(column, column1, column2,column3, column4, column5, column6, column7, column8, column9, column10);
+                tblTeams.setItems(getPlayer(playerSave));
+                column.setCellValueFactory(new PropertyValueFactory<>("name"));
+                break;
         }
     }
 

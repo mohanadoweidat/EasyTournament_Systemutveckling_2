@@ -26,24 +26,24 @@ public class PlayoffsController {
         switch (selectedItem) {
             case Three:
                 loader.setLocation(getClass().getResource("../view/ThreeTeamsPlayoff.fxml"));
-//            case Four:
-//                loader.setLocation(getClass().getResource("../view/ThreeTeamsPlayoff.fxml"));
-//            case Five:
-//                loader.setLocation(getClass().getResource("../view/ThreeTeamsPlayoff.fxml"));
-//            case Six:
-//                loader.setLocation(getClass().getResource("../view/ThreeTeamsPlayoff.fxml"));
-//            case Seven:
-//                loader.setLocation(getClass().getResource("../view/ThreeTeamsPlayoff.fxml"));
-//            case Eight:
-//                loader.setLocation(getClass().getResource("../view/EightTeamsPlayoff.fxml"));
-//            case Nine:
-//                loader.setLocation(getClass().getResource("../view/ThreeTeamsPlayoff.fxml"));
-//            case Ten:
-//                loader.setLocation(getClass().getResource("../view/ThreeTeamsPlayoff.fxml"));
+            case Four:
+                loader.setLocation(getClass().getResource("../view/fourTeamsPlayoff.fxml"));
+            case Five:
+                loader.setLocation(getClass().getResource("../view/FiveTeamsPlayoff.fxml"));
+            case Six:
+                loader.setLocation(getClass().getResource("../view/SixTeamsPlayoff.fxml"));
+            case Seven:
+                loader.setLocation(getClass().getResource("../view/SevenTeamsPlayoff.fxml"));
+            case Eight:
+                loader.setLocation(getClass().getResource("../view/EightTeamPlayoffs.fxml"));
+            case Nine:
+                loader.setLocation(getClass().getResource("../view/NineTeamsPlayoff.fxml"));
+            case Ten:
+                loader.setLocation(getClass().getResource("../view/TenTeamsPlayoff.fxml"));
                 break;
         }
         Parent playerGUI = loader.load();
-        Controller controller = loader.getController();
+//        Controller controller = loader.getController();
         Scene playerScene = new Scene(playerGUI);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(playerScene);
