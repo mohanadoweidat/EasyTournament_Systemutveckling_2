@@ -8,6 +8,7 @@ import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.*;
 import javafx.stage.*;
 import model.*;
 
@@ -27,7 +28,7 @@ public class Controller {
 
     private AmountOfTeams amountOfTeams;
     @FXML
-    private TableView <Player> tblTeams = new TableView<>();
+    private TableView  tblTeams = new TableView<>();
 
     @FXML
     private CheckBox cbGroupStage;
@@ -44,27 +45,45 @@ public class Controller {
     @FXML
     private ListView listTeamsPlayer = new ListView();
 
+    private  ObservableList<String> tableContent = FXCollections.observableArrayList();
+
     private TableColumn <Player, String> column = new TableColumn("Players");
-    private final TableColumn column1 = new TableColumn("Team 1");
-    private final TableColumn column2 = new TableColumn("Team 2");
-    private final TableColumn column3 = new TableColumn("Team 3");
-    private final TableColumn column4 = new TableColumn("Team 4");
-    private final TableColumn column5 = new TableColumn("Team 5");
-    private final TableColumn column6 = new TableColumn("Team 6");
-    private final TableColumn column7 = new TableColumn("Team 7");
-    private final TableColumn column8 = new TableColumn("Team 8");
-    private final TableColumn column9 = new TableColumn("Team 9");
-    private final TableColumn column10 = new TableColumn("Team 10");
+    private final TableColumn<Player, String> column1 = new TableColumn("Team 1");
+    private final TableColumn<Player, String> column2 = new TableColumn("Team 2");
+    private final TableColumn<Player, String> column3 = new TableColumn("Team 3");
+    private final TableColumn<Player, String> column4 = new TableColumn("Team 4");
+    private final TableColumn<Player, String> column5 = new TableColumn("Team 5");
+    private final TableColumn<Player, String> column6 = new TableColumn("Team 6");
+    private final TableColumn<Player, String> column7 = new TableColumn("Team 7");
+    private final TableColumn<Player, String> column8 = new TableColumn("Team 8");
+    private final TableColumn<Player, String> column9 = new TableColumn("Team 9");
+    private final TableColumn<Player, String> column10 = new TableColumn("Team 10");
 
     @FXML
     private ChoiceBox<AmountOfTeams> teamsBox = new ChoiceBox();
 
-    public Controller() {}
+    public Controller() {
+        setEditable();
+    }
 
     /**
      * The method reads a fxml-file and changes the current window to the new fxml-file
      */
     @FXML
+    public void setEditable(){
+        column.setEditable(true);
+        column1.setEditable(true);
+        column2.setEditable(true);
+        column3.setEditable(true);
+        column4.setEditable(true);
+        column5.setEditable(true);
+        column6.setEditable(true);
+        column7.setEditable(true);
+        column8.setEditable(true);
+        column9.setEditable(true);
+        column10.setEditable(true);
+
+    }
     public void setPlayerGUI(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../view/PlayersGui.fxml"));
@@ -269,4 +288,48 @@ public class Controller {
             alert1.showAndWait();
         }
     }
+   public void click(MouseEvent event) {
+        if(event.getClickCount()==1){ // double click
+
+            Player selected = (Player) tblTeams.getSelectionModel().getSelectedItem();
+            if(selected !=null){
+                System.out.println("select : "+selected);
+
+            }
+        }
+    }
+    public void dragDetected(MouseEvent event) {
+        // drag was detected, start drag-and-drop gesture
+        Player selected = (Player) tblTeams.getSelectionModel().getSelectedItem();
+        if(selected !=null){
+
+            Dragboard db = tblTeams.startDragAndDrop(TransferMode.ANY);
+            ClipboardContent content = new ClipboardContent();
+            content.putString(String.valueOf(selected));
+            db.setContent(content);
+            event.consume();
+        }
+    }
+    public void dragOver(DragEvent event) {
+        // data is dragged over the target
+        Dragboard db = event.getDragboard();
+        if (event.getDragboard().hasString()){
+            event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
+        }
+        event.consume();
+    }
+    public void dragDropped(DragEvent event) {
+        Dragboard db = event.getDragboard();
+        boolean success = false;
+        if (event.getDragboard().hasString()) {
+
+            String text = db.getString();
+            tableContent.add(text);
+            tblTeams.setItems(tableContent);
+            success = true;
+        }
+        event.setDropCompleted(success);
+        event.consume();
+    }
+
 }

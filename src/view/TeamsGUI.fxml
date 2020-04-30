@@ -24,7 +24,10 @@
             <Cursor fx:constant="HAND" />
          </cursor></Button>
       <ListView fx:id="listTeamsPlayer" layoutX="213.0" layoutY="35.0" prefHeight="228.0" prefWidth="208.0" style="-fx-background-color: #FFFAFA#FFFAFA;" />
-      <TableView fx:id="tblTeams" layoutX="213.0" layoutY="282.0" prefHeight="230.0" prefWidth="523.0" style="-fx-background-color: #FFFAFA#FFFAFA;" />
+      <TableView fx:id="tblTeams" editable="true" layoutX="213.0" layoutY="282.0" onDragDetected="#dragDetected" onDragDropped="#dragDropped" onDragOver="#dragOver" onMouseClicked="#click" prefHeight="230.0" prefWidth="523.0" style="-fx-background-color: #FFFAFA#FFFAFA;" tableMenuButtonVisible="true">
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy></TableView>
       <Label layoutX="218.0" layoutY="15.0" text="Added Players" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
