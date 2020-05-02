@@ -340,7 +340,7 @@ public class Controller {
 
             playerSave.add(p);
 
-            column1.set(getPlayer(playerSave));
+            tblTeams.setItems(getPlayer(playerSave));
             success = true;
 //            column1.setCellValueFactory(new PropertyValueFactory<>("name"));
 
