@@ -13,6 +13,7 @@ import javafx.stage.*;
 import model.*;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -44,6 +45,7 @@ public class Controller {
     private ListView listOverview = new ListView();
     @FXML
     private ListView listTeamsPlayer = new ListView();
+    private ObservableList<String> tableDragDrop = FXCollections.observableArrayList();
 
     private  ObservableList<String> tableContent = FXCollections.observableArrayList();
 
@@ -106,7 +108,7 @@ public class Controller {
         Parent playerGUI = loader.load();
         Controller controller = loader.getController();
         //controller.initTeamsViewData(addedPlayers);
-        controller.initTeamsTableData(teamsBox.getSelectionModel().getSelectedItem(), playerSave);
+        controller.initTeamsTableData(teamsBox.getSelectionModel().getSelectedItem(), playerSave, tableContent);
         Scene playerScene = new Scene(playerGUI);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(playerScene);
@@ -128,8 +130,9 @@ public class Controller {
         }
     }
 
-    private void initTeamsTableData(AmountOfTeams selectedItem, ArrayList playerSave) {
+    private void initTeamsTableData(AmountOfTeams selectedItem, ArrayList playerSave, ObservableList<String> tableContent) {
         this.amountOfTeams = selectedItem;
+        this.tableDragDrop = tableContent;
         switch (selectedItem){
             case Three:
                 tblTeams.getColumns().addAll(column, column1, column2,column3);
@@ -293,7 +296,7 @@ public class Controller {
 
             Player selected = (Player) tblTeams.getSelectionModel().getSelectedItem();
             if(selected !=null){
-                System.out.println("select : "+selected);
+                System.out.println("select : "+selected.toString());
 
             }
         }
@@ -324,9 +327,13 @@ public class Controller {
         if (event.getDragboard().hasString()) {
 
             String text = db.getString();
-            tableContent.add(text);
-            tblTeams.setItems(tableContent);
+            System.out.println(tableDragDrop);
+            playerSave.add(new Player(text));
+            System.out.println(tableDragDrop);
+            tblTeams.setItems(getPlayer(playerSave));
             success = true;
+//            column1.setCellValueFactory(new PropertyValueFactory<>("name"));
+
         }
         event.setDropCompleted(success);
         event.consume();
