@@ -3,6 +3,8 @@ package model;
 public class Player {
     private String name;
 
+    private String team1;
+
     public Player(String name){
         this.name=name;
     }
@@ -17,5 +19,9 @@ public class Player {
     public void setName(String name) {
         this.name = name;
 
+    }
+
+    public void setTeam1(String str){
+        this.team1 = str;
     }
 }
