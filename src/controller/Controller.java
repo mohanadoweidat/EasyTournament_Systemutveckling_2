@@ -13,7 +13,6 @@ import javafx.stage.*;
 import model.*;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -65,7 +64,14 @@ public class Controller {
     private ChoiceBox<AmountOfTeams> teamsBox = new ChoiceBox();
 
 
-
+    @FXML
+    private TextField tfQual1 = new TextField();
+    @FXML
+    private TextField tfQual2 = new TextField();
+    @FXML
+    private TextField tfQual3 = new TextField();
+    @FXML
+    private TextField tfQual4 = new TextField();
     @FXML
     private TextField tfTeam1 = new TextField();
     @FXML
@@ -97,7 +103,7 @@ public class Controller {
     @FXML
     private Label lblTeam1 = new Label();
     @FXML
-    private Label lblSemifinal1 = new Label();
+    private Label lblSemifinal1Home = new Label();
     @FXML
     private Label lblSemifinal1Away = new Label();
     @FXML
@@ -110,6 +116,10 @@ public class Controller {
     private Label lblFinalAway = new Label();
     @FXML
     private Label lblWinner = new Label();
+    @FXML
+    private Label lblQfHome = new Label();
+    @FXML
+    private Label lblQf2 = new Label();
 
 
 
@@ -261,10 +271,10 @@ public class Controller {
 
         if (score1 > score2) {
                 tfSemifinal1Home.setPromptText("Team 1");
-                lblSemifinal1.setText("Team 1");
+                lblSemifinal1Home.setText("Team 1");
             } else if (score1 < score2){
                 tfSemifinal1Home.setPromptText("Team 2");
-                lblSemifinal1.setText("Team 2");
+                lblSemifinal1Home.setText("Team 2");
             }
             if (score3 > score4){
                 tfSemifinal1Away.setPromptText("Team 3");
@@ -275,15 +285,40 @@ public class Controller {
             }
 
     }
+
+    public void qualificationGameOne(){
+        int scoreQual1 = Integer.parseInt(tfQual1.getText());
+        int scoreQual2 = Integer.parseInt(tfQual2.getText());
+
+        if (scoreQual1 > scoreQual2){
+            tfTeam5.setPromptText("Team 5");
+            lblQfHome.setText("Team 5");
+        } else {
+            tfTeam5.setPromptText("Team 6");
+            lblQfHome.setText("Team 6");
+        }
+    }
+    public void qualificationGameTwo(){
+        int scoreQual1 = Integer.parseInt(tfQual3.getText());
+        int scoreQual2 = Integer.parseInt(tfQual4.getText());
+
+        if (scoreQual1 > scoreQual2){
+            tfTeam8.setPromptText("Team 9");
+            lblQf2.setText("Team 9");
+        } else {
+            tfTeam8.setPromptText("Team 10");
+            lblQf2.setText("Team 10");
+        }
+    }
     public void gameOne(){
         int score1 = Integer.parseInt(tfTeam1.getText());
         int score2 = Integer.parseInt(tfTeam2.getText());
         if (score1 > score2) {
             tfSemifinal1Home.setPromptText("Team 1");
-            lblSemifinal1.setText("Team 1");
+            lblSemifinal1Home.setText("Team 1");
         } else if (score1 < score2){
             tfSemifinal1Home.setPromptText("Team 2");
-            lblSemifinal1.setText("Team 2");
+            lblSemifinal1Home.setText("Team 2");
         }
     }
 
@@ -329,8 +364,8 @@ public class Controller {
         int score10 = Integer.parseInt(tfSemifinal1Away.getText());
 
         if (score9 > score10){
-            lblFinalHome.setText(lblSemifinal1.getText());
-            tfFinalHome.setPromptText(lblSemifinal1.getText());
+            lblFinalHome.setText(lblSemifinal1Home.getText());
+            tfFinalHome.setPromptText(lblSemifinal1Home.getText());
         } else {
             lblFinalHome.setText(lblSemifinal1Away.getText());
             tfFinalHome.setPromptText(lblSemifinal1Away.getText());
@@ -341,8 +376,8 @@ public class Controller {
         int score12 = Integer.parseInt(tfSemifinal2Away.getText());
 
         if (score11 > score12){
-            lblFinalHome.setText(lblSemifinal2Home.getText());
-            tfFinalHome.setPromptText(lblSemifinal2Home.getText());
+            lblFinalAway.setText(lblSemifinal2Home.getText());
+            tfFinalAway.setPromptText(lblSemifinal2Home.getText());
         } else {
             lblFinalAway.setText(lblSemifinal2Away.getText());
             tfFinalAway.setPromptText(lblSemifinal2Away.getText());

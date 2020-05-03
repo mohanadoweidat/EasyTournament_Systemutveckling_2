@@ -20,7 +20,7 @@
       <Label fx:id="Team2" layoutX="310.0" layoutY="214.0" text="Team 2" />
       <Label layoutX="310.0" layoutY="270.0" text="Team 3" />
       <Label layoutX="310.0" layoutY="323.0" text="Team 4" />
-      <Label fx:id="lblSemifinal1" layoutX="410.0" layoutY="190.0" />
+      <Label fx:id="lblSemifinal1Home" layoutX="410.0" layoutY="190.0" />
       <Label fx:id="lblSemifinal1Away" layoutX="410.0" layoutY="300.0" />
       <Label fx:id="lblFinalHome" layoutX="523.0" layoutY="245.0" />
       <Label fx:id="lblWinner" layoutX="582.0" layoutY="190.0" />
@@ -40,13 +40,13 @@
          <children>
             <Label layoutX="59.0" layoutY="39.0" text="Quarterfinals 1" textFill="WHITE" />
             <TextField fx:id="tfTeam1" layoutX="11.0" layoutY="72.0" prefHeight="27.0" prefWidth="71.0" promptText="Team 1" />
-            <TextField fx:id="tfTeam2" layoutX="89.0" layoutY="72.0" prefHeight="27.0" prefWidth="71.0" promptText="Team2" />
+            <TextField fx:id="tfTeam2" layoutX="89.0" layoutY="72.0" prefHeight="27.0" prefWidth="71.0" promptText="Team 2" />
             <Label layoutX="52.0" layoutY="110.0" text="Quarterfinals 2" textFill="WHITE" />
             <Label layoutX="55.0" layoutY="170.0" text="Quarterfinals 3" textFill="WHITE" />
             <Label layoutX="55.0" layoutY="221.0" text="Quarterfinals 4" textFill="WHITE" />
             <Label layoutX="63.0" layoutY="292.0" text="Semifinal 1" textFill="WHITE" />
             <Label layoutX="62.0" layoutY="343.0" text="Semifinal 2" textFill="WHITE" />
-            <Label layoutX="76.0" layoutY="409.0" text="Final" textFill="WHITE" />
+            <Label layoutX="74.0" layoutY="404.0" text="Finals" textFill="WHITE" />
             <TextField fx:id="tfSemifinal1Home" layoutX="11.0" layoutY="309.0" prefHeight="27.0" prefWidth="71.0" />
             <TextField fx:id="tfSemifinal1Away" layoutX="89.0" layoutY="309.0" prefHeight="27.0" prefWidth="71.0" />
             <Button layoutX="179.0" layoutY="72.0" mnemonicParsing="false" onAction="#gameOne" text="OK" />
