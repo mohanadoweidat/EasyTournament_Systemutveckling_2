@@ -2,8 +2,8 @@ package controller;
 
 public enum ScenesEnum {
     FirstPage,
-    Setup,
-    GroupStage,
+    Team,
+    Player,
     ThreeTeamsPlayoff,
     FourTeamsPlayoff,
     FiveTeamsPlayoff,
