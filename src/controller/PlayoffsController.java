@@ -16,7 +16,6 @@ import java.awt.*;
 import java.io.IOException;
 
 public class PlayoffsController {
-    private Controller controller;
     private AmountOfTeams amountOfTeams;
 
     @FXML
@@ -30,12 +29,6 @@ public class PlayoffsController {
 
     @FXML
     private TextField tfSemifinal1Home = new TextField();
-
-
-
-    public PlayoffsController(Controller controller) {
-        this.controller = controller;
-    }
 
     @FXML
     public void setPlayoffsGUI(ActionEvent event, AmountOfTeams selectedItem) throws IOException {
