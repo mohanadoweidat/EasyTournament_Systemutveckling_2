@@ -14,13 +14,15 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
+        /*FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../view/FirstPage.fxml"));
         Parent config = loader.load();
-//      Parent config = FXMLLoader.load(controller.Main.class.getResource("fxml/FirstPage.fxml"));
         primaryStage.setTitle("Easy Tournament");
         primaryStage.setScene(new Scene(config,750,600));
         primaryStage.show();
+
+         */
+        new MainController(primaryStage);
     }
 
     public void setTeamGUI(){
