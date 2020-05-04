@@ -65,12 +65,6 @@ public class TeamController extends SceneControllerParent {
         }
     }
 
-    public void setupList(){
-        for (Player p : mainController.getPlayers()) {
-            listTeamsPlayer.getItems().add(p.getName());
-        }
-    }
-
     public void initialize() {
         teamsBox.getItems().addAll(AmountOfTeams.values());
         setEditable();
