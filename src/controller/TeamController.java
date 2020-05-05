@@ -32,6 +32,8 @@ public class TeamController extends SceneControllerParent {
     private ChoiceBox<String> playersBox = new ChoiceBox();
     @FXML
     private ChoiceBox<String> selectTeamBox = new ChoiceBox();
+    @FXML
+    private ChoiceBox<String> spotBox = new ChoiceBox();
 
     private ObservableList<String> tableContent = FXCollections.observableArrayList();
 
@@ -115,6 +117,7 @@ public class TeamController extends SceneControllerParent {
                     tblTeams.getColumns().addAll(column, column1, column2);
                     tblTeams.setItems(addTeams());
                     selectTeamBox.getItems().addAll("Team1", "Team2");
+                    spotBox.getItems().addAll("Player1", "Player2");
                     column.setCellValueFactory(new PropertyValueFactory<>("name"));
                     column1.setCellValueFactory(new PropertyValueFactory<>("player1"));
                     column2.setCellValueFactory(new PropertyValueFactory<>("player2"));
@@ -177,6 +180,8 @@ public class TeamController extends SceneControllerParent {
 
 
     public ObservableList<Team> addTeams(){
+        team1.setName("Malbas");
+        team2.setName("Lakers");
         observablePlayers.addAll(team1,team2);
         return observablePlayers;
     }
@@ -188,11 +193,16 @@ public class TeamController extends SceneControllerParent {
 
     @FXML
     public void addTeams(ActionEvent event){
-
         if ((selectTeamBox.getValue()).equals("Team1")){
-            team1.setPlayer1(playersBox.getValue());
+            if((spotBox.getValue()).equals("Player1")){
+                team1.setPlayer1(playersBox.getValue());
+            } else if((spotBox.getValue()).equals("Player2"))
+                team1.setPlayer2(playersBox.getValue());
         } else if ((selectTeamBox.getValue()).equals("Team2")){
-            team2.setPlayer1(playersBox.getValue());
+            if((spotBox.getValue()).equals("Player1")){
+                team2.setPlayer1(playersBox.getValue());
+            } else if((spotBox.getValue()).equals("Player2"))
+                team2.setPlayer2(playersBox.getValue());
         }
         tblTeams.refresh();
     }

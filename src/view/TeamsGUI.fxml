@@ -96,8 +96,9 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="btnAddToTeam" layoutX="543.0" layoutY="236.0" mnemonicParsing="false" onAction="#addTeams" prefHeight="27.0" prefWidth="43.0" style="-fx-background-color: #3b3f41#3b3f41 #3b3f41#3b3f41;" text="Add" textFill="WHITE" />
+      <Button fx:id="btnAddToTeam" layoutX="602.0" layoutY="236.0" mnemonicParsing="false" onAction="#addTeams" prefHeight="27.0" prefWidth="43.0" style="-fx-background-color: #3b3f41#3b3f41 #3b3f41#3b3f41;" text="Add" textFill="WHITE" />
       <ChoiceBox fx:id="playersBox" layoutX="439.0" layoutY="236.0" prefHeight="27.0" prefWidth="50.0" />
       <ChoiceBox fx:id="selectTeamBox" layoutX="493.0" layoutY="236.0" prefHeight="27.0" prefWidth="50.0" />
+      <ChoiceBox fx:id="spotBox" layoutX="548.0" layoutY="236.0" prefHeight="27.0" prefWidth="50.0" />
    </children>
 </Pane>
