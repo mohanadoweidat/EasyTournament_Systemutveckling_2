@@ -1,67 +1,71 @@
 package model;
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+
 public class TeamStats {
-    private String teams,position;
-    private int points;
-    private int draws;
+    private SimpleStringProperty teams,position;
+    private SimpleIntegerProperty points,draws,wins,losses;
+
+    public TeamStats(String position,String teams,int wins,int draws,int losses,int points){
+        this.position=new SimpleStringProperty(position);
+        this.teams=new SimpleStringProperty(teams);
+        this.wins=new SimpleIntegerProperty(wins);
+        this.draws= new SimpleIntegerProperty(draws);
+        this.losses=new SimpleIntegerProperty(losses);
+        this.points=new SimpleIntegerProperty(points);
+    }
+
 
     public String getTeams() {
-        return teams;
+        return teams.get();
     }
 
     public void setTeams(String teams) {
-        this.teams = teams;
+        this.teams.set(teams);
     }
 
     public String getPosition() {
-        return position;
+        return position.get();
     }
 
     public void setPosition(String position) {
-        this.position = position;
+        this.position.set(position);
     }
 
-    public int getPoints() {
-        return points;
+    public Integer getPoints() {
+        return points.get();
     }
 
     public void setPoints(int points) {
-        this.points = points;
+        this.points.set(points);
     }
 
-    public int getDraws() {
-        return draws;
+    public Integer getDraws() {
+        return draws.get();
     }
 
     public void setDraws(int draws) {
-        this.draws = draws;
+        this.draws.set(draws);
     }
 
-    public int getLosses() {
-        return losses;
+    public Integer getLosses() {
+        return losses.get();
     }
 
     public void setLosses(int losses) {
-        this.losses = losses;
+        this.losses.set(losses);
     }
 
-    public int getWins() {
-        return wins;
+    public Integer getWins() {
+        return wins.get();
     }
 
     public void setWins(int wins) {
-        this.wins = wins;
+        this.wins.set(wins);
     }
 
-    private int losses;
-    private int wins;
 
-    public TeamStats(String teams,String position,int points,int draws,int losses, int wins){
-        this.teams=teams;
-        this.position=position;
-        this.points=points;
-        this.draws= draws;
-        this.losses=losses;
-        this.wins=wins;
-    }
+
+
 }
