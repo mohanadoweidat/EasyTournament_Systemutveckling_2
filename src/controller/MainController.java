@@ -63,13 +63,51 @@ public class MainController {
             Scene groupStageScene = new Scene(groupStageLoader.load());
             sendSelfToControllers(groupStageLoader);
 
+            FXMLLoader ThreePlayerLoader = new FXMLLoader(getClass().getResource("../view/ThreeTeamsPlayoff.fxml"));
+            Scene ThreePlayerScene = new Scene(ThreePlayerLoader.load());
+            sendSelfToControllers(ThreePlayerLoader);
+
+            FXMLLoader FourPlayerLoader = new FXMLLoader(getClass().getResource("../view/fourTeamsPlayoff.fxml"));
+            Scene FourPlayerScene = new Scene(FourPlayerLoader.load());
+            sendSelfToControllers(FourPlayerLoader);
+
+            FXMLLoader FivePlayerLoader = new FXMLLoader(getClass().getResource("../view/FiveTeamsPlayoff.fxml"));
+            Scene FivePlayerScene = new Scene(FivePlayerLoader.load());
+            sendSelfToControllers(FivePlayerLoader);
+
+            FXMLLoader SixPlayerLoader = new FXMLLoader(getClass().getResource("../view/SixTeamsPlayoff.fxml"));
+            Scene SixPlayerScene = new Scene(SixPlayerLoader.load());
+            sendSelfToControllers(SixPlayerLoader);
+
+            FXMLLoader SevenPlayerLoader = new FXMLLoader(getClass().getResource("../view/SevenTeamsPlayoff.fxml"));
+            Scene SevenPlayerScene = new Scene(SevenPlayerLoader.load());
+            sendSelfToControllers(SevenPlayerLoader);
+
+            FXMLLoader EightPlayerLoader = new FXMLLoader(getClass().getResource("../view/EightTeamPlayoffs.fxml"));
+            Scene EightPlayerScene = new Scene(EightPlayerLoader.load());
+            sendSelfToControllers(EightPlayerLoader);
+
+            FXMLLoader NinePlayerLoader = new FXMLLoader(getClass().getResource("../view/NineTeamsPlayoff.fxml"));
+            Scene NinePlayerScene = new Scene(NinePlayerLoader.load());
+            sendSelfToControllers(NinePlayerLoader);
+
+            FXMLLoader TenPlayerLoader = new FXMLLoader(getClass().getResource("../view/TenTeamsPlayoff.fxml"));
+            Scene TenPlayerScene = new Scene(TenPlayerLoader.load());
+            sendSelfToControllers(TenPlayerLoader);
+
             scenes.put(ScenesEnum.FirstPage, firstPageScene);
             scenes.put(ScenesEnum.Team, teamScene);
             scenes.put(ScenesEnum.Player, playerScene);
             scenes.put(ScenesEnum.GroupStage, groupStageScene);
-
+            scenes.put(ScenesEnum.ThreeTeamsPlayoff, ThreePlayerScene);
+            scenes.put(ScenesEnum.FourTeamsPlayoff, FourPlayerScene);
+            scenes.put(ScenesEnum.FiveTeamsPlayoff, FivePlayerScene);
+            scenes.put(ScenesEnum.SixTeamsPlayoff, SixPlayerScene);
+            scenes.put(ScenesEnum.SevenTeamsPlayoff, SevenPlayerScene);
+            scenes.put(ScenesEnum.EightTeamsPlayoff, EightPlayerScene);
+            scenes.put(ScenesEnum.EightTeamsPlayoff, NinePlayerScene);
+            scenes.put(ScenesEnum.NineTeamsPlayoff, TenPlayerScene);
         }
-
         public void setScene(ScenesEnum sceneName) {
             if (scenes.get(sceneName) != mainWindow.getScene())
                 mainWindow.setScene(scenes.get(sceneName));

@@ -74,7 +74,32 @@ public class TeamController extends SceneControllerParent {
         if (cbGroupStage.isSelected()) {
             mainController.setScene(ScenesEnum.GroupStage);
         } else if (cbPlayoffs.isSelected()) {
-
+            switch (teamsBox.getSelectionModel().getSelectedItem()) {
+                case Three:
+                    mainController.setScene(ScenesEnum.ThreeTeamsPlayoff);
+                    break;
+                case Four:
+                    mainController.setScene(ScenesEnum.FourTeamsPlayoff);
+                    break;
+                case Five:
+                    mainController.setScene(ScenesEnum.FiveTeamsPlayoff);
+                    break;
+                case Six:
+                    mainController.setScene(ScenesEnum.SixTeamsPlayoff);
+                    break;
+                case Seven:
+                    mainController.setScene(ScenesEnum.SevenTeamsPlayoff);
+                    break;
+                case Eight:
+                    mainController.setScene(ScenesEnum.EightTeamsPlayoff);
+                    break;
+                case Nine:
+                    mainController.setScene(ScenesEnum.NineTeamsPlayoff);
+                    break;
+                case Ten:
+                    mainController.setScene(ScenesEnum.TenTeamsPlayoff);
+                    break;
+            }
         } else {
             Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
             alert1.setTitle("Error message");

@@ -14,7 +14,7 @@ import model.*;
 import java.awt.*;
 import java.io.IOException;
 
-public class PlayoffsController {
+public class PlayoffsController extends SceneControllerParent{
     private AmountOfTeams amountOfTeams;
 
     @FXML
