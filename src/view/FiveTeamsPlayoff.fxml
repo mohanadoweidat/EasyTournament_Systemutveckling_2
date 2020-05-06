@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -35,19 +36,31 @@
             <Label layoutX="59.0" layoutY="39.0" text="Quarterfinals 1" textFill="WHITE" />
             <TextField fx:id="tfTeam1" layoutX="11.0" layoutY="72.0" prefHeight="27.0" prefWidth="71.0" promptText="Team 1" />
             <TextField fx:id="tfTeam2" layoutX="89.0" layoutY="72.0" prefHeight="27.0" prefWidth="71.0" promptText="Team 2" />
-            <Label layoutX="52.0" layoutY="110.0" text="Semifinal 1" textFill="WHITE" />
-            <Label layoutX="59.0" layoutY="224.0" text="Finals" textFill="WHITE" />
-            <Label layoutX="60.0" layoutY="165.0" text="Semifinal 2" textFill="WHITE" />
-            <TextField fx:id="tfSemifinal2Home" layoutX="11.0" layoutY="189.0" prefHeight="27.0" prefWidth="71.0" promptText="Team 4" />
-            <TextField fx:id="tfSemifinal2Away" layoutX="89.0" layoutY="189.0" prefHeight="27.0" prefWidth="71.0" promptText="Team 5" />
-            <Button layoutX="179.0" layoutY="72.0" mnemonicParsing="false" onAction="#gameOne" text="OK" />
-            <TextField fx:id="tfSemifinal1Home" layoutX="11.0" layoutY="130.0" prefHeight="27.0" prefWidth="71.0" />
-            <TextField fx:id="tfSemifinal1Away" layoutX="89.0" layoutY="130.0" prefHeight="27.0" prefWidth="71.0" promptText="Team 3" />
-            <Button fx:id="gameFive" layoutX="179.0" layoutY="130.0" mnemonicParsing="false" onAction="#gameFive" text="OK" />
-            <TextField fx:id="tfFinalHome" layoutX="11.0" layoutY="251.0" prefHeight="27.0" prefWidth="71.0" promptText="Team 5" />
-            <TextField fx:id="tfFinalAway" layoutX="89.0" layoutY="251.0" prefHeight="27.0" prefWidth="71.0" promptText="Team 6" />
-            <Button layoutX="179.0" layoutY="251.0" mnemonicParsing="false" onAction="#gameSeven" text="OK" />
-            <Button layoutX="179.0" layoutY="189.0" mnemonicParsing="false" onAction="#gameSix" text="OK" />
+            <Label layoutX="52.0" layoutY="164.0" text="Semifinal 1" textFill="WHITE" />
+            <Label layoutX="64.0" layoutY="306.0" text="Finals" textFill="WHITE" />
+            <Label layoutX="60.0" layoutY="219.0" text="Semifinal 2" textFill="WHITE" />
+            <TextField fx:id="tfSemifinal2Home" layoutX="11.0" layoutY="243.0" prefHeight="27.0" prefWidth="71.0" promptText="Team 4" />
+            <TextField fx:id="tfSemifinal2Away" layoutX="89.0" layoutY="243.0" prefHeight="27.0" prefWidth="71.0" promptText="Team 5" />
+            <Button layoutX="179.0" layoutY="72.0" mnemonicParsing="false" onAction="#gameOne" text="OK">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <TextField fx:id="tfSemifinal1Home" layoutX="11.0" layoutY="184.0" prefHeight="27.0" prefWidth="71.0" />
+            <TextField fx:id="tfSemifinal1Away" layoutX="89.0" layoutY="184.0" prefHeight="27.0" prefWidth="71.0" promptText="Team 3" />
+            <Button fx:id="gameFive" layoutX="179.0" layoutY="184.0" mnemonicParsing="false" onAction="#gameFive" text="OK">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <TextField fx:id="tfFinalHome" layoutX="9.0" layoutY="333.0" prefHeight="27.0" prefWidth="71.0" promptText="Team 5" />
+            <TextField fx:id="tfFinalAway" layoutX="87.0" layoutY="333.0" prefHeight="27.0" prefWidth="71.0" promptText="Team 6" />
+            <Button layoutX="177.0" layoutY="333.0" mnemonicParsing="false" onAction="#gameSeven" text="OK">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button layoutX="179.0" layoutY="243.0" mnemonicParsing="false" onAction="#gameSix" text="OK">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
          </children>
       </Pane>
    </children>

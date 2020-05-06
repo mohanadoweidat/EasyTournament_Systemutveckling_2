@@ -14,7 +14,7 @@
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" style="-fx-background-color: #2b2b2b#2b2b2b;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlayersController">
    <children>
       <ListView fx:id="listAddedPlayers" layoutX="519.0" layoutY="93.0" prefHeight="387.0" prefWidth="215.0" style="-fx-background-color: #FFFAFA#FFFAFA #FFFAFA#FFFAFA;" />
-      <Button fx:id="btnAddPlayer" layoutX="416.0" layoutY="201.0" mnemonicParsing="false" onAction="#addPlayersToList" prefHeight="32.0" prefWidth="86.0" style="-fx-background-color: #3b3f41#3b3f41;" text="Add Player" textFill="WHITE">
+      <Button fx:id="btnAddPlayer" defaultButton="true" layoutX="416.0" layoutY="201.0" mnemonicParsing="false" onAction="#addPlayersToList" prefHeight="32.0" prefWidth="86.0" style="-fx-background-color: #3b3f41#3b3f41;" text="Add Player" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
