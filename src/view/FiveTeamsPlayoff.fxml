@@ -1,32 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlayoffsController">
    <children>
-      <ImageView fitHeight="496.0" fitWidth="778.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="496.0" fitWidth="778.0" layoutX="213.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/fiveTeams.png" />
          </image>
       </ImageView>
-      <Label layoutX="107.0" layoutY="125.0" text="Label" />
-      <Label layoutX="107.0" layoutY="188.0" text="Label" />
-      <Label layoutX="213.0" layoutY="162.0" text="Label" />
-      <Label layoutX="213.0" layoutY="279.0" text="Label" />
-      <Label layoutX="332.0" layoutY="221.0" text="Label" />
-      <Label layoutX="459.0" layoutY="221.0" text="Label" />
-      <Label layoutX="577.0" layoutY="162.0" text="Label" />
-      <Label layoutX="577.0" layoutY="279.0" text="Label" />
-      <Label layoutX="396.0" layoutY="162.0" text="Label" />
-      <Label layoutX="385.0" layoutY="123.0" text="Winner" textFill="WHITE">
+      <Label layoutX="317.0" layoutY="123.0" text="Team 1" />
+      <Label layoutX="317.0" layoutY="188.0" text="Team 2" />
+      <Label fx:id="lblSemifinal1Away" layoutX="426.0" layoutY="279.0" text="Team 3" />
+      <Label fx:id="lblSemifinal1Home" layoutX="426.0" layoutY="162.0" />
+      <Label fx:id="lblFinalHome" layoutX="542.0" layoutY="221.0" />
+      <Label fx:id="lblFinalAway" layoutX="673.0" layoutY="221.0" />
+      <Label fx:id="lblWinner" layoutX="603.0" layoutY="162.0" />
+      <Label fx:id="lblSemifinal2Away" layoutX="791.0" layoutY="279.0" text="Team 5" />
+      <Label fx:id="lblSemifinal2Home" layoutX="785.0" layoutY="162.0" text="Team 4" />
+      <Label layoutX="592.0" layoutY="131.0" text="Winner" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
+      <Pane layoutY="-9.0" prefHeight="528.0" prefWidth="239.0" style="-fx-background-color: #3b3f41 #3b3f41;">
+         <children>
+            <Label layoutX="59.0" layoutY="39.0" text="Quarterfinals 1" textFill="WHITE" />
+            <TextField fx:id="tfTeam1" layoutX="11.0" layoutY="72.0" prefHeight="27.0" prefWidth="71.0" promptText="Team 1" />
+            <TextField fx:id="tfTeam2" layoutX="89.0" layoutY="72.0" prefHeight="27.0" prefWidth="71.0" promptText="Team 2" />
+            <Label layoutX="52.0" layoutY="110.0" text="Semifinal 1" textFill="WHITE" />
+            <Label layoutX="59.0" layoutY="224.0" text="Finals" textFill="WHITE" />
+            <Label layoutX="60.0" layoutY="165.0" text="Semifinal 2" textFill="WHITE" />
+            <TextField fx:id="tfSemifinal2Home" layoutX="11.0" layoutY="189.0" prefHeight="27.0" prefWidth="71.0" promptText="Team 4" />
+            <TextField fx:id="tfSemifinal2Away" layoutX="89.0" layoutY="189.0" prefHeight="27.0" prefWidth="71.0" promptText="Team 5" />
+            <Button layoutX="179.0" layoutY="72.0" mnemonicParsing="false" onAction="#gameOne" text="OK" />
+            <TextField fx:id="tfSemifinal1Home" layoutX="11.0" layoutY="130.0" prefHeight="27.0" prefWidth="71.0" />
+            <TextField fx:id="tfSemifinal1Away" layoutX="89.0" layoutY="130.0" prefHeight="27.0" prefWidth="71.0" promptText="Team 3" />
+            <Button fx:id="gameFive" layoutX="179.0" layoutY="130.0" mnemonicParsing="false" onAction="#gameFive" text="OK" />
+            <TextField fx:id="tfFinalHome" layoutX="11.0" layoutY="251.0" prefHeight="27.0" prefWidth="71.0" promptText="Team 5" />
+            <TextField fx:id="tfFinalAway" layoutX="89.0" layoutY="251.0" prefHeight="27.0" prefWidth="71.0" promptText="Team 6" />
+            <Button layoutX="179.0" layoutY="251.0" mnemonicParsing="false" onAction="#gameSeven" text="OK" />
+            <Button layoutX="179.0" layoutY="189.0" mnemonicParsing="false" onAction="#gameSix" text="OK" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

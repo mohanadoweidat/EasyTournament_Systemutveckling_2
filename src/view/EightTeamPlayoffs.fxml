@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="520.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+<AnchorPane prefHeight="520.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlayoffsController">
    <children>
       <ImageView fitHeight="528.0" fitWidth="881.0" layoutX="185.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -32,10 +32,10 @@
       <Label fx:id="lblFinalAway" layoutX="641.0" layoutY="245.0" />
       <Label fx:id="lblSemifinal2Home" layoutX="752.0" layoutY="190.0" />
       <Label fx:id="lblSemifinal2Away" layoutX="752.0" layoutY="300.0" />
-      <Label layoutX="853.0" layoutY="340.0" text="Team 8" />
-      <Label layoutX="854.0" layoutY="270.0" text="Team 7" />
-      <Label layoutX="853.0" layoutY="214.0" text="Team 6" />
-      <Label layoutX="854.0" layoutY="154.0" text="Team 5" />
+      <Label fx:id="lblQf4Away" layoutX="853.0" layoutY="340.0" text="Team 8" />
+      <Label fx:id="lblQf4Home" layoutX="854.0" layoutY="270.0" text="Team 7" />
+      <Label fx:id="lblQf3Away" layoutX="853.0" layoutY="214.0" text="Team 6" />
+      <Label fx:id="lblQf3Home" layoutX="854.0" layoutY="154.0" text="Team 5" />
       <Pane prefHeight="528.0" prefWidth="239.0" style="-fx-background-color: #3b3f41 #3b3f41;">
          <children>
             <Label layoutX="59.0" layoutY="39.0" text="Quarterfinals 1" textFill="WHITE" />
