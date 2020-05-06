@@ -59,9 +59,15 @@ public class MainController {
             Scene playerScene = new Scene(playerLoader.load());
             sendSelfToControllers(playerLoader);
 
+            FXMLLoader groupStageLoader = new FXMLLoader(getClass().getResource("../view/GroupStage.fxml"));
+            Scene groupStageScene = new Scene(groupStageLoader.load());
+            sendSelfToControllers(groupStageLoader);
+
             scenes.put(ScenesEnum.FirstPage, firstPageScene);
             scenes.put(ScenesEnum.Team, teamScene);
             scenes.put(ScenesEnum.Player, playerScene);
+            scenes.put(ScenesEnum.GroupStage, groupStageScene);
+
         }
 
         public void setScene(ScenesEnum sceneName) {
