@@ -7,24 +7,25 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlayoffsController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #3b3f41 #3b3f41 #3b3f41 #3b3f41;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlayoffsController">
    <children>
       <ImageView fitHeight="472.0" fitWidth="808.0" layoutX="219.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/sevenTeams.png" />
          </image>
       </ImageView>
-      <Label fx:id="lblFinalAway" layoutX="688.0" layoutY="214.0" />
-      <Label fx:id="lblFinalHome" layoutX="548.0" layoutY="222.0" />
-      <Label fx:id="lblWinner" layoutX="595.0" layoutY="101.0" text="Team 1" />
+      <Label fx:id="lblFinalAway" layoutX="666.0" layoutY="218.0" />
+      <Label fx:id="lblFinalHome" layoutX="527.0" layoutY="218.0" />
+      <Label fx:id="lblWinner" layoutX="595.0" layoutY="101.0" />
       <Label layoutX="278.0" layoutY="193.0" text="Team 2" />
       <Label layoutX="278.0" layoutY="260.0" text="Team 3" />
       <Label layoutX="278.0" layoutY="329.0" text="Team 4" />
-      <Label fx:id="lblSemifinal2Home" layoutX="811.0" layoutY="151.0" />
-      <Label fx:id="lblSemifinal1Home" layoutX="422.0" layoutY="151.0" />
-      <Label fx:id="lblSemifinal1Away" layoutX="421.0" layoutY="277.0" />
-      <Label fx:id="lblSemifinal2Away" layoutX="791.0" layoutY="277.0" text="Team 7" />
+      <Label fx:id="lblSemifinal2Home" layoutX="790.0" layoutY="154.0" />
+      <Label fx:id="lblSemifinal1Home" layoutX="400.0" layoutY="154.0" />
+      <Label fx:id="lblSemifinal1Away" layoutX="400.0" layoutY="280.0" />
+      <Label fx:id="lblSemifinal2Away" layoutX="790.0" layoutY="280.0" text="Team 7" />
       <Label layoutX="917.0" layoutY="125.0" text="Team 5" />
       <Label layoutX="917.0" layoutY="193.0" text="Team 6" />
       <Pane layoutY="-4.0" prefHeight="528.0" prefWidth="239.0" style="-fx-background-color: #3b3f41 #3b3f41;">
@@ -55,5 +56,17 @@
             <TextField fx:id="tfFinalAway" layoutX="89.0" layoutY="423.0" prefHeight="27.0" prefWidth="71.0" />
          </children>
       </Pane>
+      <Label layoutX="279.0" layoutY="129.0" text="Team 1" />
+      <Label layoutX="284.0" layoutY="93.0" text="QF-1" textFill="WHITE" />
+      <Label layoutX="403.0" layoutY="121.0" text="SF-1" textFill="WHITE" />
+      <Label layoutX="285.0" layoutY="362.0" text="QF-2" textFill="WHITE" />
+      <Label layoutX="600.0" layoutY="252.0" text="Finals" textFill="WHITE" />
+      <Label layoutX="796.0" layoutY="121.0" text="SF-2" textFill="WHITE" />
+      <Label layoutX="917.0" layoutY="93.0" text="QF-2" textFill="WHITE" />
+      <Label layoutX="592.0" layoutY="52.0" text="Winner" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
