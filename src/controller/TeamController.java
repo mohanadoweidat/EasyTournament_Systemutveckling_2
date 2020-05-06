@@ -273,11 +273,220 @@ public class TeamController extends SceneControllerParent {
                 team1.setPlayer1(playersBox.getValue());
             } else if((spotBox.getValue()).equals("Player2"))
                 team1.setPlayer2(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player3"))
+                team1.setPlayer3(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player4"))
+                team1.setPlayer4(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player5"))
+                team1.setPlayer5(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player6"))
+                team1.setPlayer6(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player7"))
+                team1.setPlayer7(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player8"))
+                team1.setPlayer8(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player9"))
+                team1.setPlayer9(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player10"))
+                team1.setPlayer10(playersBox.getValue());
+
         } else if ((selectTeamBox.getValue()).equals("Team2")){
             if((spotBox.getValue()).equals("Player1")){
                 team2.setPlayer1(playersBox.getValue());
             } else if((spotBox.getValue()).equals("Player2"))
                 team2.setPlayer2(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player3"))
+                team2.setPlayer3(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player4"))
+                team2.setPlayer4(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player5"))
+                team2.setPlayer5(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player6"))
+                team2.setPlayer6(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player7"))
+                team2.setPlayer7(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player8"))
+                team2.setPlayer8(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player9"))
+                team2.setPlayer9(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player10"))
+                team2 .setPlayer10(playersBox.getValue());
+
+        } else if ((selectTeamBox.getValue()).equals("Team3")){
+            if((spotBox.getValue()).equals("Player1")){
+                team3.setPlayer1(playersBox.getValue());
+            } else if((spotBox.getValue()).equals("Player2"))
+                team3.setPlayer2(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player3"))
+                team3.setPlayer3(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player4"))
+                team3.setPlayer4(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player5"))
+                team3.setPlayer5(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player6"))
+                team3.setPlayer6(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player7"))
+                team3.setPlayer7(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player8"))
+                team3.setPlayer8(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player9"))
+                team3.setPlayer9(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player10"))
+                team3.setPlayer10(playersBox.getValue());
+
+        } else if ((selectTeamBox.getValue()).equals("Team4")){
+            if((spotBox.getValue()).equals("Player1")){
+                team4.setPlayer1(playersBox.getValue());
+            } else if((spotBox.getValue()).equals("Player2"))
+                team4.setPlayer2(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player3"))
+                team4.setPlayer3(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player4"))
+                team4.setPlayer4(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player5"))
+                team4.setPlayer5(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player6"))
+                team4.setPlayer6(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player7"))
+                team4.setPlayer7(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player8"))
+                team4.setPlayer8(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player9"))
+                team4.setPlayer9(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player10"))
+                team4.setPlayer10(playersBox.getValue());
+
+        } else if ((selectTeamBox.getValue()).equals("Team5")){
+            if((spotBox.getValue()).equals("Player1")){
+                team5.setPlayer1(playersBox.getValue());
+            } else if((spotBox.getValue()).equals("Player2"))
+                team5.setPlayer2(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player3"))
+                team5.setPlayer3(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player4"))
+                team5.setPlayer4(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player5"))
+                team5.setPlayer5(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player6"))
+                team5.setPlayer6(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player7"))
+                team5.setPlayer7(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player8"))
+                team5.setPlayer8(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player9"))
+                team5.setPlayer9(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player10"))
+                team5.setPlayer10(playersBox.getValue());
+
+        } else if ((selectTeamBox.getValue()).equals("Team6")){
+            if((spotBox.getValue()).equals("Player1")){
+                team6.setPlayer1(playersBox.getValue());
+            } else if((spotBox.getValue()).equals("Player2"))
+                team6.setPlayer2(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player3"))
+                team6.setPlayer3(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player4"))
+                team6.setPlayer4(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player5"))
+                team6.setPlayer5(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player6"))
+                team6.setPlayer6(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player7"))
+                team6.setPlayer7(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player8"))
+                team6.setPlayer8(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player9"))
+                team6.setPlayer9(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player10"))
+                team6.setPlayer10(playersBox.getValue());
+
+        } else if ((selectTeamBox.getValue()).equals("Team7")){
+            if((spotBox.getValue()).equals("Player1")){
+                team7.setPlayer1(playersBox.getValue());
+            } else if((spotBox.getValue()).equals("Player2"))
+                team7.setPlayer2(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player3"))
+                team7.setPlayer3(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player4"))
+                team7.setPlayer4(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player5"))
+                team7.setPlayer5(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player6"))
+                team7.setPlayer6(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player7"))
+                team7.setPlayer7(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player8"))
+                team7.setPlayer8(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player9"))
+                team7.setPlayer9(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player10"))
+                team7.setPlayer10(playersBox.getValue());
+
+        } else if ((selectTeamBox.getValue()).equals("Team8")){
+            if((spotBox.getValue()).equals("Player1")){
+                team8.setPlayer1(playersBox.getValue());
+            } else if((spotBox.getValue()).equals("Player2"))
+                team8.setPlayer2(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player3"))
+                team8.setPlayer3(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player4"))
+                team8.setPlayer4(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player5"))
+                team8.setPlayer5(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player6"))
+                team8.setPlayer6(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player7"))
+                team8.setPlayer7(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player8"))
+                team8.setPlayer8(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player9"))
+                team8.setPlayer9(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player10"))
+                team8.setPlayer10(playersBox.getValue());
+
+        } else if ((selectTeamBox.getValue()).equals("Team9")){
+            if((spotBox.getValue()).equals("Player1")){
+                team9.setPlayer1(playersBox.getValue());
+            } else if((spotBox.getValue()).equals("Player2"))
+                team9.setPlayer2(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player3"))
+                team9.setPlayer3(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player4"))
+                team9.setPlayer4(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player5"))
+                team9.setPlayer5(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player6"))
+                team9.setPlayer6(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player7"))
+                team9.setPlayer7(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player8"))
+                team9.setPlayer8(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player9"))
+                team9.setPlayer9(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player10"))
+                team9.setPlayer10(playersBox.getValue());
+
+        } else if ((selectTeamBox.getValue()).equals("Team10")){
+            if((spotBox.getValue()).equals("Player1")){
+                team10.setPlayer1(playersBox.getValue());
+            } else if((spotBox.getValue()).equals("Player2"))
+                team10.setPlayer2(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player3"))
+                team10.setPlayer3(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player4"))
+                team10.setPlayer4(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player5"))
+                team10.setPlayer5(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player6"))
+                team10.setPlayer6(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player7"))
+                team10.setPlayer7(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player8"))
+                team10.setPlayer8(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player9"))
+                team10.setPlayer9(playersBox.getValue());
+            else if((spotBox.getValue()).equals("Player10"))
+                team10.setPlayer10(playersBox.getValue());
         }
         tblTeams.refresh();
     }

@@ -24,10 +24,21 @@ public class Team {
 
     public Team(){}
 
-    public Team(String name, String player1, String player2){
+    public Team(String name, String player1, String player2,String player3,String player4,String player5,String player6,String player7,String player8,String player9,String player10){
         this.name = name;
         this.player1 = player1;
         this.player2 = player2;
+        this.player3 = player3;
+        this.player4 = player4;
+        this.player5 = player5;
+        this.player6 = player6;
+        this.player7 = player7;
+        this.player8 = player8;
+        this.player9 = player9;
+        this.player10 = player10;
+
+
+
     }
 
     /**
@@ -76,5 +87,61 @@ public class Team {
 
     public void setPlayer3(String player3) {
         this.player3 = player3;
+    }
+
+    public String getPlayer4() {
+        return player4;
+    }
+
+    public void setPlayer4(String player4) {
+        this.player4 = player4;
+    }
+
+    public String getPlayer5() {
+        return player5;
+    }
+
+    public void setPlayer5(String player5) {
+        this.player5 = player5;
+    }
+
+    public String getPlayer6() {
+        return player6;
+    }
+
+    public void setPlayer6(String player6) {
+        this.player6 = player6;
+    }
+
+    public String getPlayer7() {
+        return player7;
+    }
+
+    public void setPlayer7(String player7) {
+        this.player7 = player7;
+    }
+
+    public String getPlayer8() {
+        return player8;
+    }
+
+    public void setPlayer8(String player8) {
+        this.player8 = player8;
+    }
+
+    public String getPlayer9() {
+        return player9;
+    }
+
+    public void setPlayer9(String player9) {
+        this.player9 = player9;
+    }
+
+    public String getPlayer10() {
+        return player10;
+    }
+
+    public void setPlayer10(String player10) {
+        this.player10 = player10;
     }
 }
