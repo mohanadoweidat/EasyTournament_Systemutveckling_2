@@ -23,8 +23,6 @@ public class Team {
         this.player2 = player2;
     }
 
-
-
     /**
      * Returns the name of the team
      * @return name as a string
