@@ -111,22 +111,17 @@ public class TeamController extends SceneControllerParent {
 
     public void initialize() {
         teamsBox.getItems().addAll(AmountOfTeams.values());
-        setEditable();
-    }
-
-    public void setEditable() {
-       /* column1.setEditable(true);
-        column2.setEditable(true);
-        column3.setEditable(true);
-        column4.setEditable(true);
-        column5.setEditable(true);
-        column6.setEditable(true);
-        column7.setEditable(true);
-        column8.setEditable(true);
-        column9.setEditable(true);
-        column10.setEditable(true);
-
-        */
+        column.setCellValueFactory(new PropertyValueFactory<>("name"));
+        column1.setCellValueFactory(new PropertyValueFactory<>("player1"));
+        column2.setCellValueFactory(new PropertyValueFactory<>("player2"));
+        column3.setCellValueFactory(new PropertyValueFactory<>("player3"));
+        column4.setCellValueFactory(new PropertyValueFactory<>("player4"));
+        column5.setCellValueFactory(new PropertyValueFactory<>("player5"));
+        column6.setCellValueFactory(new PropertyValueFactory<>("player6"));
+        column7.setCellValueFactory(new PropertyValueFactory<>("player7"));
+        column8.setCellValueFactory(new PropertyValueFactory<>("player8"));
+        column9.setCellValueFactory(new PropertyValueFactory<>("player9"));
+        column10.setCellValueFactory(new PropertyValueFactory<>("player10"));
     }
 
     @FXML
@@ -134,62 +129,140 @@ public class TeamController extends SceneControllerParent {
         for (Player p : mainController.getPlayers()){
             playersBox.getItems().add(p.getName());
         }
-        //playersBox.getItems().addAll(mainController.getPlayers());
         try {
             switch (teamsBox.getSelectionModel().getSelectedItem()) {
                 case Three:
-                    tblTeams.getColumns().addAll(column, column1, column2);
+                    tblTeams.getColumns().addAll(column, column1, column2, column3);
                     tblTeams.setItems(addTeams());
-                    selectTeamBox.getItems().addAll("Team1", "Team2");
-                    spotBox.getItems().addAll("Player1", "Player2");
-                    column.setCellValueFactory(new PropertyValueFactory<>("name"));
-                    column1.setCellValueFactory(new PropertyValueFactory<>("player1"));
-                    column2.setCellValueFactory(new PropertyValueFactory<>("player2"));
+                    selectTeamBox.getItems().addAll("Team1", "Team2", "Team3");
+                    spotBox.getItems().addAll("Player1", "Player2", "Player3" , "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
                     break;
                 case Four:
-                    tblTeams.getColumns().addAll(column1, column2, column3, column4);
-                    //tblTeams.setItems(getPlayer(mainController.getPlayers()));
-                    column1.setCellValueFactory(new PropertyValueFactory<>("name"));
+                    tblTeams.getColumns().addAll(column, column1, column2, column3, column4);
+                    tblTeams.setItems(addTeams());
+                    selectTeamBox.getItems().addAll("Team1", "Team2", "Team3", "Team4");
+                    spotBox.getItems().addAll("Player1", "Player2", "Player3" , "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
                     break;
                 case Five:
-                    tblTeams.getColumns().addAll(column1, column2, column3, column4, column5);
-                    //tblTeams.setItems(getPlayer(mainController.getPlayers()));
-                    column1.setCellValueFactory(new PropertyValueFactory<>("name"));
+                    tblTeams.getColumns().addAll(column, column1, column2, column3, column4, column5);
+                    tblTeams.setItems(addTeams());
+                    selectTeamBox.getItems().addAll("Team1", "Team2", "Team3", "Team4", "Team5");
+                    spotBox.getItems().addAll("Player1", "Player2", "Player3" , "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
                     break;
                 case Six:
-                    tblTeams.getColumns().addAll(column1, column2, column3, column4, column5, column6);
-                    //tblTeams.setItems(getPlayer(mainController.getPlayers()));
-                    column1.setCellValueFactory(new PropertyValueFactory<>("name"));
+                    tblTeams.getColumns().addAll(column, column1, column2, column3, column4, column5, column6);
+                    tblTeams.setItems(addTeams());
+                    selectTeamBox.getItems().addAll("Team1", "Team2", "Team3", "Team4", "Team5", "Team6");
+                    spotBox.getItems().addAll("Player1", "Player2", "Player3" , "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
                     break;
                 case Seven:
-                    tblTeams.getColumns().addAll(column1, column2, column3, column4, column5, column6, column7);
-                    //tblTeams.setItems(getPlayer(mainController.getPlayers()));
-                    column1.setCellValueFactory(new PropertyValueFactory<>("name"));
+                    tblTeams.getColumns().addAll(column, column1, column2, column3, column4, column5, column6, column7);
+                    tblTeams.setItems(addTeams());
+                    selectTeamBox.getItems().addAll("Team1", "Team2", "Team3", "Team4", "Team5", "Team6", "Team7");
+                    spotBox.getItems().addAll("Player1", "Player2", "Player3" , "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
                     break;
                 case Eight:
-                    tblTeams.getColumns().addAll(column1, column2, column3, column4, column5, column6, column7, column8);
-                    //tblTeams.setItems(getPlayer(mainController.getPlayers()));
-                    column1.setCellValueFactory(new PropertyValueFactory<>("name"));
+                    tblTeams.getColumns().addAll(column, column1, column2, column3, column4, column5, column6, column7, column8);
+                    tblTeams.setItems(addTeams());
+                    selectTeamBox.getItems().addAll("Team1", "Team2", "Team3", "Team4", "Team5", "Team6", "Team7", "Team8");
+                    spotBox.getItems().addAll("Player1", "Player2", "Player3" , "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
                     break;
                 case Nine:
-                    tblTeams.getColumns().addAll(column1, column2, column3, column4, column5, column6, column7, column8, column9);
-                    //tblTeams.setItems(getPlayer(mainController.getPlayers()));
-                    column1.setCellValueFactory(new PropertyValueFactory<>("name"));
+                    tblTeams.getColumns().addAll(column, column1, column2, column3, column4, column5, column6, column7, column8, column9);
+                    tblTeams.setItems(addTeams());
+                    selectTeamBox.getItems().addAll("Team1", "Team2", "Team3", "Team4", "Team5", "Team6", "Team7", "Team8", "Team9");
+                    spotBox.getItems().addAll("Player1", "Player2", "Player3" , "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
                     break;
                 case Ten:
-                    tblTeams.getColumns().addAll(column1, column2, column3, column4, column5, column6, column7, column8, column9, column10);
-                    //tblTeams.setItems(getPlayer(mainController.getPlayers()));
-
-                    column1.setCellValueFactory(new PropertyValueFactory<>("name"));
+                    tblTeams.getColumns().addAll(column, column1, column2, column3, column4, column5, column6, column7, column8, column9, column10);
+                    tblTeams.setItems(addTeams());
+                    selectTeamBox.getItems().addAll("Team1", "Team2", "Team3", "Team4", "Team5", "Team6", "Team7", "Team8", "Team9", "Team10");
+                    spotBox.getItems().addAll("Player1", "Player2", "Player3" , "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
                     break;
             }
         } catch (Exception e) {}
     }
 
     public ObservableList<Team> addTeams(){
-        team1.setName("Malbas");
-        team2.setName("Lakers");
-        observablePlayers.addAll(team1,team2);
+        switch (teamsBox.getSelectionModel().getSelectedItem()){
+            case Three:
+                team1.setName("Team1");
+                team2.setName("Team2");
+                team3.setName("Team3");
+                observablePlayers.addAll(team1,team2,team3);
+                break;
+            case Four:
+                team1.setName("Team1");
+                team2.setName("Team2");
+                team3.setName("Team3");
+                team4.setName("Team4");
+                observablePlayers.addAll(team1,team2,team3,team4);
+                break;
+            case Five:
+                team1.setName("Team1");
+                team2.setName("Team2");
+                team3.setName("Team3");
+                team4.setName("Team4");
+                team5.setName("Team5");
+                observablePlayers.addAll(team1,team2,team3,team4,team5);
+                break;
+            case Six:
+                team1.setName("Team1");
+                team2.setName("Team2");
+                team3.setName("Team3");
+                team4.setName("Team4");
+                team5.setName("Team5");
+                team6.setName("Team6");
+                observablePlayers.addAll(team1,team2,team3,team4,team5,team6);
+                break;
+            case Seven:
+                team1.setName("Team1");
+                team2.setName("Team2");
+                team3.setName("Team3");
+                team4.setName("Team4");
+                team5.setName("Team5");
+                team6.setName("Team6");
+                team7.setName("Team7");
+                observablePlayers.addAll(team1,team2,team3,team4,team5,team6,team7);
+                break;
+            case Eight:
+                team1.setName("Team1");
+                team2.setName("Team2");
+                team3.setName("Team3");
+                team4.setName("Team4");
+                team5.setName("Team5");
+                team6.setName("Team6");
+                team7.setName("Team7");
+                team8.setName("Team8");
+                observablePlayers.addAll(team1,team2,team3,team4,team5,team6,team7,team8);
+                break;
+            case Nine:
+                team1.setName("Team1");
+                team2.setName("Team2");
+                team3.setName("Team3");
+                team4.setName("Team4");
+                team5.setName("Team5");
+                team6.setName("Team6");
+                team7.setName("Team7");
+                team8.setName("Team8");
+                team9.setName("Team9");
+                observablePlayers.addAll(team1,team2,team3,team4,team5,team6,team7,team8,team9);
+                break;
+            case Ten:
+                team1.setName("Team1");
+                team2.setName("Team2");
+                team3.setName("Team3");
+                team4.setName("Team4");
+                team5.setName("Team5");
+                team6.setName("Team6");
+                team7.setName("Team7");
+                team8.setName("Team8");
+                team9.setName("Team9");
+                team10.setName("Team10");
+                observablePlayers.addAll(team1,team2,team3,team4,team5,team6,team7,team8,team9,team10);
+                break;
+        }
+
         return observablePlayers;
     }
 
