@@ -11,6 +11,9 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="500.0" prefWidth="630.0" style="-fx-background-color: #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlayoffsController">
+
+<AnchorPane prefHeight="500.0" prefWidth="630.0" style="-fx-background-color: #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlayoffsController">
+
    <children>
       <ImageView fitHeight="500.0" fitWidth="630.0" layoutX="135.0" layoutY="1.0">
          <image>

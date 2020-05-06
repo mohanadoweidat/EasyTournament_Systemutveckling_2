@@ -10,7 +10,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
+
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #3b3f41 #3b3f41 #3b3f41 #3b3f41;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlayoffsController">
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlayoffsController">
+
    <children>
       <ImageView fitHeight="609.0" fitWidth="943.0" layoutX="229.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -119,5 +123,6 @@
       <Label layoutX="834.0" layoutY="161.0" text="SF-2" textFill="WHITE" />
       <Label layoutX="1048.0" layoutY="99.0" text="Qualification Game 1" textFill="WHITE" />
       <Label layoutX="1047.0" layoutY="338.0" text="Qualification Game 2" textFill="WHITE" />
+      <Label layoutX="618.0" layoutY="337.0" text="Finals" textFill="WHITE" />
    </children>
 </AnchorPane>
