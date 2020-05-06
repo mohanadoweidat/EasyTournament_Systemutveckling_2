@@ -10,9 +10,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.*;
 import model.*;
 
-import java.awt.*;
-import java.util.ArrayList;
-
 public class TeamController extends SceneControllerParent {
 
     private AmountOfTeams amountOfTeams;
@@ -93,7 +90,7 @@ public class TeamController extends SceneControllerParent {
     }
 
     public void setEditable() {
-        column1.setEditable(true);
+       /* column1.setEditable(true);
         column2.setEditable(true);
         column3.setEditable(true);
         column4.setEditable(true);
@@ -103,6 +100,8 @@ public class TeamController extends SceneControllerParent {
         column8.setEditable(true);
         column9.setEditable(true);
         column10.setEditable(true);
+
+        */
     }
 
     @FXML
@@ -121,7 +120,6 @@ public class TeamController extends SceneControllerParent {
                     column.setCellValueFactory(new PropertyValueFactory<>("name"));
                     column1.setCellValueFactory(new PropertyValueFactory<>("player1"));
                     column2.setCellValueFactory(new PropertyValueFactory<>("player2"));
-                    //column3.setCellValueFactory(new PropertyValueFactory<>("player3"));
                     break;
                 case Four:
                     tblTeams.getColumns().addAll(column1, column2, column3, column4);
@@ -135,7 +133,7 @@ public class TeamController extends SceneControllerParent {
                     break;
                 case Six:
                     tblTeams.getColumns().addAll(column1, column2, column3, column4, column5, column6);
-                   // tblTeams.setItems(getPlayer(mainController.getPlayers()));
+                    //tblTeams.setItems(getPlayer(mainController.getPlayers()));
                     column1.setCellValueFactory(new PropertyValueFactory<>("name"));
                     break;
                 case Seven:
@@ -163,33 +161,12 @@ public class TeamController extends SceneControllerParent {
         } catch (Exception e) {}
     }
 
-
-    //Old Method
-    /*
-   public ObservableList<Player> getPlayer(ArrayList<Player> input){
-        ObservableList<Player> observablePlayers = FXCollections.observableArrayList();
-        for (Player p: input){
-            observablePlayers.add(p);
-        }
-        return observablePlayers;
-    }
-
-     */
-
-
-
-
     public ObservableList<Team> addTeams(){
         team1.setName("Malbas");
         team2.setName("Lakers");
         observablePlayers.addAll(team1,team2);
         return observablePlayers;
     }
-
-
-
-
-
 
     @FXML
     public void addTeams(ActionEvent event){
@@ -206,9 +183,6 @@ public class TeamController extends SceneControllerParent {
         }
         tblTeams.refresh();
     }
-
-
-
 
     public void click(MouseEvent event) {
         if(event.getClickCount()==1){ // double click
