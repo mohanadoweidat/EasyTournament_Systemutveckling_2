@@ -3,7 +3,6 @@ package controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import model.AmountOfTeams;
 import model.Player;
 
 import java.util.ArrayList;
@@ -21,16 +20,26 @@ public class PlayersController extends SceneControllerParent {
     @FXML
     private TextField tfPlayerName = new TextField();
 
+    /**
+     * Changes scenes too the firstPageGUI
+     */
     @FXML
     public void setFirstPageGUI(ActionEvent actionEvent) {
         mainController.setScene(ScenesEnum.FirstPage);
     }
 
+    /**
+     * Changes scenes too the teamGUI
+     */
     @FXML
     public void setTeamsGUI(ActionEvent actionEvent) {
         mainController.setScene(ScenesEnum.Team);
     }
 
+    /**
+     * Adds a player to the game
+     */
+    @FXML
     public void addPlayersToList() {
         String test = tfPlayerName.getText();
         if (test.isBlank()) {
@@ -53,8 +62,9 @@ public class PlayersController extends SceneControllerParent {
     }
 
     /**
-     * Removes players from the "added players" list
+     * Removes players from the selected player
      */
+    @FXML
     public void removePlayerPlayersGui() {
         final int selectedIndex = listAddedPlayers.getSelectionModel().getSelectedIndex();
         if (selectedIndex != -1) {
@@ -67,5 +77,29 @@ public class PlayersController extends SceneControllerParent {
             alert1.setContentText("You need to shoes a player to remove");
             alert1.showAndWait();
         }
+    }
+
+    /**
+     * This method will handle the importing off pre saved player groups
+     */
+    @FXML
+    public void handleImportGroups(ActionEvent event){
+        Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+        alert1.setTitle("Delete problems");
+        alert1.setHeaderText(null);
+        alert1.setContentText("This feature is coming soon");
+        alert1.showAndWait();
+    }
+
+    /**
+     * This method will handle the saveing player groups
+     */
+    @FXML
+    public void handleSaveGroups(ActionEvent event){
+        Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+        alert1.setTitle("Delete problems");
+        alert1.setHeaderText(null);
+        alert1.setContentText("This feature is coming soon");
+        alert1.showAndWait();
     }
 }
