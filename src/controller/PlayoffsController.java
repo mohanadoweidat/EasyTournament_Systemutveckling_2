@@ -103,7 +103,7 @@ public class PlayoffsController extends SceneControllerParent{
         }
     }
 
-    public void qualificationGameOneForNineAndTen(){
+    public void qualificationGameOneForNineAndTenTeams(){
         int scoreQual1 = Integer.parseInt(tfQual1.getText());
         int scoreQual2 = Integer.parseInt(tfQual2.getText());
 
@@ -115,7 +115,7 @@ public class PlayoffsController extends SceneControllerParent{
             lblQf3Home.setText("Team 6");
         }
     }
-    public void qualificationGameTwoForTen(){
+    public void qualificationGameTwoForTenTeams(){
         int scoreQual1 = Integer.parseInt(tfQual3.getText());
         int scoreQual2 = Integer.parseInt(tfQual4.getText());
 
