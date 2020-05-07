@@ -103,6 +103,11 @@ public class PlayoffsController extends SceneControllerParent{
         }
     }
 
+    /**
+     * Checks the scores from the textfield and compares the scores
+     * Sets the winning teams name as prompt text for the next stage
+     * Sets the winning teams name in the label for the next stage in the playoff tree
+     */
     public void qualificationGameOneForNineAndTenTeams(){
         int scoreQual1 = Integer.parseInt(tfQual1.getText());
         int scoreQual2 = Integer.parseInt(tfQual2.getText());
@@ -115,6 +120,12 @@ public class PlayoffsController extends SceneControllerParent{
             lblQf3Home.setText("Team 6");
         }
     }
+
+    /**
+     * Checks the scores from the textfield and compares the scores
+     * Sets the winning teams name as prompt text for the next stage
+     * Sets the winning teams name in the label for the next stage in the playoff tree
+     */
     public void qualificationGameTwoForTenTeams(){
         int scoreQual1 = Integer.parseInt(tfQual3.getText());
         int scoreQual2 = Integer.parseInt(tfQual4.getText());
@@ -127,6 +138,12 @@ public class PlayoffsController extends SceneControllerParent{
             lblQf4Away.setText("Team 10");
         }
     }
+
+    /**
+     * Checks the scores from the textfield and compares the scores
+     * Sets the winning teams name as prompt text for the next stage
+     * Sets the winning teams name in the label for the next stage in the playoff tree
+     */
     public void gameOne(){
         int score1 = Integer.parseInt(tfTeam1.getText());
         int score2 = Integer.parseInt(tfTeam2.getText());
@@ -140,6 +157,11 @@ public class PlayoffsController extends SceneControllerParent{
         }
     }
 
+    /**
+     * Checks the scores from the textfield and compares the scores
+     * Sets the winning teams name as prompt text for the next stage
+     * Sets the winning teams name in the label for the next stage in the playoff tree
+     */
     public void gameTwo(){
         int score3 = Integer.parseInt(tfTeam3.getText());
         int score4 = Integer.parseInt(tfTeam4.getText());
@@ -153,6 +175,11 @@ public class PlayoffsController extends SceneControllerParent{
         }
     }
 
+    /**
+     * Checks the scores from the textfield and compares the scores
+     * Sets the winning teams name as prompt text for the semi finals
+     * Sets the winning teams name in the label for the semi finals in the playoff tree
+     */
     public void gameThree(){
         int score5 = Integer.parseInt(tfTeam5.getText());
         int score6 = Integer.parseInt(tfTeam6.getText());
@@ -166,6 +193,11 @@ public class PlayoffsController extends SceneControllerParent{
         }
     }
 
+    /**
+     * Checks the scores from the textfield and compares the scores
+     * Sets the winning teams name as prompt text for the semi finals
+     * Sets the winning teams name in the label for the semi finals in the playoff tree
+     */
     public void gameFour(){
         int score7 = Integer.parseInt(tfTeam7.getText());
         int score8 = Integer.parseInt(tfTeam8.getText());
@@ -179,6 +211,11 @@ public class PlayoffsController extends SceneControllerParent{
         }
     }
 
+    /**
+     * Checks the scores from the textfield and compares the scores
+     * Sets the winning teams name as prompt text for the finals
+     * Sets the winning teams name in the label for the finals in the playoff tree
+     */
     public void gameFive(){
         int score9 = Integer.parseInt(tfSemifinal1Home.getText());
         int score10 = Integer.parseInt(tfSemifinal1Away.getText());
@@ -192,6 +229,11 @@ public class PlayoffsController extends SceneControllerParent{
         }
     }
 
+    /**
+     * Checks the scores from the textfield and compares the scores
+     * Sets the winning teams name as prompt text for the finals
+     * Sets the winning teams name in the label for the finals in the playoff tree
+     */
     public void gameSix(){
         int score11 = Integer.parseInt(tfSemifinal2Home.getText());
         int score12 = Integer.parseInt(tfSemifinal2Away.getText());
@@ -205,6 +247,10 @@ public class PlayoffsController extends SceneControllerParent{
         }
     }
 
+    /**
+     * Checks the scores from the textfield and compares the scores
+     * Puts the winning team in the winners-label
+     */
     public void gameSeven(){
         int score13 = Integer.parseInt(tfFinalHome.getText());
         int score14 = Integer.parseInt(tfFinalAway.getText());

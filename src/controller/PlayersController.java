@@ -21,7 +21,7 @@ public class PlayersController extends SceneControllerParent {
     private TextField tfPlayerName = new TextField();
 
     /**
-     * Changes scenes too the firstPageGUI
+     * Changes scenes to the firstPageGUI
      */
     @FXML
     public void setFirstPageGUI(ActionEvent actionEvent) {
@@ -29,7 +29,7 @@ public class PlayersController extends SceneControllerParent {
     }
 
     /**
-     * Changes scenes too the teamGUI
+     * Changes scenes to the teamGUI
      */
     @FXML
     public void setTeamsGUI(ActionEvent actionEvent) {

@@ -32,7 +32,7 @@ public class MainController {
     }
 
     /**
-     * Sends the instance of the maniController to scene in the parameters
+     * Sends the instance of the mainController to scene in the parameters
      */
     public void sendSelfToControllers(FXMLLoader loader) {
         ((SceneControllerParent) loader.getController()).setMainController(this);
@@ -53,7 +53,7 @@ public class MainController {
         private ScenesHashMap scenes = new ScenesHashMap();
 
         /**
-         * Adds all scenes to a hashmap
+         * Adds all scenes to the hashmap
          */
         private void addScenesToHashMap() throws IOException {
             FXMLLoader firstPageLoader = new FXMLLoader(getClass().getResource("../view/FirstPage.fxml"));
