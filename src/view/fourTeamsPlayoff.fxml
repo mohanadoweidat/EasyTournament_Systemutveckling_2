@@ -27,7 +27,7 @@
       </Label>
       <Label fx:id="lblFinalHome" layoutX="372.0" layoutY="202.0" />
       <Label fx:id="lblFinalAway" layoutX="497.0" layoutY="202.0" />
-      <Label fx:id="lblSemfinal2Home" layoutX="607.0" layoutY="147.0" text="Team 3" />
+      <Label fx:id="lblSemifinal2Home" layoutX="607.0" layoutY="147.0" text="Team 3" />
       <Label fx:id="lblSemifinal2Away" layoutX="607.0" layoutY="260.0" text="Team 4" />
       <Pane prefHeight="462.0" prefWidth="223.0" style="-fx-background-color: #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41 #3b3f41;">
          <children>

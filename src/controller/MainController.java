@@ -114,8 +114,8 @@ public class MainController {
             scenes.put(ScenesEnum.SixTeamsPlayoff, SixPlayerScene);
             scenes.put(ScenesEnum.SevenTeamsPlayoff, SevenPlayerScene);
             scenes.put(ScenesEnum.EightTeamsPlayoff, EightPlayerScene);
-            scenes.put(ScenesEnum.EightTeamsPlayoff, NinePlayerScene);
-            scenes.put(ScenesEnum.NineTeamsPlayoff, TenPlayerScene);
+            scenes.put(ScenesEnum.NineTeamsPlayoff, NinePlayerScene);
+            scenes.put(ScenesEnum.TenTeamsPlayoff, TenPlayerScene);
         }
 
         /**

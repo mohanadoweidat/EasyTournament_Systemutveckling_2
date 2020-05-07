@@ -74,7 +74,7 @@ public class PlayersController extends SceneControllerParent {
             Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
             alert1.setTitle("Delete problems");
             alert1.setHeaderText(null);
-            alert1.setContentText("You need to shoes a player to remove");
+            alert1.setContentText("You need to choose a player to remove");
             alert1.showAndWait();
         }
     }
