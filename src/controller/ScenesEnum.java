@@ -5,7 +5,6 @@ public enum ScenesEnum {
     Team,
     Player,
     GroupStage,
-
     ThreeTeamsPlayoff,
     FourTeamsPlayoff,
     FiveTeamsPlayoff,

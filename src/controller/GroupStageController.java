@@ -3,19 +3,13 @@ package controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.converter.IntegerStringConverter;
-import javafx.util.converter.NumberStringConverter;
 import model.*;
-
-import java.awt.event.ActionEvent;
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class GroupStageController extends SceneControllerParent {
 
@@ -42,20 +36,12 @@ public class GroupStageController extends SceneControllerParent {
 
     private ObservableList <TeamStats> data = FXCollections.observableArrayList();
 
-
-    private TeamStats teamStats= new TeamStats("1","hola",2,2,3,4);
-
-
     @FXML
     public void setGroupStageGUI(AmountOfTeams selectedItem) throws IOException {
-        //
-
         switch (selectedItem) {
             case Three:
-
                 break;
             case Four:
-
                 break;
             case Five:
                 break;
@@ -71,11 +57,10 @@ public class GroupStageController extends SceneControllerParent {
                 break;
         }
     }
+
     //Groupstage
     public void initTable(){
         try{
-           // tblGroupStage.getColumns().addAll(colPosition,colTeams,colWins,colDraws,colLosses,colPoints);
-
             colPosition.setCellValueFactory(new PropertyValueFactory<>("Position"));
             colTeams.setCellValueFactory(new PropertyValueFactory<>("Teams"));
             colWins.setCellValueFactory(new PropertyValueFactory<>("Wins"));
@@ -86,78 +71,44 @@ public class GroupStageController extends SceneControllerParent {
             tblGroupStage.setItems(data);
             editableCols();
             loadData();
-
-            //tblGroupStage.setItems(data);
-
-
         }catch (Exception e){
             e.printStackTrace();
         }
-
-       // initCols();
-        //editableCols();
-        //loadData();
-       // TeamStats teamStats= new TeamStats("team1","1",1,1,1,1);
-        //tblGroupStage.getItems().add(teamStats);
-    }
-
-
-    public void initCols(){
-        colPosition.setCellValueFactory(new PropertyValueFactory<>("Position"));
-        colTeams.setCellValueFactory(new PropertyValueFactory<>("Teams"));
-        colWins.setCellValueFactory(new PropertyValueFactory<>("Wins"));
-        colLosses.setCellValueFactory(new PropertyValueFactory<>("Losses"));
-        colDraws.setCellValueFactory(new PropertyValueFactory<>("Draws"));
-        colPoints.setCellValueFactory(new PropertyValueFactory<>("Points"));
-        tblGroupStage.setItems(data);
-
-        editableCols();
     }
 
     private void editableCols(){
         colPosition.setCellFactory(TextFieldTableCell.forTableColumn());
         colPosition.setOnEditCommit(e->{
             e.getTableView().getItems().get(e.getTablePosition().getRow()).setPosition(e.getNewValue());
-
-
         });
-
 
         colTeams.setCellFactory(TextFieldTableCell.forTableColumn());
         colTeams.setOnEditCommit(e->{
             e.getTableView().getItems().get(e.getTablePosition().getRow()).setTeams(e.getNewValue());
-
-
         });
 
         colWins.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
         colWins.setOnEditCommit(e->{
             e.getTableView().getItems().get(e.getTablePosition().getRow()).setWins(Integer.parseInt(String.valueOf(e.getNewValue())));
-
-
         });
+
         colLosses.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
         colLosses.setOnEditCommit(e->{
             e.getTableView().getItems().get(e.getTablePosition().getRow()).setLosses(Integer.parseInt(String.valueOf(e.getNewValue())));
-
-
         });
+
         colDraws.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
         colDraws.setOnEditCommit(e->{
             e.getTableView().getItems().get(e.getTablePosition().getRow()).setDraws(Integer.parseInt(String.valueOf(e.getNewValue())));
-
-
         });
+
         colPoints.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
         colPoints.setOnEditCommit(e->{
             e.getTableView().getItems().get(e.getTablePosition().getRow()).setPoints(Integer.parseInt(String.valueOf(e.getNewValue())));
         });
 
-
         tblGroupStage.setEditable(true);
     }
-
-
 
     private void loadData(){
         ObservableList<TeamStats> dataTable= FXCollections.observableArrayList();
@@ -166,7 +117,4 @@ public class GroupStageController extends SceneControllerParent {
             tblGroupStage.setItems(dataTable);
         }
     }
-
-
-
 }

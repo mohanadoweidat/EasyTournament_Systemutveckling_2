@@ -16,7 +16,6 @@ public class MainController {
 
     private SceneSetter sceneSetter = new SceneSetter();
 
-
     public MainController(Stage mainWindow, Player player, Tournament tournament) {
         this.mainWindow = mainWindow;
         this.player = player;

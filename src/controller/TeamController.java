@@ -132,43 +132,43 @@ public class TeamController extends SceneControllerParent {
         try {
             switch (teamsBox.getSelectionModel().getSelectedItem()) {
                 case Three:
-                    tblTeams.getColumns().addAll(column, column1, column2, column3);
+                    tblTeams.getColumns().addAll(column, column1, column2, column3, column4, column5, column6, column7, column8, column9, column10);
                     tblTeams.setItems(addTeams());
                     selectTeamBox.getItems().addAll("Team1", "Team2", "Team3");
                     spotBox.getItems().addAll("Player1", "Player2", "Player3" , "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
                     break;
                 case Four:
-                    tblTeams.getColumns().addAll(column, column1, column2, column3, column4);
+                    tblTeams.getColumns().addAll(column, column1, column2, column3, column4, column5, column6, column7, column8, column9, column10);
                     tblTeams.setItems(addTeams());
                     selectTeamBox.getItems().addAll("Team1", "Team2", "Team3", "Team4");
                     spotBox.getItems().addAll("Player1", "Player2", "Player3" , "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
                     break;
                 case Five:
-                    tblTeams.getColumns().addAll(column, column1, column2, column3, column4, column5);
+                    tblTeams.getColumns().addAll(column, column1, column2, column3, column4, column5, column6, column7, column8, column9, column10);
                     tblTeams.setItems(addTeams());
                     selectTeamBox.getItems().addAll("Team1", "Team2", "Team3", "Team4", "Team5");
                     spotBox.getItems().addAll("Player1", "Player2", "Player3" , "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
                     break;
                 case Six:
-                    tblTeams.getColumns().addAll(column, column1, column2, column3, column4, column5, column6);
+                    tblTeams.getColumns().addAll(column, column1, column2, column3, column4, column5, column6, column7, column8, column9, column10);
                     tblTeams.setItems(addTeams());
                     selectTeamBox.getItems().addAll("Team1", "Team2", "Team3", "Team4", "Team5", "Team6");
                     spotBox.getItems().addAll("Player1", "Player2", "Player3" , "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
                     break;
                 case Seven:
-                    tblTeams.getColumns().addAll(column, column1, column2, column3, column4, column5, column6, column7);
+                    tblTeams.getColumns().addAll(column, column1, column2, column3, column4, column5, column6, column7, column8, column9, column10);
                     tblTeams.setItems(addTeams());
                     selectTeamBox.getItems().addAll("Team1", "Team2", "Team3", "Team4", "Team5", "Team6", "Team7");
                     spotBox.getItems().addAll("Player1", "Player2", "Player3" , "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
                     break;
                 case Eight:
-                    tblTeams.getColumns().addAll(column, column1, column2, column3, column4, column5, column6, column7, column8);
+                    tblTeams.getColumns().addAll(column, column1, column2, column3, column4, column5, column6, column7, column8, column9, column10);
                     tblTeams.setItems(addTeams());
                     selectTeamBox.getItems().addAll("Team1", "Team2", "Team3", "Team4", "Team5", "Team6", "Team7", "Team8");
                     spotBox.getItems().addAll("Player1", "Player2", "Player3" , "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
                     break;
                 case Nine:
-                    tblTeams.getColumns().addAll(column, column1, column2, column3, column4, column5, column6, column7, column8, column9);
+                    tblTeams.getColumns().addAll(column, column1, column2, column3, column4, column5, column6, column7, column8, column9, column10);
                     tblTeams.setItems(addTeams());
                     selectTeamBox.getItems().addAll("Team1", "Team2", "Team3", "Team4", "Team5", "Team6", "Team7", "Team8", "Team9");
                     spotBox.getItems().addAll("Player1", "Player2", "Player3" , "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
@@ -489,53 +489,5 @@ public class TeamController extends SceneControllerParent {
                 team10.setPlayer10(playersBox.getValue());
         }
         tblTeams.refresh();
-    }
-
-    public void click(MouseEvent event) {
-        if(event.getClickCount()==1){ // double click
-
-            Player selected = (Player) tblTeams.getSelectionModel().getSelectedItem();
-            if(selected !=null){
-                System.out.println("select : "+selected.toString());
-
-            }
-        }
-    }
-    public void dragDetected(MouseEvent event) {
-        // drag was detected, start drag-and-drop gesture
-        Player selected = (Player) tblTeams.getSelectionModel().getSelectedItem();
-        if(selected !=null){
-
-            Dragboard db = tblTeams.startDragAndDrop(TransferMode.ANY);
-            ClipboardContent content = new ClipboardContent();
-            content.putString(String.valueOf(selected.getName()));
-            db.setContent(content);
-            event.consume();
-        }
-    }
-    public void dragOver(DragEvent event) {
-        // data is dragged over the target
-        Dragboard db = event.getDragboard();
-        if (event.getDragboard().hasString()){
-            event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
-        }
-        event.consume();
-    }
-    public void dragDropped(DragEvent event) {
-
-
-        Dragboard db = event.getDragboard();
-        boolean success = false;
-        if (event.getDragboard().hasString()) {
-            String text = db.getString();
-            Player p = new Player(text);
-            p.setTeam1("Team1");
-            //playerSave.add(p);
-            //tblTeams.setItems(getPlayer(playerSave));
-            success = true;
-            column1.setCellValueFactory(new PropertyValueFactory<>("name"));
-        }
-        event.setDropCompleted(success);
-        event.consume();
     }
 }

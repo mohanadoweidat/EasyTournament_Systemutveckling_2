@@ -1,11 +1,11 @@
 package controller;
 
-
 import javafx.scene.Scene;
 
 import java.util.HashMap;
 
 public class ScenesHashMap {
+
     private HashMap<ScenesEnum, Scene> scenes = new HashMap<>();
 
     public synchronized void put(ScenesEnum name, Scene scene){

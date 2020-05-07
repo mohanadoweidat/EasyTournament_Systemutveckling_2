@@ -1,22 +1,13 @@
 package controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 import model.*;
 
-import java.awt.*;
-import java.io.IOException;
-
 public class PlayoffsController extends SceneControllerParent{
-    private AmountOfTeams amountOfTeams;
 
+    private AmountOfTeams amountOfTeams;
     @FXML
     private TextField tfTeam1 = new TextField();
     @FXML
@@ -92,46 +83,9 @@ public class PlayoffsController extends SceneControllerParent{
     @FXML
     private Label lblQf4Away = new Label();
 
-    @FXML
-    public void setPlayoffsGUI(ActionEvent event, AmountOfTeams selectedItem) throws IOException {
-        this.amountOfTeams=selectedItem;
-        FXMLLoader loader = new FXMLLoader();
-        switch (selectedItem) {
-            case Three:
-                loader.setLocation(getClass().getResource("../view/ThreeTeamsPlayoff.fxml"));
-                break;
-            case Four:
-                loader.setLocation(getClass().getResource("../view/fourTeamsPlayoff.fxml"));
-                break;
-            case Five:
-                loader.setLocation(getClass().getResource("../view/FiveTeamsPlayoff.fxml"));
-                break;
-            case Six:
-                loader.setLocation(getClass().getResource("../view/SixTeamsPlayoff.fxml"));
-                break;
-            case Seven:
-                loader.setLocation(getClass().getResource("../view/SevenTeamsPlayoff.fxml"));
-                break;
-            case Eight:
-                loader.setLocation(getClass().getResource("../view/EightTeamPlayoffs.fxml"));
-                break;
-            case Nine:
-                loader.setLocation(getClass().getResource("../view/NineTeamsPlayoff.fxml"));
-                break;
-            case Ten:
-                loader.setLocation(getClass().getResource("../view/TenTeamsPlayoff.fxml"));
-                break;
-        }
-        Parent playerGUI = loader.load();
-//        Controller controller = loader.getController();
-        Scene playerScene = new Scene(playerGUI);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(playerScene);
-        window.show();
-    }
-
     public void results() {
         boolean winner = true;
+
         try {
             int score1 = Integer.parseInt(tfTeam1.getText());
             int score2 = Integer.parseInt(tfTeam2.getText());
@@ -144,8 +98,8 @@ public class PlayoffsController extends SceneControllerParent{
                 tfSemifinal1Home.setPromptText("Team 2");
                 lblSemifinal1.setText("Team 2");
             }
-        }catch(NumberFormatException ex){ // handle your exception
-
+        }catch(NumberFormatException ex){
+            ex.printStackTrace();
         }
     }
 
@@ -176,6 +130,7 @@ public class PlayoffsController extends SceneControllerParent{
     public void gameOne(){
         int score1 = Integer.parseInt(tfTeam1.getText());
         int score2 = Integer.parseInt(tfTeam2.getText());
+
         if (score1 > score2) {
             tfSemifinal1Home.setPromptText("Team 1");
             lblSemifinal1Home.setText("Team 1");
@@ -188,6 +143,7 @@ public class PlayoffsController extends SceneControllerParent{
     public void gameTwo(){
         int score3 = Integer.parseInt(tfTeam3.getText());
         int score4 = Integer.parseInt(tfTeam4.getText());
+
         if (score3 > score4){
             tfSemifinal1Away.setPromptText("Team 3");
             lblSemifinal1Away.setText("Team 3");
@@ -222,6 +178,7 @@ public class PlayoffsController extends SceneControllerParent{
             lblSemifinal2Away.setText(lblQf4Away.getText());
         }
     }
+
     public void gameFive(){
         int score9 = Integer.parseInt(tfSemifinal1Home.getText());
         int score10 = Integer.parseInt(tfSemifinal1Away.getText());
@@ -234,6 +191,7 @@ public class PlayoffsController extends SceneControllerParent{
             tfFinalHome.setPromptText(lblSemifinal1Away.getText());
         }
     }
+
     public void gameSix(){
         int score11 = Integer.parseInt(tfSemifinal2Home.getText());
         int score12 = Integer.parseInt(tfSemifinal2Away.getText());

@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 public class PlayersController extends SceneControllerParent {
 
-    private AmountOfTeams amountOfTeams;
     @FXML
     private ListView listAddedPlayers = new ListView();
     @FXML
@@ -56,6 +55,7 @@ public class PlayersController extends SceneControllerParent {
     /**
      * Removes players from the "added players" list
      */
+    //TODO FIXA REMOVE MED NYA CONTROLLERS OCH MODELKLASSER
     public void removePlayerPlayersGui() {
         final int selectedIndex = listAddedPlayers.getSelectionModel().getSelectedIndex();
         if (selectedIndex != -1) {
