@@ -27,10 +27,10 @@
       <Label fx:id="lblFinalAway" layoutX="617.0" layoutY="235.0" />
       <Label fx:id="lblSemifinal2Home" layoutX="726.0" layoutY="181.0" />
       <Label fx:id="lblSemifinal2Away" layoutX="726.0" layoutY="291.0" />
-      <Label fx:id="lblQfHome" layoutX="830.0" layoutY="146.0" />
-      <Label layoutX="830.0" layoutY="205.0" text="Team 7" />
-      <Label layoutX="830.0" layoutY="261.0" text="Team 8" />
-      <Label layoutX="830.0" layoutY="333.0" text="Team 9" />
+      <Label fx:id="lblQf3Home" layoutX="830.0" layoutY="146.0" />
+      <Label fx:id="lblQf3Away" layoutX="830.0" layoutY="205.0" text="Team 7" />
+      <Label fx:id="lblQf4Home" layoutX="830.0" layoutY="261.0" text="Team 8" />
+      <Label fx:id="lblQf4Away" layoutX="830.0" layoutY="333.0" text="Team 9" />
       <Label layoutX="921.0" layoutY="181.0" text="Team 6" />
       <Label layoutX="921.0" layoutY="120.0" text="Team 5" />
       <Label fx:id="lblWinner" layoutX="557.0" layoutY="181.0" />

@@ -27,8 +27,8 @@
       <Label fx:id="lblSemifinal1Home" layoutX="400.0" layoutY="154.0" />
       <Label fx:id="lblSemifinal1Away" layoutX="400.0" layoutY="280.0" />
       <Label fx:id="lblSemifinal2Away" layoutX="790.0" layoutY="280.0" text="Team 7" />
-      <Label layoutX="917.0" layoutY="125.0" text="Team 5" />
-      <Label layoutX="917.0" layoutY="193.0" text="Team 6" />
+      <Label fx:id="lblQf3Home" layoutX="917.0" layoutY="125.0" text="Team 5" />
+      <Label fx:id="lblQf3Away" layoutX="917.0" layoutY="193.0" text="Team 6" />
       <Pane layoutY="-4.0" prefHeight="528.0" prefWidth="239.0" style="-fx-background-color: #3b3f41 #3b3f41;">
          <children>
             <Label layoutX="59.0" layoutY="39.0" text="Quarterfinals 1" textFill="WHITE" />
@@ -81,7 +81,7 @@
       <Label layoutX="285.0" layoutY="362.0" text="QF-2" textFill="WHITE" />
       <Label layoutX="600.0" layoutY="252.0" text="Finals" textFill="WHITE" />
       <Label layoutX="796.0" layoutY="121.0" text="SF-2" textFill="WHITE" />
-      <Label layoutX="917.0" layoutY="93.0" text="QF-2" textFill="WHITE" />
+      <Label layoutX="917.0" layoutY="93.0" text="QF-3" textFill="WHITE" />
       <Label layoutX="592.0" layoutY="52.0" text="Winner" textFill="WHITE">
          <font>
             <Font size="16.0" />

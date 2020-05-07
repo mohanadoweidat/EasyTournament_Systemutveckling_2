@@ -33,7 +33,7 @@
       <Label fx:id="lblQualGame2Home" layoutX="1095.0" layoutY="378.0" text="Team 9" />
       <Label fx:id="lblQualGame2Away" layoutX="1092.0" layoutY="455.0" text="Team 10" />
       <Label fx:id="lblQf3Home" layoutX="969.0" layoutY="169.0" />
-      <Label fx:id="lblqf3Away" layoutX="968.0" layoutY="243.0" text="Team 7" />
+      <Label fx:id="lblQf3Away" layoutX="968.0" layoutY="243.0" text="Team 7" />
       <Label fx:id="lblQf4Home" layoutX="968.0" layoutY="319.0" text="Team 8" />
       <Label fx:id="lblQf4Away" layoutX="969.0" layoutY="395.0" />
       <Label fx:id="lblWinner" layoutX="605.0" layoutY="136.0">
