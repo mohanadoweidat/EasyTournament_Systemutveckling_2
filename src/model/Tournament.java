@@ -14,7 +14,7 @@ public class Tournament {
 
     private AmountOfTeams amountOfTeams;
     private int teamIndex = 1;
-    private ArrayList<Player> players = new ArrayList();
+    private ArrayList<Player> arrayListPlayers = new ArrayList();
     private ArrayList teams = new ArrayList();
 
     /**
@@ -34,23 +34,23 @@ public class Tournament {
      * @param player a player name
      */
     public void setPlayer(Player player){
-        players.add(player);
+        arrayListPlayers.add(player);
     }
 
     public Player getPlayer(int i){
-        return players.get(i);
+        return arrayListPlayers.get(i);
     }
 
     public void removePlayer(int i){
-        players.remove(i);
+        arrayListPlayers.remove(i);
     }
 
     /**
      * Returns a list of different players
      * @return the list of different players
      */
-    public ArrayList<Player> getPlayers(){
-        return players;
+    public ArrayList<Player> getArrayListPlayers(){
+        return arrayListPlayers;
     }
 
     public AmountOfTeams getAmountOfTeams(){

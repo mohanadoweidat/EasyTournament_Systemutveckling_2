@@ -20,7 +20,7 @@ public class Team {
     private String player9;
     private String player10;
 
-    private final ArrayList<Player> players = new ArrayList();
+    private final ArrayList<Player> arrayListPlayers = new ArrayList();
 
     public Team(){}
 
@@ -62,7 +62,7 @@ public class Team {
      * @param player an instance of the Player-class
      */
     public void addPlayers(Player player){
-        players.add(player);
+        arrayListPlayers.add(player);
     }
 
     public String getPlayer1() {

@@ -103,7 +103,7 @@
          <font>
             <Font size="18.0" />
          </font></CheckBox>
-      <ChoiceBox fx:id="teamsBox" layoutX="220.0" layoutY="50.0" prefHeight="27.0" prefWidth="108.0" />
+      <ChoiceBox fx:id="cbTeams" layoutX="220.0" layoutY="50.0" prefHeight="27.0" prefWidth="108.0" />
       <Label layoutX="218.0" layoutY="21.0" text="Amount of teams:" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
@@ -114,9 +114,9 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="btnAddToTeam" layoutX="330.0" layoutY="208.0" mnemonicParsing="false" onAction="#addTeams" prefHeight="27.0" prefWidth="82.0" style="-fx-background-color: #2b2b2b #2b2b2b;" text="Add Player" textFill="WHITE" />
-      <ChoiceBox fx:id="playersBox" layoutX="223.0" layoutY="135.0" prefHeight="27.0" prefWidth="101.0" />
-      <ChoiceBox fx:id="selectTeamBox" layoutX="223.0" layoutY="171.0" prefHeight="27.0" prefWidth="101.0" />
-      <ChoiceBox fx:id="spotBox" layoutX="223.0" layoutY="208.0" prefHeight="27.0" prefWidth="101.0" />
+      <Button fx:id="btnAddToTeam" layoutX="330.0" layoutY="208.0" mnemonicParsing="false" onAction="#addPlayersToTeams" prefHeight="27.0" prefWidth="82.0" style="-fx-background-color: #2b2b2b #2b2b2b;" text="Add Player" textFill="WHITE" />
+      <ChoiceBox fx:id="cbPlayers" layoutX="223.0" layoutY="135.0" prefHeight="27.0" prefWidth="101.0" />
+      <ChoiceBox fx:id="cbSelectTeams" layoutX="223.0" layoutY="171.0" prefHeight="27.0" prefWidth="101.0" />
+      <ChoiceBox fx:id="cbPlacingOnTable" layoutX="223.0" layoutY="208.0" prefHeight="27.0" prefWidth="101.0" />
    </children>
 </Pane>

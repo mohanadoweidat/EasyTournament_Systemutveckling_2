@@ -122,7 +122,7 @@ public class MainController {
     }
 
     public ArrayList<Player> getPlayers(){
-        return tournament.getPlayers();
+        return tournament.getArrayListPlayers();
     }
 
     public void removePlayer(int i){
