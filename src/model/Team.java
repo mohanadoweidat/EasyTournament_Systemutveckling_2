@@ -8,17 +8,7 @@ import java.util.ArrayList;
  */
 public class Team {
 
-    private String name;
-    private String player1;
-    private String player2;
-    private String player3;
-    private String player4;
-    private String player5;
-    private String player6;
-    private String player7;
-    private String player8;
-    private String player9;
-    private String player10;
+    private String name, player1, player2, player3, player4, player5, player6, player7, player8, player9, player10;
 
     private final ArrayList<Player> arrayListPlayers = new ArrayList();
 
@@ -36,9 +26,6 @@ public class Team {
         this.player8 = player8;
         this.player9 = player9;
         this.player10 = player10;
-
-
-
     }
 
     /**
