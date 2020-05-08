@@ -11,7 +11,7 @@ import model.*;
 
 public class TeamController extends SceneControllerParent {
 
-    private AmountOfTeams amountOfTeams;
+     private AmountOfTeams amountOfTeams;
     @FXML
     private TableView tblTeams = new TableView<>();
     @FXML
