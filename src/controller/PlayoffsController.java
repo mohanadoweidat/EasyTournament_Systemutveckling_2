@@ -83,25 +83,6 @@ public class PlayoffsController extends SceneControllerParent{
     @FXML
     private Label lblQf4Away = new Label();
 
-    public void results() {
-        boolean winner = true;
-
-        try {
-            int score1 = Integer.parseInt(tfTeam1.getText());
-            int score2 = Integer.parseInt(tfTeam2.getText());
-            System.out.println(score1+ ", " + score2);
-
-            if (score1 > score2) {
-                tfSemifinal1Home.setPromptText("Team 1");
-                lblSemifinal1.setText("Team 1");
-            } else if (score1 < score2) {
-                tfSemifinal1Home.setPromptText("Team 2");
-                lblSemifinal1.setText("Team 2");
-            }
-        }catch(NumberFormatException ex){
-            ex.printStackTrace();
-        }
-    }
 
     /**
      * Checks the scores from the textfield and compares the scores

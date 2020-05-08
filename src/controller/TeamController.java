@@ -57,17 +57,27 @@ public class TeamController extends SceneControllerParent {
     private TableColumn<Team, String> columnPlayer10 = new TableColumn("Player 10");
 
     private ObservableList<Team> observablePlayers = FXCollections.observableArrayList();
-
+    /**
+     * Changes scenes to the FirstPage
+     */
     @FXML
     public void setFirstPageGUI(ActionEvent actionEvent) {
         mainController.setScene(ScenesEnum.FirstPage);
     }
 
+    /**
+     * Changes scenes to the PlayersGUI
+     */
     @FXML
     public void setPlayerGUI(ActionEvent actionEvent) {
         mainController.setScene(ScenesEnum.Player);
     }
 
+    /**
+     * Starts the tournament when button is clicked.
+     * Choosing the playoff scene depending on which is selected
+     * @param actionEvent
+     */
     @FXML
     public void startTournamentClicked(ActionEvent actionEvent) {
         if (cbGroupStage.isSelected()) {
@@ -109,6 +119,9 @@ public class TeamController extends SceneControllerParent {
         }
     }
 
+    /**
+     * Puts the value on the different columns
+     */
     public void initialize() {
         cbTeams.getItems().addAll(AmountOfTeams.values());
         columnTeam.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -124,6 +137,10 @@ public class TeamController extends SceneControllerParent {
         columnPlayer10.setCellValueFactory(new PropertyValueFactory<>("player10"));
     }
 
+    /**
+     * Chooses the amount of columns and rows for the teams and players depending on which is choosen in the ChoiceBox
+     * @param event
+     */
     @FXML
     private void initTeamsTableData(ActionEvent event) {
         for (Player p : mainController.getPlayers()){
@@ -182,6 +199,11 @@ public class TeamController extends SceneControllerParent {
             }
         } catch (Exception e) {}
     }
+
+    /**
+     * Adds the amount of teams to the table
+     * @return
+     */
 
     public ObservableList<Team> addPlayersToTeams(){
         switch (cbTeams.getSelectionModel().getSelectedItem()){
@@ -266,6 +288,11 @@ public class TeamController extends SceneControllerParent {
         return observablePlayers;
     }
 
+    /**
+     * Adds the Player object to specific index in the table
+     * This way we can sort the teams
+     * @param event
+     */
     @FXML
     public void addPlayersToTeams(ActionEvent event){
         if ((cbSelectTeams.getValue()).equals("Team1")){
