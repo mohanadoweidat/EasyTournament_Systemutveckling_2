@@ -3,6 +3,11 @@ package model;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
+/**
+ * This class stores the stats of the teams
+ *
+ * @author Andreas von Uthmann, Carl Hägred, Gustav Edén, Joel Svensson
+ */
 public class TeamStats {
     private SimpleStringProperty teams,position;
     private SimpleIntegerProperty points,draws,wins,losses;
@@ -17,14 +22,23 @@ public class TeamStats {
     }
 
 
+    /**
+     * Returns the selected team
+     */
     public String getTeams() {
         return teams.get();
     }
 
+    /**
+     * Saves the selected team
+     */
     public void setTeams(String teams) {
         this.teams.set(teams);
     }
 
+    /**
+     * Returns the
+     */
     public String getPosition() {
         return position.get();
     }
@@ -33,6 +47,9 @@ public class TeamStats {
         this.position.set(position);
     }
 
+    /**
+     * Returns the points
+     */
     public Integer getPoints() {
         return points.get();
     }
@@ -41,6 +58,9 @@ public class TeamStats {
         this.points.set(points);
     }
 
+    /**
+     * Returns the
+     */
     public Integer getDraws() {
         return draws.get();
     }
@@ -49,6 +69,9 @@ public class TeamStats {
         this.draws.set(draws);
     }
 
+    /**
+     * Returns the looser
+     */
     public Integer getLosses() {
         return losses.get();
     }
@@ -57,6 +80,9 @@ public class TeamStats {
         this.losses.set(losses);
     }
 
+    /**
+     * Returns the winner
+     */
     public Integer getWins() {
         return wins.get();
     }

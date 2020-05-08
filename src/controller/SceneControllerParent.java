@@ -1,5 +1,9 @@
 package controller;
 
+/**
+ *
+ * @author Andreas von Uthmann, Carl Hägred, Gustav Edén, Joel Svensson
+ */
 public abstract class SceneControllerParent {
 
     protected MainController mainController;

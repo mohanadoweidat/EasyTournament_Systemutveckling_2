@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * The class represent teams in the tournament
- * @author Carl Hagred
+ * @author Andreas von Uthmann, Carl Hägred, Gustav Edén, Joel Svensson
  */
 public class Team {
 

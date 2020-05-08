@@ -7,6 +7,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import model.*;
 
+/**
+ *
+ * @author Andreas von Uthmann, Carl Hägred, Gustav Edén, Joel Svensson
+ */
 public class MainController {
 
     private Stage mainWindow;
