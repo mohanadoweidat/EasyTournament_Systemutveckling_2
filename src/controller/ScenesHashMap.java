@@ -4,6 +4,10 @@ import javafx.scene.Scene;
 
 import java.util.HashMap;
 
+/**
+ *
+ * @author Andreas von Uthmann, Carl Hägred, Gustav Edén, Joel Svensson
+ */
 public class ScenesHashMap {
 
     private HashMap<ScenesEnum, Scene> scenes = new HashMap<>();

@@ -5,6 +5,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import model.*;
 
+/**
+ * This class controls the logic for the playoffs.
+ * Keeps track of the results for the playoffs
+ *
+ * @author Andreas von Uthmann, Carl Hägred, Gustav Edén, Joel Svensson
+ */
+
 public class PlayoffsController extends SceneControllerParent{
 
     private AmountOfTeams amountOfTeams;
