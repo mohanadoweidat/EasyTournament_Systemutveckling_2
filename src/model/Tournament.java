@@ -1,9 +1,5 @@
 package model;
 
-
-//import controller.PlayersController;
-//import controller.TeamsController;
-
 import java.util.ArrayList;
 
 /**
@@ -26,10 +22,6 @@ public class Tournament {
     }
 
     /**
-     * Switches the groupStage boolean between true and false
-     */
-
-    /**
      * Saves the player that is getting sent in trough the parameters to the players list
      * @param player a player name
      */
@@ -37,10 +29,16 @@ public class Tournament {
         arrayListPlayers.add(player);
     }
 
+    /**
+     * Returns the list of all players
+     */
     public Player getPlayer(int i){
         return arrayListPlayers.get(i);
     }
 
+    /**
+     * Removes a player object
+     */
     public void removePlayer(int i){
         arrayListPlayers.remove(i);
     }
@@ -53,6 +51,9 @@ public class Tournament {
         return arrayListPlayers;
     }
 
+    /**
+     * gets the amount of teams
+     */
     public AmountOfTeams getAmountOfTeams(){
         return amountOfTeams;
     }

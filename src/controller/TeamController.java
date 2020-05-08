@@ -71,6 +71,7 @@ public class TeamController extends SceneControllerParent {
     @FXML
     public void startTournamentClicked(ActionEvent actionEvent) {
         if (cbGroupStage.isSelected()) {
+            mainController.setAmountOfTeams(cbTeams.getSelectionModel().getSelectedItem());
             mainController.setScene(ScenesEnum.GroupStage);
         } else if (cbPlayoffs.isSelected()) {
             switch (cbTeams.getSelectionModel().getSelectedItem()) {
