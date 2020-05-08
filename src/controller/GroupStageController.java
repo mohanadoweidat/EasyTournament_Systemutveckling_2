@@ -11,6 +11,11 @@ import javafx.util.converter.IntegerStringConverter;
 import model.*;
 import java.io.IOException;
 
+/**
+ *
+ *
+ * @author Andreas von Uthmann, Carl Hägred, Gustav Edén, Joel Svensson
+ */
 public class GroupStageController extends SceneControllerParent {
 
     @FXML

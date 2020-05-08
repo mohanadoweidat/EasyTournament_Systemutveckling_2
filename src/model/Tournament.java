@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * The class is responsible for save tha tournaments information
- * @author Carl Hagred
+ * @author Andreas von Uthmann, Carl Hägred, Gustav Edén, Joel Svensson
  */
 public class Tournament {
 

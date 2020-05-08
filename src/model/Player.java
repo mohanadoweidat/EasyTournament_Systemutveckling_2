@@ -1,5 +1,9 @@
 package model;
 
+/**
+ *
+ * @author Andreas von Uthmann, Carl Hägred, Gustav Edén, Joel Svensson
+ */
 public class Player {
     private String name;
 

@@ -7,6 +7,12 @@ import model.Player;
 
 import java.util.ArrayList;
 
+/**
+ *
+ *
+ * @author Andreas von Uthmann, Carl Hägred, Gustav Edén, Joel Svensson
+ */
+
 public class PlayersController extends SceneControllerParent {
 
     @FXML
