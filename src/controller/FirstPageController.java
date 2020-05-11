@@ -18,5 +18,9 @@ public class FirstPageController extends SceneControllerParent {
     public void createTournamentClicked(ActionEvent actionEvent) {
         mainController.setScene(ScenesEnum.Player);
     }
+
+    public void handleLeaguePlay(){
+        mainController.setScene(ScenesEnum.GroupStage);
+    }
 }
 

@@ -117,7 +117,7 @@ public class TeamController extends SceneControllerParent {
             alert1.setContentText("You have to choose either Groupstage or Playoffs");
             alert1.showAndWait();
         }
-        mainController.test();
+        mainController.loadTeamsToLeaguePlay();
     }
 
     /**

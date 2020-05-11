@@ -72,33 +72,34 @@
                 <TableColumn fx:id="colPoints" prefWidth="107.0" text="Points" />
             </columns>
         </TableView>
-      <Button fx:id="btnAddTeams" layoutX="412.0" layoutY="217.0" mnemonicParsing="false" onAction="#initTable" prefHeight="50.0" prefWidth="99.0" style="-fx-background-color: #3b3f41#3b3f41;" text="Add teams" textFill="WHITE" />
+      <Button fx:id="btnAddTeams" layoutX="363.0" layoutY="217.0" mnemonicParsing="false" onAction="#initTable" prefHeight="50.0" prefWidth="99.0" style="-fx-background-color: #3b3f41#3b3f41;" text="Import Teams" textFill="WHITE" />
       <Label layoutX="409.0" layoutY="20.0" prefHeight="32.0" prefWidth="127.0" text="Schedule" textFill="WHITE">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <Label layoutX="339.0" layoutY="74.0" prefHeight="25.0" prefWidth="73.0" text="Team1" textFill="WHITE">
+      <Label fx:id="lblTeamToPlay1" layoutX="339.0" layoutY="74.0" prefHeight="25.0" prefWidth="73.0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="555.0" layoutY="74.0" prefHeight="25.0" prefWidth="73.0" text="Team2" textFill="WHITE">
+      <Label fx:id="lblTeamToPlay3" layoutX="555.0" layoutY="74.0" prefHeight="25.0" prefWidth="73.0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="555.0" layoutY="113.0" prefHeight="25.0" prefWidth="73.0" text="Team4" textFill="WHITE">
+      <Label fx:id="lblTeamToPlay4" layoutX="555.0" layoutY="113.0" prefHeight="25.0" prefWidth="73.0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="339.0" layoutY="113.0" prefHeight="25.0" prefWidth="73.0" text="Team3" textFill="WHITE">
+      <Label fx:id="lblTeamToPlay2" layoutX="339.0" layoutY="113.0" prefHeight="25.0" prefWidth="73.0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
       <Label layoutX="456.0" layoutY="78.0" text="vs" textFill="WHITE" />
       <Label layoutX="456.0" layoutY="117.0" text="vs" textFill="WHITE" />
+      <Button fx:id="btnNextGame" layoutX="473.0" layoutY="217.0" mnemonicParsing="false" onAction="#nextGames" prefHeight="50.0" prefWidth="99.0" style="-fx-background-color: #3b3f41#3b3f41;" text="Next Games" textFill="WHITE" />
     </children>
 </Pane>
