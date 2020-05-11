@@ -1,10 +1,12 @@
 package controller;
 
+import javafx.collections.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import model.Player;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 /**
@@ -25,6 +27,8 @@ public class PlayersController extends SceneControllerParent {
     private ListView listTeamsPlayer = new ListView();
     @FXML
     private TextField tfPlayerName = new TextField();
+
+    private ObservableList<String> doList = FXCollections.observableArrayList();
 
     /**
      * Changes scenes to the firstPageGUI
@@ -98,14 +102,25 @@ public class PlayersController extends SceneControllerParent {
     }
 
     /**
-     * This method will handle the saveing player groups
+     * Writes the group of players too a file
+     * @auther Gustav Edén
      */
-    @FXML
-    public void handleSaveGroups(ActionEvent event){
-        Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
-        alert1.setTitle("Delete problems");
-        alert1.setHeaderText(null);
-        alert1.setContentText("This feature is coming soon");
-        alert1.showAndWait();
+    public void writePlayersToFile(){
+        TextInputDialog textInputDialog= new TextInputDialog("enter groupname");
+        textInputDialog.setTitle("Name your group");
+        textInputDialog.showAndWait();
+        System.out.println(doList.toString());
+        String groupname = textInputDialog.getResult();
+        try {
+            PrintWriter pr = new PrintWriter(groupname);
+
+            for (int i=0; i<doList.size() ; i++) {
+
+                pr.println(doList.get(i));
+            }
+            pr.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
