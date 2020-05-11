@@ -106,7 +106,7 @@ public class PlayersController extends SceneControllerParent {
      * @auther Gustav Edén
      */
     public void writePlayersToFile(){
-        TextInputDialog textInputDialog= new TextInputDialog("enter groupname");
+        TextInputDialog textInputDialog = new TextInputDialog("Enter groupname");
         textInputDialog.setTitle("Name your group");
         textInputDialog.showAndWait();
         System.out.println(doList.toString());

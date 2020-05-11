@@ -7,6 +7,8 @@ import javafx.scene.control.cell.*;
 import javafx.util.converter.IntegerStringConverter;
 import model.*;
 
+import java.util.Random;
+
 /**
  * The class creates the league play
  * @author Andreas von Uthmann, Carl Hägred, Gustav Edén, Joel Svensson
@@ -34,7 +36,23 @@ public class GroupStageController extends SceneControllerParent {
     @FXML
     private TableColumn<TeamStats, Integer> colPoints = new TableColumn<>("points");
 
+    @FXML
+    private Label lblTeamToPlay1;
+
+    @FXML
+    private Label lblTeamToPlay2;
+
+    @FXML
+    private Label lblTeamToPlay3;
+
+    @FXML
+    private Label lblTeamToPlay4;
+
     private ObservableList <TeamStats> data = FXCollections.observableArrayList();
+
+    private Random random = new Random();
+
+    private int teams = 0;
 
     /**
      * Sets up the columns and calls the method that fills the table with the teams
@@ -92,41 +110,99 @@ public class GroupStageController extends SceneControllerParent {
         tblGroupStage.setEditable(true);
     }
 
+    public void nextGames(){
+        if (teams == 0){
+            Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+            alert1.setTitle("Error message");
+            alert1.setHeaderText(null);
+            alert1.setContentText("You need to add teams to see next match");
+            alert1.showAndWait();
+        } else if (teams == 3) {
+            int a = random.nextInt(teams);
+            while (a == 0) {
+                a = random.nextInt(teams);
+            }
+            lblTeamToPlay1.setText("Team " + a);
+            int b = random.nextInt(teams);
+            while (b == a || b == 0) {
+                b = random.nextInt(teams);
+            }
+            lblTeamToPlay3.setText("Team " + b);
+        } else {
+            int a = random.nextInt(teams);
+            while (a == 0) {
+                a = random.nextInt(teams);
+            }
+            lblTeamToPlay1.setText("Team " + a);
+            int b = random.nextInt(teams);
+            while (b == a || b == 0) {
+                b = random.nextInt(teams);
+            }
+            lblTeamToPlay2.setText("Team " + b);
+            int c = random.nextInt(teams);
+            while (c == b || c == a || c == 0) {
+                c = random.nextInt(teams);
+            }
+            lblTeamToPlay3.setText("Team " + c);
+            int d = random.nextInt(teams);
+            while (d == a || d == b || d == c || d == 0) {
+                d = random.nextInt(teams);
+            }
+            lblTeamToPlay4.setText("Team " + d);
+        }
+    }
+
     /**
      * Fills the table with the teams
      */
     public void loadData(){
-        ObservableList<TeamStats> dataTable= FXCollections.observableArrayList();
-        int teams = 0;
-        switch (mainController.getAmountOfTeams()) {
-            case Three:
-                teams = 3;
-                break;
-            case Four:
-                teams = 4;
-                break;
-            case Five:
-                teams = 5;
-                break;
-            case Six:
-                teams = 6;
-                break;
-            case Seven:
-                teams = 7;
-                break;
-            case Eight:
-                teams = 8;
-                break;
-            case Nine:
-                teams = 9;
-                break;
-            case Ten:
-                teams = 10;
-                break;
-        }
-        for(int j =0; j < teams; j++){
-            dataTable.add(new TeamStats(String.valueOf(j + 1),"Team" + (j + 1), 0,0,0,0));
-            tblGroupStage.setItems(dataTable);
+        if ((mainController.getAmountOfTeams()) == null){
+            Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+            alert1.setTitle("Error message");
+            alert1.setHeaderText(null);
+            alert1.setContentText("You need to import players to add them");
+            alert1.showAndWait();
+        }else {
+            ObservableList<TeamStats> dataTable = FXCollections.observableArrayList();
+            teams = 0;
+            switch (mainController.getAmountOfTeams()) {
+                case Three:
+                    teams = 3;
+                    nextGames();
+                    break;
+                case Four:
+                    teams = 4;
+                    nextGames();
+                    break;
+                case Five:
+                    teams = 5;
+                    nextGames();
+                    break;
+                case Six:
+                    teams = 6;
+                    nextGames();
+                    break;
+                case Seven:
+                    teams = 7;
+                    nextGames();
+                    break;
+                case Eight:
+                    teams = 8;
+                    nextGames();
+                    break;
+                case Nine:
+                    teams = 9;
+                    nextGames();
+                    break;
+                case Ten:
+                    teams = 10;
+                    nextGames();
+                    break;
+            }
+            for (int j = 0; j < teams; j++) {
+                dataTable.add(new TeamStats(String.valueOf(j + 1), "Team" + (j + 1), 0, 0, 0, 0));
+                tblGroupStage.setItems(dataTable);
+            }
         }
     }
 }

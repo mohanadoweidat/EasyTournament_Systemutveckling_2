@@ -182,8 +182,7 @@ public class MainController {
         return tournament.getAmountOfTeams();
     }
 
-    public void test(){
-
-       groupStageController.loadData();
+    public void loadTeamsToLeaguePlay(){
+       groupStageController.initTable();
     }
 }
