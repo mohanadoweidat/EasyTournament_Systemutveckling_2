@@ -17,6 +17,11 @@ public class MainController {
     private Player player;
     private Tournament tournament;
     private SceneSetter sceneSetter = new SceneSetter();
+    private PlayersController playersController;
+    private TeamController teamController;
+    private GroupStageController groupStageController;
+    private PlayoffsController playoffsController;
+
 
     public MainController(Stage mainWindow, Player player, Tournament tournament) {
         this.mainWindow = mainWindow;
@@ -120,6 +125,10 @@ public class MainController {
             scenes.put(ScenesEnum.EightTeamsPlayoff, EightPlayerScene);
             scenes.put(ScenesEnum.NineTeamsPlayoff, NinePlayerScene);
             scenes.put(ScenesEnum.TenTeamsPlayoff, TenPlayerScene);
+
+            playersController = playerLoader.getController();
+            teamController = teamLoader.getController();
+            groupStageController = groupStageLoader.getController();
         }
 
         /**
@@ -171,5 +180,10 @@ public class MainController {
      */
     public AmountOfTeams getAmountOfTeams(){
         return tournament.getAmountOfTeams();
+    }
+
+    public void test(){
+
+       groupStageController.loadData();
     }
 }
