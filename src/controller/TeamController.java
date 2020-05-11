@@ -117,6 +117,7 @@ public class TeamController extends SceneControllerParent {
             alert1.setContentText("You have to choose either Groupstage or Playoffs");
             alert1.showAndWait();
         }
+        mainController.test();
     }
 
     /**
@@ -139,7 +140,6 @@ public class TeamController extends SceneControllerParent {
 
     /**
      * Chooses the amount of columns and rows for the teams and players depending on which is choosen in the ChoiceBox
-     * @param event
      */
     @FXML
     private void initTeamsTableData(ActionEvent event) {
@@ -202,7 +202,6 @@ public class TeamController extends SceneControllerParent {
 
     /**
      * Adds the amount of teams to the table
-     * @return
      */
 
     public ObservableList<Team> addPlayersToTeams(){
@@ -291,7 +290,6 @@ public class TeamController extends SceneControllerParent {
     /**
      * Adds the Player object to specific index in the table
      * This way we can sort the teams
-     * @param event
      */
     @FXML
     public void addPlayersToTeams(ActionEvent event){

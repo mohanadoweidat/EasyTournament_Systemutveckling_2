@@ -95,7 +95,7 @@ public class GroupStageController extends SceneControllerParent {
     /**
      * Fills the table with the teams
      */
-    private void loadData(){
+    public void loadData(){
         ObservableList<TeamStats> dataTable= FXCollections.observableArrayList();
         int teams = 0;
         switch (mainController.getAmountOfTeams()) {

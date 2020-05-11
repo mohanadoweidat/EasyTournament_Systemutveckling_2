@@ -5,7 +5,6 @@ import javafx.stage.Stage;
 import model.*;
 
 /**
- *
  * @author Andreas von Uthmann, Carl Hägred, Gustav Edén, Joel Svensson
  */
 public class Main extends Application {
