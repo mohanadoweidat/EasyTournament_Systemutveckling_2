@@ -152,6 +152,14 @@ public class GroupStageController extends SceneControllerParent {
         }
     }
 
+    public void importTeams(){
+        Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+        alert1.setTitle("Error message");
+        alert1.setHeaderText(null);
+        alert1.setContentText("Feature is coming soon");
+        alert1.showAndWait();
+    }
+
     /**
      * Fills the table with the teams
      */
