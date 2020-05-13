@@ -184,15 +184,6 @@ public class GroupStageController extends SceneControllerParent {
      */
     public void loadData(){
         if ((mainController.getAmountOfTeams()) == null){
-            /*Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
-            alert1.setTitle("Error message");
-            alert1.setHeaderText(null);
-            alert1.setContentText("You need to import players to add them");
-            alert1.showAndWait();
-
-             */
-
-
         }else {
             ObservableList<Team> dataTable = FXCollections.observableArrayList();
             teams = 0;
@@ -230,7 +221,6 @@ public class GroupStageController extends SceneControllerParent {
                     nextGames();
                     break;
             }
-
             teamBuffer = (mainController.getTeams());
             for (int j = 0; j < teams; j++) {
                 dataTable.add(teamBuffer.get(j));

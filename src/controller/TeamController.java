@@ -98,7 +98,7 @@ public class TeamController extends SceneControllerParent {
                 new OutputStreamWriter(new FileOutputStream("files/teams.txt"), "ISO-8859-1"))) {
                 for (Team team : teams){
                     bw.write(team.getName() + " ");
-                    bw.write(team.getPlayer1() + " ");
+                    /*bw.write(team.getPlayer1() + " ");
                     bw.write(team.getPlayer2() + " ");
                     bw.write(team.getPlayer3() + " ");
                     bw.write(team.getPlayer4() + " ");
@@ -108,6 +108,7 @@ public class TeamController extends SceneControllerParent {
                     bw.write(team.getPlayer8() + " ");
                     bw.write(team.getPlayer9() + " ");
                     bw.write(team.getPlayer10() + " ");
+                    */
                     bw.newLine();
                 }
             bw.flush();
