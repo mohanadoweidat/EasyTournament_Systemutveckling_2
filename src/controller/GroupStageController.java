@@ -7,6 +7,9 @@ import javafx.scene.control.cell.*;
 import javafx.util.converter.IntegerStringConverter;
 import model.*;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Random;
@@ -55,6 +58,8 @@ public class GroupStageController extends SceneControllerParent {
     private ObservableList <Team> data = FXCollections.observableArrayList();
 
     private Random random = new Random();
+
+    private ArrayList<Team> teamsBuffer = new ArrayList();
 
     private int teams = 0;
 
@@ -154,11 +159,24 @@ public class GroupStageController extends SceneControllerParent {
     }
 
     public void importTeams(){
-        Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
-        alert1.setTitle("Error message");
-        alert1.setHeaderText(null);
-        alert1.setContentText("Feature is coming soon");
-        alert1.showAndWait();
+        teamsBuffer.clear();
+        ObservableList<Team> dataTable = FXCollections.observableArrayList();
+        try (BufferedReader br = new BufferedReader(
+                new InputStreamReader(new FileInputStream("files/teams.txt"), "UTF-8"))) {
+            String name = br.readLine();
+
+            while (name != null) {
+                System.out.println(name);
+                //Team team = new Team(name);
+                dataTable.add(new Team(name));
+                //teamBuffer.add(name);
+                name = br.readLine();
+            }
+
+            tblGroupStage.setItems(dataTable);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -166,11 +184,15 @@ public class GroupStageController extends SceneControllerParent {
      */
     public void loadData(){
         if ((mainController.getAmountOfTeams()) == null){
-            Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+            /*Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
             alert1.setTitle("Error message");
             alert1.setHeaderText(null);
             alert1.setContentText("You need to import players to add them");
             alert1.showAndWait();
+
+             */
+
+
         }else {
             ObservableList<Team> dataTable = FXCollections.observableArrayList();
             teams = 0;
