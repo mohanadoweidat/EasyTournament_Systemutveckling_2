@@ -1,5 +1,7 @@
 package model;
 
+import javafx.beans.property.SimpleIntegerProperty;
+
 import java.util.ArrayList;
 
 /**
@@ -9,6 +11,7 @@ import java.util.ArrayList;
 public class Team {
 
     private String name, player1, player2, player3, player4, player5, player6, player7, player8, player9, player10;
+    private int points = 0,draws = 0,wins = 0,losses = 0;
 
     private final ArrayList<Player> arrayListPlayers = new ArrayList();
 
@@ -130,5 +133,37 @@ public class Team {
 
     public void setPlayer10(String player10) {
         this.player10 = player10;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
+    }
+
+    public int getDraws() {
+        return draws;
+    }
+
+    public void setDraws(int draws) {
+        this.draws = draws;
+    }
+
+    public int getWins() {
+        return wins;
+    }
+
+    public void setWins(int wins) {
+        this.wins = wins;
+    }
+
+    public int getLosses() {
+        return losses;
+    }
+
+    public void setLosses(int losses) {
+        this.losses = losses;
     }
 }

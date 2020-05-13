@@ -5,6 +5,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+
 import model.*;
 
 /**
@@ -184,5 +186,17 @@ public class MainController {
 
     public void loadTeamsToLeaguePlay(){
        groupStageController.initTable();
+    }
+
+    public void addTeam(Team team){
+        tournament.setTeam(team);
+    }
+
+    public void addTeams(List team){
+        tournament.setTeams(team);
+    }
+
+    public ArrayList<Team> getTeams(){
+        return tournament.getTeams();
     }
 }
