@@ -68,7 +68,6 @@ public class GroupStageController extends SceneControllerParent {
      */
     public void initTable(){
         try{
-            //colPosition.setCellValueFactory(new PropertyValueFactory<>("Position"));
             colTeams.setCellValueFactory(new PropertyValueFactory<>("Name"));
             colWins.setCellValueFactory(new PropertyValueFactory<>("Wins"));
             colLosses.setCellValueFactory(new PropertyValueFactory<>("Losses"));
@@ -86,8 +85,6 @@ public class GroupStageController extends SceneControllerParent {
      * Makes the columns editable
      */
     private void editableCols(){
-
-
         colTeams.setCellFactory(TextFieldTableCell.forTableColumn());
         colTeams.setOnEditCommit(e->{
             e.getTableView().getItems().get(e.getTablePosition().getRow()).setName(e.getNewValue());
