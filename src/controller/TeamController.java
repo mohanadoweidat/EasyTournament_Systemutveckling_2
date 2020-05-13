@@ -9,6 +9,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.*;
 
+import java.awt.*;
+import java.io.*;
+import java.util.List;
+
 public class TeamController extends SceneControllerParent {
 
      private AmountOfTeams amountOfTeams;
@@ -71,6 +75,24 @@ public class TeamController extends SceneControllerParent {
     @FXML
     public void setPlayerGUI(ActionEvent actionEvent) {
         mainController.setScene(ScenesEnum.Player);
+    }
+
+    @FXML
+    public void saveTeams(){
+        System.out.println(tblTeams.getItems());
+
+        List<Team> teams = (tblTeams.getItems());
+        try (BufferedWriter bw = new BufferedWriter(
+                new OutputStreamWriter(new FileOutputStream("files/teams.txt"), "ISO-8859-1"))) {
+                for (Team team : teams){
+                    System.out.println(team.getName());
+                    bw.write(team.getName());
+                    bw.newLine();
+                }
+            bw.flush();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
