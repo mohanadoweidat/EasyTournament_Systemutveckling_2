@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public class Team {
 
-    private String name, player1, player2, player3, player4, player5, player6, player7, player8, player9, player10;
+    private String name = "", player1 = "", player2 = "", player3 = "", player4 = "", player5 = "", player6 = "", player7 = "", player8 = "", player9 = "", player10 = "";
     private int points = 0,draws = 0,wins = 0,losses = 0;
 
     private final ArrayList<Player> arrayListPlayers = new ArrayList();
