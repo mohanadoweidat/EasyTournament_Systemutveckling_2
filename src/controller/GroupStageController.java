@@ -155,26 +155,31 @@ public class GroupStageController extends SceneControllerParent {
         }
     }
 
-    public void importTeams(){
-        teamsBuffer.clear();
-        ObservableList<Team> dataTable = FXCollections.observableArrayList();
-        try (BufferedReader br = new BufferedReader(
-                new InputStreamReader(new FileInputStream("files/teams.txt"), "UTF-8"))) {
-            String name = br.readLine();
 
-            while (name != null) {
-                System.out.println(name);
-                //Team team = new Team(name);
-                dataTable.add(new Team(name));
-                //teamBuffer.add(name);
-                name = br.readLine();
-            }
+//   /**
+//    * Imports pre-saved teams
+//    */
+//   public void importTeams(){
+//       teamsBuffer.clear();
+//       ObservableList<Team> dataTable = FXCollections.observableArrayList();
+//       try (BufferedReader br = new BufferedReader(
+//               new InputStreamReader(new FileInputStream("files/teams.txt"), "UTF-8"))) {
+//           String name = br.readLine();
+//
+//           while (name != null) {
+//               System.out.println(name);
+//               //Team team = new Team(name);
+//               dataTable.add(new Team(name));
+//               //teamBuffer.add(name);
+//               name = br.readLine();
+//           }
+//
+//           tblGroupStage.setItems(dataTable);
+//       } catch (Exception e) {
+//           e.printStackTrace();
+//       }
+//   }
 
-            tblGroupStage.setItems(dataTable);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     /**
      * Fills the table with the teams
