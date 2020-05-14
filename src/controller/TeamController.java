@@ -28,11 +28,11 @@ public class TeamController extends SceneControllerParent {
     @FXML
     private ChoiceBox<AmountOfTeams> cbTeams = new ChoiceBox();
     @FXML
-    private ChoiceBox<String> cbPlayers = new ChoiceBox();
+    private ComboBox<String> cbPlayers = new ComboBox<>();
     @FXML
-    private ChoiceBox<String> cbSelectTeams = new ChoiceBox();
+    private ComboBox<String> cbSelectTeams = new ComboBox<>();
     @FXML
-    private ChoiceBox<String> cbPlacingOnTable = new ChoiceBox();
+    private ComboBox<String> cbPlacingOnTable = new ComboBox<>();
 
     private ObservableList<String> tableContent = FXCollections.observableArrayList();
 
@@ -342,7 +342,7 @@ public class TeamController extends SceneControllerParent {
         if ((cbSelectTeams.getValue()).equals("Team1")){
             if((cbPlacingOnTable.getValue()).equals("Player1")){
                 team1.setPlayer1(cbPlayers.getValue());
-            } else if((cbPlacingOnTable.getValue()).equals("Player2"))
+            }else if((cbPlacingOnTable.getValue()).equals("Player2"))
                 team1.setPlayer2(cbPlayers.getValue());
             else if((cbPlacingOnTable.getValue()).equals("Player3"))
                 team1.setPlayer3(cbPlayers.getValue());
