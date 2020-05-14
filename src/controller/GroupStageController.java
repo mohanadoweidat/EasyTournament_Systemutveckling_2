@@ -155,7 +155,6 @@ public class GroupStageController extends SceneControllerParent {
         }
     }
 
-
 //   /**
 //    * Imports pre-saved teams
 //    */
@@ -179,7 +178,6 @@ public class GroupStageController extends SceneControllerParent {
 //           e.printStackTrace();
 //       }
 //   }
-
 
     /**
      * Fills the table with the teams
