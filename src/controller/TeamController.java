@@ -87,6 +87,9 @@ public class TeamController extends SceneControllerParent {
         mainController.setScene(ScenesEnum.Player);
     }
 
+    /**
+     * Saves the teams you added to the table
+     */
     @FXML
     public void saveTeams(){
         System.out.println(tblTeams.getItems());
