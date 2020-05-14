@@ -194,6 +194,8 @@ public class TeamController extends SceneControllerParent {
             cbPlayers.getItems().add(p.getName());
         }
         try {
+            tblTeams.getItems().removeAll(observablePlayers);
+            tblTeams.getColumns().removeAll(columnTeam, columnPlayer1, columnPlayer2, columnPlayer3, columnPlayer4, columnPlayer5, columnPlayer6, columnPlayer7, columnPlayer8, columnPlayer9, columnPlayer10);
             switch (cbTeams.getSelectionModel().getSelectedItem()) {
                 case Three:
                     tblTeams.getColumns().addAll(columnTeam, columnPlayer1, columnPlayer2, columnPlayer3, columnPlayer4, columnPlayer5, columnPlayer6, columnPlayer7, columnPlayer8, columnPlayer9, columnPlayer10);
@@ -260,6 +262,7 @@ public class TeamController extends SceneControllerParent {
                 observablePlayers.addAll(team1,team2,team3);
                 break;
             case Four:
+
                 team1.setName("Team1");
                 team2.setName("Team2");
                 team3.setName("Team3");
