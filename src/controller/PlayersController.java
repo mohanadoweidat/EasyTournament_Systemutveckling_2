@@ -4,9 +4,10 @@ import javafx.collections.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.stage.FileChooser;
 import model.Player;
 
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.ArrayList;
 
 /**
@@ -28,7 +29,7 @@ public class PlayersController extends SceneControllerParent {
     @FXML
     private TextField tfPlayerName = new TextField();
 
-    private ObservableList<String> doList = FXCollections.observableArrayList();
+    private ObservableList<String> listOfPlayers = FXCollections.observableArrayList();
 
     /**
      * Changes scenes to the firstPageGUI
@@ -66,6 +67,7 @@ public class PlayersController extends SceneControllerParent {
             alert.showAndWait();
         } else {
             listAddedPlayers.getItems().add(tfPlayerName.getText());
+            listOfPlayers.add(tfPlayerName.getText());
             mainController.addPlayer(new Player(tfPlayerName.getText()));
         }
         tfPlayerName.setText("");
@@ -106,21 +108,53 @@ public class PlayersController extends SceneControllerParent {
      * @auther Gustav Edén
      */
     public void writePlayersToFile(){
-        TextInputDialog textInputDialog = new TextInputDialog("Enter groupname");
-        textInputDialog.setTitle("Name your group");
-        textInputDialog.showAndWait();
-        System.out.println(doList.toString());
-        String groupname = textInputDialog.getResult();
+        FileChooser chooser = new FileChooser();
+        chooser.setTitle("Choose location To Save Report");
+
+
+        File selectedFile = null;
+        if(selectedFile==null) {
+            selectedFile = chooser.showSaveDialog(null);
+        }
+
+        PrintWriter outFile = null;
         try {
-            PrintWriter pr = new PrintWriter(groupname);
-
-            for (int i=0; i<doList.size() ; i++) {
-
-                pr.println(doList.get(i));
-            }
-            pr.close();
-        }catch (Exception e){
+            outFile = new PrintWriter(selectedFile+".txt");
+        } catch (Exception e) {
             e.printStackTrace();
         }
+
+        for(int i = 0; i< listOfPlayers.size(); i++){
+            outFile.println(listOfPlayers.get(i));
+        }
+        outFile.close();
     }
+    /**
+     * Reads from groups from a file
+     * @author Gustav Edén
+     */
+    public void readGroupFromFile(){
+        FileChooser chooser1= new FileChooser();
+        File file= chooser1.showOpenDialog(null);
+        try {
+            BufferedReader in;
+            in = new BufferedReader(new FileReader(file));
+            String line = in.readLine();
+
+            while (line != null) {
+
+
+                listAddedPlayers.getItems().add(line);
+                mainController.addPlayer(new Player(line));
+                line = in.readLine();
+
+
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+    }
+
+
 }
