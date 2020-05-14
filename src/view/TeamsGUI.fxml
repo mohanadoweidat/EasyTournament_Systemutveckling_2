@@ -118,5 +118,13 @@
       <ChoiceBox fx:id="cbPlayers" layoutX="223.0" layoutY="135.0" prefHeight="27.0" prefWidth="101.0" />
       <ChoiceBox fx:id="cbSelectTeams" layoutX="223.0" layoutY="171.0" prefHeight="27.0" prefWidth="101.0" />
       <ChoiceBox fx:id="cbPlacingOnTable" layoutX="223.0" layoutY="208.0" prefHeight="27.0" prefWidth="101.0" />
+      <Pane layoutX="510.0" layoutY="18.0" prefHeight="71.0" prefWidth="206.0" style="-fx-background-color: #3b3f41 #3b3f41;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <Button fx:id="btnSTTD" layoutX="3.0" layoutY="36.0" mnemonicParsing="false" onAction="#saveTeams" prefHeight="27.0" prefWidth="200.0" style="-fx-background-color: #2b2b2b #2b2b2b;" text="Save Teams To Drive" textFill="WHITE" />
+         </children>
+      </Pane>
    </children>
 </Pane>

@@ -7,6 +7,11 @@ import javafx.scene.control.cell.*;
 import javafx.util.converter.IntegerStringConverter;
 import model.*;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -16,25 +21,25 @@ import java.util.Random;
 public class GroupStageController extends SceneControllerParent {
 
     @FXML
-    private TableView<TeamStats> tblGroupStage;
+    private TableView<Team> tblGroupStage;
 
     @FXML
-    private TableColumn<TeamStats, String> colPosition = new TableColumn<>("position");
+    private TableColumn<Team, String> colPosition = new TableColumn<>("position");
 
     @FXML
-    private TableColumn<TeamStats, String> colTeams = new TableColumn<>("teams");
+    private TableColumn<Team, String> colTeams = new TableColumn<>("teams");
 
     @FXML
-    private TableColumn<TeamStats, Integer> colWins = new TableColumn<>("wins");
+    private TableColumn<Team, Integer> colWins = new TableColumn<>("wins");
 
     @FXML
-    private TableColumn<TeamStats, Integer> colLosses = new TableColumn<>("losses");
+    private TableColumn<Team, Integer> colLosses = new TableColumn<>("losses");
 
     @FXML
-    private TableColumn<TeamStats, Integer> colDraws = new TableColumn<>("draws");
+    private TableColumn<Team, Integer> colDraws = new TableColumn<>("draws");
 
     @FXML
-    private TableColumn<TeamStats, Integer> colPoints = new TableColumn<>("points");
+    private TableColumn<Team, Integer> colPoints = new TableColumn<>("points");
 
     @FXML
     private Label lblTeamToPlay1;
@@ -48,9 +53,13 @@ public class GroupStageController extends SceneControllerParent {
     @FXML
     private Label lblTeamToPlay4;
 
-    private ObservableList <TeamStats> data = FXCollections.observableArrayList();
+    private ArrayList<Team> teamBuffer = new ArrayList<>();
+
+    private ObservableList <Team> data = FXCollections.observableArrayList();
 
     private Random random = new Random();
+
+    private ArrayList<Team> teamsBuffer = new ArrayList();
 
     private int teams = 0;
 
@@ -59,8 +68,7 @@ public class GroupStageController extends SceneControllerParent {
      */
     public void initTable(){
         try{
-            colPosition.setCellValueFactory(new PropertyValueFactory<>("Position"));
-            colTeams.setCellValueFactory(new PropertyValueFactory<>("Teams"));
+            colTeams.setCellValueFactory(new PropertyValueFactory<>("Name"));
             colWins.setCellValueFactory(new PropertyValueFactory<>("Wins"));
             colLosses.setCellValueFactory(new PropertyValueFactory<>("Losses"));
             colDraws.setCellValueFactory(new PropertyValueFactory<>("Draws"));
@@ -77,14 +85,9 @@ public class GroupStageController extends SceneControllerParent {
      * Makes the columns editable
      */
     private void editableCols(){
-        colPosition.setCellFactory(TextFieldTableCell.forTableColumn());
-        colPosition.setOnEditCommit(e->{
-            e.getTableView().getItems().get(e.getTablePosition().getRow()).setPosition(e.getNewValue());
-        });
-
         colTeams.setCellFactory(TextFieldTableCell.forTableColumn());
         colTeams.setOnEditCommit(e->{
-            e.getTableView().getItems().get(e.getTablePosition().getRow()).setTeams(e.getNewValue());
+            e.getTableView().getItems().get(e.getTablePosition().getRow()).setName(e.getNewValue());
         });
 
         colWins.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
@@ -152,18 +155,39 @@ public class GroupStageController extends SceneControllerParent {
         }
     }
 
+
+//   /**
+//    * Imports pre-saved teams
+//    */
+//   public void importTeams(){
+//       teamsBuffer.clear();
+//       ObservableList<Team> dataTable = FXCollections.observableArrayList();
+//       try (BufferedReader br = new BufferedReader(
+//               new InputStreamReader(new FileInputStream("files/teams.txt"), "UTF-8"))) {
+//           String name = br.readLine();
+//
+//           while (name != null) {
+//               System.out.println(name);
+//               //Team team = new Team(name);
+//               dataTable.add(new Team(name));
+//               //teamBuffer.add(name);
+//               name = br.readLine();
+//           }
+//
+//           tblGroupStage.setItems(dataTable);
+//       } catch (Exception e) {
+//           e.printStackTrace();
+//       }
+//   }
+
+
     /**
      * Fills the table with the teams
      */
     public void loadData(){
         if ((mainController.getAmountOfTeams()) == null){
-            Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
-            alert1.setTitle("Error message");
-            alert1.setHeaderText(null);
-            alert1.setContentText("You need to import players to add them");
-            alert1.showAndWait();
         }else {
-            ObservableList<TeamStats> dataTable = FXCollections.observableArrayList();
+            ObservableList<Team> dataTable = FXCollections.observableArrayList();
             teams = 0;
             switch (mainController.getAmountOfTeams()) {
                 case Three:
@@ -199,8 +223,9 @@ public class GroupStageController extends SceneControllerParent {
                     nextGames();
                     break;
             }
+            teamBuffer = (mainController.getTeams());
             for (int j = 0; j < teams; j++) {
-                dataTable.add(new TeamStats(String.valueOf(j + 1), "Team" + (j + 1), 0, 0, 0, 0));
+                dataTable.add(teamBuffer.get(j));
                 tblGroupStage.setItems(dataTable);
             }
         }

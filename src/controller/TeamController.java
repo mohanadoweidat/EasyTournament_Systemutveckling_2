@@ -7,11 +7,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import model.*;
+import java.io.*;
+import java.util.List;
 
 public class TeamController extends SceneControllerParent {
 
-     private AmountOfTeams amountOfTeams;
+    private AmountOfTeams amountOfTeams;
     @FXML
     private TableView tblTeams = new TableView<>();
     @FXML
@@ -57,6 +60,17 @@ public class TeamController extends SceneControllerParent {
     private TableColumn<Team, String> columnPlayer10 = new TableColumn("Player 10");
 
     private ObservableList<Team> observablePlayers = FXCollections.observableArrayList();
+
+    /**
+     * Makes the columns editable
+     */
+    private void editableCols(){
+        columnTeam.setCellFactory(TextFieldTableCell.forTableColumn());
+        columnTeam.setOnEditCommit(e->{
+            e.getTableView().getItems().get(e.getTablePosition().getRow()).setName(e.getNewValue());
+        });
+        tblTeams.setEditable(true);
+    }
     /**
      * Changes scenes to the FirstPage
      */
@@ -73,6 +87,34 @@ public class TeamController extends SceneControllerParent {
         mainController.setScene(ScenesEnum.Player);
     }
 
+    @FXML
+    public void saveTeams(){
+        System.out.println(tblTeams.getItems());
+
+        List<Team> teams = (tblTeams.getItems());
+        try (BufferedWriter bw = new BufferedWriter(
+                new OutputStreamWriter(new FileOutputStream("files/teams.txt"), "ISO-8859-1"))) {
+                for (Team team : teams){
+                    bw.write(team.getName() + " ");
+                    /*bw.write(team.getPlayer1() + " ");
+                    bw.write(team.getPlayer2() + " ");
+                    bw.write(team.getPlayer3() + " ");
+                    bw.write(team.getPlayer4() + " ");
+                    bw.write(team.getPlayer5() + " ");
+                    bw.write(team.getPlayer6() + " ");
+                    bw.write(team.getPlayer7() + " ");
+                    bw.write(team.getPlayer8() + " ");
+                    bw.write(team.getPlayer9() + " ");
+                    bw.write(team.getPlayer10() + " ");
+                    */
+                    bw.newLine();
+                }
+            bw.flush();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * Starts the tournament when button is clicked.
      * Choosing the playoff scene depending on which is selected
@@ -80,6 +122,7 @@ public class TeamController extends SceneControllerParent {
      */
     @FXML
     public void startTournamentClicked(ActionEvent actionEvent) {
+        mainController.addTeams(tblTeams.getItems());
         if (cbGroupStage.isSelected()) {
             mainController.setAmountOfTeams(cbTeams.getSelectionModel().getSelectedItem());
             mainController.setScene(ScenesEnum.GroupStage);
@@ -124,6 +167,7 @@ public class TeamController extends SceneControllerParent {
      * Puts the value on the different columns
      */
     public void initialize() {
+        editableCols();
         cbTeams.getItems().addAll(AmountOfTeams.values());
         columnTeam.setCellValueFactory(new PropertyValueFactory<>("name"));
         columnPlayer1.setCellValueFactory(new PropertyValueFactory<>("player1"));
@@ -283,7 +327,6 @@ public class TeamController extends SceneControllerParent {
                 observablePlayers.addAll(team1,team2,team3,team4,team5,team6,team7,team8,team9,team10);
                 break;
         }
-
         return observablePlayers;
     }
 
