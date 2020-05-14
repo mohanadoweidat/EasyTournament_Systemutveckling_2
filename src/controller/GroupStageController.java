@@ -11,6 +11,7 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Array;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -132,24 +133,24 @@ public class GroupStageController extends SceneControllerParent {
             }
             lblTeamToPlay3.setText("Team " + b);
         } else {
-            int a = random.nextInt(teams);
+            int a = random.nextInt((teams + 1));
             while (a == 0) {
-                a = random.nextInt(teams);
+                a = random.nextInt((teams + 1));
             }
             lblTeamToPlay1.setText("Team " + a);
-            int b = random.nextInt(teams);
+            int b = random.nextInt((teams + 1));
             while (b == a || b == 0) {
-                b = random.nextInt(teams);
+                b = random.nextInt((teams + 1));
             }
             lblTeamToPlay2.setText("Team " + b);
-            int c = random.nextInt(teams);
+            int c = random.nextInt((teams + 1));
             while (c == b || c == a || c == 0) {
-                c = random.nextInt(teams);
+                c = random.nextInt((teams + 1));
             }
             lblTeamToPlay3.setText("Team " + c);
-            int d = random.nextInt(teams);
+            int d = random.nextInt((teams + 1));
             while (d == a || d == b || d == c || d == 0) {
-                d = random.nextInt(teams);
+                d = random.nextInt((teams + 1));
             }
             lblTeamToPlay4.setText("Team " + d);
         }
