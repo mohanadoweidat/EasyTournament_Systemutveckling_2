@@ -15,9 +15,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="927.0" style="-fx-background-color: #2b2b2b;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TeamController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="940.0" style="-fx-background-color: #2b2b2b;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TeamController">
    <children>
-      <TableView fx:id="tblTeams" editable="true" layoutX="213.0" layoutY="256.0" prefHeight="330.0" prefWidth="694.0" style="-fx-background-color: #FFFAFA#FFFAFA;" tableMenuButtonVisible="true">
+      <TableView fx:id="tblTeams" editable="true" layoutX="213.0" layoutY="256.0" prefHeight="330.0" prefWidth="708.0" style="-fx-background-color: #FFFAFA#FFFAFA;" tableMenuButtonVisible="true">
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy></TableView>
@@ -76,28 +76,37 @@
             <Insets />
          </opaqueInsets>
          <children>
-            <Button fx:id="btnAdd" layoutX="164.0" layoutY="30.0" mnemonicParsing="false" onAction="#initTeamsTableData" prefHeight="27.0" prefWidth="95.0" style="-fx-background-color: #2b2b2b #2b2b2b;" text="Add" textFill="WHITE" />
+            <Button fx:id="btnAdd" layoutX="164.0" layoutY="30.0" mnemonicParsing="false" onAction="#initTeamsTableData" prefHeight="27.0" prefWidth="95.0" style="-fx-background-color: #2b2b2b #2b2b2b;" text="Add" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
          </children>
       </Pane>
-      <Pane layoutX="589.0" layoutY="100.0" prefHeight="149.0" prefWidth="317.0" style="-fx-background-color: #3b3f41 #3b3f41;">
+      <Pane layoutX="589.0" layoutY="100.0" prefHeight="149.0" prefWidth="331.0" style="-fx-background-color: #3b3f41 #3b3f41;">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <children>
-            <Button layoutX="8.0" layoutY="91.0" mnemonicParsing="false" onAction="#startTournamentClicked" prefHeight="44.0" prefWidth="274.0" style="-fx-background-color: #2b2b2b #2b2b2b;" text="Start Tournament" textFill="WHITE">
+            <Button layoutX="19.0" layoutY="91.0" mnemonicParsing="false" onAction="#startTournamentClicked" prefHeight="44.0" prefWidth="293.0" style="-fx-background-color: #2b2b2b #2b2b2b;" text="Start Tournament" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <CheckBox fx:id="cbGroupStage" layoutX="5.0" layoutY="14.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="200.0" text="League Play (BETA)" textFill="WHITE">
+            <CheckBox fx:id="cbGroupStage" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="200.0" text="League Play (BETA)" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </CheckBox>
-            <CheckBox fx:id="cbPlayoffs" layoutX="5.0" layoutY="48.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="111.0" text="Play-Offs" textFill="WHITE">
+            <CheckBox fx:id="cbPlayoffs" layoutX="14.0" layoutY="48.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="111.0" text="Play-Offs" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </CheckBox>
          </children>
       </Pane>
@@ -106,9 +115,16 @@
             <Insets />
          </opaqueInsets>
          <children>
-            <ComboBox fx:id="cbPlayers" layoutX="11.0" layoutY="41.0" prefHeight="27.0" prefWidth="140.0" promptText="Player" />
-            <ComboBox fx:id="cbSelectTeams" layoutX="11.0" layoutY="87.0" prefHeight="27.0" prefWidth="140.0" promptText="Team" />
-            <Button fx:id="btnAddToTeam" layoutX="164.0" layoutY="87.0" mnemonicParsing="false" onAction="#addPlayersToTeams" prefHeight="27.0" prefWidth="95.0" style="-fx-background-color: #2b2b2b #2b2b2b;" text="Add Player" textFill="WHITE" />
+            <ComboBox fx:id="cbPlayers" layoutX="151.0" layoutY="38.0" prefHeight="27.0" prefWidth="124.0" promptText="Player" />
+            <ComboBox fx:id="cbSelectTeams" layoutX="11.0" layoutY="38.0" prefHeight="27.0" prefWidth="124.0" promptText="Team" />
+            <Button fx:id="btnAddToTeam" layoutX="82.0" layoutY="75.0" mnemonicParsing="false" onAction="#addPlayersToTeams" prefHeight="27.0" prefWidth="124.0" style="-fx-background-color: #2b2b2b #2b2b2b;" text="Add Player" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="btnRandom" layoutX="82.0" layoutY="110.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="124.0" style="-fx-background-color: #2b2b2b #2b2b2b;" text="Randomize Teams" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
          </children>
       </Pane>
       <ChoiceBox fx:id="cbTeams" layoutX="220.0" layoutY="50.0" prefHeight="27.0" prefWidth="140.0" />
@@ -122,12 +138,15 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Pane layoutX="589.0" layoutY="18.0" prefHeight="71.0" prefWidth="317.0" style="-fx-background-color: #3b3f41 #3b3f41;">
+      <Pane layoutX="589.0" layoutY="18.0" prefHeight="71.0" prefWidth="331.0" style="-fx-background-color: #3b3f41 #3b3f41;">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <children>
-            <Button fx:id="btnSTTD" layoutX="59.0" layoutY="22.0" mnemonicParsing="false" onAction="#saveTeams" prefHeight="27.0" prefWidth="200.0" style="-fx-background-color: #2b2b2b #2b2b2b;" text="Save Teams To Drive" textFill="WHITE" />
+            <Button fx:id="btnSTTD" layoutX="66.0" layoutY="22.0" mnemonicParsing="false" onAction="#saveTeams" prefHeight="27.0" prefWidth="200.0" style="-fx-background-color: #2b2b2b #2b2b2b;" text="Save Teams To Drive" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
          </children>
       </Pane>
       <Label layoutX="223.0" layoutY="603.0" text="Remove player from team" textFill="WHITE">

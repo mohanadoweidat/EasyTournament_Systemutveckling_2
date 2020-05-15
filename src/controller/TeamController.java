@@ -15,6 +15,7 @@ import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.util.List;
+import java.util.Random;
 
 public class TeamController extends SceneControllerParent {
 
@@ -203,7 +204,6 @@ public class TeamController extends SceneControllerParent {
         for (Player p : mainController.getPlayers()) {
             cbPlayers.getItems().add(p.getName());
             cbRemovePlayer.getItems().add(p.getName());
-
         }
         try {
             tblTeams.getItems().removeAll(observablePlayers);
@@ -277,80 +277,80 @@ public class TeamController extends SceneControllerParent {
     public ObservableList<Team> addPlayersToTeams() {
         switch (cbTeams.getSelectionModel().getSelectedItem()) {
             case Three:
-                team1.setName("Team1");
-                team2.setName("Team2");
-                team3.setName("Team3");
+                team1.setName("Team 1");
+                team2.setName("Team 2");
+                team3.setName("Team 3");
                 observablePlayers.addAll(team1, team2, team3);
                 break;
             case Four:
 
-                team1.setName("Team1");
-                team2.setName("Team2");
-                team3.setName("Team3");
-                team4.setName("Team4");
+                team1.setName("Team 1");
+                team2.setName("Team 2");
+                team3.setName("Team 3");
+                team4.setName("Team 4");
                 observablePlayers.addAll(team1, team2, team3, team4);
                 break;
             case Five:
-                team1.setName("Team1");
-                team2.setName("Team2");
-                team3.setName("Team3");
-                team4.setName("Team4");
-                team5.setName("Team5");
+                team1.setName("Team 1");
+                team2.setName("Team 2");
+                team3.setName("Team 3");
+                team4.setName("Team 4");
+                team5.setName("Team 5");
                 observablePlayers.addAll(team1, team2, team3, team4, team5);
                 break;
             case Six:
-                team1.setName("Team1");
-                team2.setName("Team2");
-                team3.setName("Team3");
-                team4.setName("Team4");
-                team5.setName("Team5");
-                team6.setName("Team6");
+                team1.setName("Team 1");
+                team2.setName("Team 2");
+                team3.setName("Team 3");
+                team4.setName("Team 4");
+                team5.setName("Team 5");
+                team6.setName("Team 6");
                 observablePlayers.addAll(team1, team2, team3, team4, team5, team6);
                 break;
             case Seven:
-                team1.setName("Team1");
-                team2.setName("Team2");
-                team3.setName("Team3");
-                team4.setName("Team4");
-                team5.setName("Team5");
-                team6.setName("Team6");
-                team7.setName("Team7");
+                team1.setName("Team 1");
+                team2.setName("Team 2");
+                team3.setName("Team 3");
+                team4.setName("Team 4");
+                team5.setName("Team 5");
+                team6.setName("Team 6");
+                team7.setName("Team 7");
                 observablePlayers.addAll(team1, team2, team3, team4, team5, team6, team7);
                 break;
             case Eight:
-                team1.setName("Team1");
-                team2.setName("Team2");
-                team3.setName("Team3");
-                team4.setName("Team4");
-                team5.setName("Team5");
-                team6.setName("Team6");
-                team7.setName("Team7");
-                team8.setName("Team8");
+                team1.setName("Team 1");
+                team2.setName("Team 2");
+                team3.setName("Team 3");
+                team4.setName("Team 4");
+                team5.setName("Team 5");
+                team6.setName("Team 6");
+                team7.setName("Team 7");
+                team8.setName("Team 8");
                 observablePlayers.addAll(team1, team2, team3, team4, team5, team6, team7, team8);
                 break;
             case Nine:
-                team1.setName("Team1");
-                team2.setName("Team2");
-                team3.setName("Team3");
-                team4.setName("Team4");
-                team5.setName("Team5");
-                team6.setName("Team6");
-                team7.setName("Team7");
-                team8.setName("Team8");
-                team9.setName("Team9");
+                team1.setName("Team 1");
+                team2.setName("Team 2");
+                team3.setName("Team 3");
+                team4.setName("Team 4");
+                team5.setName("Team 5");
+                team6.setName("Team 6");
+                team7.setName("Team 7");
+                team8.setName("Team 8");
+                team9.setName("Team 9");
                 observablePlayers.addAll(team1, team2, team3, team4, team5, team6, team7, team8, team9);
                 break;
             case Ten:
-                team1.setName("Team1");
-                team2.setName("Team2");
-                team3.setName("Team3");
-                team4.setName("Team4");
-                team5.setName("Team5");
-                team6.setName("Team6");
-                team7.setName("Team7");
-                team8.setName("Team8");
-                team9.setName("Team9");
-                team10.setName("Team10");
+                team1.setName("Team 1");
+                team2.setName("Team 2");
+                team3.setName("Team 3");
+                team4.setName("Team 4");
+                team5.setName("Team 5");
+                team6.setName("Team 6");
+                team7.setName("Team 7");
+                team8.setName("Team 8");
+                team9.setName("Team 9");
+                team10.setName("Team 10");
                 observablePlayers.addAll(team1, team2, team3, team4, team5, team6, team7, team8, team9, team10);
                 break;
         }
@@ -358,11 +358,12 @@ public class TeamController extends SceneControllerParent {
     }
 
     /**
-     * Adds the Player object to specific index in the table
+     * Adds the Player object to the next empty index of the team in the table
      * This way we can sort the teams
      */
     @FXML
-    public void addPlayersToTeams(ActionEvent event) {
+    public void addPlayersToTeams(ActionEvent event)
+    {
         if ((cbSelectTeams.getValue()).equals("Team1")) {
             if ((team1.getPlayer1().equals(" "))) {
                 team1.setPlayer1(cbPlayers.getValue());
@@ -384,7 +385,6 @@ public class TeamController extends SceneControllerParent {
                 team1.setPlayer9(cbPlayers.getValue());
             } else if ((team1.getPlayer10().equals(" "))) {
                 team1.setPlayer10(cbPlayers.getValue());
-
             }
         }
         if ((cbSelectTeams.getValue()).equals("Team2")) {
@@ -604,6 +604,10 @@ public class TeamController extends SceneControllerParent {
         tblTeams.refresh();
     }
 
+    /**
+     * Removes the selected player on the selected team from the table
+     *
+     */
     public void removePlayerFromTeam(ActionEvent event){
 
         if ((cbRemoveTeam.getValue()).equals("Team1")) {
@@ -835,6 +839,60 @@ public class TeamController extends SceneControllerParent {
             } else if ((team10.getPlayer10().equals(cbRemovePlayer.getValue()))) {
                 team10.setPlayer10(" ");
             }
+        }
+        tblTeams.refresh();
+    }
+
+    /**
+     * Randomizes the listed players in to different teams
+     */
+    public void randomTeams(){
+        Random random = new Random();
+        switch (cbTeams.getSelectionModel().getSelectedItem()) {
+            case Three:
+                tblTeams.setItems(addPlayersToTeams());
+                cbSelectTeams.getItems().addAll("Team1", "Team2", "Team3");
+                cbRemoveTeam.getItems().addAll("Team1", "Team2", "Team3");
+                cbPlacingOnTable.getItems().addAll("Player1", "Player2", "Player3", "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
+                break;
+            case Four:
+                tblTeams.setItems(addPlayersToTeams());
+                cbSelectTeams.getItems().addAll("Team1", "Team2", "Team3", "Team4");
+                cbRemoveTeam.getItems().addAll("Team1", "Team2", "Team3", "Team4");
+                cbPlacingOnTable.getItems().addAll("Player1", "Player2", "Player3", "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
+                break;
+            case Five:
+                tblTeams.setItems(addPlayersToTeams());
+                cbSelectTeams.getItems().addAll("Team1", "Team2", "Team3", "Team4", "Team5");
+                cbRemoveTeam.getItems().addAll("Team1", "Team2", "Team3", "Team4", "Team5");
+                cbPlacingOnTable.getItems().addAll("Player1", "Player2", "Player3", "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
+                break;
+            case Six:
+                tblTeams.setItems(addPlayersToTeams());
+                cbSelectTeams.getItems().addAll("Team1", "Team2", "Team3", "Team4", "Team5", "Team6");
+                cbRemoveTeam.getItems().addAll("Team1", "Team2", "Team3", "Team4", "Team5", "Team6");
+                cbPlacingOnTable.getItems().addAll("Player1", "Player2", "Player3", "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
+                break;
+            case Seven:
+                tblTeams.setItems(addPlayersToTeams());
+                cbSelectTeams.getItems().addAll("Team1", "Team2", "Team3", "Team4", "Team5", "Team6", "Team7");
+                cbRemoveTeam.getItems().addAll("Team1", "Team2", "Team3", "Team4", "Team5", "Team6", "Team7");
+                cbPlacingOnTable.getItems().addAll("Player1", "Player2", "Player3", "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
+                break;
+            case Eight:
+                tblTeams.setItems(addPlayersToTeams());
+                cbSelectTeams.getItems().addAll("Team1", "Team2", "Team3", "Team4", "Team5", "Team6", "Team7", "Team8");
+                cbRemoveTeam.getItems().addAll("Team1", "Team2", "Team3", "Team4", "Team5", "Team6", "Team7", "Team8");
+                cbPlacingOnTable.getItems().addAll("Player1", "Player2", "Player3", "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
+                break;
+            case Nine:
+                tblTeams.setItems(addPlayersToTeams());
+                cbSelectTeams.getItems().addAll("Team1", "Team2", "Team3", "Team4", "Team5", "Team6", "Team7", "Team8", "Team9");
+
+                break;
+            case Ten:
+                tblTeams.setItems(addPlayersToTeams());
+                break;
         }
         tblTeams.refresh();
     }
