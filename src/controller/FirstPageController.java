@@ -19,8 +19,11 @@ public class FirstPageController extends SceneControllerParent {
         mainController.setScene(ScenesEnum.Player);
     }
 
+
+
     public void handleLeaguePlay(){
         mainController.setScene(ScenesEnum.GroupStage);
+        mainController.loadTeamsToLeaguePlay();
     }
 }
 

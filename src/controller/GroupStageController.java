@@ -1,15 +1,15 @@
 package controller;
 
 import javafx.collections.*;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.*;
+import javafx.stage.FileChooser;
 import javafx.util.converter.IntegerStringConverter;
 import model.*;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.lang.reflect.Array;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
@@ -63,6 +63,31 @@ public class GroupStageController extends SceneControllerParent {
     private ArrayList<Team> teamsBuffer = new ArrayList();
 
     private int teams = 0;
+
+    /**
+     * Changes scenes to the PlayersGUI
+     */
+    @FXML
+    public void setPlayersGUI(ActionEvent actionEvent) {
+        mainController.setScene(ScenesEnum.Player);
+    }
+
+    /**
+     * Changes scenes to the firstPageGUI
+     */
+    @FXML
+    public void setFirstPageGUI(ActionEvent actionEvent) {
+        mainController.setScene(ScenesEnum.FirstPage);
+    }
+
+    /**
+     * Changes scenes to the teamGUI
+     */
+    @FXML
+    public void setTeamsGUI(ActionEvent actionEvent) {
+        mainController.setScene(ScenesEnum.Team);
+        mainController.loadBuffer();
+    }
 
     /**
      * Sets up the columns and calls the method that fills the table with the teams
@@ -122,14 +147,14 @@ public class GroupStageController extends SceneControllerParent {
             alert1.setContentText("You need to add teams to see next match");
             alert1.showAndWait();
         } else if (teams == 3) {
-            int a = random.nextInt(teams);
+            int a = random.nextInt((teams + 1));
             while (a == 0) {
-                a = random.nextInt(teams);
+                a = random.nextInt((teams + 1));
             }
             lblTeamToPlay1.setText("Team " + a);
-            int b = random.nextInt(teams);
+            int b = random.nextInt((teams + 1));
             while (b == a || b == 0) {
-                b = random.nextInt(teams);
+                b = random.nextInt((teams + 1));
             }
             lblTeamToPlay3.setText("Team " + b);
         } else {
@@ -156,29 +181,29 @@ public class GroupStageController extends SceneControllerParent {
         }
     }
 
-//   /**
-//    * Imports pre-saved teams
-//    */
-//   public void importTeams(){
-//       teamsBuffer.clear();
-//       ObservableList<Team> dataTable = FXCollections.observableArrayList();
-//       try (BufferedReader br = new BufferedReader(
-//               new InputStreamReader(new FileInputStream("files/teams.txt"), "UTF-8"))) {
-//           String name = br.readLine();
-//
-//           while (name != null) {
-//               System.out.println(name);
-//               //Team team = new Team(name);
-//               dataTable.add(new Team(name));
-//               //teamBuffer.add(name);
-//               name = br.readLine();
-//           }
-//
-//           tblGroupStage.setItems(dataTable);
-//       } catch (Exception e) {
-//           e.printStackTrace();
-//       }
-//   }
+   /**
+    * Imports pre-saved teams
+    */
+   public void importTeams(){
+       teamsBuffer.clear();
+       ObservableList<Team> dataTable = FXCollections.observableArrayList();
+       FileChooser chooser1 = new FileChooser();
+       File file = chooser1.showOpenDialog(null);
+       try {
+           BufferedReader in;
+           in = new BufferedReader(new FileReader(file));
+           String line = in.readLine();
+           while (line != null) {
+
+               dataTable.add(new Team(line));
+               line = in.readLine();
+           }
+           tblGroupStage.setItems(dataTable);
+           tblGroupStage.refresh();
+       } catch (Exception ex) {
+           ex.printStackTrace();
+       }
+   }
 
     /**
      * Fills the table with the teams

@@ -7,13 +7,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.stage.FileChooser;
 import model.AmountOfTeams;
 import model.Player;
 import model.Team;
 
-import java.io.BufferedWriter;
-import java.io.FileOutputStream;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -109,34 +108,64 @@ public class TeamController extends SceneControllerParent {
      */
     @FXML
     public void saveTeams() {
-        System.out.println(tblTeams.getItems());
-
         List<Team> teams = (tblTeams.getItems());
-        try (BufferedWriter bw = new BufferedWriter(
-                new OutputStreamWriter(new FileOutputStream("files/teams.txt"), "ISO-8859-1"))) {
-            for (Team team : teams) {
-                bw.write(team.getName() + " ");
-                    /*bw.write(team.getPlayer1() + " ");
-                    bw.write(team.getPlayer2() + " ");
-                    bw.write(team.getPlayer3() + " ");
-                    bw.write(team.getPlayer4() + " ");
-                    bw.write(team.getPlayer5() + " ");
-                    bw.write(team.getPlayer6() + " ");
-                    bw.write(team.getPlayer7() + " ");
-                    bw.write(team.getPlayer8() + " ");
-                    bw.write(team.getPlayer9() + " ");
-                    bw.write(team.getPlayer10() + " ");
-                    */
-                bw.newLine();
-            }
-            bw.flush();
+        FileChooser chooser = new FileChooser();
+        chooser.setTitle("Choose location To Save Report");
+
+        File selectedFile = null;
+        if(selectedFile==null) {
+            selectedFile = chooser.showSaveDialog(null);
+        }
+
+        PrintWriter outFile = null;
+        try {
+            outFile = new PrintWriter(selectedFile+".txt");
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        for (Team team : teams) {
+            outFile.print(team.getName() + " ");
+                    outFile.print(team.getPlayer1() + " ");
+                    outFile.print(team.getPlayer2() + " ");
+                    outFile.print(team.getPlayer3() + " ");
+                    outFile.print(team.getPlayer4() + " ");
+                    outFile.print(team.getPlayer5() + " ");
+                    outFile.print(team.getPlayer6() + " ");
+                    outFile.print(team.getPlayer7() + " ");
+                    outFile.print(team.getPlayer8() + " ");
+                    outFile.print(team.getPlayer9() + " ");
+                    outFile.print(team.getPlayer10() + " ");
+            outFile.println();
+        }
+        outFile.close();
     }
 
+    /**
+     * Reads teams from a file
+     */
     public void importTeams(){
 
+        Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+        alert1.setTitle("Name problems");
+        alert1.setHeaderText(null);
+        alert1.setContentText("Feature is coming soon");
+        alert1.showAndWait();
+
+        if (false) {
+            FileChooser chooser1 = new FileChooser();
+            File file = chooser1.showOpenDialog(null);
+            try {
+                BufferedReader in;
+                in = new BufferedReader(new FileReader(file));
+                String line = in.readLine();
+                while (line != null) {
+                    line = in.readLine();
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
     }
 
     /**
