@@ -143,13 +143,9 @@ public class PlayersController extends SceneControllerParent {
             String line = in.readLine();
 
             while (line != null) {
-
-
                 listAddedPlayers.getItems().add(line);
                 mainController.addPlayer(new Player(line));
                 line = in.readLine();
-
-
             }
         } catch (Exception ex) {
             ex.printStackTrace();
