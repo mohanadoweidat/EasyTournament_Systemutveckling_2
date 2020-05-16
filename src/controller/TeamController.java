@@ -135,6 +135,10 @@ public class TeamController extends SceneControllerParent {
         }
     }
 
+    public void importTeams(){
+
+    }
+
     /**
      * Starts the tournament when button is clicked.
      * Choosing the playoff scene depending on which is selected
@@ -201,8 +205,6 @@ public class TeamController extends SceneControllerParent {
         columnPlayer8.setCellValueFactory(new PropertyValueFactory<>("player8"));
         columnPlayer9.setCellValueFactory(new PropertyValueFactory<>("player9"));
         columnPlayer10.setCellValueFactory(new PropertyValueFactory<>("player10"));
-
-
     }
 
 
@@ -1266,14 +1268,11 @@ public class TeamController extends SceneControllerParent {
                     playersBuffer.remove(randomPlayer);
                 }
             }
-
-
             tblTeams.refresh();
         }
     }
 
     public void loadBuffer() {
-
         playersBuffer = mainController.getPlayers();
     }
 }
