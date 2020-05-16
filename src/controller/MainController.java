@@ -152,7 +152,7 @@ public class MainController {
     /**
      * Returns a player object
      */
-    public Player getPlayer(int i){
+    public String getPlayer(int i){
         return tournament.getPlayer(i);
     }
 
@@ -198,5 +198,9 @@ public class MainController {
 
     public ArrayList<Team> getTeams(){
         return tournament.getTeams();
+    }
+
+    public void loadBuffer(){
+        teamController.loadBuffer();
     }
 }

@@ -34,8 +34,8 @@ public class Tournament {
     /**
      * Returns the list of all players
      */
-    public Player getPlayer(int i){
-        return arrayListPlayers.get(i);
+    public String getPlayer(int i){
+        return (arrayListPlayers.get(i)).getName();
     }
 
     /**
