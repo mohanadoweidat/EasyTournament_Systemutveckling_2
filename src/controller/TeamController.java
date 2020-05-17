@@ -21,7 +21,7 @@ public class TeamController extends SceneControllerParent {
 
     private AmountOfTeams amountOfTeams;
     @FXML
-    private TableView tblTeams = new TableView<>();
+    private TableView<Team> tblTeams = new TableView<>();
     @FXML
     private CheckBox cbGroupStage;
     @FXML
@@ -42,6 +42,8 @@ public class TeamController extends SceneControllerParent {
     private ComboBox<String> cbRemovePlayer = new ComboBox<>();
     @FXML
     private ComboBox<String> cbRemoveTeam = new ComboBox<>();
+
+    private int amountOfTeamsInInt = 0;
 
     private ObservableList<String> tableContent = FXCollections.observableArrayList();
 
@@ -251,6 +253,7 @@ public class TeamController extends SceneControllerParent {
             tblTeams.getColumns().removeAll(columnTeam, columnPlayer1, columnPlayer2, columnPlayer3, columnPlayer4, columnPlayer5, columnPlayer6, columnPlayer7, columnPlayer8, columnPlayer9, columnPlayer10);
             switch (cbTeams.getSelectionModel().getSelectedItem()) {
                 case Three:
+                    amountOfTeamsInInt = 3;
                     tblTeams.getColumns().addAll(columnTeam, columnPlayer1, columnPlayer2, columnPlayer3, columnPlayer4, columnPlayer5, columnPlayer6, columnPlayer7, columnPlayer8, columnPlayer9, columnPlayer10);
                     tblTeams.setItems(addPlayersToTeams());
                     cbSelectTeams.getItems().addAll("Team1", "Team2", "Team3");
@@ -258,6 +261,7 @@ public class TeamController extends SceneControllerParent {
                     cbPlacingOnTable.getItems().addAll("Player1", "Player2", "Player3", "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
                     break;
                 case Four:
+                    amountOfTeamsInInt = 4;
                     tblTeams.getColumns().addAll(columnTeam, columnPlayer1, columnPlayer2, columnPlayer3, columnPlayer4, columnPlayer5, columnPlayer6, columnPlayer7, columnPlayer8, columnPlayer9, columnPlayer10);
                     tblTeams.setItems(addPlayersToTeams());
                     cbSelectTeams.getItems().addAll("Team1", "Team2", "Team3", "Team4");
@@ -265,6 +269,7 @@ public class TeamController extends SceneControllerParent {
                     cbPlacingOnTable.getItems().addAll("Player1", "Player2", "Player3", "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
                     break;
                 case Five:
+                    amountOfTeamsInInt = 5;
                     tblTeams.getColumns().addAll(columnTeam, columnPlayer1, columnPlayer2, columnPlayer3, columnPlayer4, columnPlayer5, columnPlayer6, columnPlayer7, columnPlayer8, columnPlayer9, columnPlayer10);
                     tblTeams.setItems(addPlayersToTeams());
                     cbSelectTeams.getItems().addAll("Team1", "Team2", "Team3", "Team4", "Team5");
@@ -272,6 +277,7 @@ public class TeamController extends SceneControllerParent {
                     cbPlacingOnTable.getItems().addAll("Player1", "Player2", "Player3", "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
                     break;
                 case Six:
+                    amountOfTeamsInInt = 6;
                     tblTeams.getColumns().addAll(columnTeam, columnPlayer1, columnPlayer2, columnPlayer3, columnPlayer4, columnPlayer5, columnPlayer6, columnPlayer7, columnPlayer8, columnPlayer9, columnPlayer10);
                     tblTeams.setItems(addPlayersToTeams());
                     cbSelectTeams.getItems().addAll("Team1", "Team2", "Team3", "Team4", "Team5", "Team6");
@@ -279,6 +285,7 @@ public class TeamController extends SceneControllerParent {
                     cbPlacingOnTable.getItems().addAll("Player1", "Player2", "Player3", "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
                     break;
                 case Seven:
+                    amountOfTeamsInInt = 7;
                     tblTeams.getColumns().addAll(columnTeam, columnPlayer1, columnPlayer2, columnPlayer3, columnPlayer4, columnPlayer5, columnPlayer6, columnPlayer7, columnPlayer8, columnPlayer9, columnPlayer10);
                     tblTeams.setItems(addPlayersToTeams());
                     cbSelectTeams.getItems().addAll("Team1", "Team2", "Team3", "Team4", "Team5", "Team6", "Team7");
@@ -286,6 +293,7 @@ public class TeamController extends SceneControllerParent {
                     cbPlacingOnTable.getItems().addAll("Player1", "Player2", "Player3", "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
                     break;
                 case Eight:
+                    amountOfTeamsInInt = 8;
                     tblTeams.getColumns().addAll(columnTeam, columnPlayer1, columnPlayer2, columnPlayer3, columnPlayer4, columnPlayer5, columnPlayer6, columnPlayer7, columnPlayer8, columnPlayer9, columnPlayer10);
                     tblTeams.setItems(addPlayersToTeams());
                     cbSelectTeams.getItems().addAll("Team1", "Team2", "Team3", "Team4", "Team5", "Team6", "Team7", "Team8");
@@ -293,6 +301,7 @@ public class TeamController extends SceneControllerParent {
                     cbPlacingOnTable.getItems().addAll("Player1", "Player2", "Player3", "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
                     break;
                 case Nine:
+                    amountOfTeamsInInt = 9;
                     tblTeams.getColumns().addAll(columnTeam, columnPlayer1, columnPlayer2, columnPlayer3, columnPlayer4, columnPlayer5, columnPlayer6, columnPlayer7, columnPlayer8, columnPlayer9, columnPlayer10);
                     tblTeams.setItems(addPlayersToTeams());
                     cbSelectTeams.getItems().addAll("Team1", "Team2", "Team3", "Team4", "Team5", "Team6", "Team7", "Team8", "Team9");
@@ -300,6 +309,7 @@ public class TeamController extends SceneControllerParent {
                     cbPlacingOnTable.getItems().addAll("Player1", "Player2", "Player3", "Player4", "Player5", "Player6", "Player7", "Player8", "Player9", "Player10");
                     break;
                 case Ten:
+                    amountOfTeamsInInt = 10;
                     tblTeams.getColumns().addAll(columnTeam, columnPlayer1, columnPlayer2, columnPlayer3, columnPlayer4, columnPlayer5, columnPlayer6, columnPlayer7, columnPlayer8, columnPlayer9, columnPlayer10);
                     tblTeams.setItems(addPlayersToTeams());
                     cbSelectTeams.getItems().addAll("Team1", "Team2", "Team3", "Team4", "Team5", "Team6", "Team7", "Team8", "Team9", "Team10");
@@ -934,366 +944,13 @@ public class TeamController extends SceneControllerParent {
      */
     public void randomTeams() {
         while (playersBuffer.size() != 0) {
-
             Random random = new Random();
             int randomPlayer = -1;
-            int randomTeam = 1;
-
             randomPlayer = random.nextInt(playersBuffer.size());
-            
-            switch (cbTeams.getSelectionModel().getSelectedItem()) {
-                case Three:
-                    randomTeam += random.nextInt(3);
-                    break;
-                case Four:
-                    randomTeam += random.nextInt(4);
-                    break;
-                case Five:
-                    randomTeam += random.nextInt(5);
-                    break;
-                case Six:
-                    randomTeam += random.nextInt(6);
-                    break;
-                case Seven:
-                    randomTeam += random.nextInt(7);
-                    break;
-                case Eight:
-                    randomTeam += random.nextInt(8);
-                    break;
-                case Nine:
-                    randomTeam += random.nextInt(9);
-                    break;
-                case Ten:
-                    randomTeam += random.nextInt(10);
-                    break;
-            }
-            if (randomTeam == 1) {
-                if ((team1.getPlayer1().equals(" "))) {
-                    team1.setPlayer1((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team1.getPlayer2().equals(" "))) {
-                    team1.setPlayer2((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team1.getPlayer3().equals(" "))) {
-                    team1.setPlayer3((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team1.getPlayer4().equals(" "))) {
-                    team1.setPlayer4((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team1.getPlayer5().equals(" "))) {
-                    team1.setPlayer5((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team1.getPlayer6().equals(" "))) {
-                    team1.setPlayer6((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team1.getPlayer7().equals(" "))) {
-                    team1.setPlayer7((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team1.getPlayer8().equals(" "))) {
-                    team1.setPlayer8((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team1.getPlayer9().equals(" "))) {
-                    team1.setPlayer9((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team1.getPlayer10().equals(" "))) {
-                    team1.setPlayer10((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                }
-            }
-            if (randomTeam == 2) {
-                if ((team2.getPlayer1().equals(" "))) {
-                    team2.setPlayer1((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team2.getPlayer2().equals(" "))) {
-                    team2.setPlayer2((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team2.getPlayer3().equals(" "))) {
-                    team2.setPlayer3((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team2.getPlayer4().equals(" "))) {
-                    team2.setPlayer4((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team2.getPlayer5().equals(" "))) {
-                    team2.setPlayer5((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team2.getPlayer6().equals(" "))) {
-                    team2.setPlayer6((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team2.getPlayer7().equals(" "))) {
-                    team2.setPlayer7((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team2.getPlayer8().equals(" "))) {
-                    team2.setPlayer8((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team2.getPlayer9().equals(" "))) {
-                    team2.setPlayer9((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team2.getPlayer10().equals(" "))) {
-                    team2.setPlayer10((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                }
-            }
-            if (randomTeam == 3) {
-                if ((team3.getPlayer1().equals(" "))) {
-                    team3.setPlayer1((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team3.getPlayer2().equals(" "))) {
-                    team3.setPlayer2((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team3.getPlayer3().equals(" "))) {
-                    team3.setPlayer3((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team3.getPlayer4().equals(" "))) {
-                    team3.setPlayer4((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team3.getPlayer5().equals(" "))) {
-                    team3.setPlayer5((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team3.getPlayer6().equals(" "))) {
-                    team3.setPlayer6((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team3.getPlayer7().equals(" "))) {
-                    team3.setPlayer7((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team3.getPlayer8().equals(" "))) {
-                    team3.setPlayer8((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team3.getPlayer9().equals(" "))) {
-                    team3.setPlayer9((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team3.getPlayer10().equals(" "))) {
-                    team3.setPlayer10((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                }
-            }
-            if (randomTeam == 4) {
-                if ((team4.getPlayer1().equals(" "))) {
-                    team4.setPlayer1((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team4.getPlayer2().equals(" "))) {
-                    team4.setPlayer2((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team4.getPlayer3().equals(" "))) {
-                    team4.setPlayer3((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team4.getPlayer4().equals(" "))) {
-                    team4.setPlayer4((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team4.getPlayer5().equals(" "))) {
-                    team4.setPlayer5((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team4.getPlayer6().equals(" "))) {
-                    team4.setPlayer6((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team4.getPlayer7().equals(" "))) {
-                    team4.setPlayer7((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team4.getPlayer8().equals(" "))) {
-                    team4.setPlayer8((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team4.getPlayer9().equals(" "))) {
-                    team4.setPlayer9((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team4.getPlayer10().equals(" "))) {
-                    team4.setPlayer10((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                }
-            }
-            if (randomTeam == 5) {
-                if ((team5.getPlayer1().equals(" "))) {
-                    team5.setPlayer1((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team5.getPlayer2().equals(" "))) {
-                    team5.setPlayer2((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team5.getPlayer3().equals(" "))) {
-                    team5.setPlayer3((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team5.getPlayer4().equals(" "))) {
-                    team5.setPlayer4((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team5.getPlayer5().equals(" "))) {
-                    team5.setPlayer5((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team5.getPlayer6().equals(" "))) {
-                    team5.setPlayer6((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team5.getPlayer7().equals(" "))) {
-                    team5.setPlayer7((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team5.getPlayer8().equals(" "))) {
-                    team5.setPlayer8((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team5.getPlayer9().equals(" "))) {
-                    team5.setPlayer9((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team5.getPlayer10().equals(" "))) {
-                    team5.setPlayer10((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                }
-            }
-            if (randomTeam == 6) {
-                if ((team6.getPlayer1().equals(" "))) {
-                    team6.setPlayer1((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team6.getPlayer2().equals(" "))) {
-                    team6.setPlayer2((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team6.getPlayer3().equals(" "))) {
-                    team6.setPlayer3((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team6.getPlayer4().equals(" "))) {
-                    team6.setPlayer4((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team6.getPlayer5().equals(" "))) {
-                    team6.setPlayer5((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team6.getPlayer6().equals(" "))) {
-                    team6.setPlayer6((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team6.getPlayer7().equals(" "))) {
-                    team6.setPlayer7((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team6.getPlayer8().equals(" "))) {
-                    team6.setPlayer8((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team6.getPlayer9().equals(" "))) {
-                    team6.setPlayer9((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team6.getPlayer10().equals(" "))) {
-                    team6.setPlayer10((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                }
-            }
-            if (randomTeam == 7) {
-                if ((team7.getPlayer1().equals(" "))) {
-                    team7.setPlayer1((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team7.getPlayer2().equals(" "))) {
-                    team7.setPlayer2((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team7.getPlayer3().equals(" "))) {
-                    team7.setPlayer3((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team7.getPlayer4().equals(" "))) {
-                    team7.setPlayer4((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team7.getPlayer5().equals(" "))) {
-                    team7.setPlayer5((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team7.getPlayer6().equals(" "))) {
-                    team7.setPlayer6((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team7.getPlayer7().equals(" "))) {
-                    team7.setPlayer7((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team7.getPlayer8().equals(" "))) {
-                    team7.setPlayer8((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team7.getPlayer9().equals(" "))) {
-                    team7.setPlayer9((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team7.getPlayer10().equals(" "))) {
-                    team7.setPlayer10((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                }
-            }
-            if (randomTeam == 8) {
-                if ((team8.getPlayer1().equals(" "))) {
-                    team8.setPlayer1((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team8.getPlayer2().equals(" "))) {
-                    team8.setPlayer2((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team8.getPlayer3().equals(" "))) {
-                    team8.setPlayer3((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team8.getPlayer4().equals(" "))) {
-                    team8.setPlayer4((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team8.getPlayer5().equals(" "))) {
-                    team8.setPlayer5((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team8.getPlayer6().equals(" "))) {
-                    team8.setPlayer6((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team8.getPlayer7().equals(" "))) {
-                    team8.setPlayer7((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team8.getPlayer8().equals(" "))) {
-                    team8.setPlayer8((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team8.getPlayer9().equals(" "))) {
-                    team8.setPlayer9((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team8.getPlayer10().equals(" "))) {
-                    team8.setPlayer10((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                }
-            }
-            if (randomTeam == 9) {
-                if ((team9.getPlayer1().equals(" "))) {
-                    team9.setPlayer1((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team9.getPlayer2().equals(" "))) {
-                    team9.setPlayer2((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team9.getPlayer3().equals(" "))) {
-                    team9.setPlayer3((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team9.getPlayer4().equals(" "))) {
-                    team9.setPlayer4((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team9.getPlayer5().equals(" "))) {
-                    team9.setPlayer5((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team9.getPlayer6().equals(" "))) {
-                    team9.setPlayer6((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team9.getPlayer7().equals(" "))) {
-                    team9.setPlayer7((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team9.getPlayer8().equals(" "))) {
-                    team9.setPlayer8((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team9.getPlayer9().equals(" "))) {
-                    team9.setPlayer9((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team9.getPlayer10().equals(" "))) {
-                    team9.setPlayer10((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                }
-            }
-            if (randomTeam == 10) {
-                if ((team10.getPlayer1().equals(" "))) {
-                    team10.setPlayer1((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team10.getPlayer2().equals(" "))) {
-                    team10.setPlayer2((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team10.getPlayer3().equals(" "))) {
-                    team10.setPlayer3((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team10.getPlayer4().equals(" "))) {
-                    team10.setPlayer4((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team10.getPlayer5().equals(" "))) {
-                    team10.setPlayer5((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team10.getPlayer6().equals(" "))) {
-                    team10.setPlayer6((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team10.getPlayer7().equals(" "))) {
-                    team10.setPlayer7((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team10.getPlayer8().equals(" "))) {
-                    team10.setPlayer8((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team10.getPlayer9().equals(" "))) {
-                    team10.setPlayer9((playersBuffer.get(randomPlayer)).getName());
-                    playersBuffer.remove(randomPlayer);
-                } else if ((team10.getPlayer10().equals(" "))) {
-                    team10.setPlayer10((playersBuffer.get(randomPlayer)).getName());
+
+            for (Team t : tblTeams.getItems()){
+                if (!((playersBuffer.get(randomPlayer)).getName()).equals("")) {
+                    t.addRandomPlayer((playersBuffer.get(randomPlayer)).getName());
                     playersBuffer.remove(randomPlayer);
                 }
             }
