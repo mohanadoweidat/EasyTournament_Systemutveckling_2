@@ -191,4 +191,29 @@ public class Team {
     public void setLosses(int losses) {
         this.losses = losses;
     }
+
+
+    public void addRandomPlayer(String name){
+        if ((player1.equals(" "))) {
+            setPlayer1(name);
+        } else if ((player2.equals(" "))) {
+            setPlayer2(name);
+        } else if ((player3.equals(" "))) {
+            setPlayer3(name);
+        } else if ((player4.equals(" "))) {
+            setPlayer4(name);
+        } else if ((player5.equals(" "))) {
+            setPlayer5(name);
+        } else if ((player6.equals(" "))) {
+            setPlayer6(name);
+        } else if ((player7.equals(" "))) {
+            setPlayer7(name);
+        } else if ((player8.equals(" "))) {
+            setPlayer8(name);
+        } else if ((player9.equals(" "))) {
+            setPlayer9(name);
+        } else if ((player10.equals(" "))) {
+            setPlayer10(name);
+        }
+    }
 }
