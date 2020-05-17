@@ -45,6 +45,8 @@ public class TeamController extends SceneControllerParent {
 
     private int amountOfTeamsInInt = 0;
 
+    private Random random = new Random();
+
     private ObservableList<String> tableContent = FXCollections.observableArrayList();
 
     private Team team1 = new Team();
@@ -944,17 +946,18 @@ public class TeamController extends SceneControllerParent {
      */
     public void randomTeams() {
         while (playersBuffer.size() != 0) {
-            Random random = new Random();
             int randomPlayer = -1;
             randomPlayer = random.nextInt(playersBuffer.size());
-
-            for (Team t : tblTeams.getItems()){
-                if (!((playersBuffer.get(randomPlayer)).getName()).equals("")) {
-                    t.addRandomPlayer((playersBuffer.get(randomPlayer)).getName());
+            for (Team team : tblTeams.getItems()){
+                if (playersBuffer.size() != 0) {
+                    team.addRandomPlayer((playersBuffer.get(randomPlayer)).getName());
                     playersBuffer.remove(randomPlayer);
+                    tblTeams.refresh();
+                    if(playersBuffer.size() != 0) {
+                        randomPlayer = random.nextInt(playersBuffer.size());
+                    }
                 }
             }
-            tblTeams.refresh();
         }
     }
 
