@@ -196,9 +196,9 @@ public class GroupStageController extends SceneControllerParent {
            String line = in.readLine();
            String[] team;
            while (line != null) {
-
                team = line.split(",");
-               dataTable.add(new Team(team[0],team[1],team[2],team[3],team[4],team[5],team[6],team[7],team[8],team[9],team[10],Integer.parseInt(team[11]),Integer.parseInt(team[12]),Integer.parseInt(team[13]),Integer.parseInt(team[14])));
+               dataTable.add(new Team(team[0],team[1],team[2],team[3],team[4],team[5],team[6],team[7],team[8],team[9],team[10],
+                       Integer.parseInt(team[11]),Integer.parseInt(team[12]),Integer.parseInt(team[13]),Integer.parseInt(team[14])));
                line = in.readLine();
            }
            tblGroupStage.setItems(dataTable);
@@ -264,6 +264,7 @@ public class GroupStageController extends SceneControllerParent {
                 team.setDraws(0);
                 team.setPoints(0);
                 team.setLosses(0);
+                tblGroupStage.refresh();
             }
         }
     }
