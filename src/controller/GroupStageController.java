@@ -195,11 +195,17 @@ public class GroupStageController extends SceneControllerParent {
            in = new BufferedReader(new FileReader(file));
            String line = in.readLine();
            String[] team;
+           int count = 0;
            while (line != null) {
                team = line.split(",");
                dataTable.add(new Team(team[0],team[1],team[2],team[3],team[4],team[5],team[6],team[7],team[8],team[9],team[10],
                        Integer.parseInt(team[11]),Integer.parseInt(team[12]),Integer.parseInt(team[13]),Integer.parseInt(team[14])));
+               count++;
                line = in.readLine();
+           }
+           if(count != 0) {
+               teams = count;
+               nextGames();
            }
            tblGroupStage.setItems(dataTable);
            tblGroupStage.refresh();
