@@ -13,6 +13,7 @@ import java.io.*;
 import java.lang.reflect.Array;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -193,9 +194,11 @@ public class GroupStageController extends SceneControllerParent {
            BufferedReader in;
            in = new BufferedReader(new FileReader(file));
            String line = in.readLine();
+           String[] team;
            while (line != null) {
-
-               dataTable.add(new Team(line));
+               team = line.split(",");
+               dataTable.add(new Team(team[0],team[1],team[2],team[3],team[4],team[5],team[6],team[7],team[8],team[9],team[10],
+                       Integer.parseInt(team[11]),Integer.parseInt(team[12]),Integer.parseInt(team[13]),Integer.parseInt(team[14])));
                line = in.readLine();
            }
            tblGroupStage.setItems(dataTable);
@@ -204,6 +207,67 @@ public class GroupStageController extends SceneControllerParent {
            ex.printStackTrace();
        }
    }
+
+    /**
+     * Saves the teams and the score you added to the table
+     */
+    @FXML
+    public void saveTeams() {
+        List<Team> teams = (tblGroupStage.getItems());
+        FileChooser chooser = new FileChooser();
+        chooser.setTitle("Choose location To Save Report");
+
+        File selectedFile = null;
+        if(selectedFile==null) {
+            selectedFile = chooser.showSaveDialog(null);
+        }
+
+        PrintWriter outFile = null;
+        try {
+            outFile = new PrintWriter(selectedFile+".txt");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        for (Team team : teams) {
+            outFile.print(team.getName() + ",");
+            outFile.print(team.getPlayer1() + ",");
+            outFile.print(team.getPlayer2() + ",");
+            outFile.print(team.getPlayer3() + ",");
+            outFile.print(team.getPlayer4() + ",");
+            outFile.print(team.getPlayer5() + ",");
+            outFile.print(team.getPlayer6() + ",");
+            outFile.print(team.getPlayer7() + ",");
+            outFile.print(team.getPlayer8() + ",");
+            outFile.print(team.getPlayer9() + ",");
+            outFile.print(team.getPlayer10() + ",");
+            outFile.print(team.getPoints() + ",");
+            outFile.print(team.getDraws() + ",");
+            outFile.print(team.getWins() + ",");
+            outFile.print(team.getLosses() + ",");
+            outFile.println();
+        }
+        outFile.close();
+    }
+
+    public void startNewLeague(){
+        List<Team> teams = (tblGroupStage.getItems());
+        if (teams.size() == 0){
+            Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+            alert1.setTitle("Error message");
+            alert1.setHeaderText(null);
+            alert1.setContentText("You need to add teams to start the League Play");
+            alert1.showAndWait();
+        }else {
+            for (Team team : teams) {
+                team.setWins(0);
+                team.setDraws(0);
+                team.setPoints(0);
+                team.setLosses(0);
+                tblGroupStage.refresh();
+            }
+        }
+    }
 
     /**
      * Fills the table with the teams
