@@ -14,6 +14,7 @@ public class Tournament {
     private ArrayList<Player> arrayListPlayers = new ArrayList();
     private ArrayList<Player> arrayListTeams = new ArrayList();
     private ArrayList<Team> teams = new ArrayList();
+    private int timesToMeat = 0;
 
     /**
      * Saves the amount of teams that gets sent in trough parameters
@@ -70,5 +71,13 @@ public class Tournament {
 
     public void setTeams(List teams) {
         this.teams.addAll(teams);
+    }
+
+    public int getTimesToMeat() {
+        return timesToMeat;
+    }
+
+    public void setTimesToMeat(int timesToMeat) {
+        this.timesToMeat = timesToMeat;
     }
 }

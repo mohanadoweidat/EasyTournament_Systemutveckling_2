@@ -203,4 +203,12 @@ public class MainController {
     public void loadBuffer(){
         teamController.loadBuffer();
     }
+
+    public void setTimesToMeat(int times){
+        tournament.setTimesToMeat(times);
+    }
+
+    public void getTimesToMeat(){
+        tournament.getTimesToMeat();
+    }
 }
