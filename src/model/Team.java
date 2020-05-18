@@ -31,6 +31,24 @@ public class Team {
         this.player10 = player10;
     }
 
+    public Team(String name, String player1, String player2,String player3,String player4,String player5,String player6,String player7,String player8,String player9,String player10, int points, int draws, int wins, int losses){
+        this.name = name;
+        this.player1 = player1;
+        this.player2 = player2;
+        this.player3 = player3;
+        this.player4 = player4;
+        this.player5 = player5;
+        this.player6 = player6;
+        this.player7 = player7;
+        this.player8 = player8;
+        this.player9 = player9;
+        this.player10 = player10;
+        this.points = points;
+        this.draws = draws;
+        this.wins = wins;
+        this.losses = losses;
+    }
+
     public Team(String name) {
         this.name = name;
     }

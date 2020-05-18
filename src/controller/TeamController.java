@@ -129,17 +129,21 @@ public class TeamController extends SceneControllerParent {
         }
 
         for (Team team : teams) {
-            outFile.print(team.getName() + " ");
-                    outFile.print(team.getPlayer1() + " ");
-                    outFile.print(team.getPlayer2() + " ");
-                    outFile.print(team.getPlayer3() + " ");
-                    outFile.print(team.getPlayer4() + " ");
-                    outFile.print(team.getPlayer5() + " ");
-                    outFile.print(team.getPlayer6() + " ");
-                    outFile.print(team.getPlayer7() + " ");
-                    outFile.print(team.getPlayer8() + " ");
-                    outFile.print(team.getPlayer9() + " ");
-                    outFile.print(team.getPlayer10() + " ");
+            outFile.print(team.getName() + ",");
+                    outFile.print(team.getPlayer1() + ",");
+                    outFile.print(team.getPlayer2() + ",");
+                    outFile.print(team.getPlayer3() + ",");
+                    outFile.print(team.getPlayer4() + ",");
+                    outFile.print(team.getPlayer5() + ",");
+                    outFile.print(team.getPlayer6() + ",");
+                    outFile.print(team.getPlayer7() + ",");
+                    outFile.print(team.getPlayer8() + ",");
+                    outFile.print(team.getPlayer9() + ",");
+                    outFile.print(team.getPlayer10() + ",");
+                    outFile.print(team.getPoints() + ",");
+                    outFile.print(team.getDraws() + ",");
+                    outFile.print(team.getWins() + ",");
+                    outFile.print(team.getLosses() + ",");
             outFile.println();
         }
         outFile.close();
@@ -946,7 +950,7 @@ public class TeamController extends SceneControllerParent {
      */
     public void randomTeams() {
         while (playersBuffer.size() != 0) {
-            int randomPlayer = -1;
+            int randomPlayer = 0;
             randomPlayer = random.nextInt(playersBuffer.size());
             for (Team team : tblTeams.getItems()){
                 if (playersBuffer.size() != 0) {
