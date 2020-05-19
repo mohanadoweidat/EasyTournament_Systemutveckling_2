@@ -234,7 +234,7 @@ public class GroupStageController extends SceneControllerParent {
                                team[5],team[6],team[7],team[8],team[9],team[10],
                                Integer.parseInt(team[11]),Integer.parseInt(team[12]),
                                Integer.parseInt(team[13]),Integer.parseInt(team[14])));
-               mainController.setTeam(
+               mainController.addTeam(
                        new Team(team[0],team[1],team[2],team[3],team[4],
                                team[5],team[6],team[7],team[8],team[9],team[10],
                                Integer.parseInt(team[11]),Integer.parseInt(team[12]),

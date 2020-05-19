@@ -200,6 +200,10 @@ public class MainController {
         return tournament.getTeams();
     }
 
+    public Team getTeam(int index){
+        return tournament.getTeam(index);
+    }
+
     public void loadBuffer(){
         teamController.loadBuffer();
     }
@@ -210,13 +214,5 @@ public class MainController {
 
     public void getTimesToMeat(){
         tournament.getTimesToMeat();
-    }
-
-    public void setTeam(Team team){
-        tournament.setTeam(team);
-    }
-
-    public void getTeam(){
-        tournament.getTeams();
     }
 }

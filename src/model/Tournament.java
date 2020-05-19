@@ -65,6 +65,10 @@ public class Tournament {
         return teams;
     }
 
+    public Team getTeam(int index) {
+        return teams.get(index);
+    }
+
     public void setTeam(Team teams) {
         this.teams.add(teams);
     }
