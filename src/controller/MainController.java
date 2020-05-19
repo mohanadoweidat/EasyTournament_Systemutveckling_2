@@ -211,4 +211,12 @@ public class MainController {
     public void getTimesToMeat(){
         tournament.getTimesToMeat();
     }
+
+    public void setTeam(Team team){
+        tournament.setTeam(team);
+    }
+
+    public void getTeam(){
+        tournament.getTeams();
+    }
 }
