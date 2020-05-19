@@ -200,7 +200,19 @@ public class MainController {
         return tournament.getTeams();
     }
 
+    public Team getTeam(int index){
+        return tournament.getTeam(index);
+    }
+
     public void loadBuffer(){
         teamController.loadBuffer();
+    }
+
+    public void setTimesToMeat(int times){
+        tournament.setTimesToMeat(times);
+    }
+
+    public void getTimesToMeat(){
+        tournament.getTimesToMeat();
     }
 }

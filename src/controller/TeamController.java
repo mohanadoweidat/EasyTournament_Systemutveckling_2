@@ -49,16 +49,16 @@ public class TeamController extends SceneControllerParent {
 
     private ObservableList<String> tableContent = FXCollections.observableArrayList();
 
-    private Team team1 = new Team();
-    private Team team2 = new Team();
-    private Team team3 = new Team();
-    private Team team4 = new Team();
-    private Team team5 = new Team();
-    private Team team6 = new Team();
-    private Team team7 = new Team();
-    private Team team8 = new Team();
-    private Team team9 = new Team();
-    private Team team10 = new Team();
+    private Team team1;
+    private Team team2;
+    private Team team3;
+    private Team team4;
+    private Team team5;
+    private Team team6;
+    private Team team7;
+    private Team team8;
+    private Team team9;
+    private Team team10;
 
     private TableColumn<Team, String> columnTeam = new TableColumn("Team");
     private TableColumn<Team, String> columnPlayer1 = new TableColumn("Player 1");
@@ -117,33 +117,33 @@ public class TeamController extends SceneControllerParent {
         chooser.setTitle("Choose location To Save Report");
 
         File selectedFile = null;
-        if(selectedFile==null) {
+        if (selectedFile == null) {
             selectedFile = chooser.showSaveDialog(null);
         }
 
         PrintWriter outFile = null;
         try {
-            outFile = new PrintWriter(selectedFile+".txt");
+            outFile = new PrintWriter(selectedFile + ".txt");
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         for (Team team : teams) {
             outFile.print(team.getName() + ",");
-                    outFile.print(team.getPlayer1() + ",");
-                    outFile.print(team.getPlayer2() + ",");
-                    outFile.print(team.getPlayer3() + ",");
-                    outFile.print(team.getPlayer4() + ",");
-                    outFile.print(team.getPlayer5() + ",");
-                    outFile.print(team.getPlayer6() + ",");
-                    outFile.print(team.getPlayer7() + ",");
-                    outFile.print(team.getPlayer8() + ",");
-                    outFile.print(team.getPlayer9() + ",");
-                    outFile.print(team.getPlayer10() + ",");
-                    outFile.print(team.getPoints() + ",");
-                    outFile.print(team.getDraws() + ",");
-                    outFile.print(team.getWins() + ",");
-                    outFile.print(team.getLosses() + ",");
+            outFile.print(team.getPlayer1() + ",");
+            outFile.print(team.getPlayer2() + ",");
+            outFile.print(team.getPlayer3() + ",");
+            outFile.print(team.getPlayer4() + ",");
+            outFile.print(team.getPlayer5() + ",");
+            outFile.print(team.getPlayer6() + ",");
+            outFile.print(team.getPlayer7() + ",");
+            outFile.print(team.getPlayer8() + ",");
+            outFile.print(team.getPlayer9() + ",");
+            outFile.print(team.getPlayer10() + ",");
+            outFile.print(team.getPoints() + ",");
+            outFile.print(team.getDraws() + ",");
+            outFile.print(team.getWins() + ",");
+            outFile.print(team.getLosses() + ",");
             outFile.println();
         }
         outFile.close();
@@ -152,7 +152,7 @@ public class TeamController extends SceneControllerParent {
     /**
      * Reads teams from a file
      */
-    public void importTeams(){
+    public void importTeams() {
 
         Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
         alert1.setTitle("Name problems");
@@ -244,12 +244,65 @@ public class TeamController extends SceneControllerParent {
         columnPlayer10.setCellValueFactory(new PropertyValueFactory<>("player10"));
     }
 
+    public void loadTeams() {
+        try  {
+            team1 = mainController.getTeam(0);
+        } catch(Exception e) {
+            team1 = new Team();
+        }
+        try  {
+            team2 = mainController.getTeam(1);
+        } catch(Exception e) {
+            team2 = new Team();
+        }
+        try  {
+            team3 = mainController.getTeam(2);
+        } catch(Exception e) {
+            team3 = new Team();
+        }
+        try  {
+            team4 = mainController.getTeam(3);
+        } catch(Exception e) {
+            team4 = new Team();
+        }
+        try  {
+            team5 = mainController.getTeam(4);
+        } catch(Exception e) {
+            team5 = new Team();
+        }
+        try  {
+            team6 = mainController.getTeam(5);
+        } catch(Exception e) {
+            team6 = new Team();
+        }
+        try  {
+            team7 = mainController.getTeam(6);
+        } catch(Exception e) {
+            team7 = new Team();
+        }
+        try  {
+            team8 = mainController.getTeam(7);
+        } catch(Exception e) {
+            team8 = new Team();
+        }
+        try  {
+            team9 = mainController.getTeam(8);
+        } catch(Exception e) {
+            team9 = new Team();
+        }
+        try  {
+            team10 = mainController.getTeam(9);
+        } catch(Exception e) {
+            team10 = new Team();
+        }
+    }
 
     /**
      * Chooses the amount of columns and rows for the teams and players depending on which is choosen in the ChoiceBox
      */
     @FXML
     private void initTeamsTableData(ActionEvent event) {
+        loadTeams();
         for (Player p : mainController.getPlayers()) {
             cbPlayers.getItems().add(p.getName());
 //            cbRemovePlayer.getItems().add(p.getName());
@@ -952,12 +1005,12 @@ public class TeamController extends SceneControllerParent {
         while (playersBuffer.size() != 0) {
             int randomPlayer = 0;
             randomPlayer = random.nextInt(playersBuffer.size());
-            for (Team team : tblTeams.getItems()){
+            for (Team team : tblTeams.getItems()) {
                 if (playersBuffer.size() != 0) {
                     team.addRandomPlayer((playersBuffer.get(randomPlayer)).getName());
                     playersBuffer.remove(randomPlayer);
                     tblTeams.refresh();
-                    if(playersBuffer.size() != 0) {
+                    if (playersBuffer.size() != 0) {
                         randomPlayer = random.nextInt(playersBuffer.size());
                     }
                 }

@@ -9,11 +9,13 @@ import javafx.stage.FileChooser;
 import javafx.util.converter.IntegerStringConverter;
 import model.*;
 
+import javax.swing.*;
 import java.io.*;
 import java.lang.reflect.Array;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
 /**
@@ -140,6 +142,35 @@ public class GroupStageController extends SceneControllerParent {
         tblGroupStage.setEditable(true);
     }
 
+    public void setupLeaguePlay(){
+        List<Team> teamsToPlay = (tblGroupStage.getItems());
+        TextInputDialog dialog = new TextInputDialog("Ex. 2");
+        dialog.setTitle("Easy Tournament");
+        dialog.setHeaderText("Enter the amount of times you want eanch team to meat each other");
+        dialog.setContentText("Please enter the amount of times:");
+
+        Optional<String> result = dialog.showAndWait();
+        if (result.isPresent()){
+            System.out.println("Your name: " + result.get());
+            try{
+                mainController.setTimesToMeat(Integer.parseInt(result.get()));
+            }catch (Exception e){
+                Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+                alert1.setTitle("Error message");
+                alert1.setHeaderText(null);
+                alert1.setContentText("Only enter numbers");
+                alert1.showAndWait();
+            }
+        }
+
+
+
+
+ //       for (Team team : teamsToPlay) {
+
+        //}
+    }
+
     public void nextGames(){
         if (teams == 0){
             Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
@@ -198,8 +229,16 @@ public class GroupStageController extends SceneControllerParent {
            int count = 0;
            while (line != null) {
                team = line.split(",");
-               dataTable.add(new Team(team[0],team[1],team[2],team[3],team[4],team[5],team[6],team[7],team[8],team[9],team[10],
-                       Integer.parseInt(team[11]),Integer.parseInt(team[12]),Integer.parseInt(team[13]),Integer.parseInt(team[14])));
+               dataTable.add(
+                       new Team(team[0],team[1],team[2],team[3],team[4],
+                               team[5],team[6],team[7],team[8],team[9],team[10],
+                               Integer.parseInt(team[11]),Integer.parseInt(team[12]),
+                               Integer.parseInt(team[13]),Integer.parseInt(team[14])));
+               mainController.addTeam(
+                       new Team(team[0],team[1],team[2],team[3],team[4],
+                               team[5],team[6],team[7],team[8],team[9],team[10],
+                               Integer.parseInt(team[11]),Integer.parseInt(team[12]),
+                               Integer.parseInt(team[13]),Integer.parseInt(team[14])));
                count++;
                line = in.readLine();
            }
