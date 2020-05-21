@@ -15,8 +15,23 @@ public class Team {
 
     public Team(){}
 
+
+
     public Team(String name, String player1, String player2,String player3,String player4,String player5,String player6,String player7,String player8,String player9,String player10){
         this.name = name;
+        this.player1 = player1;
+        this.player2 = player2;
+        this.player3 = player3;
+        this.player4 = player4;
+        this.player5 = player5;
+        this.player6 = player6;
+        this.player7 = player7;
+        this.player8 = player8;
+        this.player9 = player9;
+        this.player10 = player10;
+    }
+
+    public Team(String player1, String player2,String player3,String player4,String player5,String player6,String player7,String player8,String player9,String player10){
         this.player1 = player1;
         this.player2 = player2;
         this.player3 = player3;
@@ -79,13 +94,26 @@ public class Team {
     }
 
     public void RemovePlayerFromRemoveList(String player){
-
         for (String s : arrayListPlayers) {
             if (s.equals(player)) {
                 arrayListPlayers.remove(player);
                 arrayListPlayers.trimToSize();
             }
         }
+    }
+
+    public void RemovePlayersTeam(){
+        arrayListPlayers.clear();
+        player1 = " ";
+        player2 = " ";
+        player3 = " ";
+        player4 = " ";
+        player5 = " ";
+        player6 = " ";
+        player7 = " ";
+        player8 = " ";
+        player9 = " ";
+        player10 = " ";
     }
 
     public String getPlayer1() {
