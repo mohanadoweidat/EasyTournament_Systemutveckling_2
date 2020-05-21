@@ -112,7 +112,6 @@ public class PlayersController extends SceneControllerParent {
         FileChooser chooser = new FileChooser();
         chooser.setTitle("Choose location To Save Report");
 
-
         File selectedFile = null;
         if(selectedFile==null) {
             selectedFile = chooser.showSaveDialog(null);

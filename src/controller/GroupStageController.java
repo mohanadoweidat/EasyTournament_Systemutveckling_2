@@ -8,11 +8,7 @@ import javafx.scene.control.cell.*;
 import javafx.stage.FileChooser;
 import javafx.util.converter.IntegerStringConverter;
 import model.*;
-
-import javax.swing.*;
 import java.io.*;
-import java.lang.reflect.Array;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -151,7 +147,6 @@ public class GroupStageController extends SceneControllerParent {
 
         Optional<String> result = dialog.showAndWait();
         if (result.isPresent()){
-            System.out.println("Your name: " + result.get());
             try{
                 mainController.setTimesToMeat(Integer.parseInt(result.get()));
             }catch (Exception e){
@@ -311,6 +306,7 @@ public class GroupStageController extends SceneControllerParent {
                 team.setLosses(0);
                 tblGroupStage.refresh();
             }
+            setupLeaguePlay();
         }
     }
 

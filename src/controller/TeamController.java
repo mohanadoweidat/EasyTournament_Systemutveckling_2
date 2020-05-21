@@ -75,6 +75,8 @@ public class TeamController extends SceneControllerParent {
     private ObservableList<Team> observablePlayers = FXCollections.observableArrayList();
 
     private ArrayList<Player> playersBuffer = new ArrayList<>();
+    private ArrayList<Team> teamsBuffer = new ArrayList();
+    private int teams = 0;
 
     public TeamController() {
 
@@ -153,26 +155,33 @@ public class TeamController extends SceneControllerParent {
      * Reads teams from a file
      */
     public void importTeams() {
-
-        Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
-        alert1.setTitle("Name problems");
-        alert1.setHeaderText(null);
-        alert1.setContentText("Feature is coming soon");
-        alert1.showAndWait();
-
-        if (false) {
-            FileChooser chooser1 = new FileChooser();
-            File file = chooser1.showOpenDialog(null);
-            try {
-                BufferedReader in;
-                in = new BufferedReader(new FileReader(file));
-                String line = in.readLine();
-                while (line != null) {
-                    line = in.readLine();
-                }
-            } catch (Exception ex) {
-                ex.printStackTrace();
+        teamsBuffer.clear();
+        ObservableList<Team> dataTable = FXCollections.observableArrayList();
+        FileChooser chooser1 = new FileChooser();
+        File file = chooser1.showOpenDialog(null);
+        try {
+            BufferedReader in;
+            in = new BufferedReader(new FileReader(file));
+            String line = in.readLine();
+            String[] team;
+            while (line != null) {
+                team = line.split(",");
+                dataTable.add(
+                        new Team(team[0],team[1],team[2],team[3],team[4],
+                                team[5],team[6],team[7],team[8],team[9],team[10],
+                                Integer.parseInt(team[11]),Integer.parseInt(team[12]),
+                                Integer.parseInt(team[13]),Integer.parseInt(team[14])));
+                mainController.addTeam(
+                        new Team(team[0],team[1],team[2],team[3],team[4],
+                                team[5],team[6],team[7],team[8],team[9],team[10],
+                                Integer.parseInt(team[11]),Integer.parseInt(team[12]),
+                                Integer.parseInt(team[13]),Integer.parseInt(team[14])));
+                line = in.readLine();
             }
+            tblTeams.setItems(dataTable);
+            tblTeams.refresh();
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
     }
 
@@ -412,8 +421,6 @@ public class TeamController extends SceneControllerParent {
             case "Team10":
                 cbRemovePlayer.getItems().setAll(team10.getPlayers());
                 break;
-
-
         }
     }
 
@@ -429,7 +436,6 @@ public class TeamController extends SceneControllerParent {
                 observablePlayers.addAll(team1, team2, team3);
                 break;
             case Four:
-
                 team1.setName("Team 1");
                 team2.setName("Team 2");
                 team3.setName("Team 3");
@@ -512,6 +518,7 @@ public class TeamController extends SceneControllerParent {
         if ((cbSelectTeams.getValue()).equals("Team1")) {
             if ((team1.getPlayer1().equals(" "))) {
                 team1.setPlayer1(cbPlayers.getValue());
+
             } else if ((team1.getPlayer2().equals(" "))) {
                 team1.setPlayer2(cbPlayers.getValue());
             } else if ((team1.getPlayer3().equals(" "))) {
@@ -757,241 +764,631 @@ public class TeamController extends SceneControllerParent {
         if ((cbRemoveTeam.getValue()).equals("Team1")) {
             if ((team1.getPlayer1().equals(cbRemovePlayer.getValue()))) {
                 team1.setPlayer1(" ");
-//                team1.removePlayerFromList(cbRemovePlayer.getValue());
+                team1.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team1.getPlayer2().equals(cbRemovePlayer.getValue()))) {
                 team1.setPlayer2(" ");
-//                team1.removePlayerFromList(cbRemovePlayer.getValue());
+                team1.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team1.getPlayer3().equals(cbRemovePlayer.getValue()))) {
                 team1.setPlayer3(" ");
-//                team1.removePlayerFromList(cbRemovePlayer.getValue());
+                team1.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team1.getPlayer4().equals(cbRemovePlayer.getValue()))) {
                 team1.setPlayer4(" ");
-//                team1.removePlayerFromList(cbRemovePlayer.getValue());
+                team1.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team1.getPlayer5().equals(cbRemovePlayer.getValue()))) {
                 team1.setPlayer5(" ");
-//                team1.removePlayerFromList(cbRemovePlayer.getValue());
+                team1.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team1.getPlayer6().equals(cbRemovePlayer.getValue()))) {
                 team1.setPlayer6(" ");
-//                team1.removePlayerFromList(cbRemovePlayer.getValue());
+                team1.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team1.getPlayer7().equals(cbRemovePlayer.getValue()))) {
                 team1.setPlayer7(" ");
-//                team1.removePlayerFromList(cbRemovePlayer.getValue());
+                team1.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team1.getPlayer8().equals(cbRemovePlayer.getValue()))) {
                 team1.setPlayer8(" ");
-//                team1.removePlayerFromList(cbRemovePlayer.getValue());
+                team1.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team1.getPlayer9().equals(cbRemovePlayer.getValue()))) {
                 team1.setPlayer9(" ");
-//                team1.removePlayerFromList(cbRemovePlayer.getValue());
+                team1.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team1.getPlayer10().equals(cbRemovePlayer.getValue()))) {
                 team1.setPlayer10(" ");
-//                team1.removePlayerFromList(cbRemovePlayer.getValue());
+                team1.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             }
         }
         if ((cbRemoveTeam.getValue()).equals("Team2")) {
             if ((team2.getPlayer1().equals(cbRemovePlayer.getValue()))) {
                 team2.setPlayer1(" ");
+                team2.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team2.getPlayer2().equals(cbRemovePlayer.getValue()))) {
                 team2.setPlayer2(" ");
+                team2.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team2.getPlayer3().equals(cbRemovePlayer.getValue()))) {
                 team2.setPlayer3(" ");
+                team2.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team2.getPlayer4().equals(cbRemovePlayer.getValue()))) {
                 team2.setPlayer4(" ");
+                team2.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team2.getPlayer5().equals(cbRemovePlayer.getValue()))) {
                 team2.setPlayer5(" ");
+                team2.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team2.getPlayer6().equals(cbRemovePlayer.getValue()))) {
                 team2.setPlayer6(" ");
+                team2.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team2.getPlayer7().equals(cbRemovePlayer.getValue()))) {
                 team2.setPlayer7(" ");
+                team2.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team2.getPlayer8().equals(cbRemovePlayer.getValue()))) {
                 team2.setPlayer8(" ");
+                team2.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team2.getPlayer9().equals(cbRemovePlayer.getValue()))) {
                 team2.setPlayer9(" ");
+                team2.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team2.getPlayer10().equals(cbRemovePlayer.getValue()))) {
                 team2.setPlayer10(" ");
+                team2.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             }
         }
         if ((cbRemoveTeam.getValue()).equals("Team3")) {
             if ((team3.getPlayer1().equals(cbRemovePlayer.getValue()))) {
                 team3.setPlayer1(" ");
+                team1.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team3.getPlayer2().equals(cbRemovePlayer.getValue()))) {
                 team3.setPlayer2(" ");
+                team3.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team3.getPlayer3().equals(cbRemovePlayer.getValue()))) {
                 team3.setPlayer3(" ");
+                team3.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team3.getPlayer4().equals(cbRemovePlayer.getValue()))) {
                 team3.setPlayer4(" ");
+                team3.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team3.getPlayer5().equals(cbRemovePlayer.getValue()))) {
                 team3.setPlayer5(" ");
+                team3.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team3.getPlayer6().equals(cbRemovePlayer.getValue()))) {
                 team3.setPlayer6(" ");
+                team3.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team3.getPlayer7().equals(cbRemovePlayer.getValue()))) {
                 team3.setPlayer7(" ");
+                team3.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team3.getPlayer8().equals(cbRemovePlayer.getValue()))) {
                 team3.setPlayer8(" ");
+                team3.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team3.getPlayer9().equals(cbRemovePlayer.getValue()))) {
                 team3.setPlayer9(" ");
+                team3.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team3.getPlayer10().equals(cbRemovePlayer.getValue()))) {
                 team3.setPlayer10(" ");
+                team3.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             }
         }
         if ((cbRemoveTeam.getValue()).equals("Team4")) {
             if ((team4.getPlayer1().equals(cbRemovePlayer.getValue()))) {
                 team4.setPlayer1(" ");
+                team4.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team4.getPlayer2().equals(cbRemovePlayer.getValue()))) {
                 team4.setPlayer2(" ");
+                team4.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team4.getPlayer3().equals(cbRemovePlayer.getValue()))) {
                 team4.setPlayer3(" ");
+                team4.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team4.getPlayer4().equals(cbRemovePlayer.getValue()))) {
                 team4.setPlayer4(" ");
+                team4.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team4.getPlayer5().equals(cbRemovePlayer.getValue()))) {
                 team4.setPlayer5(" ");
+                team4.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team4.getPlayer6().equals(cbRemovePlayer.getValue()))) {
                 team4.setPlayer6(" ");
+                team4.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team4.getPlayer7().equals(cbRemovePlayer.getValue()))) {
                 team4.setPlayer7(" ");
+                team4.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team4.getPlayer8().equals(cbRemovePlayer.getValue()))) {
                 team4.setPlayer8(" ");
+                team4.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team4.getPlayer9().equals(cbRemovePlayer.getValue()))) {
                 team4.setPlayer9(" ");
+                team4.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team4.getPlayer10().equals(cbRemovePlayer.getValue()))) {
                 team4.setPlayer10(" ");
+                team4.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             }
         }
         if ((cbRemoveTeam.getValue()).equals("Team5")) {
             if ((team5.getPlayer1().equals(cbRemovePlayer.getValue()))) {
                 team5.setPlayer1(" ");
+                team5.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team5.getPlayer2().equals(cbRemovePlayer.getValue()))) {
                 team5.setPlayer2(" ");
+                team5.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team5.getPlayer3().equals(cbRemovePlayer.getValue()))) {
                 team5.setPlayer3(" ");
+                team5.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team5.getPlayer4().equals(cbRemovePlayer.getValue()))) {
                 team5.setPlayer4(" ");
+                team5.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team5.getPlayer5().equals(cbRemovePlayer.getValue()))) {
                 team5.setPlayer5(" ");
+                team5.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team5.getPlayer6().equals(cbRemovePlayer.getValue()))) {
                 team5.setPlayer6(" ");
+                team5.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team5.getPlayer7().equals(cbRemovePlayer.getValue()))) {
                 team5.setPlayer7(" ");
+                team5.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team5.getPlayer8().equals(cbRemovePlayer.getValue()))) {
                 team5.setPlayer8(" ");
+                team5.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team5.getPlayer9().equals(cbRemovePlayer.getValue()))) {
                 team5.setPlayer9(" ");
+                team5.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team5.getPlayer10().equals(cbRemovePlayer.getValue()))) {
                 team5.setPlayer10(" ");
+                team5.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             }
         }
         if ((cbRemoveTeam.getValue()).equals("Team6")) {
             if ((team6.getPlayer1().equals(cbRemovePlayer.getValue()))) {
                 team6.setPlayer1(" ");
+                team6.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team6.getPlayer2().equals(cbRemovePlayer.getValue()))) {
                 team6.setPlayer2(" ");
+                team6.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team6.getPlayer3().equals(cbRemovePlayer.getValue()))) {
                 team6.setPlayer3(" ");
+                team6.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team6.getPlayer4().equals(cbRemovePlayer.getValue()))) {
                 team6.setPlayer4(" ");
+                team6.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team6.getPlayer5().equals(cbRemovePlayer.getValue()))) {
                 team6.setPlayer5(" ");
+                team6.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team6.getPlayer6().equals(cbRemovePlayer.getValue()))) {
                 team6.setPlayer6(" ");
+                team6.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team6.getPlayer7().equals(cbRemovePlayer.getValue()))) {
                 team6.setPlayer7(" ");
+                team6.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team6.getPlayer8().equals(cbRemovePlayer.getValue()))) {
                 team6.setPlayer8(" ");
+                team6.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team6.getPlayer9().equals(cbRemovePlayer.getValue()))) {
                 team6.setPlayer9(" ");
+                team6.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team6.getPlayer10().equals(cbRemovePlayer.getValue()))) {
                 team6.setPlayer10(" ");
+                team6.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             }
         }
         if ((cbRemoveTeam.getValue()).equals("Team7")) {
             if ((team7.getPlayer1().equals(cbRemovePlayer.getValue()))) {
                 team7.setPlayer1(" ");
+                team7.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team7.getPlayer2().equals(cbRemovePlayer.getValue()))) {
                 team7.setPlayer2(" ");
+                team7.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team7.getPlayer3().equals(cbRemovePlayer.getValue()))) {
                 team7.setPlayer3(" ");
+                team7.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team7.getPlayer4().equals(cbRemovePlayer.getValue()))) {
                 team7.setPlayer4(" ");
+                team7.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team7.getPlayer5().equals(cbRemovePlayer.getValue()))) {
                 team7.setPlayer5(" ");
+                team7.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team7.getPlayer6().equals(cbRemovePlayer.getValue()))) {
                 team7.setPlayer6(" ");
+                team7.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team7.getPlayer7().equals(cbRemovePlayer.getValue()))) {
                 team7.setPlayer7(" ");
+                team7.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team7.getPlayer8().equals(cbRemovePlayer.getValue()))) {
                 team7.setPlayer8(" ");
+                team7.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team7.getPlayer9().equals(cbRemovePlayer.getValue()))) {
                 team7.setPlayer9(" ");
+                team7.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team7.getPlayer10().equals(cbRemovePlayer.getValue()))) {
                 team7.setPlayer10(" ");
+                team7.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             }
         }
         if ((cbRemoveTeam.getValue()).equals("Team8")) {
             if ((team8.getPlayer1().equals(cbRemovePlayer.getValue()))) {
                 team8.setPlayer1(" ");
+                team8.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team8.getPlayer2().equals(cbRemovePlayer.getValue()))) {
                 team8.setPlayer2(" ");
+                team8.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team8.getPlayer3().equals(cbRemovePlayer.getValue()))) {
                 team8.setPlayer3(" ");
+                team8.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team8.getPlayer4().equals(cbRemovePlayer.getValue()))) {
                 team8.setPlayer4(" ");
+                team8.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team8.getPlayer5().equals(cbRemovePlayer.getValue()))) {
                 team8.setPlayer5(" ");
+                team8.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team8.getPlayer6().equals(cbRemovePlayer.getValue()))) {
                 team8.setPlayer6(" ");
+                team8.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team8.getPlayer7().equals(cbRemovePlayer.getValue()))) {
                 team8.setPlayer7(" ");
+                team8.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team8.getPlayer8().equals(cbRemovePlayer.getValue()))) {
                 team8.setPlayer8(" ");
+                team8.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team8.getPlayer9().equals(cbRemovePlayer.getValue()))) {
                 team8.setPlayer9(" ");
+                team8.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team8.getPlayer10().equals(cbRemovePlayer.getValue()))) {
                 team8.setPlayer10(" ");
+                team8.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             }
         }
         if ((cbRemoveTeam.getValue()).equals("Team9")) {
             if ((team9.getPlayer1().equals(cbRemovePlayer.getValue()))) {
                 team9.setPlayer1(" ");
+                team9.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team9.getPlayer2().equals(cbRemovePlayer.getValue()))) {
                 team9.setPlayer2(" ");
+                team9.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team9.getPlayer3().equals(cbRemovePlayer.getValue()))) {
                 team9.setPlayer3(" ");
+                team9.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team9.getPlayer4().equals(cbRemovePlayer.getValue()))) {
                 team9.setPlayer4(" ");
+                team9.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team9.getPlayer5().equals(cbRemovePlayer.getValue()))) {
                 team9.setPlayer5(" ");
+                team9.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team9.getPlayer6().equals(cbRemovePlayer.getValue()))) {
                 team9.setPlayer6(" ");
+                team9.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team9.getPlayer7().equals(cbRemovePlayer.getValue()))) {
                 team9.setPlayer7(" ");
+                team9.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team9.getPlayer8().equals(cbRemovePlayer.getValue()))) {
                 team9.setPlayer8(" ");
+                team9.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team9.getPlayer9().equals(cbRemovePlayer.getValue()))) {
                 team9.setPlayer9(" ");
+                team9.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team9.getPlayer10().equals(cbRemovePlayer.getValue()))) {
                 team9.setPlayer10(" ");
+                team9.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             }
         }
         if ((cbRemoveTeam.getValue()).equals("Team10")) {
             if ((team10.getPlayer1().equals(cbRemovePlayer.getValue()))) {
                 team10.setPlayer1(" ");
+                team10.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team10.getPlayer2().equals(cbRemovePlayer.getValue()))) {
                 team10.setPlayer2(" ");
+                team10.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team10.getPlayer3().equals(cbRemovePlayer.getValue()))) {
                 team10.setPlayer3(" ");
+                team10.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team10.getPlayer4().equals(cbRemovePlayer.getValue()))) {
                 team10.setPlayer4(" ");
+                team10.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team10.getPlayer5().equals(cbRemovePlayer.getValue()))) {
                 team10.setPlayer5(" ");
+                team10.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team10.getPlayer6().equals(cbRemovePlayer.getValue()))) {
                 team10.setPlayer6(" ");
+                team10.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team10.getPlayer7().equals(cbRemovePlayer.getValue()))) {
                 team10.setPlayer7(" ");
+                team10.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team10.getPlayer8().equals(cbRemovePlayer.getValue()))) {
                 team10.setPlayer8(" ");
+                team10.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team10.getPlayer9().equals(cbRemovePlayer.getValue()))) {
                 team10.setPlayer9(" ");
+                team10.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             } else if ((team10.getPlayer10().equals(cbRemovePlayer.getValue()))) {
                 team10.setPlayer10(" ");
+                team10.RemovePlayerFromRemoveList(cbRemovePlayer.getValue());
+                playersBuffer.add(new Player(cbRemovePlayer.getValue()));
+                cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                mainController.addPlayer(new Player(cbRemovePlayer.getValue()));
             }
         }
         tblTeams.refresh();

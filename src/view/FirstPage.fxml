@@ -25,7 +25,7 @@
             <Font name="Plantagenet Cherokee" size="64.0" />
          </font>
       </Label>
-      <Button layoutX="381.0" layoutY="515.0" mnemonicParsing="false" onAction="#handleLeaguePlay" prefHeight="44.0" prefWidth="250.0" style="-fx-background-color: #3b3f41;" text="League Play" textFill="WHITE">
+      <Button layoutX="381.0" layoutY="515.0" mnemonicParsing="false" onAction="#handleLeaguePlay" prefHeight="44.0" prefWidth="250.0" style="-fx-background-color: #3b3f41;" text="Resume League Play" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

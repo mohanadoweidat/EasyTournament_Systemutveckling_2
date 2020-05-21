@@ -80,10 +80,10 @@ public class Team {
         return arrayListPlayers;
     }
 
-    public void removePlayerFromList(String player){
+    public void RemovePlayerFromRemoveList(String player){
         for (String s : arrayListPlayers) {
             if (s.equals(player)) {
-                arrayListPlayers.remove(s);
+                arrayListPlayers.remove(player);
             }
         }
     }
