@@ -204,10 +204,6 @@ public class MainController {
         return tournament.getTeam(index);
     }
 
-    public void loadBuffer(){
-        teamController.loadBuffer();
-    }
-
     public void setTimesToMeat(int times){
         tournament.setTimesToMeat(times);
     }
