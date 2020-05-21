@@ -1116,6 +1116,14 @@ public class TeamController extends SceneControllerParent {
         }
     }
 
+    public void removeAllPlayersFromTeam(){
+        for (Team t : tblTeams.getItems()){
+            cbPlayers.getItems().addAll(t.getPlayers());
+            t.RemovePlayersTeam();
+        }
+        tblTeams.refresh();
+    }
+
     public void loadBuffer() {
         playersBuffer = mainController.getPlayers();
     }
