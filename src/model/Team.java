@@ -1,7 +1,5 @@
 package model;
 
-import javafx.beans.property.SimpleIntegerProperty;
-
 import java.util.ArrayList;
 
 /**
@@ -81,9 +79,11 @@ public class Team {
     }
 
     public void RemovePlayerFromRemoveList(String player){
+
         for (String s : arrayListPlayers) {
             if (s.equals(player)) {
                 arrayListPlayers.remove(player);
+                arrayListPlayers.trimToSize();
             }
         }
     }

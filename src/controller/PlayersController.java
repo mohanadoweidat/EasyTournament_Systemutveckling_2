@@ -45,7 +45,6 @@ public class PlayersController extends SceneControllerParent {
     @FXML
     public void setTeamsGUI(ActionEvent actionEvent) {
         mainController.setScene(ScenesEnum.Team);
-        mainController.loadBuffer();
     }
 
     /**
