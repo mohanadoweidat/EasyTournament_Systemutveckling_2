@@ -182,26 +182,23 @@ public class GroupStageController extends SceneControllerParent {
             }
             lblTeamToPlay3.setText(mainController.getTeam(b).getName());
         } else {
-            int a = random.nextInt((teams + 1));
-            while (a == 0) {
-                a = random.nextInt((teams + 1));
+            int a = random.nextInt(teams);
+            lblTeamToPlay1.setText(mainController.getTeam(a).getName());
+            int b = random.nextInt((teams));
+            while (b == a) {
+                b = random.nextInt((teams));
             }
-            lblTeamToPlay1.setText("Team " + a);
-            int b = random.nextInt((teams + 1));
-            while (b == a || b == 0) {
-                b = random.nextInt((teams + 1));
+            lblTeamToPlay2.setText(mainController.getTeam(b).getName());
+            int c = random.nextInt((teams));
+            while (c == b || c == a) {
+                c = random.nextInt((teams));
             }
-            lblTeamToPlay2.setText("Team " + b);
-            int c = random.nextInt((teams + 1));
-            while (c == b || c == a || c == 0) {
-                c = random.nextInt((teams + 1));
+            lblTeamToPlay3.setText(mainController.getTeam(c).getName());
+            int d = random.nextInt((teams));
+            while (d == a || d == b || d == c) {
+                d = random.nextInt((teams));
             }
-            lblTeamToPlay3.setText("Team " + c);
-            int d = random.nextInt((teams + 1));
-            while (d == a || d == b || d == c || d == 0) {
-                d = random.nextInt((teams + 1));
-            }
-            lblTeamToPlay4.setText("Team " + d);
+            lblTeamToPlay4.setText(mainController.getTeam(d).getName());
         }
     }
 
