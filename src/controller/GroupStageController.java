@@ -166,6 +166,7 @@ public class GroupStageController extends SceneControllerParent {
     }
 
     public void nextGames(){
+        tblGroupStage.getSortOrder().add(colPoints);
         if (teams == 0){
             Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
             alert1.setTitle("Error message");
