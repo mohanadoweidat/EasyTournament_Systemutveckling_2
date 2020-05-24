@@ -53,6 +53,18 @@ public class GroupStageController extends SceneControllerParent {
     @FXML
     private Label lblTeamToPlay4;
 
+    @FXML
+    private Button btnWinner1;
+
+    @FXML
+    private Button btnWinner2;
+
+    @FXML
+    private Button btnWinner3;
+
+    @FXML
+    private Button btnWinner4;
+
     private ArrayList<Team> teamBuffer = new ArrayList<>();
 
     private ObservableList <Team> data = FXCollections.observableArrayList();
@@ -166,55 +178,66 @@ public class GroupStageController extends SceneControllerParent {
     }
 
     public void winner1(){
-        for (Team team : tblGroupStage.getItems()){
-            if (team.getName().equals(lblTeamToPlay1.getText())){
-                team.setWins(1);
+        if (!lblTeamToPlay1.getText().equals("")) {
+            for (Team team : tblGroupStage.getItems()) {
+                if (team.getName().equals(lblTeamToPlay1.getText())) {
+                    team.setWins(1);
+                }
+                if (team.getName().equals(lblTeamToPlay3.getText())) {
+                    team.setLosses(1);
+                }
             }
-            if(team.getName().equals(lblTeamToPlay3.getText())){
-                team.setLosses(1);
-            }
+            tblGroupStage.refresh();
         }
-        tblGroupStage.refresh();
+        tblGroupStage.getSortOrder().add(colPoints);
     }
 
     public void winner2(){
-        for (Team team : tblGroupStage.getItems()){
-            if (team.getName().equals(lblTeamToPlay3.getText())){
-                team.setWins(1);
+        if (!lblTeamToPlay3.getText().equals("")) {
+            for (Team team : tblGroupStage.getItems()) {
+                if (team.getName().equals(lblTeamToPlay3.getText())) {
+                    team.setWins(1);
+                }
+                if (team.getName().equals(lblTeamToPlay1.getText())) {
+                    team.setLosses(1);
+                }
             }
-            if(team.getName().equals(lblTeamToPlay1.getText())){
-                team.setLosses(1);
-            }
+            tblGroupStage.refresh();
         }
-        tblGroupStage.refresh();
+        tblGroupStage.getSortOrder().add(colPoints);
     }
 
     public void winner3(){
-        for (Team team : tblGroupStage.getItems()){
-            if (team.getName().equals(lblTeamToPlay2.getText())){
-                team.setWins(1);
+        if (!lblTeamToPlay2.getText().equals("")) {
+            for (Team team : tblGroupStage.getItems()) {
+                if (team.getName().equals(lblTeamToPlay2.getText())) {
+                    team.setWins(1);
+                }
+                if (team.getName().equals(lblTeamToPlay4.getText())) {
+                    team.setLosses(1);
+                }
             }
-            if(team.getName().equals(lblTeamToPlay4.getText())){
-                team.setLosses(1);
-            }
+            tblGroupStage.refresh();
         }
-        tblGroupStage.refresh();
+        tblGroupStage.getSortOrder().add(colPoints);
     }
 
     public void winner4(){
-        for (Team team : tblGroupStage.getItems()){
-            if (team.getName().equals(lblTeamToPlay4.getText())){
-                team.setWins(1);
+        if (!lblTeamToPlay4.getText().equals("")) {
+            for (Team team : tblGroupStage.getItems()) {
+                if (team.getName().equals(lblTeamToPlay4.getText())) {
+                    team.setWins(1);
+                }
+                if (team.getName().equals(lblTeamToPlay2.getText())) {
+                    team.setLosses(1);
+                }
             }
-            if(team.getName().equals(lblTeamToPlay2.getText())){
-                team.setLosses(1);
-            }
+            tblGroupStage.refresh();
         }
-        tblGroupStage.refresh();
+        tblGroupStage.getSortOrder().add(colPoints);
     }
 
     public void nextGames(){
-        tblGroupStage.getSortOrder().add(colPoints);
         if (teams == 0){
             Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
             alert1.setTitle("Error message");
@@ -229,7 +252,15 @@ public class GroupStageController extends SceneControllerParent {
                 b = random.nextInt((teams));
             }
             lblTeamToPlay3.setText(mainController.getTeam(b).getName());
+            btnWinner1.setVisible(true);
+            btnWinner2.setVisible(false);
+            btnWinner3.setVisible(true);
+            btnWinner4.setVisible(false);
         } else {
+            btnWinner1.setVisible(true);
+            btnWinner2.setVisible(true);
+            btnWinner3.setVisible(true);
+            btnWinner4.setVisible(true);
             int a = random.nextInt(teams);
             lblTeamToPlay1.setText(mainController.getTeam(a).getName());
             int b = random.nextInt((teams));
@@ -356,6 +387,10 @@ public class GroupStageController extends SceneControllerParent {
      * Fills the table with the teams
      */
     public void loadData(){
+        btnWinner1.setVisible(false);
+        btnWinner2.setVisible(false);
+        btnWinner3.setVisible(false);
+        btnWinner4.setVisible(false);
         if ((mainController.getAmountOfTeams()) == null){
         }else {
             ObservableList<Team> dataTable = FXCollections.observableArrayList();
