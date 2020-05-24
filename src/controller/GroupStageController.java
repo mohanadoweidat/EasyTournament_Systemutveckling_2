@@ -150,6 +150,9 @@ public class GroupStageController extends SceneControllerParent {
     }
 
     public void setupLeaguePlay(){
+        for (Team team : tblGroupStage.getItems()) {
+            team.reset();
+        }
         List<Team> teamsToPlay = (tblGroupStage.getItems());
         TextInputDialog dialog = new TextInputDialog("Ex. 2");
         dialog.setTitle("Easy Tournament");

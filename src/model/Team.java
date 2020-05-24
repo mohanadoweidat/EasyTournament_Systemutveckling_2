@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Team {
 
     private String name = " ", player1 = " ", player2 = " ", player3 = " ", player4 = " ", player5 = " ", player6 = " ", player7 = " ", player8 = " ", player9 = " ", player10 = " ";
-    private int points = 0,draws = 0,wins = 0,losses = 0;
+    private int points = 0,draws = 0,wins = 0,losses = 0, timesToPlay = 0, games = 0;
 
     private final ArrayList<String> arrayListPlayers = new ArrayList();
 
@@ -229,6 +229,7 @@ public class Team {
     public void setWins(int i) {
         this.wins += i;
         this.points += 3;
+        this.games += 1;
     }
 
     public int getLosses() {
@@ -237,7 +238,17 @@ public class Team {
 
     public void setLosses(int i) {
         this.losses += i;
+        this.games += 1;
 
+    }
+
+    public void reset(){
+        this.losses = 0;
+        this.points = 0;
+        this.wins = 0;
+        this.draws = 0;
+        this.games = 0;
+        this.timesToPlay = 0;
     }
 
 
