@@ -165,6 +165,54 @@ public class GroupStageController extends SceneControllerParent {
         //}
     }
 
+    public void winner1(){
+        for (Team team : tblGroupStage.getItems()){
+            if (team.getName().equals(lblTeamToPlay1.getText())){
+                team.setWins(1);
+            }
+            if(team.getName().equals(lblTeamToPlay3.getText())){
+                team.setLosses(1);
+            }
+        }
+        tblGroupStage.refresh();
+    }
+
+    public void winner2(){
+        for (Team team : tblGroupStage.getItems()){
+            if (team.getName().equals(lblTeamToPlay3.getText())){
+                team.setWins(1);
+            }
+            if(team.getName().equals(lblTeamToPlay1.getText())){
+                team.setLosses(1);
+            }
+        }
+        tblGroupStage.refresh();
+    }
+
+    public void winner3(){
+        for (Team team : tblGroupStage.getItems()){
+            if (team.getName().equals(lblTeamToPlay2.getText())){
+                team.setWins(1);
+            }
+            if(team.getName().equals(lblTeamToPlay4.getText())){
+                team.setLosses(1);
+            }
+        }
+        tblGroupStage.refresh();
+    }
+
+    public void winner4(){
+        for (Team team : tblGroupStage.getItems()){
+            if (team.getName().equals(lblTeamToPlay4.getText())){
+                team.setWins(1);
+            }
+            if(team.getName().equals(lblTeamToPlay2.getText())){
+                team.setLosses(1);
+            }
+        }
+        tblGroupStage.refresh();
+    }
+
     public void nextGames(){
         tblGroupStage.getSortOrder().add(colPoints);
         if (teams == 0){

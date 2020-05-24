@@ -226,16 +226,18 @@ public class Team {
         return wins;
     }
 
-    public void setWins(int wins) {
-        this.wins = wins;
+    public void setWins(int i) {
+        this.wins += i;
+        this.points += 3;
     }
 
     public int getLosses() {
         return losses;
     }
 
-    public void setLosses(int losses) {
-        this.losses = losses;
+    public void setLosses(int i) {
+        this.losses += i;
+
     }
 
 
