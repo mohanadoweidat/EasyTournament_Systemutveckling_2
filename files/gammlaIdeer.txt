@@ -1,3 +1,18 @@
+else if (teams == 3) {
+            int a = random.nextInt((teams + 1));
+            while (a == 0) {
+                a = random.nextInt((teams + 1));
+            }
+            lblTeamToPlay1.setText("Team " + a);
+            int b = random.nextInt((teams + 1));
+            while (b == a || b == 0) {
+                b = random.nextInt((teams + 1));
+            }
+            lblTeamToPlay3.setText("Team " + b);
+
+
+
+
 Andreas och Carls slumpa lag ->
 
             /*

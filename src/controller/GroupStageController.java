@@ -174,16 +174,13 @@ public class GroupStageController extends SceneControllerParent {
             alert1.setContentText("You need to add teams to see next match");
             alert1.showAndWait();
         } else if (teams == 3) {
-            int a = random.nextInt((teams + 1));
-            while (a == 0) {
-                a = random.nextInt((teams + 1));
+            int a = random.nextInt(teams);
+            lblTeamToPlay1.setText(mainController.getTeam(a).getName());
+            int b = random.nextInt((teams));
+            while (b == a) {
+                b = random.nextInt((teams));
             }
-            lblTeamToPlay1.setText("Team " + a);
-            int b = random.nextInt((teams + 1));
-            while (b == a || b == 0) {
-                b = random.nextInt((teams + 1));
-            }
-            lblTeamToPlay3.setText("Team " + b);
+            lblTeamToPlay3.setText(mainController.getTeam(b).getName());
         } else {
             int a = random.nextInt((teams + 1));
             while (a == 0) {
