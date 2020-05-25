@@ -306,8 +306,8 @@ public class GroupStageController extends SceneControllerParent {
             }
             lblTeamToPlay3.setText(mainController.getTeam(b).getName());
             btnWinner1.setVisible(true);
-            btnWinner2.setVisible(false);
-            btnWinner3.setVisible(true);
+            btnWinner2.setVisible(true);
+            btnWinner3.setVisible(false);
             btnWinner4.setVisible(false);
         } else {
             btnWinner1.setVisible(true);
