@@ -73,6 +73,12 @@ public class GroupStageController extends SceneControllerParent {
 
     private ArrayList<Team> teamsBuffer = new ArrayList();
 
+    private ArrayList<Team> teamsToPlay = new ArrayList();
+
+    private int timesPlayed = 0;
+
+    private int bufferTimesToPlay = 0;
+
     private int teams = 0;
 
     /**
@@ -126,6 +132,7 @@ public class GroupStageController extends SceneControllerParent {
             e.getTableView().getItems().get(e.getTablePosition().getRow()).setName(e.getNewValue());
         });
 
+        /*
         colWins.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
         colWins.setOnEditCommit(e->{
             e.getTableView().getItems().get(e.getTablePosition().getRow()).setWins(Integer.parseInt(String.valueOf(e.getNewValue())));
@@ -146,15 +153,17 @@ public class GroupStageController extends SceneControllerParent {
             e.getTableView().getItems().get(e.getTablePosition().getRow()).setPoints(Integer.parseInt(String.valueOf(e.getNewValue())));
         });
 
+        */
+
         tblGroupStage.setEditable(true);
     }
 
     public void setupLeaguePlay(){
+        timesPlayed = 0;
         for (Team team : tblGroupStage.getItems()) {
             team.reset();
         }
-        List<Team> teamsToPlay = (tblGroupStage.getItems());
-        TextInputDialog dialog = new TextInputDialog("Ex. 2");
+        /*TextInputDialog dialog = new TextInputDialog("Ex. 2");
         dialog.setTitle("Easy Tournament");
         dialog.setHeaderText("Enter the amount of times you want eanch team to meat each other");
         dialog.setContentText("Please enter the amount of times:");
@@ -162,7 +171,10 @@ public class GroupStageController extends SceneControllerParent {
         Optional<String> result = dialog.showAndWait();
         if (result.isPresent()){
             try{
-                mainController.setTimesToMeat(Integer.parseInt(result.get()));
+
+                bufferTimesToPlay = (Integer.parseInt(result.get()));
+
+                System.out.println(bufferTimesToPlay);
             }catch (Exception e){
                 Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
                 alert1.setTitle("Error message");
@@ -172,12 +184,50 @@ public class GroupStageController extends SceneControllerParent {
             }
         }
 
+        for(int i = 0; i < bufferTimesToPlay; i++) {
+            teamsToPlay.addAll(tblGroupStage.getItems());
+        }
 
+        //nextGamesTest();
 
+         */
+    }
 
- //       for (Team team : teamsToPlay) {
+    public void nextGamesTest(){
+        if (teams == 0) {
+            Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+            alert1.setTitle("Error message");
+            alert1.setHeaderText(null);
+            alert1.setContentText("You need to add teams to see next match");
+            alert1.showAndWait();
+        }else if (teams == 3){
+            if (bufferTimesToPlay == 0){
+                Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+                alert1.setTitle("");
+                alert1.setHeaderText(null);
+                alert1.setContentText("League is over \nStart a new one");
+                alert1.showAndWait();
+            }else {
+                if (timesPlayed != bufferTimesToPlay) {
+                    int a = random.nextInt(teamsToPlay.size());
+                    lblTeamToPlay1.setText(teamsToPlay.get(a).getName());
+                    teamsToPlay.remove(a);
+                    int b = random.nextInt(teamsToPlay.size());
+                    while (b == a) {
+                        b = random.nextInt((teams));
+                    }
+                    lblTeamToPlay1.setText(teamsToPlay.get(b).getName());
+                    teamsToPlay.remove(b);
 
-        //}
+                    timesPlayed++;
+
+                }
+                btnWinner1.setVisible(true);
+                btnWinner2.setVisible(true);
+                btnWinner3.setVisible(true);
+                btnWinner4.setVisible(true);
+            }
+        }
     }
 
     public void winner1(){

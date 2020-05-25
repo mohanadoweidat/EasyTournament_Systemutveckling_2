@@ -208,7 +208,7 @@ public class MainController {
         tournament.setTimesToMeat(times);
     }
 
-    public void getTimesToMeat(){
-        tournament.getTimesToMeat();
+    public int getTimesToMeat(){
+        return tournament.getTimesToMeat();
     }
 }
