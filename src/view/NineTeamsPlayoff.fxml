@@ -112,5 +112,15 @@
       <Label layoutX="836.0" layoutY="367.0" text="QF-4" textFill="WHITE" />
       <Label layoutX="908.0" layoutY="90.0" text="Qualification" textFill="WHITE" />
       <Label layoutX="561.0" layoutY="291.0" text="Finals" textFill="WHITE" />
+      <ImageView fitHeight="27.0" fitWidth="870.0" layoutX="239.0" layoutY="514.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/Snyggt.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="17.0" fitWidth="870.0" layoutX="239.0" layoutY="-3.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/Snyggt.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
