@@ -92,5 +92,10 @@
             <Font size="16.0" />
          </font>
       </Label>
+      <ImageView fitHeight="65.0" fitWidth="789.0" layoutX="239.0" layoutY="459.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/Snyggt.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

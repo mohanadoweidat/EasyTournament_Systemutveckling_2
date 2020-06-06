@@ -95,7 +95,7 @@
             <TextField fx:id="tfSemifinal2Home" layoutX="14.0" layoutY="475.0" prefHeight="27.0" prefWidth="71.0" />
             <TextField fx:id="tfSemifinal2Away" layoutX="96.0" layoutY="475.0" prefHeight="27.0" prefWidth="71.0" />
             <TextField fx:id="tfFinalHome" layoutX="14.0" layoutY="524.0" prefHeight="27.0" prefWidth="71.0" />
-            <TextField fx:id="tfFinalAway" layoutX="96.0" layoutY="522.0" prefHeight="27.0" prefWidth="71.0" />
+            <TextField fx:id="tfFinalAway" layoutX="96.0" layoutY="524.0" prefHeight="27.0" prefWidth="71.0" />
             <TextField fx:id="tfQual1" layoutX="14.0" layoutY="82.0" prefHeight="27.0" prefWidth="71.0" promptText="Team 5" />
             <TextField fx:id="tfQual2" layoutX="96.0" layoutY="82.0" prefHeight="27.0" prefWidth="71.0" promptText="Team 6" />
             <Label layoutX="44.0" layoutY="60.0" text="Qualification Game 1" textFill="WHITE" />
@@ -126,5 +126,15 @@
       <Label layoutX="1048.0" layoutY="99.0" text="Qualification Game 1" textFill="WHITE" />
       <Label layoutX="1047.0" layoutY="338.0" text="Qualification Game 2" textFill="WHITE" />
       <Label layoutX="618.0" layoutY="337.0" text="Finals" textFill="WHITE" />
+      <ImageView fitHeight="75.0" fitWidth="943.0" layoutX="229.0" layoutY="493.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/Snyggt.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="67.0" fitWidth="943.0" layoutX="229.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/Snyggt.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
