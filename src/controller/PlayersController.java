@@ -11,8 +11,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 /**
- *
- *
+ * Connects the Players fxml-file with the ret of the system
  * @author Andreas von Uthmann, Carl Hägred, Gustav Edén, Joel Svensson
  */
 
@@ -82,25 +81,14 @@ public class PlayersController extends SceneControllerParent {
         if (selectedIndex != -1) {
             mainController.removePlayer(selectedIndex);
             listAddedPlayers.getItems().remove(selectedIndex);
+            listOfPlayers.remove(selectedIndex);
         } else{
             Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
             alert1.setTitle("Delete problems");
             alert1.setHeaderText(null);
-            alert1.setContentText("You need to choose a player to remove");
+            alert1.setContentText("Select the player from the list that you want to remove");
             alert1.showAndWait();
         }
-    }
-
-    /**
-     * This method will handle the importing off pre saved player groups
-     */
-    @FXML
-    public void handleImportGroups(ActionEvent event){
-        Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
-        alert1.setTitle("Delete problems");
-        alert1.setHeaderText(null);
-        alert1.setContentText("This feature is coming soon");
-        alert1.showAndWait();
     }
 
     /**
@@ -128,6 +116,7 @@ public class PlayersController extends SceneControllerParent {
         }
         outFile.close();
     }
+
     /**
      * Reads from groups from a file
      * @author Gustav Edén
@@ -148,8 +137,5 @@ public class PlayersController extends SceneControllerParent {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-
     }
-
-
 }

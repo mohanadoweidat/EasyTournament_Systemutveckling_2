@@ -17,6 +17,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Connects the Team fxml-file with the ret of the system
+ * @author Andreas von Uthmann, Carl Hägred, Gustav Edén, Joel Svensson
+ */
+
 public class TeamController extends SceneControllerParent {
 
     private AmountOfTeams amountOfTeams;

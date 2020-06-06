@@ -15,7 +15,7 @@ import java.util.Optional;
 import java.util.Random;
 
 /**
- * The class creates the league play
+ * Connects the GroupStage fxml-file with the ret of the system
  * @author Andreas von Uthmann, Carl Hägred, Gustav Edén, Joel Svensson
  */
 public class GroupStageController extends SceneControllerParent {
@@ -132,104 +132,22 @@ public class GroupStageController extends SceneControllerParent {
             e.getTableView().getItems().get(e.getTablePosition().getRow()).setName(e.getNewValue());
         });
 
-        /*
-        colWins.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
-        colWins.setOnEditCommit(e->{
-            e.getTableView().getItems().get(e.getTablePosition().getRow()).setWins(Integer.parseInt(String.valueOf(e.getNewValue())));
-        });
-
-        colLosses.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
-        colLosses.setOnEditCommit(e->{
-            e.getTableView().getItems().get(e.getTablePosition().getRow()).setLosses(Integer.parseInt(String.valueOf(e.getNewValue())));
-        });
-
-        colDraws.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
-        colDraws.setOnEditCommit(e->{
-            e.getTableView().getItems().get(e.getTablePosition().getRow()).setDraws(Integer.parseInt(String.valueOf(e.getNewValue())));
-        });
-
-        colPoints.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
-        colPoints.setOnEditCommit(e->{
-            e.getTableView().getItems().get(e.getTablePosition().getRow()).setPoints(Integer.parseInt(String.valueOf(e.getNewValue())));
-        });
-
-        */
-
         tblGroupStage.setEditable(true);
     }
 
+    /**
+     * Resets the scores of the teams
+     */
     public void setupLeaguePlay(){
         timesPlayed = 0;
         for (Team team : tblGroupStage.getItems()) {
             team.reset();
         }
-        /*TextInputDialog dialog = new TextInputDialog("Ex. 2");
-        dialog.setTitle("Easy Tournament");
-        dialog.setHeaderText("Enter the amount of times you want eanch team to meat each other");
-        dialog.setContentText("Please enter the amount of times:");
-
-        Optional<String> result = dialog.showAndWait();
-        if (result.isPresent()){
-            try{
-
-                bufferTimesToPlay = (Integer.parseInt(result.get()));
-
-                System.out.println(bufferTimesToPlay);
-            }catch (Exception e){
-                Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
-                alert1.setTitle("Error message");
-                alert1.setHeaderText(null);
-                alert1.setContentText("Only enter numbers");
-                alert1.showAndWait();
-            }
-        }
-
-        for(int i = 0; i < bufferTimesToPlay; i++) {
-            teamsToPlay.addAll(tblGroupStage.getItems());
-        }
-
-        //nextGamesTest();
-
-         */
     }
 
-    public void nextGamesTest(){
-        if (teams == 0) {
-            Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
-            alert1.setTitle("Error message");
-            alert1.setHeaderText(null);
-            alert1.setContentText("You need to add teams to see next match");
-            alert1.showAndWait();
-        }else if (teams == 3){
-            if (bufferTimesToPlay == 0){
-                Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
-                alert1.setTitle("");
-                alert1.setHeaderText(null);
-                alert1.setContentText("League is over \nStart a new one");
-                alert1.showAndWait();
-            }else {
-                if (timesPlayed != bufferTimesToPlay) {
-                    int a = random.nextInt(teamsToPlay.size());
-                    lblTeamToPlay1.setText(teamsToPlay.get(a).getName());
-                    teamsToPlay.remove(a);
-                    int b = random.nextInt(teamsToPlay.size());
-                    while (b == a) {
-                        b = random.nextInt((teams));
-                    }
-                    lblTeamToPlay1.setText(teamsToPlay.get(b).getName());
-                    teamsToPlay.remove(b);
-
-                    timesPlayed++;
-
-                }
-                btnWinner1.setVisible(true);
-                btnWinner2.setVisible(true);
-                btnWinner3.setVisible(true);
-                btnWinner4.setVisible(true);
-            }
-        }
-    }
-
+    /**
+     * Handles the winner1 button
+     */
     public void winner1(){
         if (!lblTeamToPlay1.getText().equals("")) {
             for (Team team : tblGroupStage.getItems()) {
@@ -245,6 +163,9 @@ public class GroupStageController extends SceneControllerParent {
         tblGroupStage.getSortOrder().add(colPoints);
     }
 
+    /**
+     * Handles the winner2 button
+     */
     public void winner2(){
         if (!lblTeamToPlay3.getText().equals("")) {
             for (Team team : tblGroupStage.getItems()) {
@@ -260,6 +181,9 @@ public class GroupStageController extends SceneControllerParent {
         tblGroupStage.getSortOrder().add(colPoints);
     }
 
+    /**
+     * Handles the winner3 button
+     */
     public void winner3(){
         if (!lblTeamToPlay2.getText().equals("")) {
             for (Team team : tblGroupStage.getItems()) {
@@ -275,6 +199,9 @@ public class GroupStageController extends SceneControllerParent {
         tblGroupStage.getSortOrder().add(colPoints);
     }
 
+    /**
+     * Handles the winner4 button
+     */
     public void winner4(){
         if (!lblTeamToPlay4.getText().equals("")) {
             for (Team team : tblGroupStage.getItems()) {
@@ -290,6 +217,9 @@ public class GroupStageController extends SceneControllerParent {
         tblGroupStage.getSortOrder().add(colPoints);
     }
 
+    /**
+     * Shows the next teams to play
+     */
     public void nextGames(){
         if (teams == 0){
             Alert alert1 = new Alert(Alert.AlertType.INFORMATION);

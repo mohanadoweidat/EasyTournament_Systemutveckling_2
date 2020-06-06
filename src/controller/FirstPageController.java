@@ -3,10 +3,8 @@ package controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
-
 /**
- *
- *
+ * Connects the FirstPage fxml-file with the ret of the system
  * @author Andreas von Uthmann, Carl Hägred, Gustav Edén, Joel Svensson
  */
 public class FirstPageController extends SceneControllerParent {
