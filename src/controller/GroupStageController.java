@@ -15,7 +15,7 @@ import java.util.Optional;
 import java.util.Random;
 
 /**
- * The class creates the league play
+ * Connects the GroupStage fxml-file with the ret of the system
  * @author Andreas von Uthmann, Carl Hägred, Gustav Edén, Joel Svensson
  */
 public class GroupStageController extends SceneControllerParent {

@@ -24,7 +24,9 @@ public class MainController {
     private GroupStageController groupStageController;
     private PlayoffsController playoffsController;
 
-
+    /**
+     * The Constructor
+     */
     public MainController(Stage mainWindow, Player player, Tournament tournament) {
         this.mainWindow = mainWindow;
         this.player = player;
@@ -178,37 +180,44 @@ public class MainController {
     }
 
     /**
-     * gets the amount of teams
+     * Gets the amount of teams
      */
     public AmountOfTeams getAmountOfTeams(){
         return tournament.getAmountOfTeams();
     }
 
+    /**
+     * Loads teams to leagueplay
+     */
     public void loadTeamsToLeaguePlay(){
        groupStageController.initTable();
     }
 
+    /**
+     * Adds a team to the tournament
+     */
     public void addTeam(Team team){
         tournament.setTeam(team);
     }
 
+    /**
+     * Adds teams to the tournament
+     */
     public void addTeams(List team){
         tournament.setTeams(team);
     }
 
+    /**
+     * Returns the teams from the tournament
+     */
     public ArrayList<Team> getTeams(){
         return tournament.getTeams();
     }
 
+    /**
+     * Returns the selected team from the tournament
+     */
     public Team getTeam(int index){
         return tournament.getTeam(index);
-    }
-
-    public void setTimesToMeat(int times){
-        tournament.setTimesToMeat(times);
-    }
-
-    public int getTimesToMeat(){
-        return tournament.getTimesToMeat();
     }
 }
