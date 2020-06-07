@@ -5,16 +5,15 @@ import java.util.List;
 
 /**
  * The class is responsible for save tha tournaments information
- * @author Andreas von Uthmann, Carl Hägred, Gustav Edén, Joel Svensson
+ * @author Andreas von Uthmann, Gustav Edén
  */
 public class Tournament {
 
     private AmountOfTeams amountOfTeams;
     private int teamIndex = 1;
     private ArrayList<Player> arrayListPlayers = new ArrayList();
-    private ArrayList<Player> arrayListTeams = new ArrayList();
     private ArrayList<Team> teams = new ArrayList();
-    private int timesToMeat = 0;
+    private int timesToMeet = 0;
 
     /**
      * Saves the amount of teams that gets sent in trough parameters
@@ -77,11 +76,11 @@ public class Tournament {
         this.teams.addAll(teams);
     }
 
-    public int getTimesToMeat() {
-        return timesToMeat;
+    public int getTimesToMeet() {
+        return timesToMeet;
     }
 
-    public void setTimesToMeat(int timesToMeat) {
-        this.timesToMeat = timesToMeat;
+    public void setTimesToMeet(int timesToMeet) {
+        this.timesToMeet = timesToMeet;
     }
 }

@@ -6,25 +6,20 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.*;
 import javafx.stage.FileChooser;
-import javafx.util.converter.IntegerStringConverter;
 import model.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.Random;
 
 /**
  * Connects the GroupStage fxml-file with the ret of the system
- * @author Andreas von Uthmann, Carl Hägred, Gustav Edén, Joel Svensson
+ * @author  Carl Hägred, Gustav Edén
  */
 public class GroupStageController extends SceneControllerParent {
 
     @FXML
     private TableView<Team> tblGroupStage;
-
-    @FXML
-    private TableColumn<Team, String> colPosition = new TableColumn<>("position");
 
     @FXML
     private TableColumn<Team, String> colTeams = new TableColumn<>("teams");
@@ -72,12 +67,6 @@ public class GroupStageController extends SceneControllerParent {
     private Random random = new Random();
 
     private ArrayList<Team> teamsBuffer = new ArrayList();
-
-    private ArrayList<Team> teamsToPlay = new ArrayList();
-
-    private int timesPlayed = 0;
-
-    private int bufferTimesToPlay = 0;
 
     private int teams = 0;
 
@@ -139,7 +128,6 @@ public class GroupStageController extends SceneControllerParent {
      * Resets the scores of the teams
      */
     public void setupLeaguePlay(){
-        timesPlayed = 0;
         for (Team team : tblGroupStage.getItems()) {
             team.reset();
         }
