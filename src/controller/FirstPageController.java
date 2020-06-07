@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 
 /**
  * Connects the FirstPage fxml-file with the ret of the system
- * @author Andreas von Uthmann, Carl Hägred, Gustav Edén, Joel Svensson
+ * @author  Carl Hägred
  */
 public class FirstPageController extends SceneControllerParent {
 

@@ -19,7 +19,7 @@ import java.util.Random;
 
 /**
  * Connects the Team fxml-file with the ret of the system
- * @author Andreas von Uthmann, Carl Hägred, Gustav Edén, Joel Svensson
+ * @author Andreas von Uthmann, Carl Hägred
  */
 
 public class TeamController extends SceneControllerParent {
@@ -1121,6 +1121,10 @@ public class TeamController extends SceneControllerParent {
         }
     }
 
+    /**
+     * Removes all players from the table
+     */
+
     public void removeAllPlayersFromTeam(){
         for (Team t : tblTeams.getItems()){
             cbPlayers.getItems().addAll(t.getPlayers());
@@ -1129,6 +1133,9 @@ public class TeamController extends SceneControllerParent {
         tblTeams.refresh();
     }
 
+    /**
+     * Puts the players in the tournament in the buffer
+     */
     public void loadBuffer() {
         playersBuffer = mainController.getPlayers();
     }
