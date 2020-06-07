@@ -11,7 +11,7 @@ import model.*;
 
 /**
  *
- * @author Andreas von Uthmann, Carl Hägred, Gustav Edén, Joel Svensson
+ * @author Andreas von Uthmann, Joel Svensson
  */
 public class MainController {
 

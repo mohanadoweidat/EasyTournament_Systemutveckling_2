@@ -11,7 +11,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 /**
- * Connects the Players fxml-file with the ret of the system
+ * Connects the Players fxml-file with the rest of the system
  * @author Andreas von Uthmann, Carl Hägred, Gustav Edén, Joel Svensson
  */
 
@@ -19,12 +19,6 @@ public class PlayersController extends SceneControllerParent {
 
     @FXML
     private ListView listAddedPlayers = new ListView();
-    @FXML
-    private ArrayList<Player> playerSave = new ArrayList();
-    @FXML
-    private ListView listOverview = new ListView();
-    @FXML
-    private ListView listTeamsPlayer = new ListView();
     @FXML
     private TextField tfPlayerName = new TextField();
 

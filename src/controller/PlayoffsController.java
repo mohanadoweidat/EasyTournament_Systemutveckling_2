@@ -4,25 +4,19 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import model.*;
 
 /**
  * This class controls the logic for the playoffs.
  * Keeps track of the results for the playoffs
- * @author Andreas von Uthmann, Carl Hägred, Gustav Edén, Joel Svensson
+ * @author Andreas von Uthmann, Joel Svensson
  */
 
 public class PlayoffsController extends SceneControllerParent{
 
-    private AmountOfTeams amountOfTeams;
     @FXML
     private TextField tfTeam1 = new TextField();
     @FXML
     private TextField tfTeam2 = new TextField();
-    @FXML
-    private Label lblTeam1 = new Label();
-    @FXML
-    private Label lblSemifinal1 = new Label();
     @FXML
     private TextField tfSemifinal1Home = new TextField();
     @FXML
@@ -69,18 +63,6 @@ public class PlayoffsController extends SceneControllerParent{
     private Label lblFinalAway = new Label();
     @FXML
     private Label lblWinner = new Label();
-    @FXML
-    private Label lblQfHome = new Label();
-    @FXML
-    private Label lblQf2 = new Label();
-    @FXML
-    private Label lblQualGame1Home = new Label();
-    @FXML
-    private Label lblQualGame1Away = new Label();
-    @FXML
-    private Label lblQualGame2Home = new Label();
-    @FXML
-    private Label lblQualGame2Away = new Label();
     @FXML
     private Label lblQf3Home = new Label();
     @FXML
