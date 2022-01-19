@@ -16,6 +16,7 @@ public class Main extends Application {
         new MainController(primaryStage, player, tournament);
     }
 
+    //This is the main function.
     public static void main(String[] args) {
         launch(args);
     }
