@@ -7,7 +7,7 @@ import model.*;
 /**
  * @author Andreas von Uthmann, Carl Hägred, Gustav Edén, Joel Svensson
  */
-public class Main extends Application { //testMain
+public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
