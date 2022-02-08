@@ -164,6 +164,7 @@ public class TeamController extends SceneControllerParent {
         File file = chooser1.showOpenDialog(null);
         try {
             BufferedReader in;
+            if (file != null){
             in = new BufferedReader(new FileReader(file));
             String line = in.readLine();
             String[] team;
@@ -180,6 +181,7 @@ public class TeamController extends SceneControllerParent {
                                 Integer.parseInt(team[11]),Integer.parseInt(team[12]),
                                 Integer.parseInt(team[13]),Integer.parseInt(team[14])));
                 line = in.readLine();
+            }
             }
             tblTeams.setItems(dataTable);
             tblTeams.refresh();

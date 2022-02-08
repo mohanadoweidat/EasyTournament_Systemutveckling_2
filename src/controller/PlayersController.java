@@ -118,15 +118,17 @@ public class PlayersController extends SceneControllerParent {
     public void readGroupFromFile(){
         FileChooser chooser1= new FileChooser();
         File file= chooser1.showOpenDialog(null);
+
         try {
             BufferedReader in;
-            in = new BufferedReader(new FileReader(file));
-            String line = in.readLine();
-
+            if (file != null){
+                in = new BufferedReader(new FileReader(file));
+                String line = in.readLine();
             while (line != null) {
                 listAddedPlayers.getItems().add(line);
                 mainController.addPlayer(new Player(line));
                 line = in.readLine();
+            }
             }
         } catch (Exception ex) {
             ex.printStackTrace();
