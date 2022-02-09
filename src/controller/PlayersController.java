@@ -100,13 +100,18 @@ public class PlayersController extends SceneControllerParent {
 
         PrintWriter outFile = null;
         try {
-            outFile = new PrintWriter(selectedFile+".txt");
+            if(selectedFile == null)
+            {
+                return;
+            }
+            else {
+                outFile = new PrintWriter(selectedFile+".txt");
+                for(int i = 0; i< listOfPlayers.size(); i++){
+                    outFile.println(listOfPlayers.get(i));
+                }
+            }
         } catch (Exception e) {
             e.printStackTrace();
-        }
-
-        for(int i = 0; i< listOfPlayers.size(); i++){
-            outFile.println(listOfPlayers.get(i));
         }
         outFile.close();
     }

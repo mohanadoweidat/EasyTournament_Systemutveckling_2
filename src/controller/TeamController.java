@@ -134,28 +134,33 @@ public class TeamController extends SceneControllerParent {
 
         PrintWriter outFile = null;
         try {
-            outFile = new PrintWriter(selectedFile + ".txt");
+            if(selectedFile == null)
+            {
+              return;
+            }
+            else{
+                outFile = new PrintWriter(selectedFile + ".txt");
+                for (Team team : teams) {
+                    outFile.print(team.getName() + ",");
+                    outFile.print(team.getPlayer1() + ",");
+                    outFile.print(team.getPlayer2() + ",");
+                    outFile.print(team.getPlayer3() + ",");
+                    outFile.print(team.getPlayer4() + ",");
+                    outFile.print(team.getPlayer5() + ",");
+                    outFile.print(team.getPlayer6() + ",");
+                    outFile.print(team.getPlayer7() + ",");
+                    outFile.print(team.getPlayer8() + ",");
+                    outFile.print(team.getPlayer9() + ",");
+                    outFile.print(team.getPlayer10() + ",");
+                    outFile.print(team.getPoints() + ",");
+                    outFile.print(team.getDraws() + ",");
+                    outFile.print(team.getWins() + ",");
+                    outFile.print(team.getLosses() + ",");
+                    outFile.println();
+                }
+            }
         } catch (Exception e) {
             e.printStackTrace();
-        }
-
-        for (Team team : teams) {
-            outFile.print(team.getName() + ",");
-            outFile.print(team.getPlayer1() + ",");
-            outFile.print(team.getPlayer2() + ",");
-            outFile.print(team.getPlayer3() + ",");
-            outFile.print(team.getPlayer4() + ",");
-            outFile.print(team.getPlayer5() + ",");
-            outFile.print(team.getPlayer6() + ",");
-            outFile.print(team.getPlayer7() + ",");
-            outFile.print(team.getPlayer8() + ",");
-            outFile.print(team.getPlayer9() + ",");
-            outFile.print(team.getPlayer10() + ",");
-            outFile.print(team.getPoints() + ",");
-            outFile.print(team.getDraws() + ",");
-            outFile.print(team.getWins() + ",");
-            outFile.print(team.getLosses() + ",");
-            outFile.println();
         }
         outFile.close();
     }
@@ -524,246 +529,254 @@ public class TeamController extends SceneControllerParent {
      * This way we can sort the teams
      */
     @FXML
-    public void addPlayersToTeams(ActionEvent event) {
-        if ((cbSelectTeams.getValue()).equals("Team1")) {
-            if ((team1.getPlayer1().equals(" "))) {
-                team1.setPlayer1(cbPlayers.getValue());
-            } else if ((team1.getPlayer2().equals(" "))) {
-                team1.setPlayer2(cbPlayers.getValue());
-            } else if ((team1.getPlayer3().equals(" "))) {
-                team1.setPlayer3(cbPlayers.getValue());
-            } else if ((team1.getPlayer4().equals(" "))) {
-                team1.setPlayer4(cbPlayers.getValue());
-            } else if ((team1.getPlayer5().equals(" "))) {
-                team1.setPlayer5(cbPlayers.getValue());
-            } else if ((team1.getPlayer6().equals(" "))) {
-                team1.setPlayer6(cbPlayers.getValue());
-            } else if ((team1.getPlayer7().equals(" "))) {
-                team1.setPlayer7(cbPlayers.getValue());
-            } else if ((team1.getPlayer8().equals(" "))) {
-                team1.setPlayer8(cbPlayers.getValue());
-            } else if ((team1.getPlayer9().equals(" "))) {
-                team1.setPlayer9(cbPlayers.getValue());
-            } else if ((team1.getPlayer10().equals(" "))) {
-                team1.setPlayer10(cbPlayers.getValue());
-            }
-        }
-        if ((cbSelectTeams.getValue()).equals("Team2")) {
-            if ((team2.getPlayer1().equals(" "))) {
-                team2.setPlayer1(cbPlayers.getValue());
-            } else if ((team2.getPlayer2().equals(" "))) {
-                team2.setPlayer2(cbPlayers.getValue());
-            } else if ((team2.getPlayer3().equals(" "))) {
-                team2.setPlayer3(cbPlayers.getValue());
-            } else if ((team2.getPlayer4().equals(" "))) {
-                team2.setPlayer4(cbPlayers.getValue());
-            } else if ((team2.getPlayer5().equals(" "))) {
-                team2.setPlayer5(cbPlayers.getValue());
-            } else if ((team2.getPlayer6().equals(" "))) {
-                team2.setPlayer6(cbPlayers.getValue());
-            } else if ((team2.getPlayer7().equals(" "))) {
-                team2.setPlayer7(cbPlayers.getValue());
-            } else if ((team2.getPlayer8().equals(" "))) {
-                team2.setPlayer8(cbPlayers.getValue());
-            } else if ((team2.getPlayer9().equals(" "))) {
-                team2.setPlayer9(cbPlayers.getValue());
-            } else if ((team2.getPlayer10().equals(" "))) {
-                team2.setPlayer10(cbPlayers.getValue());
+    public void addPlayersToTeams(ActionEvent event)
+    {
+            if (cbSelectTeams.getValue() != null && cbPlayers.getValue() != null)
+            {
+                if ((cbSelectTeams.getValue()).equals("Team1")) {
+                    if ((team1.getPlayer1().equals(" "))) {
+                        team1.setPlayer1(cbPlayers.getValue());
+                    } else if ((team1.getPlayer2().equals(" "))) {
+                        team1.setPlayer2(cbPlayers.getValue());
+                    } else if ((team1.getPlayer3().equals(" "))) {
+                        team1.setPlayer3(cbPlayers.getValue());
+                    } else if ((team1.getPlayer4().equals(" "))) {
+                        team1.setPlayer4(cbPlayers.getValue());
+                    } else if ((team1.getPlayer5().equals(" "))) {
+                        team1.setPlayer5(cbPlayers.getValue());
+                    } else if ((team1.getPlayer6().equals(" "))) {
+                        team1.setPlayer6(cbPlayers.getValue());
+                    } else if ((team1.getPlayer7().equals(" "))) {
+                        team1.setPlayer7(cbPlayers.getValue());
+                    } else if ((team1.getPlayer8().equals(" "))) {
+                        team1.setPlayer8(cbPlayers.getValue());
+                    } else if ((team1.getPlayer9().equals(" "))) {
+                        team1.setPlayer9(cbPlayers.getValue());
+                    } else if ((team1.getPlayer10().equals(" "))) {
+                        team1.setPlayer10(cbPlayers.getValue());
+                    }
+                }
+                if ((cbSelectTeams.getValue()).equals("Team2")) {
+                    if ((team2.getPlayer1().equals(" "))) {
+                        team2.setPlayer1(cbPlayers.getValue());
+                    } else if ((team2.getPlayer2().equals(" "))) {
+                        team2.setPlayer2(cbPlayers.getValue());
+                    } else if ((team2.getPlayer3().equals(" "))) {
+                        team2.setPlayer3(cbPlayers.getValue());
+                    } else if ((team2.getPlayer4().equals(" "))) {
+                        team2.setPlayer4(cbPlayers.getValue());
+                    } else if ((team2.getPlayer5().equals(" "))) {
+                        team2.setPlayer5(cbPlayers.getValue());
+                    } else if ((team2.getPlayer6().equals(" "))) {
+                        team2.setPlayer6(cbPlayers.getValue());
+                    } else if ((team2.getPlayer7().equals(" "))) {
+                        team2.setPlayer7(cbPlayers.getValue());
+                    } else if ((team2.getPlayer8().equals(" "))) {
+                        team2.setPlayer8(cbPlayers.getValue());
+                    } else if ((team2.getPlayer9().equals(" "))) {
+                        team2.setPlayer9(cbPlayers.getValue());
+                    } else if ((team2.getPlayer10().equals(" "))) {
+                        team2.setPlayer10(cbPlayers.getValue());
 
-            }
-        }
-        if ((cbSelectTeams.getValue()).equals("Team3")) {
-            if ((team3.getPlayer1().equals(" "))) {
-                team3.setPlayer1(cbPlayers.getValue());
-            } else if ((team3.getPlayer2().equals(" "))) {
-                team3.setPlayer2(cbPlayers.getValue());
-            } else if ((team3.getPlayer3().equals(" "))) {
-                team3.setPlayer3(cbPlayers.getValue());
-            } else if ((team3.getPlayer4().equals(" "))) {
-                team3.setPlayer4(cbPlayers.getValue());
-            } else if ((team3.getPlayer5().equals(" "))) {
-                team3.setPlayer5(cbPlayers.getValue());
-            } else if ((team3.getPlayer6().equals(" "))) {
-                team3.setPlayer6(cbPlayers.getValue());
-            } else if ((team3.getPlayer7().equals(" "))) {
-                team3.setPlayer7(cbPlayers.getValue());
-            } else if ((team3.getPlayer8().equals(" "))) {
-                team3.setPlayer8(cbPlayers.getValue());
-            } else if ((team3.getPlayer9().equals(" "))) {
-                team3.setPlayer9(cbPlayers.getValue());
-            } else if ((team3.getPlayer10().equals(" "))) {
-                team3.setPlayer10(cbPlayers.getValue());
+                    }
+                }
+                if ((cbSelectTeams.getValue()).equals("Team3")) {
+                    if ((team3.getPlayer1().equals(" "))) {
+                        team3.setPlayer1(cbPlayers.getValue());
+                    } else if ((team3.getPlayer2().equals(" "))) {
+                        team3.setPlayer2(cbPlayers.getValue());
+                    } else if ((team3.getPlayer3().equals(" "))) {
+                        team3.setPlayer3(cbPlayers.getValue());
+                    } else if ((team3.getPlayer4().equals(" "))) {
+                        team3.setPlayer4(cbPlayers.getValue());
+                    } else if ((team3.getPlayer5().equals(" "))) {
+                        team3.setPlayer5(cbPlayers.getValue());
+                    } else if ((team3.getPlayer6().equals(" "))) {
+                        team3.setPlayer6(cbPlayers.getValue());
+                    } else if ((team3.getPlayer7().equals(" "))) {
+                        team3.setPlayer7(cbPlayers.getValue());
+                    } else if ((team3.getPlayer8().equals(" "))) {
+                        team3.setPlayer8(cbPlayers.getValue());
+                    } else if ((team3.getPlayer9().equals(" "))) {
+                        team3.setPlayer9(cbPlayers.getValue());
+                    } else if ((team3.getPlayer10().equals(" "))) {
+                        team3.setPlayer10(cbPlayers.getValue());
 
-            }
-        }
-        if ((cbSelectTeams.getValue()).equals("Team4")) {
-            if ((team4.getPlayer1().equals(" "))) {
-                team4.setPlayer1(cbPlayers.getValue());
-            } else if ((team4.getPlayer2().equals(" "))) {
-                team4.setPlayer2(cbPlayers.getValue());
-            } else if ((team4.getPlayer3().equals(" "))) {
-                team4.setPlayer3(cbPlayers.getValue());
-            } else if ((team4.getPlayer4().equals(" "))) {
-                team4.setPlayer4(cbPlayers.getValue());
-            } else if ((team4.getPlayer5().equals(" "))) {
-                team4.setPlayer5(cbPlayers.getValue());
-            } else if ((team4.getPlayer6().equals(" "))) {
-                team4.setPlayer6(cbPlayers.getValue());
-            } else if ((team4.getPlayer7().equals(" "))) {
-                team4.setPlayer7(cbPlayers.getValue());
-            } else if ((team4.getPlayer8().equals(" "))) {
-                team4.setPlayer8(cbPlayers.getValue());
-            } else if ((team4.getPlayer9().equals(" "))) {
-                team4.setPlayer9(cbPlayers.getValue());
-            } else if ((team4.getPlayer10().equals(" "))) {
-                team4.setPlayer10(cbPlayers.getValue());
+                    }
+                }
+                if ((cbSelectTeams.getValue()).equals("Team4")) {
+                    if ((team4.getPlayer1().equals(" "))) {
+                        team4.setPlayer1(cbPlayers.getValue());
+                    } else if ((team4.getPlayer2().equals(" "))) {
+                        team4.setPlayer2(cbPlayers.getValue());
+                    } else if ((team4.getPlayer3().equals(" "))) {
+                        team4.setPlayer3(cbPlayers.getValue());
+                    } else if ((team4.getPlayer4().equals(" "))) {
+                        team4.setPlayer4(cbPlayers.getValue());
+                    } else if ((team4.getPlayer5().equals(" "))) {
+                        team4.setPlayer5(cbPlayers.getValue());
+                    } else if ((team4.getPlayer6().equals(" "))) {
+                        team4.setPlayer6(cbPlayers.getValue());
+                    } else if ((team4.getPlayer7().equals(" "))) {
+                        team4.setPlayer7(cbPlayers.getValue());
+                    } else if ((team4.getPlayer8().equals(" "))) {
+                        team4.setPlayer8(cbPlayers.getValue());
+                    } else if ((team4.getPlayer9().equals(" "))) {
+                        team4.setPlayer9(cbPlayers.getValue());
+                    } else if ((team4.getPlayer10().equals(" "))) {
+                        team4.setPlayer10(cbPlayers.getValue());
 
-            }
-        }
-        if ((cbSelectTeams.getValue()).equals("Team5")) {
-            if ((team5.getPlayer1().equals(" "))) {
-                team5.setPlayer1(cbPlayers.getValue());
-            } else if ((team5.getPlayer2().equals(" "))) {
-                team5.setPlayer2(cbPlayers.getValue());
-            } else if ((team5.getPlayer3().equals(" "))) {
-                team5.setPlayer3(cbPlayers.getValue());
-            } else if ((team5.getPlayer4().equals(" "))) {
-                team5.setPlayer4(cbPlayers.getValue());
-            } else if ((team5.getPlayer5().equals(" "))) {
-                team5.setPlayer5(cbPlayers.getValue());
-            } else if ((team5.getPlayer6().equals(" "))) {
-                team5.setPlayer6(cbPlayers.getValue());
-            } else if ((team5.getPlayer7().equals(" "))) {
-                team5.setPlayer7(cbPlayers.getValue());
-            } else if ((team5.getPlayer8().equals(" "))) {
-                team5.setPlayer8(cbPlayers.getValue());
-            } else if ((team5.getPlayer9().equals(" "))) {
-                team5.setPlayer9(cbPlayers.getValue());
-            } else if ((team5.getPlayer10().equals(" "))) {
-                team5.setPlayer10(cbPlayers.getValue());
+                    }
+                }
+                if ((cbSelectTeams.getValue()).equals("Team5")) {
+                    if ((team5.getPlayer1().equals(" "))) {
+                        team5.setPlayer1(cbPlayers.getValue());
+                    } else if ((team5.getPlayer2().equals(" "))) {
+                        team5.setPlayer2(cbPlayers.getValue());
+                    } else if ((team5.getPlayer3().equals(" "))) {
+                        team5.setPlayer3(cbPlayers.getValue());
+                    } else if ((team5.getPlayer4().equals(" "))) {
+                        team5.setPlayer4(cbPlayers.getValue());
+                    } else if ((team5.getPlayer5().equals(" "))) {
+                        team5.setPlayer5(cbPlayers.getValue());
+                    } else if ((team5.getPlayer6().equals(" "))) {
+                        team5.setPlayer6(cbPlayers.getValue());
+                    } else if ((team5.getPlayer7().equals(" "))) {
+                        team5.setPlayer7(cbPlayers.getValue());
+                    } else if ((team5.getPlayer8().equals(" "))) {
+                        team5.setPlayer8(cbPlayers.getValue());
+                    } else if ((team5.getPlayer9().equals(" "))) {
+                        team5.setPlayer9(cbPlayers.getValue());
+                    } else if ((team5.getPlayer10().equals(" "))) {
+                        team5.setPlayer10(cbPlayers.getValue());
 
-            }
-        }
-        if ((cbSelectTeams.getValue()).equals("Team6")) {
-            if ((team6.getPlayer1().equals(" "))) {
-                team6.setPlayer1(cbPlayers.getValue());
-            } else if ((team6.getPlayer2().equals(" "))) {
-                team6.setPlayer2(cbPlayers.getValue());
-            } else if ((team6.getPlayer3().equals(" "))) {
-                team6.setPlayer3(cbPlayers.getValue());
-            } else if ((team6.getPlayer4().equals(" "))) {
-                team6.setPlayer4(cbPlayers.getValue());
-            } else if ((team6.getPlayer5().equals(" "))) {
-                team6.setPlayer5(cbPlayers.getValue());
-            } else if ((team6.getPlayer6().equals(" "))) {
-                team6.setPlayer6(cbPlayers.getValue());
-            } else if ((team6.getPlayer7().equals(" "))) {
-                team6.setPlayer7(cbPlayers.getValue());
-            } else if ((team6.getPlayer8().equals(" "))) {
-                team6.setPlayer8(cbPlayers.getValue());
-            } else if ((team6.getPlayer9().equals(" "))) {
-                team6.setPlayer9(cbPlayers.getValue());
-            } else if ((team6.getPlayer10().equals(" "))) {
-                team6.setPlayer10(cbPlayers.getValue());
+                    }
+                }
+                if ((cbSelectTeams.getValue()).equals("Team6")) {
+                    if ((team6.getPlayer1().equals(" "))) {
+                        team6.setPlayer1(cbPlayers.getValue());
+                    } else if ((team6.getPlayer2().equals(" "))) {
+                        team6.setPlayer2(cbPlayers.getValue());
+                    } else if ((team6.getPlayer3().equals(" "))) {
+                        team6.setPlayer3(cbPlayers.getValue());
+                    } else if ((team6.getPlayer4().equals(" "))) {
+                        team6.setPlayer4(cbPlayers.getValue());
+                    } else if ((team6.getPlayer5().equals(" "))) {
+                        team6.setPlayer5(cbPlayers.getValue());
+                    } else if ((team6.getPlayer6().equals(" "))) {
+                        team6.setPlayer6(cbPlayers.getValue());
+                    } else if ((team6.getPlayer7().equals(" "))) {
+                        team6.setPlayer7(cbPlayers.getValue());
+                    } else if ((team6.getPlayer8().equals(" "))) {
+                        team6.setPlayer8(cbPlayers.getValue());
+                    } else if ((team6.getPlayer9().equals(" "))) {
+                        team6.setPlayer9(cbPlayers.getValue());
+                    } else if ((team6.getPlayer10().equals(" "))) {
+                        team6.setPlayer10(cbPlayers.getValue());
 
-            }
-        }
-        if ((cbSelectTeams.getValue()).equals("Team7")) {
-            if ((team7.getPlayer1().equals(" "))) {
-                team7.setPlayer1(cbPlayers.getValue());
-            } else if ((team7.getPlayer2().equals(" "))) {
-                team7.setPlayer2(cbPlayers.getValue());
-            } else if ((team7.getPlayer3().equals(" "))) {
-                team7.setPlayer3(cbPlayers.getValue());
-            } else if ((team7.getPlayer4().equals(" "))) {
-                team7.setPlayer4(cbPlayers.getValue());
-            } else if ((team7.getPlayer5().equals(" "))) {
-                team7.setPlayer5(cbPlayers.getValue());
-            } else if ((team7.getPlayer6().equals(" "))) {
-                team7.setPlayer6(cbPlayers.getValue());
-            } else if ((team7.getPlayer7().equals(" "))) {
-                team7.setPlayer7(cbPlayers.getValue());
-            } else if ((team7.getPlayer8().equals(" "))) {
-                team7.setPlayer8(cbPlayers.getValue());
-            } else if ((team7.getPlayer9().equals(" "))) {
-                team7.setPlayer9(cbPlayers.getValue());
-            } else if ((team7.getPlayer10().equals(" "))) {
-                team7.setPlayer10(cbPlayers.getValue());
-            }
+                    }
+                }
+                if ((cbSelectTeams.getValue()).equals("Team7")) {
+                    if ((team7.getPlayer1().equals(" "))) {
+                        team7.setPlayer1(cbPlayers.getValue());
+                    } else if ((team7.getPlayer2().equals(" "))) {
+                        team7.setPlayer2(cbPlayers.getValue());
+                    } else if ((team7.getPlayer3().equals(" "))) {
+                        team7.setPlayer3(cbPlayers.getValue());
+                    } else if ((team7.getPlayer4().equals(" "))) {
+                        team7.setPlayer4(cbPlayers.getValue());
+                    } else if ((team7.getPlayer5().equals(" "))) {
+                        team7.setPlayer5(cbPlayers.getValue());
+                    } else if ((team7.getPlayer6().equals(" "))) {
+                        team7.setPlayer6(cbPlayers.getValue());
+                    } else if ((team7.getPlayer7().equals(" "))) {
+                        team7.setPlayer7(cbPlayers.getValue());
+                    } else if ((team7.getPlayer8().equals(" "))) {
+                        team7.setPlayer8(cbPlayers.getValue());
+                    } else if ((team7.getPlayer9().equals(" "))) {
+                        team7.setPlayer9(cbPlayers.getValue());
+                    } else if ((team7.getPlayer10().equals(" "))) {
+                        team7.setPlayer10(cbPlayers.getValue());
+                    }
 
-        }
-        if ((cbSelectTeams.getValue()).equals("Team8")) {
-            if ((team8.getPlayer1().equals(" "))) {
-                team8.setPlayer1(cbPlayers.getValue());
-            } else if ((team8.getPlayer2().equals(" "))) {
-                team8.setPlayer2(cbPlayers.getValue());
-            } else if ((team8.getPlayer3().equals(" "))) {
-                team8.setPlayer3(cbPlayers.getValue());
-            } else if ((team8.getPlayer4().equals(" "))) {
-                team8.setPlayer4(cbPlayers.getValue());
-            } else if ((team8.getPlayer5().equals(" "))) {
-                team8.setPlayer5(cbPlayers.getValue());
-            } else if ((team8.getPlayer6().equals(" "))) {
-                team8.setPlayer6(cbPlayers.getValue());
-            } else if ((team8.getPlayer7().equals(" "))) {
-                team8.setPlayer7(cbPlayers.getValue());
-            } else if ((team8.getPlayer8().equals(" "))) {
-                team8.setPlayer8(cbPlayers.getValue());
-            } else if ((team8.getPlayer9().equals(" "))) {
-                team8.setPlayer9(cbPlayers.getValue());
-            } else if ((team8.getPlayer10().equals(" "))) {
-                team8.setPlayer10(cbPlayers.getValue());
+                }
+                if ((cbSelectTeams.getValue()).equals("Team8")) {
+                    if ((team8.getPlayer1().equals(" "))) {
+                        team8.setPlayer1(cbPlayers.getValue());
+                    } else if ((team8.getPlayer2().equals(" "))) {
+                        team8.setPlayer2(cbPlayers.getValue());
+                    } else if ((team8.getPlayer3().equals(" "))) {
+                        team8.setPlayer3(cbPlayers.getValue());
+                    } else if ((team8.getPlayer4().equals(" "))) {
+                        team8.setPlayer4(cbPlayers.getValue());
+                    } else if ((team8.getPlayer5().equals(" "))) {
+                        team8.setPlayer5(cbPlayers.getValue());
+                    } else if ((team8.getPlayer6().equals(" "))) {
+                        team8.setPlayer6(cbPlayers.getValue());
+                    } else if ((team8.getPlayer7().equals(" "))) {
+                        team8.setPlayer7(cbPlayers.getValue());
+                    } else if ((team8.getPlayer8().equals(" "))) {
+                        team8.setPlayer8(cbPlayers.getValue());
+                    } else if ((team8.getPlayer9().equals(" "))) {
+                        team8.setPlayer9(cbPlayers.getValue());
+                    } else if ((team8.getPlayer10().equals(" "))) {
+                        team8.setPlayer10(cbPlayers.getValue());
 
+                    }
+                }
+                if ((cbSelectTeams.getValue()).equals("Team9")) {
+                    if ((team9.getPlayer1().equals(" "))) {
+                        team9.setPlayer1(cbPlayers.getValue());
+                    } else if ((team9.getPlayer2().equals(" "))) {
+                        team9.setPlayer2(cbPlayers.getValue());
+                    } else if ((team9.getPlayer3().equals(" "))) {
+                        team9.setPlayer3(cbPlayers.getValue());
+                    } else if ((team9.getPlayer4().equals(" "))) {
+                        team9.setPlayer4(cbPlayers.getValue());
+                    } else if ((team9.getPlayer5().equals(" "))) {
+                        team9.setPlayer5(cbPlayers.getValue());
+                    } else if ((team9.getPlayer6().equals(" "))) {
+                        team9.setPlayer6(cbPlayers.getValue());
+                    } else if ((team9.getPlayer7().equals(" "))) {
+                        team9.setPlayer7(cbPlayers.getValue());
+                    } else if ((team9.getPlayer8().equals(" "))) {
+                        team9.setPlayer8(cbPlayers.getValue());
+                    } else if ((team9.getPlayer9().equals(" "))) {
+                        team9.setPlayer9(cbPlayers.getValue());
+                    } else if ((team9.getPlayer10().equals(" "))) {
+                        team9.setPlayer10(cbPlayers.getValue());
+                    }
+                }
+                if ((cbSelectTeams.getValue()).equals("Team10")) {
+                    if ((team10.getPlayer1().equals(" "))) {
+                        team10.setPlayer1(cbPlayers.getValue());
+                    } else if ((team10.getPlayer2().equals(" "))) {
+                        team10.setPlayer2(cbPlayers.getValue());
+                    } else if ((team10.getPlayer3().equals(" "))) {
+                        team10.setPlayer3(cbPlayers.getValue());
+                    } else if ((team10.getPlayer4().equals(" "))) {
+                        team10.setPlayer4(cbPlayers.getValue());
+                    } else if ((team10.getPlayer5().equals(" "))) {
+                        team10.setPlayer5(cbPlayers.getValue());
+                    } else if ((team10.getPlayer6().equals(" "))) {
+                        team10.setPlayer6(cbPlayers.getValue());
+                    } else if ((team10.getPlayer7().equals(" "))) {
+                        team10.setPlayer7(cbPlayers.getValue());
+                    } else if ((team10.getPlayer8().equals(" "))) {
+                        team10.setPlayer8(cbPlayers.getValue());
+                    } else if ((team10.getPlayer9().equals(" "))) {
+                        team10.setPlayer9(cbPlayers.getValue());
+                    } else if ((team10.getPlayer10().equals(" "))) {
+                        team10.setPlayer10(cbPlayers.getValue());
+                    }
+                }
+                cbPlayers.getItems().remove(cbPlayers.getValue());
+                tblTeams.refresh();
             }
-        }
-        if ((cbSelectTeams.getValue()).equals("Team9")) {
-            if ((team9.getPlayer1().equals(" "))) {
-                team9.setPlayer1(cbPlayers.getValue());
-            } else if ((team9.getPlayer2().equals(" "))) {
-                team9.setPlayer2(cbPlayers.getValue());
-            } else if ((team9.getPlayer3().equals(" "))) {
-                team9.setPlayer3(cbPlayers.getValue());
-            } else if ((team9.getPlayer4().equals(" "))) {
-                team9.setPlayer4(cbPlayers.getValue());
-            } else if ((team9.getPlayer5().equals(" "))) {
-                team9.setPlayer5(cbPlayers.getValue());
-            } else if ((team9.getPlayer6().equals(" "))) {
-                team9.setPlayer6(cbPlayers.getValue());
-            } else if ((team9.getPlayer7().equals(" "))) {
-                team9.setPlayer7(cbPlayers.getValue());
-            } else if ((team9.getPlayer8().equals(" "))) {
-                team9.setPlayer8(cbPlayers.getValue());
-            } else if ((team9.getPlayer9().equals(" "))) {
-                team9.setPlayer9(cbPlayers.getValue());
-            } else if ((team9.getPlayer10().equals(" "))) {
-                team9.setPlayer10(cbPlayers.getValue());
+            else
+            {
+                infoMessages.pickTeamAndPlayerMessage();
             }
-        }
-        if ((cbSelectTeams.getValue()).equals("Team10")) {
-            if ((team10.getPlayer1().equals(" "))) {
-                team10.setPlayer1(cbPlayers.getValue());
-            } else if ((team10.getPlayer2().equals(" "))) {
-                team10.setPlayer2(cbPlayers.getValue());
-            } else if ((team10.getPlayer3().equals(" "))) {
-                team10.setPlayer3(cbPlayers.getValue());
-            } else if ((team10.getPlayer4().equals(" "))) {
-                team10.setPlayer4(cbPlayers.getValue());
-            } else if ((team10.getPlayer5().equals(" "))) {
-                team10.setPlayer5(cbPlayers.getValue());
-            } else if ((team10.getPlayer6().equals(" "))) {
-                team10.setPlayer6(cbPlayers.getValue());
-            } else if ((team10.getPlayer7().equals(" "))) {
-                team10.setPlayer7(cbPlayers.getValue());
-            } else if ((team10.getPlayer8().equals(" "))) {
-                team10.setPlayer8(cbPlayers.getValue());
-            } else if ((team10.getPlayer9().equals(" "))) {
-                team10.setPlayer9(cbPlayers.getValue());
-            } else if ((team10.getPlayer10().equals(" "))) {
-                team10.setPlayer10(cbPlayers.getValue());
-            }
-        }
-        cbPlayers.getItems().remove(cbPlayers.getValue());
-        tblTeams.refresh();
     }
 
     /**
