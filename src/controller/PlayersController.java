@@ -9,6 +9,8 @@ import model.Player;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Connects the Players fxml-file with the rest of the system
@@ -23,6 +25,8 @@ public class PlayersController extends SceneControllerParent {
     private TextField tfPlayerName = new TextField();
 
     private ObservableList<String> listOfPlayers = FXCollections.observableArrayList();
+
+    private TeamController teamController = new TeamController();
 
     /**
      * Changes scenes to the firstPageGUI
@@ -65,6 +69,8 @@ public class PlayersController extends SceneControllerParent {
         }
         tfPlayerName.setText("");
     }
+
+
 
     /**
      * Removes players from the selected player

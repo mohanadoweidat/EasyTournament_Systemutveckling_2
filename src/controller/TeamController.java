@@ -14,9 +14,7 @@ import model.Team;
 import view.InfoMessages;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /**
  * Connects the Team fxml-file with the ret of the system
@@ -38,6 +36,13 @@ public class TeamController extends SceneControllerParent {
     private ListView<String> listTeamsPlayer = new ListView<>();
     @FXML
     private ChoiceBox<AmountOfTeams> cbTeams = new ChoiceBox();
+
+
+    public ComboBox<String> getCbPlayers()
+    {
+        return cbPlayers;
+    }
+
     @FXML
     private ComboBox<String> cbPlayers = new ComboBox<>();
     @FXML
@@ -321,16 +326,22 @@ public class TeamController extends SceneControllerParent {
             team10 = new Team();
         }
     }
+    public void loadPlayers(){
+        for (Player p : mainController.getPlayers()) {
+            cbPlayers.getItems().add(p.getName());
+        }
+    }
+
+
 
     /**
      * Chooses the amount of columns and rows for the teams and players depending on which is choosen in the ChoiceBox
      */
     @FXML
     private void initTeamsTableData(ActionEvent event) {
-        loadTeams();
-        for (Player p : mainController.getPlayers()) {
-            cbPlayers.getItems().add(p.getName());
-        }
+        if (tblTeams.getItems().size() <= 0){
+            loadTeams();
+            loadPlayers();
         try {
             tblTeams.getItems().removeAll(observablePlayers);
             tblTeams.getColumns().removeAll(columnTeam, columnPlayer1, columnPlayer2, columnPlayer3, columnPlayer4, columnPlayer5, columnPlayer6, columnPlayer7, columnPlayer8, columnPlayer9, columnPlayer10);
@@ -401,6 +412,7 @@ public class TeamController extends SceneControllerParent {
                     break;
             }
         } catch (Exception e) {
+        }
         }
     }
 
