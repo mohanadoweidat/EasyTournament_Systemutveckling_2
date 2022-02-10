@@ -64,7 +64,6 @@
         </Pane>
         <TableView fx:id="tblGroupStage" layoutX="194.0" layoutY="289.0" prefHeight="311.0" prefWidth="556.0">
             <columns>
-                <TableColumn fx:id="colPosition" prefWidth="62.0" text="Postion" />
                 <TableColumn fx:id="colTeams" prefWidth="166.0" text="Team" />
                 <TableColumn fx:id="colWins" prefWidth="75.0" text="Wins" />
                 <TableColumn fx:id="colDraws" prefWidth="76.0" text="Draws" />
