@@ -417,8 +417,10 @@ public class TeamController extends SceneControllerParent {
     }
 
     public void selectPlayersToRemove() {
+
         switch (cbRemoveTeam.getSelectionModel().getSelectedItem()) {
             case "Team1":
+
                 cbRemovePlayer.getItems().setAll(team1.getPlayers());
                 break;
             case "Team2":
@@ -1127,8 +1129,9 @@ public class TeamController extends SceneControllerParent {
                         team10.setPlayer10(" ");
                     }
                 }
-                selectPlayersToRemove();
                 cbPlayers.getItems().add(cbRemovePlayer.getValue());
+                cbRemovePlayer.getItems().remove(cbRemovePlayer.getValue());
+                selectPlayersToRemove();
                 tblTeams.refresh();
             }
             else{
@@ -1167,10 +1170,10 @@ public class TeamController extends SceneControllerParent {
      */
 
     public void removeAllPlayersFromTeam(){
-        for (Team t : tblTeams.getItems()){
-            cbPlayers.getItems().addAll(t.getPlayers());
-            t.RemovePlayersTeam();
-        }
+            for (Team t : tblTeams.getItems()){
+                    cbPlayers.getItems().addAll(t.getPlayers());
+                    t.RemovePlayersTeam();
+            }
         tblTeams.refresh();
     }
 
