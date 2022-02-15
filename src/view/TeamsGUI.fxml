@@ -115,7 +115,7 @@
             <Insets />
          </opaqueInsets>
          <children>
-            <ComboBox fx:id="cbPlayers" layoutX="151.0" layoutY="38.0" prefHeight="27.0" prefWidth="124.0" promptText="Player" />
+            <ComboBox fx:id="cbPlayers"  layoutX="151.0" layoutY="38.0" prefHeight="27.0" prefWidth="124.0" promptText="Player" />
             <ComboBox fx:id="cbSelectTeams" layoutX="11.0" layoutY="38.0" prefHeight="27.0" prefWidth="124.0" promptText="Team" />
             <Button fx:id="btnAddToTeam" layoutX="82.0" layoutY="75.0" mnemonicParsing="false" onAction="#addPlayersToTeams" prefHeight="27.0" prefWidth="124.0" style="-fx-background-color: #2b2b2b #2b2b2b;" text="Add Player" textFill="WHITE">
                <cursor>
