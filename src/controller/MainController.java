@@ -31,7 +31,7 @@ public class MainController {
         this.mainWindow = mainWindow;
         this.player = player;
         this.tournament = tournament;
-
+        mainWindow.setResizable(false);
         try {
             sceneSetter.addScenesToHashMap();
         } catch (IOException e) {
