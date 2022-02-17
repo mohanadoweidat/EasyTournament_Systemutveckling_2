@@ -98,6 +98,7 @@ public class Team {
             if (s.equals(player)) {
                 arrayListPlayers.remove(player);
                 arrayListPlayers.trimToSize();
+                break;
             }
         }
     }

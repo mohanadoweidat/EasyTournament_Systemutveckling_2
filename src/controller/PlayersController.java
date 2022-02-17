@@ -9,6 +9,8 @@ import model.Player;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Connects the Players fxml-file with the rest of the system
@@ -23,6 +25,8 @@ public class PlayersController extends SceneControllerParent {
     private TextField tfPlayerName = new TextField();
 
     private ObservableList<String> listOfPlayers = FXCollections.observableArrayList();
+
+    private TeamController teamController = new TeamController();
 
     /**
      * Changes scenes to the firstPageGUI
@@ -66,6 +70,8 @@ public class PlayersController extends SceneControllerParent {
         tfPlayerName.setText("");
     }
 
+
+
     /**
      * Removes players from the selected player
      */
@@ -100,13 +106,18 @@ public class PlayersController extends SceneControllerParent {
 
         PrintWriter outFile = null;
         try {
-            outFile = new PrintWriter(selectedFile+".txt");
+            if(selectedFile == null)
+            {
+                return;
+            }
+            else {
+                outFile = new PrintWriter(selectedFile+".txt");
+                for(int i = 0; i< listOfPlayers.size(); i++){
+                    outFile.println(listOfPlayers.get(i));
+                }
+            }
         } catch (Exception e) {
             e.printStackTrace();
-        }
-
-        for(int i = 0; i< listOfPlayers.size(); i++){
-            outFile.println(listOfPlayers.get(i));
         }
         outFile.close();
     }
@@ -118,15 +129,17 @@ public class PlayersController extends SceneControllerParent {
     public void readGroupFromFile(){
         FileChooser chooser1= new FileChooser();
         File file= chooser1.showOpenDialog(null);
+
         try {
             BufferedReader in;
-            in = new BufferedReader(new FileReader(file));
-            String line = in.readLine();
-
+            if (file != null){
+                in = new BufferedReader(new FileReader(file));
+                String line = in.readLine();
             while (line != null) {
                 listAddedPlayers.getItems().add(line);
                 mainController.addPlayer(new Player(line));
                 line = in.readLine();
+            }
             }
         } catch (Exception ex) {
             ex.printStackTrace();

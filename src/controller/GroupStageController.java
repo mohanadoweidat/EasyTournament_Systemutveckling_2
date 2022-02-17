@@ -8,9 +8,7 @@ import javafx.scene.control.cell.*;
 import javafx.stage.FileChooser;
 import model.*;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /**
  * Connects the GroupStage fxml-file with the ret of the system
@@ -92,6 +90,8 @@ public class GroupStageController extends SceneControllerParent {
     @FXML
     public void setTeamsGUI(ActionEvent actionEvent) {
         mainController.setScene(ScenesEnum.Team);
+
+
     }
 
     /**
