@@ -1139,7 +1139,7 @@ public class TeamController extends SceneControllerParent {
             }
         }
         else{
-            infoMessages.emptyTeamOrPlayerMessag();
+            infoMessages.emptyTeamOrPlayerMessage();
         }
     }
 

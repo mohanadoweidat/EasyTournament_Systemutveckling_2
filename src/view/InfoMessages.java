@@ -41,4 +41,13 @@ public class InfoMessages
         alert.setContentText("The name needs to start with a letter");
         alert.showAndWait();
     }
+
+    public void emptyTeamOrPlayerMessage()
+    {
+        alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Information");
+        alert.setHeaderText(null);
+        alert.setContentText("There is no teams or players!");
+        alert.showAndWait();
+    }
 }
