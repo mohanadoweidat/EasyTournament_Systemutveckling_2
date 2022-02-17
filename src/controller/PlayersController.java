@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 import model.Player;
+import view.InfoMessages;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ public class PlayersController extends SceneControllerParent {
 
     private ObservableList<String> listOfPlayers = FXCollections.observableArrayList();
 
-    private TeamController teamController = new TeamController();
+    private InfoMessages infoMessages = new InfoMessages();
 
     /**
      * Changes scenes to the firstPageGUI
@@ -48,29 +49,44 @@ public class PlayersController extends SceneControllerParent {
      * Adds a player to the game
      */
     @FXML
-    public void addPlayersToList() {
+    public void addPlayersToList()
+    {
         String test = tfPlayerName.getText();
-        if (test.isBlank()) {
-            Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
-            alert1.setTitle("Name problems");
-            alert1.setHeaderText(null);
-            alert1.setContentText("The name can't be empty");
-            alert1.showAndWait();
-        } else if (Character.isDigit(test.charAt(0))) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Name problems");
-            alert.setHeaderText(null);
-            alert.setContentText("The name needs to start with a letter");
-            alert.showAndWait();
-        } else {
-            listAddedPlayers.getItems().add(tfPlayerName.getText());
-            listOfPlayers.add(tfPlayerName.getText());
-            mainController.addPlayer(new Player(tfPlayerName.getText()));
+        if (test.isBlank())
+        {
+            infoMessages.emptyName();
+        }
+        else if (Character.isDigit(test.charAt(0)))
+        {
+            infoMessages.specialName();
+        }
+        else {
+            if(!checkPlayerName(tfPlayerName.getText()))
+            {
+                listAddedPlayers.getItems().add(tfPlayerName.getText());
+                listOfPlayers.add(tfPlayerName.getText());
+                mainController.addPlayer(new Player(tfPlayerName.getText()));
+            }
+            else
+            {
+                infoMessages.nameAlreadyExist();
+            }
         }
         tfPlayerName.setText("");
     }
 
+    private boolean checkPlayerName(String name)
+    {
+        for (int i = 0; i < listOfPlayers.size(); i++)
+        {
+            if(listOfPlayers.get(i).equals(name))
+            {
+                return true;
+            }
 
+        }
+        return false;
+    }
 
     /**
      * Removes players from the selected player
