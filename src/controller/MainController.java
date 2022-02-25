@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.*;
+import view.InfoMessages;
 
 /**
  *
@@ -23,6 +24,7 @@ public class MainController {
     private TeamController teamController;
     private GroupStageController groupStageController;
     private PlayoffsController playoffsController;
+    private InfoMessages infoMessages = new InfoMessages();
 
     /**
      * The Constructor
@@ -55,7 +57,12 @@ public class MainController {
      * Displays the scene that you calls upon
      */
     public void setScene(ScenesEnum sceneToShow){
-        sceneSetter.setScene(sceneToShow);
+        if (sceneToShow == ScenesEnum.Team && getPlayers().size() < 3) {
+            infoMessages.notEnoughPlayersToPickTeams();
+        } else {
+            sceneSetter.setScene(sceneToShow);
+            System.out.println(sceneToShow);
+        }
     }
 
     /**
@@ -139,8 +146,9 @@ public class MainController {
          * Displays the selected scene
          */
         public void setScene(ScenesEnum sceneName) {
-            if (scenes.get(sceneName) != mainWindow.getScene())
+            if (scenes.get(sceneName) != mainWindow.getScene()) {
                 mainWindow.setScene(scenes.get(sceneName));
+            }
         }
     }
 

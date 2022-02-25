@@ -50,4 +50,12 @@ public class InfoMessages
         alert.setContentText("There is no teams or players!");
         alert.showAndWait();
     }
+
+    public void notEnoughPlayersToPickTeams() {
+       Alert alert = new Alert(Alert.AlertType.ERROR);
+       alert.setTitle("Error");
+       alert.setHeaderText(null);
+       alert.setContentText("In order to pick teams, a minimum of 3 players needs to be added.");
+       alert.showAndWait();
+    }
 }
