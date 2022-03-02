@@ -1166,6 +1166,28 @@ public class TeamController extends SceneControllerParent {
     }
 
     /**
+     * Displays information about league play
+     */
+    public void leagueInfo() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("League Play Information");
+        alert.setHeaderText(null);
+        alert.setContentText("League play allows you to compete in multiple rounds between different opponents.");
+        alert.showAndWait();
+    }
+
+    /**
+     * Displays information about Play-offs
+     */
+    public void playoffsInfo() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Play-offs Information");
+        alert.setHeaderText(null);
+        alert.setContentText("Play-offs allows players to enter a knockout stage where only one team can be the winner.");
+        alert.showAndWait();
+    }
+
+    /**
      * Removes all players from the table
      */
 
