@@ -172,4 +172,6 @@ $RECYCLE.BIN/
 
 # End of https://www.gitignore.io/api/java,macos,windows,intellij
 .idea/EasyTournament.iml
+EasyTournament.iml
+EasyTournament_Systemutveckling_2.iml
 *.xml
