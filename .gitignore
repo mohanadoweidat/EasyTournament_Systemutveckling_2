@@ -174,4 +174,5 @@ $RECYCLE.BIN/
 .idea/EasyTournament.iml
 EasyTournament.iml
 EasyTournament_Systemutveckling_2.iml
+*.iml
 *.xml
