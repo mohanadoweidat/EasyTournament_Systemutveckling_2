@@ -110,11 +110,19 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Label layoutX="59.0" layoutY="23.0" text="Game scores" textFill="WHITE">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
+
+            <Button fx:id="Confiq" layoutX="14.0" layoutY="10.0" graphicTextGap="8.0" mnemonicParsing="false" onAction="#setFirstPageGUI" prefHeight="50.0" prefWidth="140.0" style="-fx-background-color: #3b3f41#3b3f41;" text="Home Page" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/ET.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
       </Pane>
       <Label layoutX="266.0" layoutY="137.0" text="QF-1" textFill="WHITE" />
