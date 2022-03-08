@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
@@ -71,6 +72,11 @@ public class PlayoffsController extends SceneControllerParent{
     private Label lblQf4Home = new Label();
     @FXML
     private Label lblQf4Away = new Label();
+
+    @FXML
+    public void setFirstPageGUI(ActionEvent actionEvent) {
+        mainController.setScene(ScenesEnum.FirstPage);
+    }
 
 
     /**
