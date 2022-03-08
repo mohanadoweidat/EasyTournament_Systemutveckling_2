@@ -58,6 +58,10 @@ public class GroupStageController extends SceneControllerParent {
     @FXML
     private Button btnWinner4;
 
+    @FXML
+    private Button btnNextGame;
+
+
     private ArrayList<Team> teamBuffer = new ArrayList<>();
 
     private ObservableList <Team> data = FXCollections.observableArrayList();
@@ -67,6 +71,8 @@ public class GroupStageController extends SceneControllerParent {
     private ArrayList<Team> teamsBuffer = new ArrayList();
 
     private int teams = 0;
+    private int wins;
+    private int temp;
 
     /**
      * Changes scenes to the PlayersGUI
@@ -90,10 +96,23 @@ public class GroupStageController extends SceneControllerParent {
     @FXML
     public void setTeamsGUI(ActionEvent actionEvent) {
         mainController.setScene(ScenesEnum.Team);
-
-
     }
 
+    public void disableButtons(){
+        btnWinner1.setDisable(true);
+        btnWinner2.setDisable(true);
+        btnWinner3.setDisable(true);
+        btnWinner4.setDisable(true);
+        btnNextGame.setDisable(false);
+    }
+
+    public void enableButtons(){
+        btnWinner1.setDisable(false);
+        btnWinner2.setDisable(false);
+        btnWinner3.setDisable(false);
+        btnWinner4.setDisable(false);
+        btnNextGame.setDisable(true);
+    }
     /**
      * Sets up the columns and calls the method that fills the table with the teams
      */
@@ -141,6 +160,8 @@ public class GroupStageController extends SceneControllerParent {
             for (Team team : tblGroupStage.getItems()) {
                 if (team.getName().equals(lblTeamToPlay1.getText())) {
                     team.setWins(1);
+                    wins++;
+                    disableButtons();
                 }
                 if (team.getName().equals(lblTeamToPlay3.getText())) {
                     team.setLosses(1);
@@ -159,6 +180,8 @@ public class GroupStageController extends SceneControllerParent {
             for (Team team : tblGroupStage.getItems()) {
                 if (team.getName().equals(lblTeamToPlay3.getText())) {
                     team.setWins(1);
+                    wins++;
+                    disableButtons();
                 }
                 if (team.getName().equals(lblTeamToPlay1.getText())) {
                     team.setLosses(1);
@@ -177,6 +200,9 @@ public class GroupStageController extends SceneControllerParent {
             for (Team team : tblGroupStage.getItems()) {
                 if (team.getName().equals(lblTeamToPlay2.getText())) {
                     team.setWins(1);
+                    wins++;
+                    disableButtons();
+
                 }
                 if (team.getName().equals(lblTeamToPlay4.getText())) {
                     team.setLosses(1);
@@ -195,6 +221,8 @@ public class GroupStageController extends SceneControllerParent {
             for (Team team : tblGroupStage.getItems()) {
                 if (team.getName().equals(lblTeamToPlay4.getText())) {
                     team.setWins(1);
+                    wins++;
+                    disableButtons();
                 }
                 if (team.getName().equals(lblTeamToPlay2.getText())) {
                     team.setLosses(1);
@@ -209,47 +237,49 @@ public class GroupStageController extends SceneControllerParent {
      * Shows the next teams to play
      */
     public void nextGames(){
-        if (teams == 0){
-            Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
-            alert1.setTitle("Error message");
-            alert1.setHeaderText(null);
-            alert1.setContentText("You need to add teams to see next match");
-            alert1.showAndWait();
-        } else if (teams == 3) {
-            int a = random.nextInt(teams);
-            lblTeamToPlay1.setText(mainController.getTeam(a).getName());
-            int b = random.nextInt((teams));
-            while (b == a) {
-                b = random.nextInt((teams));
+            enableButtons();
+            if (teams == 0) {
+                Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+                alert1.setTitle("Error message");
+                alert1.setHeaderText(null);
+                alert1.setContentText("You need to add teams to see next match");
+                alert1.showAndWait();
+            } else if (teams == 3) {
+                int a = random.nextInt(teams);
+                lblTeamToPlay1.setText(mainController.getTeam(a).getName());
+                int b = random.nextInt((teams));
+                while (b == a) {
+                    b = random.nextInt((teams));
+                }
+                lblTeamToPlay3.setText(mainController.getTeam(b).getName());
+                btnWinner1.setVisible(true);
+                btnWinner2.setVisible(true);
+                btnWinner3.setVisible(false);
+                btnWinner4.setVisible(false);
+            } else {
+                btnWinner1.setVisible(true);
+                btnWinner2.setVisible(true);
+                btnWinner3.setVisible(true);
+                btnWinner4.setVisible(true);
+                int a = random.nextInt(teams);
+                lblTeamToPlay1.setText(mainController.getTeam(a).getName());
+                int b = random.nextInt((teams));
+                while (b == a) {
+                    b = random.nextInt((teams));
+                }
+                lblTeamToPlay2.setText(mainController.getTeam(b).getName());
+                int c = random.nextInt((teams));
+                while (c == b || c == a) {
+                    c = random.nextInt((teams));
+                }
+                lblTeamToPlay3.setText(mainController.getTeam(c).getName());
+                int d = random.nextInt((teams));
+                while (d == a || d == b || d == c) {
+                    d = random.nextInt((teams));
+                }
+                lblTeamToPlay4.setText(mainController.getTeam(d).getName());
+                temp = wins;
             }
-            lblTeamToPlay3.setText(mainController.getTeam(b).getName());
-            btnWinner1.setVisible(true);
-            btnWinner2.setVisible(true);
-            btnWinner3.setVisible(false);
-            btnWinner4.setVisible(false);
-        } else {
-            btnWinner1.setVisible(true);
-            btnWinner2.setVisible(true);
-            btnWinner3.setVisible(true);
-            btnWinner4.setVisible(true);
-            int a = random.nextInt(teams);
-            lblTeamToPlay1.setText(mainController.getTeam(a).getName());
-            int b = random.nextInt((teams));
-            while (b == a) {
-                b = random.nextInt((teams));
-            }
-            lblTeamToPlay2.setText(mainController.getTeam(b).getName());
-            int c = random.nextInt((teams));
-            while (c == b || c == a) {
-                c = random.nextInt((teams));
-            }
-            lblTeamToPlay3.setText(mainController.getTeam(c).getName());
-            int d = random.nextInt((teams));
-            while (d == a || d == b || d == c) {
-                d = random.nextInt((teams));
-            }
-            lblTeamToPlay4.setText(mainController.getTeam(d).getName());
-        }
     }
 
    /**
