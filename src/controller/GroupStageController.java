@@ -161,7 +161,11 @@ public class GroupStageController extends SceneControllerParent {
                 if (team.getName().equals(lblTeamToPlay1.getText())) {
                     team.setWins(1);
                     wins++;
-                    disableButtons();
+                    btnWinner1.setDisable(true);
+                    btnWinner2.setDisable(true);
+                    if (btnWinner3.isDisabled()){
+                        btnNextGame.setDisable(false);
+                    }
                 }
                 if (team.getName().equals(lblTeamToPlay3.getText())) {
                     team.setLosses(1);
@@ -181,7 +185,11 @@ public class GroupStageController extends SceneControllerParent {
                 if (team.getName().equals(lblTeamToPlay3.getText())) {
                     team.setWins(1);
                     wins++;
-                    disableButtons();
+                    btnWinner1.setDisable(true);
+                    btnWinner2.setDisable(true);
+                    if (btnWinner3.isDisabled()){
+                        btnNextGame.setDisable(false);
+                    }
                 }
                 if (team.getName().equals(lblTeamToPlay1.getText())) {
                     team.setLosses(1);
@@ -201,7 +209,11 @@ public class GroupStageController extends SceneControllerParent {
                 if (team.getName().equals(lblTeamToPlay2.getText())) {
                     team.setWins(1);
                     wins++;
-                    disableButtons();
+                    btnWinner3.setDisable(true);
+                    btnWinner4.setDisable(true);
+                    if (btnWinner1.isDisabled()){
+                        btnNextGame.setDisable(false);
+                    }
 
                 }
                 if (team.getName().equals(lblTeamToPlay4.getText())) {
@@ -222,7 +234,11 @@ public class GroupStageController extends SceneControllerParent {
                 if (team.getName().equals(lblTeamToPlay4.getText())) {
                     team.setWins(1);
                     wins++;
-                    disableButtons();
+                    btnWinner3.setDisable(true);
+                    btnWinner4.setDisable(true);
+                    if (btnWinner3.isDisabled()){
+                        btnNextGame.setDisable(false);
+                    }
                 }
                 if (team.getName().equals(lblTeamToPlay2.getText())) {
                     team.setLosses(1);
