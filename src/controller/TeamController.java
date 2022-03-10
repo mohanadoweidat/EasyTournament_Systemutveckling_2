@@ -55,7 +55,8 @@ public class TeamController extends SceneControllerParent {
     private ComboBox<String> cbRemoveTeam = new ComboBox<>();
 
     private int amountOfTeamsInInt = 0;
-
+    private int count;
+    
     private Random random = new Random();
 
     private ObservableList<String> tableContent = FXCollections.observableArrayList();
@@ -86,6 +87,8 @@ public class TeamController extends SceneControllerParent {
     private ObservableList<Team> observablePlayers = FXCollections.observableArrayList();
 
     private ArrayList<Player> playersBuffer = new ArrayList<>();
+    private ArrayList<Player> tempBuffer = new ArrayList<>();
+    private ArrayList<Player> rePlayersBuffer = new ArrayList<>();
     private ArrayList<Team> teamsBuffer = new ArrayList();
     private int teams = 0;
 
@@ -1147,6 +1150,10 @@ public class TeamController extends SceneControllerParent {
      * Randomizes the listed players in to different teams
      */
     public void randomTeams() {
+        if (count>0) {
+            reRandomize();
+        }
+        count++;
         loadBuffer();
         while (playersBuffer.size() != 0) {
             int randomPlayer = 0;
@@ -1154,6 +1161,7 @@ public class TeamController extends SceneControllerParent {
             for (Team team : tblTeams.getItems()) {
                 if (playersBuffer.size() != 0) {
                     team.addRandomPlayer((playersBuffer.get(randomPlayer)).getName());
+                    fillBuffer(playersBuffer.get(randomPlayer));
                     cbPlayers.getItems().remove(((playersBuffer.get(randomPlayer)).getName()));
                     playersBuffer.remove(randomPlayer);
                     tblTeams.refresh();
@@ -1165,6 +1173,15 @@ public class TeamController extends SceneControllerParent {
         }
     }
 
+    public void reRandomize(){
+        playersBuffer.addAll(tempBuffer);
+        tempBuffer.clear();
+        removeAllPlayersFromTeam();
+    }
+
+    public void fillBuffer(Player player){
+       tempBuffer.add(player);
+    }
     /**
      * Displays information about league play
      */
@@ -1204,5 +1221,6 @@ public class TeamController extends SceneControllerParent {
      */
     public void loadBuffer() {
         playersBuffer = mainController.getPlayers();
+        rePlayersBuffer = mainController.getPlayers();
     }
 }
