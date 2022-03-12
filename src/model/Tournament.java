@@ -76,11 +76,4 @@ public class Tournament {
         this.teams.addAll(teams);
     }
 
-    public int getTimesToMeet() {
-        return timesToMeet;
-    }
-
-    public void setTimesToMeet(int timesToMeet) {
-        this.timesToMeet = timesToMeet;
-    }
 }

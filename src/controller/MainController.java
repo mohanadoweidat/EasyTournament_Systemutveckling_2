@@ -23,7 +23,6 @@ public class MainController {
     private PlayersController playersController;
     private TeamController teamController;
     private GroupStageController groupStageController;
-    private PlayoffsController playoffsController;
     private InfoMessages infoMessages = new InfoMessages();
 
     /**

@@ -83,7 +83,6 @@ public class PlayersController extends SceneControllerParent {
             {
                 return true;
             }
-
         }
         return false;
     }

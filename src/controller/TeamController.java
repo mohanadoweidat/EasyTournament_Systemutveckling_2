@@ -23,7 +23,6 @@ import java.util.*;
 
 public class TeamController extends SceneControllerParent {
 
-    private AmountOfTeams amountOfTeams;
     @FXML
     private TableView<Team> tblTeams = new TableView<>();
     @FXML
@@ -36,12 +35,6 @@ public class TeamController extends SceneControllerParent {
     private ListView<String> listTeamsPlayer = new ListView<>();
     @FXML
     private ChoiceBox<AmountOfTeams> cbTeams = new ChoiceBox();
-
-
-    public ComboBox<String> getCbPlayers()
-    {
-        return cbPlayers;
-    }
 
     @FXML
     private ComboBox<String> cbPlayers = new ComboBox<>();
@@ -423,7 +416,6 @@ public class TeamController extends SceneControllerParent {
 
         switch (cbRemoveTeam.getSelectionModel().getSelectedItem()) {
             case "Team1":
-
                 cbRemovePlayer.getItems().setAll(team1.getPlayers());
                 break;
             case "Team2":
@@ -594,7 +586,6 @@ public class TeamController extends SceneControllerParent {
                         team2.setPlayer9(cbPlayers.getValue());
                     } else if ((team2.getPlayer10().equals(" "))) {
                         team2.setPlayer10(cbPlayers.getValue());
-
                     }
                 }
                 if ((cbSelectTeams.getValue()).equals("Team3")) {
@@ -618,7 +609,6 @@ public class TeamController extends SceneControllerParent {
                         team3.setPlayer9(cbPlayers.getValue());
                     } else if ((team3.getPlayer10().equals(" "))) {
                         team3.setPlayer10(cbPlayers.getValue());
-
                     }
                 }
                 if ((cbSelectTeams.getValue()).equals("Team4")) {
@@ -642,7 +632,6 @@ public class TeamController extends SceneControllerParent {
                         team4.setPlayer9(cbPlayers.getValue());
                     } else if ((team4.getPlayer10().equals(" "))) {
                         team4.setPlayer10(cbPlayers.getValue());
-
                     }
                 }
                 if ((cbSelectTeams.getValue()).equals("Team5")) {
@@ -666,7 +655,6 @@ public class TeamController extends SceneControllerParent {
                         team5.setPlayer9(cbPlayers.getValue());
                     } else if ((team5.getPlayer10().equals(" "))) {
                         team5.setPlayer10(cbPlayers.getValue());
-
                     }
                 }
                 if ((cbSelectTeams.getValue()).equals("Team6")) {
@@ -690,7 +678,6 @@ public class TeamController extends SceneControllerParent {
                         team6.setPlayer9(cbPlayers.getValue());
                     } else if ((team6.getPlayer10().equals(" "))) {
                         team6.setPlayer10(cbPlayers.getValue());
-
                     }
                 }
                 if ((cbSelectTeams.getValue()).equals("Team7")) {
@@ -715,7 +702,6 @@ public class TeamController extends SceneControllerParent {
                     } else if ((team7.getPlayer10().equals(" "))) {
                         team7.setPlayer10(cbPlayers.getValue());
                     }
-
                 }
                 if ((cbSelectTeams.getValue()).equals("Team8")) {
                     if ((team8.getPlayer1().equals(" "))) {
@@ -738,7 +724,6 @@ public class TeamController extends SceneControllerParent {
                         team8.setPlayer9(cbPlayers.getValue());
                     } else if ((team8.getPlayer10().equals(" "))) {
                         team8.setPlayer10(cbPlayers.getValue());
-
                     }
                 }
                 if ((cbSelectTeams.getValue()).equals("Team9")) {
