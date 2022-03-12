@@ -78,7 +78,6 @@ public class PlayoffsController extends SceneControllerParent{
         mainController.setScene(ScenesEnum.FirstPage);
     }
 
-
     /**
      * Checks the scores from the textfield and compares the scores
      * Sets the winning teams name as prompt text for the next stage
@@ -266,7 +265,6 @@ public class PlayoffsController extends SceneControllerParent{
                 alert1.setContentText("The game has to have a winner!");
                 alert1.showAndWait();
             }
-
             if (score7 > score8) {
                 tfSemifinal2Away.setPromptText(lblQf4Home.getText());
                 lblSemifinal2Away.setText(lblQf4Home.getText());
@@ -300,7 +298,6 @@ public class PlayoffsController extends SceneControllerParent{
                 alert1.setContentText("The game has to have a winner!");
                 alert1.showAndWait();
             }
-
             if (score9 > score10) {
                 lblFinalHome.setText(lblSemifinal1Home.getText());
                 tfFinalHome.setPromptText(lblSemifinal1Home.getText());
@@ -334,7 +331,6 @@ public class PlayoffsController extends SceneControllerParent{
                 alert1.setContentText("The game has to have a winner!");
                 alert1.showAndWait();
             }
-
             if (score11 > score12) {
                 lblFinalAway.setText(lblSemifinal2Home.getText());
                 tfFinalAway.setPromptText(lblSemifinal2Home.getText());
@@ -367,7 +363,6 @@ public class PlayoffsController extends SceneControllerParent{
                 alert1.setContentText("The game has to have a winner!");
                 alert1.showAndWait();
             }
-
             if (score13 > score14) {
                 lblWinner.setText(lblFinalHome.getText());
             } else {
