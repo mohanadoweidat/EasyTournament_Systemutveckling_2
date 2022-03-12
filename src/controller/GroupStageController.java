@@ -163,7 +163,7 @@ public class GroupStageController extends SceneControllerParent {
                     wins++;
                     btnWinner1.setDisable(true);
                     btnWinner2.setDisable(true);
-                    if (btnWinner3.isDisabled()){
+                    if (btnWinner3.isDisabled() || mainController.getAmountOfTeams().equals(AmountOfTeams.Three)){
                         btnNextGame.setDisable(false);
                     }
                 }
@@ -187,7 +187,7 @@ public class GroupStageController extends SceneControllerParent {
                     wins++;
                     btnWinner1.setDisable(true);
                     btnWinner2.setDisable(true);
-                    if (btnWinner3.isDisabled()){
+                    if (btnWinner3.isDisabled() || mainController.getAmountOfTeams().equals(AmountOfTeams.Three)){
                         btnNextGame.setDisable(false);
                     }
                 }
