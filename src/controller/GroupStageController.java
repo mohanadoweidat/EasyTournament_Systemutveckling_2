@@ -47,6 +47,9 @@ public class GroupStageController extends SceneControllerParent {
     private Label lblTeamToPlay4;
 
     @FXML
+    private Label lblSchedule;
+
+    @FXML
     private Button btnWinner1;
 
     @FXML
@@ -63,16 +66,15 @@ public class GroupStageController extends SceneControllerParent {
 
 
     private ArrayList<Team> teamBuffer = new ArrayList<>();
-
+    private ArrayList<Team> teamsBuffer = new ArrayList();
     private ObservableList <Team> data = FXCollections.observableArrayList();
 
     private Random random = new Random();
 
-    private ArrayList<Team> teamsBuffer = new ArrayList();
-
     private int teams = 0;
     private int wins;
     private int temp;
+    private int roundCounter;
 
     /**
      * Changes scenes to the PlayersGUI
@@ -98,14 +100,9 @@ public class GroupStageController extends SceneControllerParent {
         mainController.setScene(ScenesEnum.Team);
     }
 
-    public void disableButtons(){
-        btnWinner1.setDisable(true);
-        btnWinner2.setDisable(true);
-        btnWinner3.setDisable(true);
-        btnWinner4.setDisable(true);
-        btnNextGame.setDisable(false);
-    }
-
+    /**
+     * Handles buttons for wins and Next Games
+     */
     public void enableButtons(){
         btnWinner1.setDisable(false);
         btnWinner2.setDisable(false);
@@ -261,6 +258,7 @@ public class GroupStageController extends SceneControllerParent {
                 alert1.setContentText("You need to add teams to see next match");
                 alert1.showAndWait();
             } else if (teams == 3) {
+                roundCounter++;
                 int a = random.nextInt(teams);
                 lblTeamToPlay1.setText(mainController.getTeam(a).getName());
                 int b = random.nextInt((teams));
@@ -272,7 +270,9 @@ public class GroupStageController extends SceneControllerParent {
                 btnWinner2.setVisible(true);
                 btnWinner3.setVisible(false);
                 btnWinner4.setVisible(false);
+                lblSchedule.setText("Round "+roundCounter);
             } else {
+                roundCounter++;
                 btnWinner1.setVisible(true);
                 btnWinner2.setVisible(true);
                 btnWinner3.setVisible(true);
@@ -295,6 +295,7 @@ public class GroupStageController extends SceneControllerParent {
                 }
                 lblTeamToPlay4.setText(mainController.getTeam(d).getName());
                 temp = wins;
+                lblSchedule.setText("Round "+roundCounter);
             }
     }
 
