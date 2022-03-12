@@ -56,7 +56,7 @@ public class TeamController extends SceneControllerParent {
 
     private int amountOfTeamsInInt = 0;
     private int count;
-    
+
     private Random random = new Random();
 
     private ObservableList<String> tableContent = FXCollections.observableArrayList();
