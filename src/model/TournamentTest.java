@@ -28,7 +28,7 @@ class TournamentTest {
         tournament.removePlayer(0);
         assertEquals(0, tournament.getArrayListPlayers().size());
     }
-    
+
     @Test
     void getTeam(){
         tournament.setTeam(new Team("Team1"));

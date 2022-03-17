@@ -1,0 +1,17 @@
+Projektets automattester återfinns under Directory->Model->TournamentTest
+
+
+För varje test skapas en ny instans av klassen Tournament som innehåller de metoder som testas.
+
+Testerna använder sig av annotationer från JUniter Jupiter (BeforeEach & Test) och kräver
+följande importer:
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+Vid exekvering av testfallen kan man välja att antingen välja alla genom att köra klassen
+eller testa varje testfall för sig
+
+För att mäta Code Coverage kan detta behöva ställas in i inställningarna.
+Run->Edit Configurations->Modify Options->
