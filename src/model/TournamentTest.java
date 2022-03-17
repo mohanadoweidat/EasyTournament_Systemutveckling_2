@@ -17,6 +17,19 @@ class TournamentTest {
     }
 
     @Test
+    void getPlayer() {
+        tournament.setPlayer(new Player("John Doe"));
+        assertEquals("John Doe", tournament.getPlayer(0));
+    }
+
+    @Test
+    void removePlayer(){
+        tournament.setPlayer(new Player("John Doe"));
+        tournament.removePlayer(0);
+        assertEquals(0, tournament.getArrayListPlayers().size());
+    }
+    
+    @Test
     void getTeam(){
         tournament.setTeam(new Team("Team1"));
         Team team1 = tournament.getTeam(0);
